@@ -10,6 +10,7 @@ import { HmosComponent } from './components/hmos/hmos.component';
 import { OurTeamComponent } from './components/our-team/our-team.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
+import { HomeAboutComponent } from './components/home/home-about/home-about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegistrationFormComponent } from './components/registration-form/regist
     HmosComponent,
     OurTeamComponent,
     PaymentOptionsComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+    HomeAboutComponent
   ],
   imports: [
     BrowserModule,
