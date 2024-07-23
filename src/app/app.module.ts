@@ -13,6 +13,8 @@ import { PaymentOptionsComponent } from './components/payment-options/payment-op
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
+import { SystemComponent } from './components/system/system.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,12 @@ import { HomeAboutComponent } from './components/home/home-about/home-about.comp
     HmosComponent,
     OurTeamComponent,
     PaymentOptionsComponent,
+    RegistrationFormComponent,
+    HomeAboutComponent,
+     AboutComponent,
+    SystemComponent
     RegistrationFormComponent,  
-    AboutComponent,
+   
     HomeAboutComponent,
     
   ],
@@ -33,7 +39,7 @@ import { HomeAboutComponent } from './components/home/home-about/home-about.comp
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
