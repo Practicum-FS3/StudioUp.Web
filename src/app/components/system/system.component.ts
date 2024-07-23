@@ -40,29 +40,28 @@ export class SystemComponent {
             return parseInt(hourA) - parseInt(hourB);
           }
           return parseInt(minutA) - parseInt(minutB);
-          return 0;
 
         }));
       }
 
       console.log(this.groupedItems);
 
-      // for (var item of this.groupedItems) {
-      //   if (item.length < this.maxCount)
-      //     for (let i = 0; i < item.length; i++) {
-      //       if (14 < parseInt(item[i].hour.hour)) {
-      //         this.index = i;
-      //         break;
-      //       } else {
-      //         this.index = i + 1;
-      //       }
-      //     }
-      //   for (let i = item.length; i < this.maxCount; i++) {
-      //     item.splice(this.index, 0, this.rek);
-      //     this.index++;
-      //   }
-      //   this.index = 0;
-      // }
+      for (var item of this.groupedItems) {
+        if (item.length < this.maxCount)
+          for (let i = 0; i < item.length; i++) {
+            if (14 < parseInt(item[i].hour.charAt(0) + item[i].hour.charAt(1))) {
+              this.index = i;
+              break;
+            } else {
+              this.index = i + 1;
+            }
+          }
+        for (let i = item.length; i < this.maxCount; i++) {
+          item.splice(this.index, 0, this.rek);
+          this.index++;
+        }
+        this.index = 0;
+      }
     })
 
   }
