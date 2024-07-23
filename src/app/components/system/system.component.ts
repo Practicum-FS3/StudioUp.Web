@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Training } from '../../models/Training';
+import { Training } from '../../models/TrainingCalander';
 import { DataService } from '../../services/TrainingService/data.service';
 
 @Component({
