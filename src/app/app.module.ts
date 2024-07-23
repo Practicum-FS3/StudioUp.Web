@@ -11,6 +11,7 @@ import { HmosComponent } from './components/hmos/hmos.component';
 import { OurTeamComponent } from './components/our-team/our-team.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
+import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
 
 @NgModule({
@@ -22,8 +23,10 @@ import { HomeAboutComponent } from './components/home/home-about/home-about.comp
     HmosComponent,
     OurTeamComponent,
     PaymentOptionsComponent,
-    RegistrationFormComponent,
-    HomeAboutComponent
+    RegistrationFormComponent,  
+    AboutComponent,
+    HomeAboutComponent,
+    
   ],
   imports: [
     BrowserModule,
