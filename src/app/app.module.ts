@@ -11,6 +11,8 @@ import { OurTeamComponent } from './components/our-team/our-team.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
+import { SystemComponent } from './components/system/system.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,14 @@ import { HomeAboutComponent } from './components/home/home-about/home-about.comp
     OurTeamComponent,
     PaymentOptionsComponent,
     RegistrationFormComponent,
-    HomeAboutComponent
+    HomeAboutComponent,
+    SystemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
