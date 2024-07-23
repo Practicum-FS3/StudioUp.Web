@@ -12,4 +12,7 @@ export class GenericService {
   getByIdWithContent(id:number):Observable<ContentType>{
     return this.http.get<ContentType>(`${this.apiUrl}GetByIdWithContentSection/${id}`)
   }
+  GetByIdWithContentSectionHPOnly(id:number):Observable<ContentType>{
+    return this.http.get<ContentType>(`${this.apiUrl}GetByIdWithContentSectionHPOnly/${id}`)
+  }
 }
