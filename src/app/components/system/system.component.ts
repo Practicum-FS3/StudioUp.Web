@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CustomerTypeDTO, Training, TrainingTypeDTO } from '../../models/Training';
+import { Training } from '../../models/Training';
 import { DataService } from '../../services/TrainingService/data.service';
 
 @Component({
@@ -16,9 +16,9 @@ export class SystemComponent {
   index: number = 0
 
   rek: Training = {
-    id: 0, trainingTypeID: 0, trainerID: 0, dayOfWeek: 0,
-    customerTypeID: 0,
-    hour: { hour: 0, minute: 0 }, participantsCount: 0, isActive: false
+    id: 0, trainerID: 0, dayOfWeek: 0,
+    trainerName: '',
+    hour: '', isActive: false
   }
   constructor(private dataService: DataService) {
     this.dataService.getAll().subscribe(data => {
@@ -31,47 +31,43 @@ export class SystemComponent {
         }
 
         this.groupedItems?.push(this.arr.filter(x => x.dayOfWeek == day).sort((a, b) => {
-          if (a.hour.hour !== b.hour.hour) {
-            return a.hour.hour - b.hour.hour;
+          let hourA = a.hour.charAt(0) + a.hour.charAt(1);
+          let hourB = b.hour.charAt(0) + b.hour.charAt(1);
+          let minutA=a.hour.charAt(3) + a.hour.charAt(4);
+          let minutB=b.hour.charAt(3) + b.hour.charAt(4);
+
+          if (hourA !== hourB) {
+            return parseInt(hourA) - parseInt(hourB);
           }
-          return a.hour.minute - b.hour.minute;
+          return parseInt(minutA) - parseInt(minutB);
+          return 0;
+
         }));
       }
 
       console.log(this.groupedItems);
 
-      for (var item of this.groupedItems) {
-        if (item.length < this.maxCount)
-          for (let i = 0; i < item.length; i++) {
-            if (14 < item[i].hour.hour) {
-              this.index = i;
-              break;
-            } else {
-              this.index = i + 1;
-            }
-          }
-        for (let i = item.length; i < this.maxCount; i++) {
-          item.splice(this.index, 0, this.rek);
-          this.index++;
-        }
-        this.index = 0;
-      }
+      // for (var item of this.groupedItems) {
+      //   if (item.length < this.maxCount)
+      //     for (let i = 0; i < item.length; i++) {
+      //       if (14 < parseInt(item[i].hour.hour)) {
+      //         this.index = i;
+      //         break;
+      //       } else {
+      //         this.index = i + 1;
+      //       }
+      //     }
+      //   for (let i = item.length; i < this.maxCount; i++) {
+      //     item.splice(this.index, 0, this.rek);
+      //     this.index++;
+      //   }
+      //   this.index = 0;
+      // }
     })
 
   }
 
-  getTrainingType(id: number): TrainingTypeDTO | undefined {
-    this.dataService.getTrainingType(id).subscribe(data => {
-      return data;
-    })
-    return undefined;
-  }
-  getCustomerType(id: number): CustomerTypeDTO | undefined {
-
-    this.dataService.getCustomerType(id).subscribe(data => {
-      return data;
-    })
-    return undefined;
-  }
 
 }
+
+
