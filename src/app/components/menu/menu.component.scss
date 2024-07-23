@@ -1,0 +1,27 @@
+.nav-bar {
+    width: 100%;
+    direction: rtl;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: white;
+    height: 5vh;
+    font-size: 1vw;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: black;
+    margin: 3vh;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.nav-bar a:hover {
+    color: #FFC900;
+}
+
+.leftlink {
+    display: inline-block;
+    position: absolute;
+    left: 8%;
+}
