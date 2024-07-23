@@ -4,10 +4,11 @@ import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
 
 const routes: Routes = [
-  {path:'about',component:AboutComponent},
   {path:'',component:HomeAboutComponent},
+  {path:'about',component:AboutComponent},
   {path:'home',component:HomeAboutComponent},
-  
+  {path:'home/about',component:AboutComponent}
+
 ];
 
 @NgModule({

@@ -12,7 +12,6 @@ import { PaymentOptionsComponent } from './components/payment-options/payment-op
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
-import { TwoComponent } from './components/home/two/two.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,7 @@ import { TwoComponent } from './components/home/two/two.component';
     RegistrationFormComponent,  
     AboutComponent,
     HomeAboutComponent,
-    TwoComponent
+    
   ],
   imports: [
     BrowserModule,

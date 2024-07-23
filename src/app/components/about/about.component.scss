@@ -40,7 +40,6 @@
                     left: 40px;
                     color: var(--ffffff, #FFF);
                     // font-family: "Anomalia ML v2 AAA";
-                    font-family: Aharoni;
                     font-size: 580%;
                     font-style: normal;
                     font-weight: 700;
@@ -89,75 +88,7 @@
     }
 }
 
-// // #j {
-// //     display: flex;
-// //     flex-direction: row;
-// //     flex-wrap: wrap;
-// //     justify-content: space-evenly;
-// //     width: 90%;
-// //     justify-content: center;
-// //     margin-top: 12%;
-// //     margin-left: 6.5%;
 
-// //     #k {
-
-// //         width: 24%;
-// //         height: 400px;
-// //         top: 620px;
-// //         left: 76px;
-// //         gap: 0%;
-// //         border-radius: 23%;
-// //         opacity: 0px;
-// //         background-color: rgba(250, 246, 243, 0.50);
-// //         margin: 1.5%;
-
-// //         #icon {
-// //             width: 65px;
-// //             height: 37.5px;
-// //             flex-shrink: 0;
-// //             // border: 1px solid rgba(255, 204, 15, 1);
-// //             // background-color:rgba(255, 204, 15, 0.5);
-// //             // width: 25%;
-// //             // height: 37.5px;
-// //             top: 699px;
-// //             left: 111px;
-// //             gap: 0px;
-// //             opacity: 0px;
-// //             // angle: 0 deg;
-// //             margin: 12%;
-// //         }
-
-// //         p {
-// //             font-family: Aharoni;
-// //             //styleName: 22;
-// //             // font-family: Ploni ML v2 AAA;
-// //             font-size: 150%;
-// //             font-weight: 400;
-// //             line-height: 30px;
-// //             text-align: left;
-// //             width: 65%;
-// //             height: 180px;
-// //             top: 764.75px;
-// //             left: 116.66px;
-// //             gap: 0px;
-// //             opacity: 0px;
-// //             angle: -0.45 deg;
-// //             margin-left: 9%;
-// //             margin-top: 19%;
-// //             color: rgba(76, 76, 73, 1);
-// //         }
-
-// //         #name {
-// //             width: 30%;
-// //             height: 10%;
-// //             margin-top: -2%;
-// //             font-size: 100%;
-// //             color: rgba(76, 76, 73, 1);
-// //             border: solid 0.1px gray;
-// //         }
-
-// //     }
-// // }
 #cards {
     margin-top: 7%;
     display: flex;
@@ -165,7 +96,7 @@
     margin-left: 15%;
 
     #kl {
-        width: 26%;
+        width: 24.5%;
         height: 400px;
         top: 620px;
         left: 76px;
@@ -188,7 +119,6 @@
         }
 
         #j {
-            font-family: Aharoni;
             //styleName: 22;
             // font-family: Ploni ML v2 AAA;
             font-size: 150%;
@@ -208,12 +138,11 @@
         }
 
         #name {
-            font-family: Aharoni;
             width: 50%;
             height: 20%;
             margin-top: -2%;
             margin-left: 11%;
-            font-size: 160%;
+            font-size: 100%;
             color: rgba(76, 76, 73, 1);
         }
     }
