@@ -10,6 +10,9 @@ import { HmosComponent } from './components/hmos/hmos.component';
 import { OurTeamComponent } from './components/our-team/our-team.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
+import { AboutComponent } from './components/about/about.component';
+import { HomeAboutComponent } from './components/home/home-about/home-about.component';
+import { TwoComponent } from './components/home/two/two.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { RegistrationFormComponent } from './components/registration-form/regist
     HmosComponent,
     OurTeamComponent,
     PaymentOptionsComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,  
+    AboutComponent,
+    HomeAboutComponent,
+    TwoComponent
   ],
   imports: [
     BrowserModule,
