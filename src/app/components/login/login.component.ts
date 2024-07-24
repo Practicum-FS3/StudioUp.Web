@@ -39,7 +39,8 @@ export class LoginComponent {
       },
       error => {
         console.error('Login error', error);
-        this.errorMassage = 'Login failed';
+        this.errorMassage = 'משתמש לא קיים';
+        //מתי זה משתמש לא קיים ומתי נופל
       }
     );
   }
