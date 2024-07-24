@@ -17,7 +17,7 @@ export class SystemComponent {
 
   rek: Training = {
     id: 0, trainerID: 0, dayOfWeek: 0,
-    trainerName: '',
+    trainerName: '',customerTypeName:'',trainingTypeName:'',
     hour: '', isActive: false
   }
   constructor(private dataService: DataService) {
