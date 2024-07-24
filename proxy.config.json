@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "https://fireplace.co.il",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+  

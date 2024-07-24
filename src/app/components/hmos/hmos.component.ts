@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DownloadFileService } from '../../services/download-file.service/download-file.service';
 
 @Component({
   selector: 'app-hmos',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class HmosComponent {
 
-}
+  constructor(private _downloadService: DownloadFileService) {}
+
+  downloadFile() {
+    this._downloadService.downloadPdf();
+  }}
