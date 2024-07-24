@@ -15,7 +15,7 @@
             <div *ngFor="let n of numbersArray" class="n">
                 <div class="tur">
                     <div *ngFor="let lesson of groupedItems[n-1]; " class="item">
-                        <div *ngIf="lesson.id!=0">
+                        <div *ngIf="lesson.id!=0 && lesson.isActive==true">
                            {{lesson.hour}}
                             <br>
                             {{lesson.trainerName}}
