@@ -1,55 +1,98 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.header {
-    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
-    font-size: 3%;
-    width: 100%;
+.wrapping {
+  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  width: 100%;
 }
 
-.title {
-    background-color: rgb(255, 201, 0);
-    color: white;
-    border-radius: 20vh;
-    text-align: center;
-    padding: 0.4vh 0vh 0.4vh 0vh;
-    font-weight: bold;
-    font-size: 1.2vw;
-    margin: 1vh 1%; 
+
+.custom-header {
+  background-color: #FFD700;
+  text-align: center;
+  padding: 0.8vh 0vh 0.8vh 0vh;
+  border-radius: 20vh;
+  margin: 2vh 5%;
+  color: white;
+  font-weight: 700;
 
 }
 
-.div-header {
-    width: 100%;
-    display: flex;
+.custom-header span {
+  color: #D91C5C;
+  font-size: 20px;
 }
 
-.star {
-    padding: -5vh;
-    fill: #D91C5C;
-    width: 1vw;
-    height: 2vh;
-    transform: rotate(6deg);
+.link_img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link_img .text {
+  flex-grow: 1;
+  text-align: right;
 }
 
 .img {
-    height: 10vh;
-    width: 4vw;
-    background-image: url('../../../assets/images/logo.png');
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    flex-grow: 0;
-    margin-left: 0.5%;
-    order: -1; 
+  display: block;
+  height: 80px;
+  width: 60px;
+  background-image: url('../../../assets/images/logo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+
 }
 
-.row {
-    display: flex;
+#btn {
+  color: #FFD700;
+  background-color: #D91C5C;
+  border-color: #000000;
 
-    justify-content: space-between;
-    align-items: center; 
+  position: absolute;
+  right: 25px;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 470px) {
+  .custom-header {
+    font-size: 14px;
+  }
+
+  .star {
+    display: inline-block;
+    transform: scale(0.8);
+  }
+
+}
+
+@media (max-width: 400px) {
+  .custom-header {
+    font-size: 13px;
+
+  }
+
+  .star {
+    display: inline-block;
+    transform: scale(0.6);
+  }
+
+}
+
+@media (max-width: 360px) {
+  .custom-header {
+    font-size: 11px;
+
+  }
+
+  .star {
+    display: inline-block;
+    transform: scale(0.6);
+  }
+
 }
