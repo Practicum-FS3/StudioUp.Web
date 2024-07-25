@@ -1,5 +1,62 @@
-/* body {
-    font-family: Arial, sans-serif;
+
+@font-face {
+    font-family: 'Ploni ML v2 AAA Light';
+    src: url('../fonts/PloniBlack.woff') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ploni ML v2 AAA Bold';
+    src: url('../fonts/PloniBold.woff') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ploni ML v2 AAA';
+    src: url('../fonts/PloniDBold.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anomalia ML v2 AAA';
+    src: url('../fonts/PloniLight.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anomalia ML v2 AAA';
+    src: url('../fonts/PloniMedium.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anomalia ML v2 AAA';
+    src: url('../fonts/PloniRegular.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anomalia ML v2 AAA';
+    src: url('../fonts/PloniUBold.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anomalia ML v2 AAA';
+    src: url('../fonts/PloniULight.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Ploni ML v2 AAA', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -18,7 +75,7 @@
     padding: 0.8vh 0vh 0.8vh 0vh;
     font-weight: bold;
     font-size: 1.2vw;
-    margin: 1vh 1%; 
+    margin: 1vh 1%;
 
 }
 
