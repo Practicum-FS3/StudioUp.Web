@@ -1,0 +1,103 @@
+<div class="cardCust">
+    <ng-container *ngIf="!toedit; else otherContent">
+        <p>
+            <label class="title">שם</label>
+            <span [innerText]="currentCustomer?.lastName"></span>
+            <span style="margin-right: 4px;" [innerText]="currentCustomer?.firstName"></span>
+        </p>
+        <p>
+            <label class="title">טלפון</label>
+            <span [innerText]="currentCustomer?.tel"></span>
+        </p>
+        <p>
+            <label class="title">מייל</label>
+            <span [innerText]="currentCustomer?.email"></span>
+        </p>
+        <p>
+            <label class="title">כתובת</label>
+            <span [innerText]="currentCustomer?.address"></span>
+        </p>
+        <p>
+            <label class="title">סטטוס</label>
+            <span>{{ currentCustomer?.isActive ? 'פעיל' : 'לא פעיל' }}</span>
+        </p>
+        <p>
+            <label class="title">סוג לקוח</label>
+            <span *ngIf="currentCustomer && arrCustType">{{ getCustomerTypeTitle() }}</span>
+        </p>
+        <p>
+            <label class="title">סוג מנוי</label>
+            <span *ngIf="currentCustomer && arrSubscriptionType">{{ getSubscriptionTypeTitle() }}</span>
+        </p>
+        <p>
+            <label class="title">קופת חולים</label>
+            <span *ngIf="currentCustomer && arrHMO">{{ getHmoTitle() }}</span>
+        </p>
+        <p>
+            <label class="title">אמצעי תשלום</label>
+            <span *ngIf="currentCustomer && arrPaymentOptions">{{ getPaymentOptionTitle() }}</span>
+        </p>
+
+        <input class="saveInput" type="button" value="עריכה" (click)="edit()">
+    </ng-container>
+    <ng-template #otherContent>
+        <form [formGroup]="myForm" id="form">
+            <h2>עריכה</h2>
+            <p class="divInput">
+                <label class="miniTitle">שם פרטי</label><br>
+                <input class="inputes" pInputText id="firstName" formControlName="firstName" ngModel="{{currentCustomer?.firstName}}" />
+            </p>
+            <p class="divInput">
+                <label>שם משפחה</label><br>
+                <input class="inputes" pInputText id="lastName" formControlName="lastName" ngModel="{{currentCustomer?.lastName}}" />
+            </p>
+            <p class="divInput">
+                <label>טלפון</label><br>
+                <input  class="inputes" pInputText id="tel" formControlName="tel" ngModel="{{currentCustomer?.tel}}" />
+            </p>
+            <p class="divInput">
+                <label>מייל</label><br>
+                <input class="inputes"  pInputText id="email" formControlName="email" ngModel="{{currentCustomer?.email}}" />
+            </p>
+            <p class="divInput">
+                <label>כתובת</label><br>
+                <input class="inputes" pInputText id="address" formControlName="address" ngModel="{{currentCustomer?.address}}" />
+            </p>
+            <p class="divInput">
+                <label>סוג לקוח:</label><br>
+                <select class="inputes" id="mySelect" pInputText id="customerTypeId" formControlName="customerTypeId"
+                    ngModel="{{currentCustomer?.customerTypeId}}">
+                    <option *ngFor="let customerType of arrCustType" [value]="customerType.id">{{customerType.title}}
+                    </option>
+                </select>
+            </p>
+
+            <p class="divInput">
+                <label>סוג מנוי:</label><br>
+                <select class="inputes" id="mySelect" pInputText id="subscriptionTypeId" formControlName="subscriptionTypeId"
+                    ngModel="{{currentCustomer?.subscriptionTypeId}}">
+                    <option *ngFor="let subscriptionType of arrSubscriptionType" [value]="subscriptionType.id">
+                        {{subscriptionType.title}}
+                    </option>
+                </select>
+            </p>
+           
+            <p class="divInput">
+                <label>קופת חולים:</label><br>
+                <input pInputText id="hmoId" formControlName="hmoId" ngModel="{{currentCustomer?.hmoId}}" />
+            </p>
+           
+            <p class="divInput">
+                <label>אופן התשלום:</label><br>
+                <select class="inputes" id="mySelect" pInputText id="paymentOptionId" formControlName="paymentOptionId"
+                    ngModel="{{currentCustomer?.paymentOptionId}}">
+                    <option *ngFor="let paymentOption of arrPaymentOptions" [value]="paymentOption.id">{{paymentOption.title}}
+                    </option>
+                </select>
+            </p>
+
+            <input class="saveInput" type="submit" value="שמור שינויים" (click)="saveChanges()">
+        </form>
+    </ng-template>
+</div>
+

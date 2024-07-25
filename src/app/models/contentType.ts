@@ -1,4 +1,4 @@
-import { ContentSections } from './contentSections.model'
+// import { ContentSections } from './contentSections.model'
 export class ContentType {
     ID?: number;
     Title?: string;
@@ -8,5 +8,5 @@ export class ContentType {
     Title1?: string;
     Title2?: string;
     Title3?: string;
-    ContentSections?:ContentSections[];
+    // ContentSections?:ContentSections[];
 }

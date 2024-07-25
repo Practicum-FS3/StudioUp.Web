@@ -1,0 +1,145 @@
+.cardCust {
+    direction: rtl;
+    width: 40%;
+    border-radius: 39px;
+    padding: 2%;
+    background-color: #ECECEC;
+    margin: 0 auto;
+    padding-right: 3%;
+}
+
+.title {
+    font-size: 25px;
+    display: block;
+    list-style: circle;
+}
+
+.inputes {
+    background-color: #ECECEC;
+    border-color: #E3DCDC;
+    border-style: solid;
+    box-shadow: none;
+    border-radius: 1.5vh;
+}
+
+.p-inputtext {
+    margin: 0;
+    width: 90%;
+}
+
+span {
+    font-size: 20px;
+    margin-right: 5%;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav {
+    background-color: rgb(255, 255, 255); /* Specify your desired background color here */
+}
+
+:host ::ng-deep .p-tabview-panels {
+    background-color: rgba(236, 236, 236, 1);
+    height: 250%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cardCust ::ng-deep .p-tabPanel[header="פרטים אישיים"] .ui-tabview-title {
+    color: red; /* Specify your desired color here */
+}
+
+.divInput {
+    background-color: rgb(255, 201, 0);
+    color: white;
+    border-radius: 2vh;
+    text-align: center;
+    padding: 0.8vh 0vh 0.8vh 0vh;
+    font-weight: bold;
+    font-size: 1.2vw;
+    margin: 1vh 1%;
+}
+
+.miniTitle {
+    font-size: 15px;
+}
+
+.saveInput {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: 48.03px;
+    background-color: #D91C5C;
+    gap: 0px;
+    border-radius: 20px 20px 20px 20px;
+    opacity: 0px;
+    border-style: none;
+    font-size: 25px;
+    color: white;
+}
+
+/* מדיה קווריס כדי להפוך את העיצוב לרספונסיבי */
+@media only screen and (max-width: 1200px) {
+    .cardCust {
+        width: 60%;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .span {
+        font-size: 18px;
+    }
+
+    .divInput {
+        font-size: 1.5vw;
+    }
+
+    .saveInput {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cardCust {
+        width: 80%;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .span {
+        font-size: 16px;
+    }
+
+    .divInput {
+        font-size: 2vw;
+    }
+
+    .saveInput {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .cardCust {
+        width: 100%;
+        padding: 5%;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .span {
+        font-size: 14px;
+    }
+
+    .divInput {
+        font-size: 3vw;
+    }
+
+    .saveInput {
+        width: 80%;
+    }
+}
