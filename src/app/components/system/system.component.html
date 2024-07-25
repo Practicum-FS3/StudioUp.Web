@@ -1,4 +1,3 @@
-
 <div class="p">
 
     <div class="tit">
@@ -15,15 +14,15 @@
         <div class="container">
             <div *ngFor="let n of numbersArray" class="n">
                 <div class="tur">
-                    <div *ngFor="let morning of groupedItems[n-1]; " class="item">
-                        <div *ngIf="morning.id!=0">
-                            {{morning.hour.minute}}
-                            :
-                            {{morning.hour.hour}}
+                    <div *ngFor="let lesson of groupedItems[n-1]; " class="item">
+                        <div *ngIf="lesson.id!=0 && lesson.isActive==true">
+                           {{lesson.hour}}
                             <br>
-                        {{getTrainingType(morning.trainingTypeID)}}
-                        <br>
-                        {{getCustomerType(morning.customerTypeID)}}
+                            {{lesson.trainerName}}
+                            <br>
+                            {{lesson.trainingTypeName}}
+                            <br>
+                            {{lesson.customerTypeName}}
 
                         </div>
                     </div>
@@ -48,4 +47,4 @@
         </div>
 
     </div>
-</div> 
+</div>
