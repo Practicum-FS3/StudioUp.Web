@@ -1,85 +1,240 @@
-.externalDiv {
-    width: 100%;
-    height: 3326px;
-    border-radius: 39px 39px 39px 39px;
-    background: rgba(236, 236, 236, 1)
+// .externalDiv {
+//     width: 100%;
+//     height: 3326px;
+//     border-radius: 39px 39px 39px 39px;
+//     background: rgba(236, 236, 236, 1)
+// }
+// .HMO {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: flex-start;
+//     align-items: center;
+//     height: 15%;
+//     width: 65%;
+//     border-radius: 55px 55px 55px 55px;
+//     margin: 2.5%;
+//     margin-right: 17%;
+//     background: rgba(255, 255, 255, 1);
+// }
+// .title {
+//     padding:4%;
+//     // font-family: ' Anomalia ML v2 AAA';
+//     font-size: 430%;
+//     font-weight: 700;
+// }
+// .innerTitle {
+//     padding:4%;
+//     font-size: 235%;
+//     font-weight: 700;
+//     margin-right: 5%;
+// }
+// .text {
+//     width: 70%;
+//     padding: 5px; 
+//     font-size: 238%;
+//     font-weight: 700;
+//     line-height: 100%;
+// }
+// .smallText {
+//     font-size: 57%;
+// }
+// p {
+//     margin: 10px; 
+// }
+// .toFlex1 {
+//     width: 45%;
+//     & .text{
+//          margin-right: 10%;
+//     }
+// }
+// .toFlex2 {
+//     width: 55%;
+// }
+
+// @media screen and (max-width: 768px) {
+//     .HMO {
+//         height: 17%;
+//         width: 80%;
+//         align-items: flex-start;
+//         flex-direction: column;
+//         justify-content: space-between;
+//         margin-right: 10%;
+//     }
+//     .toFlex1 {
+//         width: 100%;
+//     }
+//     .toFlex2 {
+//         width: 100%;
+//     }
+//     .innerTitle {
+//         font-size: 200%;
+//     }
+//     .title {
+//         // font-family: ' Anomalia ML v2 AAA';
+//         font-size: 190%;
+//         font-weight: 700;
+//     }
+//     .text {
+//         width: 80%;
+//         margin-right: 10%;
+//         font-size: 150%;
+//     }
+//     p {
+//         margin: 2px; 
+//     }
+// }
+
+
+
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+.externalDiv {
+    width: 80%;
+    border-radius: 39px;
+    background: rgba(236, 236, 236, 1);
+    padding: 0.1%;
+    margin: auto;
+}
+
 .HMO {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    height: 15%;
-    width: 65%;
-    border-radius: 55px 55px 55px 55px;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 60%;
+    border-radius: 55px;
     margin: 2.5%;
     margin-right: 17%;
-    background: rgba(255, 255, 255, 1);
+    background: rgb(255, 255, 255);
+    padding: 1%;
 }
+
 .title {
-    padding:4%;
-    // font-family: ' Anomalia ML v2 AAA';
+    padding: 4%;
+    font-family: 'Anomalia ML v2 AAA';
     font-size: 430%;
     font-weight: 700;
+    text-align: center;
 }
 .innerTitle {
-    padding:4%;
+    padding: 4%;
     font-size: 235%;
     font-weight: 700;
     margin-right: 5%;
+    text-align: right; /* Align text to the right */
+    width: 100%; /* Ensure the element takes up full width for alignment */
 }
+
 .text {
     width: 70%;
-    padding: 5px; 
+    padding: 5px;
     font-size: 238%;
     font-weight: 700;
     line-height: 100%;
 }
+
 .smallText {
     font-size: 57%;
 }
+
 p {
-    margin: 10px; 
+    margin: 0.5%;
 }
+
 .toFlex1 {
     width: 45%;
-    & .text{
-         margin-right: 10%;
-    }
 }
+
+.toFlex1 .text {
+    margin-right: 10%;
+}
+
 .toFlex2 {
     width: 55%;
 }
 
-@media screen and (max-width: 768px) {
+.container {
+    display: flex;
+}
+
+.p-buttonDiv {
+    margin-left: 10%;
+    text-align: center;
+border: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
     .HMO {
-        height: 17%;
-        width: 80%;
+        width: 70%;
+        margin-right: 15%;
+    }
+}/* Media Queries */
+@media screen and (max-width: 768px) {
+    .externalDiv {
+        width: 100%;
+    }
+
+    .HMO {
+        width: 90%;
+        margin-right: 5%;
         align-items: flex-start;
         flex-direction: column;
-        justify-content: space-between;
-        margin-right: 10%;
+        justify-content: flex-start;
+        padding: 2%;
     }
+
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack toFlex1 and toFlex2 vertically */
+    }
+
+    .toFlex1, .toFlex2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* Align content to the right */
+        text-align: right; /* Ensure text alignment is right */
+    }
+
     .toFlex1 {
-        width: 100%;
+        margin-bottom: 10px; /* Optional spacing between the two columns */
     }
-    .toFlex2 {
-        width: 100%;
-    }
+
     .innerTitle {
         font-size: 200%;
     }
+
     .title {
-        // font-family: ' Anomalia ML v2 AAA';
-        font-size: 190%;
-        font-weight: 700;
+        font-size: 250%;
     }
+
     .text {
-        width: 80%;
-        margin-right: 10%;
-        font-size: 150%;
+        width: 90%;
+        margin-right: 0;
+        font-size: 180%;
     }
-    p {
-        margin: 2px; 
+
+    .p-buttonDiv {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px; /* Space above the button div */
+    }
+
+    p-button {
+        width: 100%;
+        font-size: 150%;
     }
 }

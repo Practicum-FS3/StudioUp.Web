@@ -1,20 +1,24 @@
+
 <div class="externalDiv" dir="rtl">
     <p class="title">נספח לחברות קופ”ח</p>
-    <ng-container *ngFor="let item of [0, 1, 2, 3]">
+    <ng-container *ngFor="let item of hmosList">
     <div class="HMO">
+
+        <div class="container"> 
         <div class="toFlex1">
-            <p class="innerTitle">כללית</p><br>
+            <p class="innerTitle">{{ item.title }}</p><br>
+
             <p class="text">
-                ביטוח: <span class="smallText">משלים</span>
+                ביטוח: <span class="smallText">{{ item.arrangementName }}</span>
             </p>
             <p class="text">
-                הטבה: <span class="smallText">22 ₪ במקום 40 ₪</span>
+                הטבה: <span class="smallText">{{ item.trainingPrice}} ₪ במקום 40 ₪</span>
             </p>
             <p class="text">
-                מגיל:<span class="smallText">18 ומעלה</span>
+            {{item.minimumAge}}    מגיל:<span class="smallText">{{item.maximumAge}} ומעלה</span>
             </p>
             <p class="text">
-                מוגבל ל:<span class="smallText">5 כניסות בחודש</span>
+                מוגבל ל:<span class="smallText">{{item.trainingsPerMonth}} כניסות בחודש</span>
             </p>
         </div>
         <div class="toFlex2">
@@ -25,11 +29,16 @@
             <p class="text">
                 בעלות אפליקציה: <span class="smallText">מזמינים את השיעור הנבחר באפליקציה ושולחים לי למייל או לווצאפ אישור כניסה</span>
             </p>
-      
+        </div>
+        </div>
+
+        <div class="p-buttonDiv">
+
+            <p-button label="הורדת קובץ" [rounded]="true" severity="secondary" (onClick)="downloadFile()"></p-button>
+
         </div>
     </div>
 
 </ng-container>
-
 
 </div>

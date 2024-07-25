@@ -37,10 +37,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss",
               "src/assets/styles/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -68,6 +72,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.config.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "StudioUp.Web:build:production"
@@ -112,4 +119,4 @@
       "analytics": "54d9cd87-1563-4382-a21d-3a0ddb41c5db"
     }
   }
-}
+
