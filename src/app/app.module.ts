@@ -15,6 +15,8 @@ import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
 import { SystemComponent } from './components/system/system.component';
 import { provideHttpClient } from '@angular/common/http';
+import { AccordionModule } from 'primeng/accordion';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,10 @@ import { provideHttpClient } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AccordionModule,
+    BrowserAnimationsModule
+
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

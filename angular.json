@@ -99,7 +99,10 @@
             ],
             "styles": [
               "src/styles.scss",
-               "src/assets/styles/style.css"
+               "src/assets/styles/style.css",
+               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+               "node_modules/primeng/resources/primeng.min.css",
+               "node_modules/primeng/resources/themes/nova-light/theme.css"
             ],
             "scripts": []
           }
@@ -112,4 +115,4 @@
       "analytics": "54d9cd87-1563-4382-a21d-3a0ddb41c5db"
     }
   }
-}
+

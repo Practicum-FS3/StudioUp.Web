@@ -1,26 +1,36 @@
-import { Component } from '@angular/core';
+
+import { Component, HostListener } from '@angular/core';
 import { Training } from '../../models/TrainingCalander';
 import { DataService } from '../../services/TrainingService/data.service';
 
 @Component({
   selector: 'app-system',
   templateUrl: './system.component.html',
-  styleUrl: './system.component.scss'
+  styleUrl: './system.component.scss',
 })
 export class SystemComponent {
-  days = ['מוצשק', 'שישי', 'חמישי', 'רביעי', 'שלישי', 'שני', 'ראשון'];
+  days = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'מוצש"ק'];
   numbersArray = [1, 2, 3, 4, 5, 6, 7];
   maxCount = 0;
   arr: Array<Training> | undefined
   groupedItems: Array<Array<Training>> = []
   index: number = 0
-
+  screenWidth: number = window.innerWidth;
   rek: Training = {
     id: 0, trainerID: 0, dayOfWeek: 0,
-    trainerName: '',customerTypeName:'',trainingTypeName:'',
+    trainerName: '', customerTypeName: '', trainingTypeName: '',
     hour: '', isActive: false
   }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    if (event.target instanceof Window) {
+      this.screenWidth = (<Window>event.target).innerWidth;
+    }
+  }
   constructor(private dataService: DataService) {
+
+
     this.dataService.getAll().subscribe(data => {
       this.arr = data
       console.log({ data });
@@ -33,8 +43,8 @@ export class SystemComponent {
         this.groupedItems?.push(this.arr.filter(x => x.dayOfWeek == day).sort((a, b) => {
           let hourA = a.hour.charAt(0) + a.hour.charAt(1);
           let hourB = b.hour.charAt(0) + b.hour.charAt(1);
-          let minutA=a.hour.charAt(3) + a.hour.charAt(4);
-          let minutB=b.hour.charAt(3) + b.hour.charAt(4);
+          let minutA = a.hour.charAt(3) + a.hour.charAt(4);
+          let minutB = b.hour.charAt(3) + b.hour.charAt(4);
 
           if (hourA !== hourB) {
             return parseInt(hourA) - parseInt(hourB);
