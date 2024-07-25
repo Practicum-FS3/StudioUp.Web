@@ -1,16 +1,37 @@
-<div class="nav-bar">
-    <nav >
-        <a routerLink="/home" routerLinkActive="active">בית</a>
-        <a routerLink="/????" routerLinkActive="active">אודות</a>
-        <a routerLink="/?????" routerLinkActive="active">סוגי אימונים</a>
-        <a routerLink="/system" routerLinkActive="active">מערכת קורסים</a>
-   <a routerLink="/about" routerLinkActive="active">לקוחות מספרים</a>
-       
-        <a routerLink="/?????" routerLinkActive="active">מערכת קורסים</a>
-        <a routerLink="/?????" routerLinkActive="active">מסלולי מנויים</a>
-        <a routerLink="/price list" routerLinkActive="active">מחירון</a>
-        <a routerLink="/?????" routerLinkActive="active">צור קשר</a>
-       
+<div>
+    <nav class="navbar-nav d-none d-lg-flex" id="nav_row" dir="rtl">
+        <a class="nav-item nav-link active" routerLink="/home" routerLinkActive="active" id="first">בית</a>
+        <a class="nav-item nav-link" routerLink="/about" routerLinkActive="active">אודות</a>
+        <a class="nav-item nav-link" routerLink="/training" routerLinkActive="active">סוגי אימונים</a>
+        <a class="nav-item nav-link" routerLink="/testimonials" routerLinkActive="active">לקוחות מספרים</a>
+        <a class="nav-item nav-link" routerLink="/courses" routerLinkActive="active">מערכת קורסים</a>
+        <a class="nav-item nav-link" routerLink="/plans" routerLinkActive="active">מסלולי מנויים</a>
+        <a class="nav-item nav-link" routerLink="/pricing" routerLinkActive="active">מחירון</a>
+        <a class="nav-item nav-link" routerLink="/contact" routerLinkActive="active">צור קשר</a>
+        <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="active" style="display: none; ">אזור
+            אישי</a>
+        <a class="nav-item nav-link fixed-login" routerLink="/login" routerLinkActive="active" >התחברות/הזדהות</a>
+
     </nav>
-    
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">תפריט</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <nav class="navbar-nav">
+            <a class="nav-item nav-link active" routerLink="/home" routerLinkActive="active">בית</a>
+            <a class="nav-item nav-link" routerLink="/about" routerLinkActive="active">אודות</a>
+            <a class="nav-item nav-link" routerLink="/training" routerLinkActive="active">סוגי אימונים</a>
+            <a class="nav-item nav-link" routerLink="/testimonials" routerLinkActive="active">לקוחות מספרים</a>
+            <a class="nav-item nav-link" routerLink="/courses" routerLinkActive="active">מערכת קורסים</a>
+            <a class="nav-item nav-link" routerLink="/plans" routerLinkActive="active">מסלולי מנויים</a>
+            <a class="nav-item nav-link" routerLink="/pricing" routerLinkActive="active">מחירון</a>
+            <a class="nav-item nav-link" routerLink="/contact" routerLinkActive="active">צור קשר</a>
+            <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="active" style="display: none;">אזור אישי</a>
+            <a class="nav-item nav-link " routerLink="/login" routerLinkActive="active">התחברות/הזדהות</a>
+        </nav>
+    </div>
 </div>
