@@ -7,7 +7,7 @@ import { ContentType } from '../models/contentType';
   providedIn: 'root'
 })
 export class GenericService {
-  apiUrl: string = 'https://localhost:44354/api/ContentType/'
+  apiUrl: string = 'https://localhost:7101/api/ContentType/'
   constructor(private http:HttpClient) { }
   getByIdWithContent(id:number):Observable<ContentType>{
     return this.http.get<ContentType>(`${this.apiUrl}GetByIdWithContentSection/${id}`)

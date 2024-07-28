@@ -4,40 +4,20 @@
             <div><p>אפשרויות</p></div>
             <div><p>תשלום</p></div>
         </div>
-
         <div class="backgroundImageDiv">
-            <!-- <img src="sources/EnvelopeIcon.png" alt="EnvelopeIcon"> -->
         </div>
     </div>
 
-    <div class="PaymentOptionDivContainer">
+    <div *ngFor="let po of paymentOption.contentSections" class="optionList">
+    <div *ngIf="po.isActive == true" class="PaymentOptionDivContainer">
         <div class="PaymentOptionDivRow">
             <div class="PaymentOptionDiv">
-                <img src="../../../assets/Icon1.png" class="Icon">
-                <p class="headerOption">כ.אשראי</p>
-                <p class="textOption">בתשלום אחד בלבד למאמנת בשיעור הראשון של המנוי</p>
-                <p class="textOptionBold">כל עיכוב בתשלום יחוייב בקנס של 5 ש”ח לכל שבוע איחור</p>
-            </div>
-            <div class="PaymentOptionDiv">
-                <img src="../../../assets/Icon3.png" class="Icon">
-                <p class="headerOption">מזומן</p>
-                <p class="textOption">בתשלום אחד בלבד למאמנת בשיעור הראשון של המנוי</p>
-                <p class="textOptionBold">כל עיכוב בתשלום יחוייב בקנס של 5 ש”ח לכל שבוע איחור</p>
-            </div>
-        </div>
-        <div class="PaymentOptionDivRow">
-            <div class="PaymentOptionDiv">
-                <img src="../../../assets/Icon2.png" class="Icon">
-                <p class="headerOption">צקים</p>
-                <p class="textOption">בתשלום אחד בלבד למאמנת בשיעור הראשון של המנוי</p>
-                <p class="textOptionBold">כל עיכוב בתשלום יחוייב בקנס של 5 ש”ח לכל שבוע איחור</p>
-            </div>
-            <div class="PaymentOptionDiv">
-                <img src="../../../assets/Icon2.png" class="Icon">
-                <p class="headerOption">צקים</p>
-                <p class="textOption">בתשלום אחד בלבד למאמנת בשיעור הראשון של המנוי</p>
-                <p class="textOptionBold">כל עיכוב בתשלום יחוייב בקנס של 5 ש”ח לכל שבוע איחור</p>
+                <img src="{{urlImg}}{{po.imageData}}" class="Icon">
+                <p class="headerOption">{{po.section1}}</p>
+                <p class="textOption">{{po.section2}}</p>
+                <p class="textOptionBold">{{po.section3}}</p>
             </div>
         </div>
     </div>
 </div>
+

@@ -29,9 +29,9 @@ import { provideHttpClient } from '@angular/common/http';
     HomeAboutComponent,
      AboutComponent,
     SystemComponent
-    RegistrationFormComponent,  
+    // RegistrationFormComponent,  
    
-    HomeAboutComponent,
+    // HomeAboutComponent,
     
   ],
   imports: [
