@@ -7,6 +7,8 @@
     display: flex;
     margin-top: 6%;
 }
+// p-accordionTab{   background-color: aqua;
+// }
 
 .sce {
     width: 80%;
@@ -15,8 +17,6 @@
     border-radius: 60px;
     color: rgba(255, 255, 255, 1);
     font-family: 'PloniBlack';
-    // font-size: 100%;
-    // font-weight: 500;
     text-align: center;
     align-content: center;
     margin-left: 5%;
@@ -55,7 +55,6 @@
     flex-direction: column;
     flex: 1;
     padding-left: 10%;
-
 }
 
 .headers {
@@ -78,11 +77,13 @@
     border-radius: 60px;
     flex: 1;
     width: 100%;
+    // new
+    height: auto;
+    transition: height 0.3s;
 
 }
 
 .n {
-
     height: 100%;
     display: grid;
     gap: 1%;
@@ -106,6 +107,7 @@
 .item {
     background-color: rgba(255, 241, 191, 0.48);
     height: 135px;
+    // height: fit-content;
     border-radius: 10px;
     color:
         rgba(0, 0, 0, 1);
@@ -120,46 +122,45 @@
 
 }
 
-.smily {
-    display: flex;
-    margin-left: 65%;
-    // background-image: url('../../../assets/images/s2.png');
-    // background-size: cover;
-    // background-size: 150%;
-    // background-position: 50% 55%;
-    // background-repeat: no-repeat;
-}
+
 
 @media (max-width: 910px) {
 
-    .tit{
 
-    }
-    .c {
-        background-color: rgba(255, 204, 15, 1);
+    .headers {
+        flex-direction: column;
         width: 100%;
-        border-radius: 60px;
+        height: fit-content;
 
     }
 
-    .h {
+    .header {
+        font-size: 250%;
+        background-color: black;
+    }
+
+    .img {
+        display: none;
+    }
+
+    .sce {
         width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 2%;
+        height: 120px;
+        font-size: 200%;
     }
-    .t{
-        display: flex;
-        justify-content: center;
-        margin: 2%;
-        width: 100%;
+
+    .item {
+        height: fit-content;
+    font-size: 90%;
 
     }
-  .sce{
-    height: 120px;
-  }
 
-    // .item{
-    //     width: 100px;
-    // }
+    .container {
+        grid-template-columns: none;
+        width: 80%;
+        padding: 10%;
+        // justify-content: center;
+    }
+
 }
+
