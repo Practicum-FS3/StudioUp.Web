@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';  // ייבוא של HttpClientModule
 
 import { HttpClientModule } from '@angular/common/http'; // הוסף ייבוא זה
 import { AppRoutingModule } from './app-routing.module';
@@ -13,10 +14,13 @@ import { PaymentOptionsComponent } from './components/payment-options/payment-op
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
+import {FormsModule} from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SystemComponent } from './components/system/system.component';
 import { provideHttpClient } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpClientModule,
     AccordionModule,
     BrowserAnimationsModule
+    FormsModule,
+    NgbModule,
+    ButtonModule
 
   ],
   providers: [provideHttpClient()],
