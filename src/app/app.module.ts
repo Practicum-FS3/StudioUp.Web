@@ -18,6 +18,8 @@ import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SystemComponent } from './components/system/system.component';
 import { provideHttpClient } from '@angular/common/http';
+import { AccordionModule } from 'primeng/accordion';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 
 @NgModule({
@@ -41,9 +43,11 @@ import { ButtonModule } from 'primeng/button';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AccordionModule,
+    BrowserAnimationsModule
     FormsModule,
-    NgbModule
-    ButtonModule,
+    NgbModule,
+    ButtonModule
 
   ],
   providers: [provideHttpClient()],
