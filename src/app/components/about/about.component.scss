@@ -1,248 +1,593 @@
+// #top {
+//     display: flex;
+//     flex-direction: row;
+//     margin-top: 6%;
+
+//     #a {
+//         width: 55%;
+//         height: 300px;
+//         top: 132px;
+//         left: 98px;
+//         border-radius: 33px;
+//         background-color: #4c4c49;
+//         margin-left: 4.9%;
+
+//         #b {
+//             background-image: url('../../../assets/images/בועת\ דיבור.png');
+//             background-repeat: no-repeat;
+
+//             width: 25%;
+//             height: 366.22px;
+//             top: 148px;
+//             left: 142px;
+//             rotate: 0;
+
+//             #cm {
+//                 height: 50px;
+//                 color: #FFF;
+//                 font-size: 2.5cm;
+//                 margin-left: 48%;
+//                 padding: 5%;
+
+//             }
+//         }
+//     }
+
+//     #d {
+//         width: 0.8%;
+//         height: 61px;
+//         top: 560px;
+//         left: 877px;
+//         rotate: 90;
+//         background-color: #ffffff;
+//     }
+
+//     #e {
+
+//         width: 32%;
+//         height: 300px;
+//         top: 132px;
+//         left: 912px;
+//         gap: 0px;
+//         border-radius: 33px;
+//         opacity: 0px;
+//         background: rgba(255, 204, 15, 1);
+
+
+
+//         #f {
+
+//             margin-top: 15%;
+//             margin-left: 49%;
+//             width: 8%;
+//             height: 5%;
+//             transform: rotate(-10.265deg);
+//             flex-shrink: 0;
+
+//             #smily {
+//                 background-image: url('../../../assets/images/סמיילי\ מספרים\ עלינו.png');
+//                 background-repeat: no-repeat;
+//                 width: 350px;
+//                 height: 250px;
+//             }
+//         }
+//     }
+// }
+
+// #cards {
+//     margin-top: 7%;
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     // margin-left: 15%;
+
+//     #kl {
+//         width: 22%;
+//         height: 400px;
+//         top: 620px;
+//         left: 76px;
+//         gap: 0%;
+//         border-radius: 23%;
+//         opacity: 0px;
+//         background-color: rgba(250, 246, 243, 0.50);
+//         margin: 1.5%;
+
+//         #icon {
+//             width: 19%;
+//             height: 10%;
+//             margin: 8%;
+//             background-image: url('../../../assets/images/מרחאות\ כתום.png');
+//             background-repeat: no-repeat;
+//             background-size: 100% 100%;
+//         }
+
+//         #j {
+//             font-size: 150%;
+//             font-weight: 400;
+//             line-height: 30px;
+//             text-align: left;
+//             width: 65%;
+//             height: 180px;
+//             top: 764.75px;
+//             left: 116.66px;
+//             gap: 0px;
+//             opacity: 0px;
+//             angle: -0.45 deg;
+//             margin-left: 9%;
+//             margin-top: 10%;
+//             color: rgba(76, 76, 73, 1);
+//         }
+
+//         #name {
+//             width: 50%;
+//             height: 20%;
+//             margin-top: -2%;
+//             margin-left: 11%;
+//             font-size: 100%;
+//             color: rgba(76, 76, 73, 1);
+//         }
+//     }
+// }
+
+
+// @media (max-width: 768px) {
+//     #svg {
+//         width: 50%;
+//         height: auto;
+//     }
+
+//     #f svg {
+//         width: 100px;
+//         height: auto;
+//     }
+
+//     #top {
+//         #a {
+//             height: 40xp;
+//         }
+
+//         #b {
+//             height: 40px;
+//         }
+//     }
+// }
+
+// @media (max-width: 480px) {
+//     #svg {
+//         width: 120px;
+//         height: auto;
+//     }
+
+//     #f svg {
+//         width: 150px;
+//         height: auto;
+//     }
+
+//     #top {
+//         #a {
+//             height: 40xp;
+//         }
+
+//         #b {
+//             height: 40px;
+//         }
+//     }
+
+
+
+
+//     #top {
+//         display: flex;
+//         flex-direction: row;
+//         margin-top: 4%;
+//         width: 100%;
+
+//         #a {
+//             width: 55%;
+//             height: 80px;
+//             // top: 132px;
+//             // left: 98px;
+//             border-radius: 33px;
+//             background-color: #4c4c49;
+//             // margin-left: 4.9%;
+
+//             #b {
+//                 background-image: url('../../../assets/images/בועת\ דיבור.png');
+//                 background-repeat: no-repeat;
+//                 background-size: cover;
+//                 width: 50px;
+//                 height: 98px;
+//                 // top: 148px;
+//                 // left: 142px;
+//                 rotate: 0;
+
+//                 #cm {
+//                     height: 20px;
+//                     color: #FFF;
+//                     font-size: 0.8cm;
+//                     margin-left: 48%;
+//                     padding: 5%;
+
+//                 }
+//             }
+//         }
+
+//         #d {
+//             width: 0.8%;
+//             height: 40px;
+//             top: 560px;
+//             left: 877px;
+//             rotate: 90;
+//             background-color: #ffffff;
+//         }
+
+//         #e {
+
+//             width: 32%;
+//             height: 80px;
+//             top: 132px;
+//             left: 912px;
+//             gap: 0px;
+//             border-radius: 33px;
+//             opacity: 0px;
+//             background: rgba(255, 204, 15, 1);
+
+
+
+//             #f {
+
+//                 margin-top: 15%;
+//                 margin-left: 49%;
+//                 width: 28%;
+//                 height: 60px;
+//                 transform: rotate(-10.265deg);
+//                 flex-shrink: 0;
+
+//                 #smily {
+//                     margin-right: 50%;
+//                     background-image: url('../../../assets/images/סמיילי\ מספרים\ עלינו.png');
+//                     background-repeat: no-repeat;
+//                     background-size: 100% 100%;
+//                     width: 65px;
+//                     // background-color: red;
+//                     height: 55px;
+//                 }
+//             }
+//         }
+//     }
+
+//     #cards {
+//         margin-top: 7%;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+
+//         width: 100%;
+//         margin-right: 20px;
+
+//         #kl {
+//             display: flex;
+//             flex-direction: row;
+//             width: 85%;
+//             height: fit-content;
+//             border-radius: 33px;
+//             // opacity: 0px;
+//             background-color: rgba(250, 246, 243, 0.50);
+
+//             #icon {
+//                 width: 25px;
+//                 height: 15px;
+//                 // flex-shrink: 0;
+//                 // top: 699px;
+//                 // left: 111px;
+//                 // gap: 0px;
+//                 // opacity: 0px;
+//                 // angle: 0 deg;
+//                 // background-color: red;
+//                 // margin: 12%;
+//                 // background-image: url('../../../assets/images/מרחאות\ כתום.png');
+//                 // background-repeat: no-repeat;
+//                 // background-size: 100% 100%;
+//             }
+
+//             #j {
+//                 //styleName: 22;
+//                 // font-family: Ploni ML v2 AAA;
+//                 font-size: 85%;
+//                 // justify-content: flex-start;
+//                 // font-weight: 400;
+//                 text-align: right;
+//                 width: 65%;
+//                 height: 15%;
+//                 margin-left: 9%;
+//                 margin-top: 10%;
+//                 color: rgba(76, 76, 73, 1);
+//             }
+
+//             // #name {
+//             //     width: 50%;
+//             //     height: 20%;
+//             //     margin-top: -2%;
+//             //     margin-left: 11%;
+//             //     font-size: 100%;
+//             //     color: rgba(76, 76, 73, 1);
+//             // }
+//         }
+//     }
+
+// }
+
+
 #top {
     display: flex;
     flex-direction: row;
     margin-top: 6%;
+    justify-content: space-evenly;
+    width: 100%;
+}
+#a {
 
-    #a {
-        width: 55%;
-        height: 300px;
-        top: 132px;
-        left: 98px;
-        border-radius: 33px;
-        background-color: #4c4c49;
-        margin-left: 8%;
+    border-radius: 33px;
+    background-color:#4c4c49;
+    width: 55%;
+    height: 250px;
+    position: relative;
+    
+}
 
-        #b {
+#bubble {
 
-            width: 55%;
-            // height: 366.22px;
-            top: 178px;
-            left: 142px;
-            rotate: 0;
+    background-image: url('../../../assets/images/בועת\ דיבור.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width:100%;
+    height: 250.22px;
+    align-items: self-start;
+    margin-top: -120px;
+        
+}
 
-            #c {
-                color: white;
-                margin: -40%;
-                background-color: gray;
-                margin-right: 35%;
-                font-size: 2.5cm;
+#e {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 32%;
+    height: 250px;
+    border-radius: 33px;
+    background: rgba(255, 204, 15, 1);
 
+}
 
-            }
-
-            #svg {
-                position: relative;
-                display: inline-block;
-
-                text {
-                    position: absolute;
-                    top: 40px;
-                    left: 40px;
-                    color: var(--ffffff, #FFF);
-                    // font-family: "Anomalia ML v2 AAA";
-                    font-size: 580%;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: 68px;
-                    width: 5%;
-                    height: 350px;
-
-                    flex-shrink: 0;
-
-                }
-            }
-        }
-    }
-
-    #d {
-        width: 0.8%;
-        height: 61px;
-        top: 560px;
-        left: 877px;
-        rotate: 90;
-        background-color: #ffffff;
-    }
-
-    #e {
-
-        width: 32%;
-        height: 300px;
-        top: 132px;
-        left: 912px;
-        gap: 0px;
-        border-radius: 33px;
-        opacity: 0px;
-        background: rgba(255, 204, 15, 1);
+#smily {
+  
+    background-image: url('../../../assets/images/סמיילי\ מספרים\ עלינו.png');
+    background-repeat: no-repeat;
+    background-size: 65%;
+    background-position: bottom;
+    width: 80%;
+    height: 90%;
+    margin-right: -10%;
+    
+   
+}
 
 
+#cm {
+    color: #FFF;
+    font-size: 450%;
+    margin-left: 15%;
+   margin-top: 2%;
+    width: min-content;
+}
 
-        #f {
+#d {
+    width: 0.8%;
+    height: 61px;
+    top: 560px;
+    left: 877px;
+    rotate: 90;
+    background-color: #ffffff;
+}
 
-            margin-top: 20%;
-            margin-left: 42%;
-            width: 8%;
-            height: 5%;
-            transform: rotate(-10.265deg);
-            flex-shrink: 0;
-        }
-    }
+#f {
+    margin-top: 15%;
+    margin-left: 49%;
+    width: 8%;
+    height: 5%;
+    transform: rotate(-10.265deg);
+    flex-shrink: 0;
+    
 }
 
 
 #cards {
     margin-top: 7%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 15%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:5px;
+    width: 90%;
+    margin-left: 7%;
 
-    #kl {
-        width: 24.5%;
-        height: 400px;
-        top: 620px;
-        left: 76px;
-        gap: 0%;
-        border-radius: 23%;
-        opacity: 0px;
+}
+
+
+    #icon {
+        width: 28%;
+        height: 35px;
+        margin: 8%;
+        background-image: url('../../../assets/images/מרחאות\ כתום.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .kl {
+        justify-content: flex-start;
+        display: flex;
+        flex-direction: row;
+        width: 65%;
+        height: 350px;
+        border-radius:66px;
         background-color: rgba(250, 246, 243, 0.50);
-        margin: 1.5%;
+        padding: 16px;
+        margin: 3%;
+    }
 
-        #icon {
-            width: 65px;
-            height: 37.5px;
+
+    #name {
+        margin-top: 15%;
+        flex-grow: 1;
+        text-align: right;
+        font-size: 150%;
+        color: rgba(76, 76, 73, 1);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+@media (max-width: 900px) {
+    #a{
+        width: 90%;
+        height: 200px;
+    }
+    #bubble {
+   
+        width:100%;
+        height:200.22px;
+        background-size: 100% 100%;
+        margin-top: -70px;
+    }
+    #e{
+        width: 0%;
+        height: 200px;
+    }
+    #cm{
+        font-size: 320%;
+        margin-left: 25%;
+    }
+    #name{
+        font-size:130% ;
+    }
+
+    #cards {
+        
+        grid-template-columns: repeat(2, 1fr);
+       
+    }
+    
+    .kl {
+  
+        height: 320px;
+      
+    }
+    #icon {
+        width: 35%;
+    
+    }
+   
+    
+}
+
+@media (max-width: 540px) {
+#icon{
+    width: 15%;
+    height: 18px;
+    margin: 8%;
+}
+
+    .kl {
+        width: 85%;
+        height: auto;
+        border-radius: 33px;
+        padding: 16px;
+    }
+    #cm {
+        color: #FFF;
+        font-size:250%;
+        margin-left: 15%;
+        margin-top: 0%;
+        padding: 5%;
+    }
+
+    #cards {
+        margin-top: 7%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        margin-left: 5%; 
+    }
+    
+    #top {
+        display: flex;
+        flex-direction: row;
+        margin-top: 4%;
+        width: 100%;
+        height: 120px;
+    }
+        #a {
+                width: 90%;
+                height: 120px;
+            border-radius: 33px;
+            background-color: #4c4c49;
+        }
+        #bubble{
+            width:100% ;
+            height:150px;
+            background-size: contain;
+            margin-top: -130px;
+        }
+
+        #b {
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            rotate: 0;
+        }   
+
+        #d {
+            width: 0.8%;
+            height: 40px;
+            top: 560px;
+            left: 877px;
+            rotate: 90;
+            background-color: #ffffff;
+        }
+
+        #e {
+            width: 0px;
+            top: 132px;
+            left: 912px;
+            border-radius: 33px;
+            opacity: 0px;
+            background-size: contain;
+            background: rgb(222, 184, 70);
+        }
+      
+
+        #f {
+            margin-top: 15%;
+            margin-left: 49%;
+            width: 28%;
+            height: 60px;
+            transform: rotate(-10.265deg);
             flex-shrink: 0;
-            top: 699px;
-            left: 111px;
-            gap: 0px;
-            opacity: 0px;
-            // angle: 0 deg;
-            margin: 12%;
         }
-
-        #j {
-            //styleName: 22;
-            // font-family: Ploni ML v2 AAA;
-            font-size: 150%;
-            font-weight: 400;
-            line-height: 30px;
-            text-align: left;
-            width: 65%;
-            height: 180px;
-            top: 764.75px;
-            left: 116.66px;
-            gap: 0px;
-            opacity: 0px;
-            angle: -0.45 deg;
-            margin-left: 9%;
-            margin-top: 19%;
-            color: rgba(76, 76, 73, 1);
-        }
-
-        #name {
-            width: 50%;
-            height: 20%;
-            margin-top: -2%;
-            margin-left: 11%;
-            font-size: 100%;
-            color: rgba(76, 76, 73, 1);
-        }
-    }
-}
-
-
-// #top {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//   }
-
-//   #top #a, #top #d, #top #e {
-//     width: 100%;
-//   }
-
-//   #b, #f {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//   }
-
-//   /* עיצוב ברירת מחדל */
-//   #svg {
-//     width: 764px;
-//     height: 367px;
-//   }
-
-//   #f svg {
-//     width: 250px;
-//     height: 216px;
-//   }
-
-//   /* סגנונות למכשירים ברוחב קטן מ-768px */
-//   @media (max-width: 768px) {
-//     #svg {
-//       width: 100%;
-//       height: auto;
-//     }
-
-//     #f svg {
-//       width: 200px;
-//       height: auto;
-//     }
-//   }
-
-//   /* סגנונות למכשירים ברוחב קטן מ-480px */
-//   @media (max-width: 480px) {
-//     #svg {
-//       width: 100%;
-//       height: auto;
-//     }
-
-//     #f svg {
-//       width: 150px;
-//       height: auto;
-//     }
-//   }
-
-
-@media (max-width: 768px) {
-    #svg {
-        width: 50%;
-        height: auto;
+#name{
+    margin-top: 15%;
+    flex-grow: 1;
+    text-align: right;
+    font-size: 100%;
+    color: rgba(76, 76, 73, 1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}       
     }
 
-    #f svg {
-        width: 100px;
-        height: auto;
-    }
-    #top {
-        #a {
-            height: 40xp;
-        }
-
-        #b {
-            height: 40px;
-        }
-    }
-}
-
-/* סגנונות למכשירים ברוחב קטן מ-480px */
-@media (max-width: 480px) {
-    #svg {
-        width:120px ;
-        height: auto;
+    .container{
+        display: flex;
+        flex-direction: column;
     }
 
-    #f svg {
-        width: 150px;
-        height: auto;
-    }
-
-    #top {
-        #a {
-            height: 40xp;
-        }
-
-        #b {
-            height: 40px;
-        }
-    }
-}
+       
+    

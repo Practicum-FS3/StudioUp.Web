@@ -21,6 +21,7 @@
 }
 
 @font-face {
+    //font-family: 'Anomalia ML v2 AAA Light';
     font-family: 'PloniLight';
     src: url('../fonts/PloniLight.woff') format('opentype');
     font-weight: 500;
@@ -28,20 +29,21 @@
 }
 
 @font-face {
-    font-family: 'Anomalia ML v2 AAA';
+    font-family: 'Anomalia ML v2 AAA Medium';
     src: url('../fonts/PloniMedium.woff') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Anomalia ML v2 AAA';
+    font-family: 'Anomalia ML v2 AAA Regular';
     src: url('../fonts/PloniRegular.woff') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
+    //font-family: 'Anomalia ML v2 AAA Bold';
     font-family: 'PloniUBold';
     src: url('../fonts/PloniUBold.woff') format('opentype');
     font-weight: 500;
@@ -62,68 +64,104 @@ body {
 }
 /*
 .header {
-    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
-    font-size: 3%;
-    width: 100%;
+  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
+  font-size: 3%;
+  width: 100%;
 }
 
 .title {
-    background-color: rgb(255, 201, 0);
-    color: white;
-    border-radius: 20vh;
-    text-align: center;
-    padding: 0.8vh 0vh 0.8vh 0vh;
-    font-weight: bold;
-    font-size: 1.2vw;
-    margin: 1vh 1%;
-
+  background-color: rgb(255, 201, 0);
+  color: white;
+  border-radius: 20vh;
+  text-align: center;
+  padding: 0.8vh 0vh 0.8vh 0vh;
+  font-weight: bold;
+  font-size: 1.2vw;
+  margin: 1vh 1%;
 }
 
 .div-header {
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
 }
 
 .nav-bar {
-    padding: 3vh;
-    width: 100%;
-    direction: rtl;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: white;
-    height: 5vh;
-    font-size: 1vw;
+  padding: 3vh;
+  width: 100%;
+  direction: rtl;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white;
+  height: 5vh;
+  font-size: 1vw;
 }
 
 .img img {
-    height: 10vh;
+  height: 10vh;
 }
 
 .nav-bar a {
-    text-decoration: none;
-    color: black;
-    margin: 3vh;
-    font-weight: bold;
-    white-space: nowrap;
+  text-decoration: none;
+  color: black;
+  margin: 3vh;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 .nav-bar a:hover {
-    color: #FFC900;
+  color: #ffc900;
 }
 
 .leftlink {
-    display: inline-block;
-    position: absolute;
-    left: 8%;
+  display: inline-block;
+  position: absolute;
+  left: 8%;
 }
-
 .star {
     fill: #D91C5C;
     padding: -5vh;
     width: 1vw;
     height: 2vh;
     transform: rotate(6deg);
-} 
+}
+
+
+.sumbit-text,
+.button-text {
+  width: 181.33rem;
+  height: 37.68rem;
+  border-radius: 30px;
+  background-color: #d91c5c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: "PloniMLv2AAA-Regular", sans-serif;
+  font-size: 22rem;
+  margin-right: 10rem;
+}
+
+.sumbit-button,
+.button-ref {
+  width: 36.55rem;
+  height: 36.55rem;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-image: url('../images/Arrow1Black.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
+}
+
+.custom-select {
+  padding-right: 5%;
+}
+
 
 /* body {
     font-family: Arial, sans-serif;
@@ -183,13 +221,7 @@ body {
     left: 8%;
 }
 
-.star {
-    fill: #D91C5C;
-    padding: -5vh;
-    width: 1vw;
-    height: 2vh;
-    transform: rotate(6deg);
-}
+
 
 .img {
     height: 10vh;
@@ -206,4 +238,4 @@ body {
     display: flex;
     flex-direction: row-reverse;
 } */
- 
+

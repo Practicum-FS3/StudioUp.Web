@@ -10,6 +10,10 @@ export class GenericService {
   apiUrl: string = 'https://localhost:7101/api/ContentType/'
   constructor(private http:HttpClient) { }
   getByIdWithContent(id:number):Observable<ContentType>{
+    console.log('log');
+    
+    console.log({id});
+    
     return this.http.get<ContentType>(`${this.apiUrl}GetByIdWithContentSection/${id}`)
   }
   GetByIdWithContentSectionHPOnly(id:number):Observable<ContentType>{
