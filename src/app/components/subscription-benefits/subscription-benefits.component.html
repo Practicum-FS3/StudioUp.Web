@@ -1,42 +1,29 @@
-<img class="pic1" alt="">
+<div class="container">
+    <img class="pic1" alt="">
 
-<div class="rectangle281"></div>
-<div class="rectangle281-text">הטבות כושר למנויים</div>
+    <div class="rectangle281"></div>
+    <div class="rectangle281-text">הטבות כושר למנויים</div>
 
-<div class="text">פגישה אישית ייעוץ לפעילות גופנית</div>
+    <div class="text">{{s.title}}</div>
 
-<div class="rectangle235"></div>
-<div class="rectangle235-text">בפגישה אישית ניצור יחד תכנית פעולה מותאמת להכנסת כושר 
-    <br>,לשגרה שלך<br>
-    רעיונות לתרגילים יעודים בדיוק
-    <br> בשבילך , מתיחות למצבי כאב ,
-    ופתרונות תנועתיים למצבים 
-    <br>.מאתגרים
-</div>
-
-<div class="rectangle236"></div>
-<div class="rectangle236-text">-סדנת אורח חיים בריא<br>
-    בשווי של 100 ש"ח חינם לבעלות
-    <br>מנוי וחברות לאומית ו20- ש"ח
-    <br>.ללקוחות כרטיסיה
-    <br> אחת לחודש תערך בסטודיו סדנה
-    <br>לאורח חיים בריא מדיאטנית<br>
-    .מובילה<br>
-    בתחום הבריאות
-    והירידה <br>
-    .במשקל
+    <div class="PaymentOptionDivRow">
+        <div class="optionList" *ngFor="let po of s.contentSections">
+            <div *ngIf="po.isActive == true" class="PaymentOptionDivContainer">
+                <div class="PaymentOptionDiv">
+                    <p class="text1">{{po.section1}}</p>
+                    <p *ngIf="po.section2!='null'" class="text2">{{po.section2}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
-<div class="rectangle237"></div>
-<div class="rectangle237-text">עם שאלות ותשובות שלכן עצות 
-    .וטיפים לתזונה בריאה ועוד
-    <div class="rectangle237-text2"> הסדנה היא סגורה ומיועדת 
-    <br>,למתאמנות סטודיו אפ בלבד 
-    <br> פרטים בסטודיו</div>
-</div>
 
-<div class="rectangle168"></div>
+
+
+<!-- לא קשר להטבות למנויים -->
+<!-- <div class="rectangle168"></div>
 <div class="rectangle168-text">מסלולי מנויים</div>
 
 <div class="rectangle190 "></div>
@@ -54,4 +41,4 @@
 <div class="rectangle21"></div>
 <a class="rectangle21-text" href="/*קישור לדף של ההרשמה*/" >להצטרפות למנוי</a>
 <div class="rectangle22"></div>
-<div class="arrov"><h1>↙</h1></div>
+<div class="arrov"><h1>↙</h1></div> -->

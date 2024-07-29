@@ -20,6 +20,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
+import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
+import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { ButtonModule } from 'primeng/button';
     SystemComponent,
     RegistrationFormComponent,  
     HomeAboutComponent,
+    SubscriptionBenefitsComponent,
+    HomeSubscriptionBenefitsComponent
     
   ],
   imports: [
@@ -43,7 +47,7 @@ import { ButtonModule } from 'primeng/button';
     AppRoutingModule,
     HttpClientModule,
     AccordionModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     FormsModule,
     NgbModule,
     ButtonModule

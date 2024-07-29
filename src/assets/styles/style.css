@@ -60,7 +60,7 @@ body {
     margin: 0;
     padding: 0;
 }
-
+/*
 .header {
     box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
     font-size: 3%;
@@ -206,3 +206,4 @@ body {
     display: flex;
     flex-direction: row-reverse;
 } */
+ 
