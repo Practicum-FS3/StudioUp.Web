@@ -1,13 +1,10 @@
-export class PaymentOptions {
-
-    constructor(
-        public id: number = 0,
-        public title: string,
-        public isActive: boolean,
-
-    ) {
-
+export class PaymentOption {
+    id: number;
+    title: string;
+  
+    constructor(id: number, title: string) {
+      this.id = id;
+      this.title = title;
     }
-}
-
-
+  }
+  
