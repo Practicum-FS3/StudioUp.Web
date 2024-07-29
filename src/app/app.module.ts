@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';  // ייבוא של HttpClientModule
 
-import { HttpClientModule } from '@angular/common/http'; // הוסף ייבוא זה
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,8 +13,12 @@ import { PaymentOptionsComponent } from './components/payment-options/payment-op
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
+import {FormsModule} from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SystemComponent } from './components/system/system.component';
 import { provideHttpClient } from '@angular/common/http';
+import { AccordionModule } from 'primeng/accordion';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 
 @NgModule({
@@ -29,14 +33,20 @@ import { ButtonModule } from 'primeng/button';
     RegistrationFormComponent,
     HomeAboutComponent,
      AboutComponent,
-    SystemComponent,   
+    SystemComponent,
+    RegistrationFormComponent,  
     HomeAboutComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ButtonModule,
+    AccordionModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    NgbModule,
+    ButtonModule
 
   ],
   providers: [provideHttpClient()],

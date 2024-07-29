@@ -1,4 +1,5 @@
-import { ContentSections } from './contentSection'
+import { ContentSections } from "./contentSection";
+
 export class ContentType {
     iD?: number;
     title?: string;
