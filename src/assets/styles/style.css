@@ -21,6 +21,7 @@
 }
 
 @font-face {
+    //font-family: 'Anomalia ML v2 AAA Light';
     font-family: 'PloniLight';
     src: url('../fonts/PloniLight.woff') format('opentype');
     font-weight: 500;
@@ -28,20 +29,21 @@
 }
 
 @font-face {
-    font-family: 'Anomalia ML v2 AAA';
+    font-family: 'Anomalia ML v2 AAA Medium';
     src: url('../fonts/PloniMedium.woff') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Anomalia ML v2 AAA';
+    font-family: 'Anomalia ML v2 AAA Regular';
     src: url('../fonts/PloniRegular.woff') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
+    //font-family: 'Anomalia ML v2 AAA Bold';
     font-family: 'PloniUBold';
     src: url('../fonts/PloniUBold.woff') format('opentype');
     font-weight: 500;
