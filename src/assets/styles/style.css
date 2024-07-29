@@ -62,7 +62,7 @@ body {
     margin: 0;
     padding: 0;
 }
-
+/*
 .header {
   box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
   font-size: 3%;
@@ -70,7 +70,6 @@ body {
 }
 
 .title {
-<<<<<<< HEAD
   background-color: rgb(255, 201, 0);
   color: white;
   border-radius: 20vh;
@@ -79,17 +78,6 @@ body {
   font-weight: bold;
   font-size: 1.2vw;
   margin: 1vh 1%;
-=======
-    background-color: rgb(255, 201, 0);
-    color: white;
-    border-radius: 20vh;
-    text-align: center;
-    padding: 0.8vh 0vh 0.8vh 0vh;
-    font-weight: bold;
-    font-size: 1.2vw;
-    margin: 1vh 1%;
-
->>>>>>> 43075de2cb45088057471c0e956084a2c69fade8
 }
 
 .div-header {
@@ -129,15 +117,14 @@ body {
   position: absolute;
   left: 8%;
 }
-
 .star {
-<<<<<<< HEAD
-  fill: #d91c5c;
-  padding: -5vh;
-  width: 1vw;
-  height: 2vh;
-  transform: rotate(6deg);
+    fill: #D91C5C;
+    padding: -5vh;
+    width: 1vw;
+    height: 2vh;
+    transform: rotate(6deg);
 }
+
 
 .sumbit-text,
 .button-text {
@@ -174,13 +161,7 @@ body {
 .custom-select {
   padding-right: 5%;
 }
-=======
-    fill: #D91C5C;
-    padding: -5vh;
-    width: 1vw;
-    height: 2vh;
-    transform: rotate(6deg);
-} 
+
 
 /* body {
     font-family: Arial, sans-serif;
@@ -240,13 +221,7 @@ body {
     left: 8%;
 }
 
-.star {
-    fill: #D91C5C;
-    padding: -5vh;
-    width: 1vw;
-    height: 2vh;
-    transform: rotate(6deg);
-}
+
 
 .img {
     height: 10vh;
@@ -263,4 +238,4 @@ body {
     display: flex;
     flex-direction: row-reverse;
 } */
->>>>>>> 43075de2cb45088057471c0e956084a2c69fade8
+

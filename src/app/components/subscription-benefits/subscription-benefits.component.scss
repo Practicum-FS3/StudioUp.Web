@@ -9,6 +9,7 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .rectangle281 {
     position: absolute;
     width: 20%;
@@ -18,6 +19,7 @@
     background: #4C4C49;
     border-radius: 60px;
 }
+
 .rectangle281-text {
     position: absolute;
     width: 14%;
@@ -32,6 +34,7 @@
     text-align: right;
     color: #FFFFFF;
 }
+
 .text {
     position: absolute;
     width: 50%;
@@ -48,78 +51,77 @@
     text-align: right;
     color: #4C4C49;
 }
-.rectangle235 {
-    position: absolute;
-    width: 20.6%;
-    height: 43.2%;
-    left: 60.7%;
-    top: 95%;
+
+.optionList {
+    float: left;
+    flex: 0 45%;
+    width: 100%;
+}
+
+.PaymentOptionDivContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100%;
+    margin-left: 20%;
+}
+
+.PaymentOptionDivRow {
+    display: flex;
+    margin-left: -36%;
+    margin-right: -10%;
+}
+
+.PaymentOptionDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-bottom: 7%;
+
+    width: 120.6%;
     background: rgba(255, 246, 212, 0.8);
     border-radius: 60px;
+    margin-left: 5%;
 }
-.rectangle235-text {
-    position: absolute;
-    width: 14.8%;
-    height: 21.8%;
-    left: 63.5%;
-    top: 104%;
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0;
+    height: 200%;
+    margin-top: 20%;
+}
+
+.text1 {
     font-family: 'Ploni ML v2 AAA';
     font-style: normal;
     font-weight: 400;
     font-size: 1.3vw;
     line-height: 1.5vw;
-    text-align: center;
     color: #000000;
+    margin-top: 15%;
+    text-align: right;
+
 }
-.rectangle236 {
-    position: absolute;
-    width: 20.5%;
-    height: 43.2%;
-    left: 37.7%;
-    top: 95%;
-    background: rgba(255, 246, 212, 0.8);
-    border-radius: 60px;
-}
-.rectangle236-text {
-    position: absolute;
-    width: 14.7%;
-    height: 27.7%;
-    left: 40.7%;
-    top: 104%;
+
+.text2 {
+    text-align: right;
     font-family: 'Ploni ML v2 AAA';
     font-style: normal;
     font-weight: 400;
     font-size: 1.3vw;
     line-height: 1.5vw;
-    text-align: center;
-    color: #000000;
-}
-.rectangle237 {
-    position: absolute;
-    width: 20.6%;
-    height: 43.2%;
-    left: 14.6%;
-    top: 95%;
-    background: rgba(255, 246, 212, 0.8);
-    border-radius: 60px;
-}
-.rectangle237-text {
-    position: absolute;
-    width: 14.6%;
-    height: 27.7%;
-    left: 18%;
-    top: 104%;
-    font-family: 'Ploni ML v2 AAA';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.3vw;
-    line-height: 1.5vw;
-    text-align: center;
-    color: #000000;
-}
-.rectangle237-text2 {
     color: #FFCC0F;
+
 }
+
+
+
+//לא קשור להטבות למנוים
+/*
 .rectangle168 {
     position: absolute;
     width: 75.3%;
@@ -223,4 +225,4 @@
     top: 251.6%;
     color: #4C4C49;
     font-size: 0.9vw;
-}
+}*/
