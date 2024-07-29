@@ -18,6 +18,10 @@ import { provideHttpClient } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+
+ import { SignaturePadModule } from 'angular2-signaturepad';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
      AboutComponent,
     SystemComponent,
     RegistrationFormComponent,  
-    HomeAboutComponent,
+    HomeAboutComponent, 
     
   ],
   imports: [
@@ -40,8 +44,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     AccordionModule,
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    
+    SignaturePadModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

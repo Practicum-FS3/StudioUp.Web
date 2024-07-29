@@ -99,10 +99,8 @@
             ],
             "styles": [
               "src/styles.scss",
-               "src/assets/styles/style.css",
-               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-               "node_modules/primeng/resources/primeng.min.css",
-               "node_modules/primeng/resources/themes/nova-light/theme.css"
+               "src/assets/styles/style.css"
+          
             ],
             "scripts": []
           }
