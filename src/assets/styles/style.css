@@ -1,5 +1,64 @@
+
+@font-face {
+    font-family: 'PloniBlack';
+    src: url('../fonts/PloniBlack.woff') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ploni ML v2 AAA Bold';
+    src: url('../fonts/PloniBold.woff') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ploni ML v2 AAA';
+    src: url('../fonts/PloniDBold.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anomalia ML v2 AAA Light';
+    font-family: 'PloniLight';
+    src: url('../fonts/PloniLight.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anomalia ML v2 AAA Medium';
+    src: url('../fonts/PloniMedium.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anomalia ML v2 AAA Regular';
+    src: url('../fonts/PloniRegular.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anomalia ML v2 AAA Bold';
+    font-family: 'PloniUBold';
+    src: url('../fonts/PloniUBold.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anomalia ML v2 AAA';
+    src: url('../fonts/PloniULight.woff') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Ploni ML v2 AAA', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -18,7 +77,7 @@ body {
     padding: 0.8vh 0vh 0.8vh 0vh;
     font-weight: bold;
     font-size: 1.2vw;
-    margin: 1vh 1%; 
+    margin: 1vh 1%;
 
 }
 
@@ -66,4 +125,86 @@ body {
     width: 1vw;
     height: 2vh;
     transform: rotate(6deg);
+} 
+
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+.header {
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
+    font-size: 3%;
+    width: 100%;
+}
+
+.title {
+    background-color: rgb(255, 201, 0);
+    color: white;
+    border-radius: 20vh;
+    text-align: center;
+    padding: 0.8vh 0vh 0.8vh 0vh;
+    font-weight: bold;
+    font-size: 1.2vw;
+    margin: 1vh 1%;
+
+}
+
+.div-header {
+    width: 100%;
+    display: flex;
+}
+
+.nav-bar {
+    padding: 3vh;
+    width: 100%;
+    direction: rtl;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: white;
+    height: 5vh;
+    font-size: 1vw;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: black;
+    margin: 3vh;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.nav-bar a:hover {
+    color: #FFC900;
+}
+
+.leftlink {
+    display: inline-block;
+    position: absolute;
+    left: 8%;
+}
+
+.star {
+    fill: #D91C5C;
+    padding: -5vh;
+    width: 1vw;
+    height: 2vh;
+    transform: rotate(6deg);
+}
+
+.img {
+    height: 10vh;
+    width: 4vw;
+    background-image: url('../images/logo.png');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-grow: 0;
+    margin-left: 1%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row-reverse;
+} */

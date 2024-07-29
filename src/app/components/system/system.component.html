@@ -1,0 +1,75 @@
+<div class="p">
+    <div class="tit">
+        <div class="sce">מערכת שיעורים</div>
+        <div class="img"></div>
+    </div>
+
+    <div class="table" *ngIf="screenWidth>910">
+        <div class="headers">
+            <div class="header" *ngFor="let day of days">{{day}}</div>
+        </div>
+        <div class="container">
+            <div *ngFor="let n of numbersArray" class="n">
+                <div class="tur">
+                    <div *ngFor="let lesson of groupedItems[n-1]" class="item">
+                        <div *ngIf="lesson.id!=0 && lesson.isActive==true">
+                            {{lesson.hour}}
+                            <br>
+                            {{lesson.trainerName}}
+                            <br>
+                            {{lesson.trainingTypeName}}
+                            <br>
+                            {{lesson.customerTypeName}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="smily" dir="ltr">
+                <svg xmlns="http://www.w3.org/2000/svg" width="57" height="47" fill="none"
+                    style="transform: rotate(270deg);">
+                    <path opacity="0.5" d="M12.4791 3.98518C12.2119 13.9352 24.4502 37.1337 49.6456 38.0153"
+                        stroke="#997B0F" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path opacity="0.5" d="M26.2326 4.31421C24.7997 7.73606 24.3083 14.5005 33.8059 14.1836"
+                        stroke="#997B0F" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path opacity="0.5" d="M37.6375 17.6055C36.635 21.1772 36.9767 27.9509 46.3638 26.4717"
+                        stroke="#997B0F" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- למסך קטן -->
+
+    <div *ngIf="screenWidth<910" class="table">
+
+        <div class="c">
+            <p-accordion  *ngFor="let title of days; let i=index"  >
+                <div class="h">
+                <p-accordionTab header="{{title}}" class="t">
+                    <div *ngFor="let lesson of groupedItems[i]">
+                        <div *ngIf="lesson.id!=0 && lesson.isActive==true" class="item">
+                            {{lesson.hour}}
+                            <br>
+                            {{lesson.trainerName}}
+                            <br>
+                            {{lesson.trainingTypeName}}
+                            <br>
+                            {{lesson.customerTypeName}}
+                        </div>
+                    </div>
+                </p-accordionTab>
+            </div>
+            </p-accordion>
+        </div>
+    </div>
+
+
+
+</div>
