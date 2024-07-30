@@ -1,0 +1,70 @@
+.offcanvas-header {
+  background-color: #FFD700;
+}
+
+.offcanvas-title {
+  color: #D91C5C;
+}
+
+.navbar-nav .nav-link {
+  color: black;
+  font-weight: 500;
+  margin: 0 15px;
+
+}
+
+.navbar-nav .nav-link:hover {
+  color: #FFD700;
+}
+
+.navbar-nav .nav-link.active {
+  color: #FFD700;
+}
+
+#nav_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+}
+
+.fixed-login {
+  position: fixed;
+  left: 80px;
+}
+
+.btn-close {
+  border: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  padding: 0;
+}
+
+#offcanvasNavbar {
+  direction: rtl;
+  width: 300px;
+}
+
+#offcanvasNavbarLabel {
+  margin-left: 180px;
+}
+
+#first {
+  margin-right: 25px;
+}
+
+@media (max-width: 1150px) {
+  .navbar-nav .nav-link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .navbar-nav .nav-link {
+    font-size: 12px;
+  }
+}
