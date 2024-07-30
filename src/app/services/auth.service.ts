@@ -6,7 +6,7 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:7074/api';
+  private apiUrl = 'https://localhost:7101/api/auth';
   private loggedIn: boolean = false;
 
   constructor(private http: HttpClient) { }
@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   checkToken(token: string): Observable<boolean> {
-    return this.http.post<{ valid: boolean }>(`${this.apiUrl}/check-token`, { token })
+    return this.http.post<{ valid: boolean }>(`${this.apiUrl}/check-token`, { token: token })
       .pipe(map(response => {
         this.loggedIn = response.valid;
         return response.valid;
