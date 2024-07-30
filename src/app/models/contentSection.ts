@@ -1,9 +1,9 @@
 export class ContentSections{
-    ID?:number;
-    ContentTypeID?:number;
-    Section1?:string;
-    Section2?:string;
-    Section3?:string;
-    IsActive?:boolean;
-    ViewInHP?:boolean;
+    id?:number;
+    contentTypeID?:number;
+    section1?:string;
+    section2?:string;
+    section3?:string;
+    isActive?:boolean;
+    viewInHP?:boolean;
 }

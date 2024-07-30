@@ -1,1 +1,18 @@
-<p>home-about works!</p>
+<div id="container">
+<div id="header">{{content?.title}}</div>
+<div id="allcards">
+  <div *ngFor="let item of content?.contentSections" id="card">
+    <div id="icon"></div>
+    <div id="p">{{item.section1}}</div>
+    <div id="name">{{item.section2}}</div>
+  </div>
+</div>
+<div id="end" dir="rtl">
+  <div id="readmore">{{content?.title3}}</div>
+  <div id="link">
+    <a routerLink={{content?.linkHP}} routerLinkActive="active">
+      <div id="circle">
+        <div id="arrow"></div>
+      </div>
+    </a>
+  </div></div></div>
