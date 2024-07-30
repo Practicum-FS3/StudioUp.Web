@@ -4,7 +4,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { HttpClientModule } from '@angular/common/http';  // ייבוא של HttpClientModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +38,7 @@ import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscr
     OurTeamComponent,
     PaymentOptionsComponent,
     HomeAboutComponent,
-    RegistrationComponent
+    RegistrationComponent,
     HomeAboutComponent,
      AboutComponent,
     SystemComponent,
