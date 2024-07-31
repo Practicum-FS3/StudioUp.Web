@@ -1,0 +1,41 @@
+<!-- <form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="customerCode">קוד לקוח:</label>
+      <input id="customerCode" formControlName="customerCode" />
+    </div>
+  
+    <div>
+      <label for="prefitCode">קוד פריפיט:</label>
+      <input id="FreeFitId" formControlName="prefitCode" />
+    </div>
+  
+    <div>
+      <label for="registrationForm">טופס רישום:</label>
+      <input id="registrationForm" type="file" (change)="onFileChange($event)" />
+    </div>
+  
+    <button type="submit">שלח</button>
+  </form> -->
+
+  <div class="personal-area">
+    <h2>אזור אישי</h2>
+    <form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="freeFitCode">קוד פריפיט:</label>
+        <input id="freeFitCode" formControlName="freeFitCode" type="text" />
+        <div *ngIf="personalForm.get('freeFitCode')?.invalid && personalForm.get('freeFitCode')?.touched">
+          <small>קוד פריפיט נדרש</small>
+        </div>
+      </div>
+      
+      <div>
+        <label for="file">טופס רישום (העלאת קובץ):</label>
+        <input id="file" type="file" (change)="onFileChange($event)" />
+        <div *ngIf="personalForm.get('file')?.invalid && personalForm.get('file')?.touched">
+          <small>העלאת קובץ נדרשת</small>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="personalForm.invalid">שלח</button>
+    </form>
+  </div>
