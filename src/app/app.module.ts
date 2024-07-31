@@ -20,7 +20,13 @@ import { provideHttpClient } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
+import { SignaturePadModule } from 'angular2-signaturepad';
+import { SignatureComponent } from './components/signature/signature.component';
+// import { TruncateTextDirectiveDirective } from './components/about/truncate-text-directive.directive';
+// import { TruncateTextDirective } from './components/about/truncate-text.directive';
 
+
+import { TruncatePipe } from './components/about/truncate.pipe'; // Import your custom pipe
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +42,8 @@ import { ButtonModule } from 'primeng/button';
     SystemComponent,
     RegistrationFormComponent,  
     HomeAboutComponent,
+    SignatureComponent,
+    TruncatePipe
     
   ],
   imports: [
@@ -46,7 +54,8 @@ import { ButtonModule } from 'primeng/button';
     BrowserAnimationsModule,
     FormsModule,
     NgbModule,
-    ButtonModule
+    ButtonModule,
+    SignaturePadModule
 
   ],
   providers: [provideHttpClient()],

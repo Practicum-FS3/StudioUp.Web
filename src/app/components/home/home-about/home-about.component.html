@@ -1,11 +1,18 @@
-<div id="container">
 <div id="header">{{content?.title}}</div>
 <div id="allcards">
-  <div *ngFor="let item of content?.contentSections" id="card">
-    <div id="icon"></div>
-    <div id="p">{{item.section1}}</div>
-    <div id="name">{{item.section2}}</div>
-  </div>
+  <div  *ngFor="let item of homeContent?.contentSections ; let i=index" id="card">
+  
+    <div  [ngClass]="{'dark-icon': i % 2 === 0, 'light-icon': i % 2 !== 0}"></div>
+     <!-- <div id="icon"></div> -->
+      <div id="p" dir="rtl" (mouseenter)="toggleHover()" (mouseleave)="toggleHover()"> {{ item.section1 || '' | truncate:115 }}</div>
+      <!-- ----------- -->
+      <div dir="rtl" id="hoverWindow" *ngIf="isHovered &&  item && item.section1 &&item.section1.length>120">
+        <p id="hoverContent">{{ item.section1 }}</p>
+      </div>
+      <!-- ------------------ -->
+      <div id="name">{{item.section2}}</div>
+    </div>
+  
 </div>
 <div id="end" dir="rtl">
   <div id="readmore">{{content?.title3}}</div>
@@ -15,4 +22,4 @@
         <div id="arrow"></div>
       </div>
     </a>
-  </div></div></div>
+ 
