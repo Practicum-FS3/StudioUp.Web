@@ -16,6 +16,9 @@ import { HomeAboutComponent } from './components/home/home-about/home-about.comp
 import { SystemComponent } from './components/system/system.component';
 import { provideHttpClient } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
+import { TrainingTypesComponent } from './components/training-types/training-types.component';
+import { PrimeIcons, MenuItem } from 'primeng/api';
+import { HomeTrainingTypesComponent } from './components/home/home-training-types/home-training-types.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,7 @@ import { ButtonModule } from 'primeng/button';
     HomeAboutComponent,
      AboutComponent,
     SystemComponent,   
-    HomeAboutComponent,
+    HomeAboutComponent, TrainingTypesComponent, HomeTrainingTypesComponent,
   ],
   imports: [
     BrowserModule,
