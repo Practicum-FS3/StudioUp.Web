@@ -27,38 +27,31 @@
         </div>
     </div>
 
-    <!-- למסך קטן -->
 
+
+    <!-- למסך קטן -->
     <div *ngIf="screenWidth<910" class="table">
-        <div class="container">
-            <div class="acordion">
-                <p-accordion *ngFor="let title of days; let i=index">
-                    <p-accordionTab header="{{title}}" [headerStyle]="{
-                'background-color':'rgba(76, 76, 73, 1)',
-                'font-size':'150%',
-                'color':'rgba(255, 255, 255, 1)',
-                'width':'100%',
-                'border-radius':'16px',
-                'font-family':'PloniUBold',
-                'line-height':'200%',
-                'text-align':'center',
-                'margin-top':'2%'
-            }">
+        <div *ngFor="let title of days; let i=index" class="a">
+            <div class="header">{{title}}</div>
+            <div class="container">
+                <p-accordion>
+                    <p-accordionTab>
                         <div *ngFor="let lesson of groupedItems[i]">
                             <div *ngIf="lesson.id!=0 && lesson.isActive==true" class="item">
-                                {{lesson.hour}}-
-                                {{lesson.trainerName}}
-                                <br>
-                                {{lesson.trainingTypeName}}-
-                                {{lesson.customerTypeName}}
+                                <div id="t"> {{lesson.hour}}-
+                                    {{lesson.trainerName}}
+                                </div>
+                                <div>
+                                    {{lesson.trainingTypeName}}-
+                                    {{lesson.customerTypeName}}
+                                </div>
                             </div>
                         </div>
                     </p-accordionTab>
                 </p-accordion>
             </div>
         </div>
+
     </div>
-
-
 
 </div>
