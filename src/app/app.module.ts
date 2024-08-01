@@ -28,6 +28,10 @@ import { AfterRegistrationComponent } from './components/after-registration/afte
 import { StoreModule } from '@ngrx/store';
 import { registrationReducer } from './store/reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
+import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
+import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
+
 
 @NgModule({
   declarations: [
@@ -45,6 +49,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     SystemComponent,
     HomeAboutComponent,
     AfterRegistrationComponent,    
+    SubscriptionBenefitsComponent,
+    HomeSubscriptionBenefitsComponent,
+    CustomerSubHistoryComponent
   ],
   imports: [
     BrowserModule,
