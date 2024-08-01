@@ -2,72 +2,32 @@
   max-width: 100%;
   padding: 2%;
 
-  // .registrationHeader {
-  //   display: flex;
-  //   align-items: center;
-  //   position: relative;
-  //   width: 80%;
-  //   margin-left: 15%;
-  //   margin-top: 10%;
-
-  //   .registration {
-  //     align-content: center;
-  //     background-color: #4c4c49;
-  //     height: 200rem;
-  //     border-radius: 60px;
-  //     position: relative;
-  //     z-index: 0;
-  //     padding-left: 30%;
-  //     padding-top: 1%;
-  //     margin-left: 10%;
-
-  //     .registration-text {
-  //       font-family: "Anomalia ML v2 AAA Bold";
-  //       font-size: 70rem;
-  //       font-weight: 700;
-  //       color: #ffffff;
-  //       position: relative;
-  //     }
-  //   }
-
-  //   .registration-image {
-  //     background-image: url("../../../assets/images/FIGMA.png");
-  //     background-size: contain;
-  //     background-repeat: no-repeat;
-  //     height: 150%;
-  //     position: absolute;
-  //     z-index: 1;
-  //     margin-top: 6%;
-  //   }
-  // }
-
   .registrationHeader {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the content horizontally */
+    justify-content: center;
     position: relative;
-    width: 80%; /* Make the header take the full width of the screen */
-    padding: 5% 0; /* Add padding for top and bottom spacing */
+    width: 90%;
+    padding: 5% 0;
+    margin-left: 15%;
 
     .registration {
       display: flex;
       flex-direction: column;
       align-items: center;
       background-color: #4c4c49;
-      width: 100%;
-      // max-width: 800px; /* Max width to prevent it from getting too wide */
       border-radius: 60px;
-      padding: 5%; /* Adjust padding to be more responsive */
+      padding: 8%;
       position: relative;
       z-index: 0;
-      margin-left: 10%;
-
+      margin: 0;
+      width: 80%;
+      height: 100%;
       .registration-text {
-        font-family: "Anomalia ML v2 AAA Bold";
+        font-family: "Anomalia ML v2 AAA Bold", sans-serif;
         font-size: 70rem;
-        font-weight: 700;
         color: #ffffff;
-        text-align: center; /* Center the text */
+        text-align: center;
         margin: 0;
       }
     }
@@ -76,229 +36,238 @@
       background-image: url("../../../assets/images/FIGMA.png");
       background-size: contain;
       background-repeat: no-repeat;
-      height: 100%;
+      height: 80%;
+      width: 100%;
       position: absolute;
       z-index: 1;
-      top: 0;
-      // right: 0; /* Position the image to the top-right */
-      width: 50%; /* Adjust the width to be more responsive */
+      top: -10px;
+    }
+    @media (max-width: 1200px) {
+      .registration {
+        width: 70%;
+        border-radius: 40px;
+      }
+
+      .registration-text {
+        font-size: 0.5rem;
+      }
+
+      .registration-image {
+        left: 35px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .registration {
+        width: 85%;
+        margin-right: 5%;
+      }
+
+      .registration-text {
+        font-size: 0.5rem;
+      }
+
+      .registration-image {
+        top: 6px;
+        left: 6px;
+      }
     }
 
     @media (max-width: 768px) {
       flex-direction: column;
-      padding: 10% 0; /* Increase padding for smaller screens */
+      padding: 10% 0;
 
       .registration {
         width: 90%;
         padding: 10%;
+        border-radius: 50px;
       }
 
       .registration-text {
-        font-size: 1.5rem; /* Reduce font size on smaller screens */
+        font-size: 0.5rem;
       }
 
       .registration-image {
-        width: 80%;
-        height: auto;
-        top: auto;
-        bottom: 0;
-        right: auto;
-        margin-top: 10%;
+        width: 30%;
+        top: 50%;
+        left: -10%;
+        transform: translateY(-50%);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .registration {
+        width: 95%;
+        padding: 15%;
+        border-radius: 30px;
+      }
+
+      .registration-text {
+      }
+
+      .registration-image {
+        width: 35%;
+        top: 50%;
+        left: -15%;
+        transform: translateY(-50%);
       }
     }
 
     @media (max-width: 480px) {
       .registration {
-        width: 95%;
-        padding: 15%;
+        width: 100%;
+        padding: 10%;
       }
 
       .registration-text {
-        font-size: 1.2rem; /* Further reduce font size */
+        font-size: 0.2rem;
       }
 
       .registration-image {
-        width: 100%;
-        height: auto; /* Maintain aspect ratio */
-        margin-top: 20px;
+        width: 40%;
+        height: 60%;
+        transform: translateY(-60%);
+        left: -15%;
       }
     }
-  }
 
-  .row {
-    direction: rtl;
-    margin: 10%;
-  }
-  @font-face {
-    font-family: "Anomalia ML v2 AAA Bold";
-    src: url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.eot");
-    src: url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.eot?#iefix")
-        format("embedded-opentype"),
-      url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.woff2")
-        format("woff2"),
-      url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.woff")
-        format("woff"),
-      url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.ttf")
-        format("truetype"),
-      url("https://db.onlinewebfonts.com/t/2ecc29f5f909de1152b76b935fa51c0f.svg#Anomalia ML v2 AAA Bold")
-        format("svg");
+    @media (max-width: 360px) {
+      .registration {
+        padding: 8%;
+        border-radius: 20px;
+      }
+
+      .registration-text {
+      }
+
+      .registration-image {
+        height: 60%;
+        top: 50%;
+        left: -15%;
+        transform: translateY(-60%);
+      }
+    }
   }
 
   .form {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    left: 0;
-    width: 100%;
-  }
+    flex-wrap: wrap;
+    direction: rtl;
+    margin: 5%;
+    margin-top: 0%;
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      input {
+        padding-block: 1%;
+      }
+      ::placeholder {
+        color: black;
+      }
+    }
 
-  .form-input,
-  .custom-select {
-    width: 100%;
-    height: fit-content;
-    border-radius: 31px;
-    border: none;
-    background-color: #ececec;
-    font-family: "PloniMLv2AAA-Regular", sans-serif;
-    font-size: 22rem;
-    font-weight: 400;
-    text-align: right;
-    margin-top: 6%;
-    display: flex;
-    align-items: center;
-    padding-right: 5%;
-  }
-  .form-input {
-    padding-block: 1%;
-  }
-  .form-input::placeholder {
-    color: black;
-  }
+    .wrap-form,
+    .selects {
+      flex: 1 1 45%;
+    }
 
-  .sumbit {
-    display: flex;
-    align-items: center;
-    margin-top: 10rem;
-    justify-content: right;
-  }
+    input,
+    select {
+      width: 100%;
+      height: fit-content;
+      border-radius: 31px;
+      border: none;
+      background-color: #ececec;
+      font-family: "Ploni ML v2 AAA", sans-serif;
+      font-size: 22rem;
+      font-weight: 400;
+      text-align: right;
+      margin-top: 6%;
+      display: flex;
+      // align-items: center;
+      padding-right: 5%;
+    }
 
-  .sumbit-text,
-  .button-text {
-    width: 181.33rem;
-    padding-block: 1%;
-    margin-right: 0%;
-    margin-top: 6%;
-    border-radius: 30px;
-    background-color: #d91c5c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-family: "PloniMLv2AAA-Regular", sans-serif;
-    font-size: 22rem;
-    text-align: center;
-  }
-  button,
-  .button-ref {
-    width: 36.55rem;
-    height: 36.55rem;
-    border-radius: 50%;
-    border: 2px solid black;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 6%;
-    cursor: pointer;
-    background-image: url("../../../assets/images/Arrow1Black.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 40%;
-    &:hover {
+    .sumbit {
+      flex: 1 1 100%;
+      display: flex;
+      align-items: center;
+      margin-top: -3%;
+      margin-left: 1%;
+      justify-content: left;
+      .sumbit-text {
+        padding: 0.8%;
+      }
+    }
+
+    .sumbit-text,
+    .button-text {
+      width: 181.33rem;
+      margin-right: 0%;
+      margin-top: 6%;
+      border-radius: 30px;
+      background-color: #d91c5c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-family: "Ploni ML v2 AAA", sans-serif;
+      font-size: 22rem;
+      text-align: center;
+    }
+
+    button,
+    .button-ref {
+      width: 36.55rem;
+      height: 36.55rem;
+      border-radius: 50%;
+      border: 2px solid black;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 6%;
+      background-image: url("../../../assets/images/Arrow1Black.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 40%;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    select:hover,
+    input:hover {
       opacity: 0.5;
     }
-  }
-  select:hover,
-  input:hover {
-    opacity: 0.5;
-  }
-  .select {
-    display: flex;
-  }
 
-  .wrap-form {
-    display: flex;
-    justify-content: left;
-    align-items: center;
+    .select {
+      display: flex;
+    }
+
     mat-error {
       color: #d91c5c;
+      padding-right: 3%;
     }
-  }
-  @media (max-width: 1200px) {
-    .registrationHeader {
-      width: 90%;
-      margin-left: 5%;
 
-      .registration {
-        height: 150rem;
-        padding-left: 20%;
-        margin-left: 5%;
-
-        .registration-text {
-          font-size: 50rem;
-        }
-      }
-
-      .registration-image {
-        height: 120%;
-        margin-top: 5%;
-      }
+    .wrap-form {
+      display: flex;
+      justify-content: left;
+      align-items: center;
     }
   }
 
-  @media (max-width: 768px) {
-    .registrationHeader {
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      margin-left: 0;
-
-      .registration {
-        height: 100rem;
-        padding-left: 10%;
-        padding-top: 2%;
-        margin-left: 0;
-
-        .registration-text {
-          font-size: 40rem;
-        }
-      }
-
-      .registration-image {
-        width: 100%;
-        height: auto;
-        margin-top: 2%;
-      }
-    }
+  @font-face {
+    font-family: "Anomalia ML v2 AAA Bold";
+    src: url("../../../assets/fonts/AnomaliaMLv2AAABold.woff") format("woff2");
+    font-weight: 700;
+    font-style: normal;
   }
-
-  @media (max-width: 480px) {
-    .registrationHeader {
-      .registration {
-        height: auto;
-        padding-left: 5%;
-        padding-right: 5%;
-
-        .registration-text {
-          font-size: 30rem;
-        }
-      }
-
-      .registration-image {
-        width: 100%;
-        height: auto;
-        margin-top: 1%;
-      }
-    }
+  @font-face {
+    font-family: "Ploni ML v2 AAA";
+    src: url("../../../assets/fonts/PloniRegular.woff"), format("woff2");
+    font-weight: 400;
+    font-style: normal;
   }
 }

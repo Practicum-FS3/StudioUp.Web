@@ -8,21 +8,23 @@ import { AboutComponent } from './components/about/about.component';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { OurTeamComponent } from './components/our-team/our-team.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
-import { CustomerSubscription } from './models/customerSubscription';
+import { HmosComponent } from './components/hmos/hmos.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
+
 const routes: Routes = [
-  {path:"login", component:LoginComponent},
-  {path:'',component:HomeAboutComponent},
-  {path:'about',component:AboutComponent},
-  {path:'home',component:HomeAboutComponent},
-  {path:'home/about',component:AboutComponent},
-  {path:'system', component:SystemComponent},
-  {path:'SubscriptionBenefits', component:SubscriptionBenefitsComponent},
-  {path:'payment-options',component:PaymentOptionsComponent},
-  {path:'our-team',component:OurTeamComponent},
-  {path:'login',component:LoginComponent},
-  {path:'registration', component: RegistrationComponent },
-  {path:'subscriptionPerCustomer',component: CustomerSubHistoryComponent}
+  { path: 'login', component: LoginComponent },
+  { path: '', component: HomeAboutComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'home', component: HomeAboutComponent },
+  { path: 'home/about', component: AboutComponent },
+  { path: 'payment-options', component: PaymentOptionsComponent },
+  { path: 'our-team', component: OurTeamComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registration', component: RegistrationComponent },
+  { path: 'HMOs', component: HmosComponent },
+  { path: 'system', component: SystemComponent},
+  { path: 'SubscriptionBenefits', component: SubscriptionBenefitsComponent},
+  { path: 'subscriptionPerCustomer',component: CustomerSubHistoryComponent}
 ];
 
 @NgModule({
