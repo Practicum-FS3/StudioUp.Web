@@ -1,0 +1,22 @@
+<div dir="rtl" class="container mt-3">
+    <h2 class="custom-title">הסטוריית מנויי לקוח</h2>
+    <table class="table table-custom">
+      <thead>
+        <tr>
+            <th>תז לקוח</th>
+            <th>סוג מנוי</th>
+            <th>תאריך התחלת מנוי</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subscription of subscriptions" [ngClass]="{'bg-danger': subscription.condition}">
+          <td>{{ subscription.customerId }}</td>
+          <td>{{ subscription.subscriptionTypeId }}</td>
+          <td>{{ subscription.startDate | date }}</td>
+        </tr>
+      </tbody>
+      
+    </table>
+
+  </div>
+  
