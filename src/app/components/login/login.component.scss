@@ -1,0 +1,22 @@
+.btn {
+    background-color: rgb(217, 28, 92);
+    margin-top: 3vh;
+    border-color: black;
+    margin-left: 3vh;
+
+}
+
+input {
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    color: #000;
+}
+
+input:focus {
+    box-shadow: 0px 0px 5px 2px yellow;
+    border-color: white;
+}
+
+.alert{
+    direction: rtl;
+}

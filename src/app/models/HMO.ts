@@ -1,7 +1,9 @@
 export class HMO {
-    id?: number;
-    title?: string;
-    constructor(title: string) {
-        this.title = title;
-    }
+  id: number;
+  title: string;
+
+  constructor(id: number, title: string) {
+    this.id = id;
+    this.title = title;
+  }
 }

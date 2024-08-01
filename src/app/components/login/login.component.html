@@ -13,13 +13,15 @@
                 </div>
                 <div class="card-body">
                     <form (ngSubmit)="onsubmit()" #loginForm="ngForm">
-                        <div class="form-group">
-                            <label for="email">כתובת אימייל</label>
-                            <input type="email" class="form-control" id="email" required [(ngModel)]="email" name="email" placeholder="הכנס כתובת אימייל">
+                        <div class="form-group"  dir="rtl">
+                            <label class="label" for="email">כתובת אימייל</label>
+                            <input type="email" class="form-control" id="email" required [(ngModel)]="email" 
+                                name="email" placeholder="הכנס כתובת אימייל" >
                         </div>
-                        <div class="form-group">
-                            <label for="email" סיסמה></label>
-                            <input type="password" class="form-control" id="password" required [(ngModel)]="password" name="password" placeholder="הכנס סיסמה">
+                        <div class="form-group" dir="rtl">
+                            <label class="label" for="email"> סיסמה</label>
+                            <input type="password" class="form-control" id="password" required [(ngModel)]="password"
+                                name="password" placeholder="הכנס סיסמה">
                         </div>
                         <button type="submit" class="btn btn-primary btn-block"
                             [disabled]="!loginForm.valid">התחבר</button>
