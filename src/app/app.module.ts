@@ -27,6 +27,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscr
      AboutComponent,
     SystemComponent,
     SubscriptionBenefitsComponent,
-    HomeSubscriptionBenefitsComponent
+    HomeSubscriptionBenefitsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
