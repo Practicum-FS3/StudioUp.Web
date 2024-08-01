@@ -1,19 +1,13 @@
 <div class="container">
-  <!-- <div class="registrationHeader">
-    <div class="registration col-10">
-      <p class="registration-text">להרשמה</p>
-    </div>
-    <div class="registration-image col-2"></div>
-  </div> -->
   <div class="registrationHeader">
     <div class="registration">
       <p class="registration-text">להרשמה</p>
     </div>
     <div class="registration-image"></div>
   </div>
-  
-  <div class="row">
-    <form [formGroup]="selectsForm" class="selects col-md-6 col-12">
+
+  <form [formGroup]="form" class="form" (ngSubmit)="customerRegistration()">
+    <div class="selects col-md-6 col-12">
       <div class="select">
         <select class="custom-select col-6" formControlName="training" required>
           <option value="" disabled selected>סוג האימון</option>
@@ -22,46 +16,42 @@
           </option>
         </select>
         <div class="button-text col-4">סוגי אימונים</div>
-        <div class="button-ref">
-          <nav><a href="../"></a></nav>
-        </div>
+        <a class="button-ref" (click)="navigateTo('subscriptions')" routerLinkActive="active"></a>
       </div>
+      <mat-error
+        *ngIf="form.get('training')?.hasError('required') && form.get('training')?.touched"
+        >  *שדה חובה</mat-error
+      >
 
       <div class="select">
         <select class="custom-select col-6" formControlName="customer" required>
           <option value="" disabled selected>מנוי</option>
-          <option
-            *ngFor="let subscriptionType of subscriptionTypes"
-            [value]="subscriptionType.id"
-          >
+          <option *ngFor="let subscriptionType of subscriptionTypes" [value]="subscriptionType.id">
             {{ subscriptionType.title }}
           </option>
         </select>
         <div class="button-text col-4">מנויים</div>
-        <div class="button-ref">
-          <nav><a href="../"></a></nav>
-        </div>
+        <a class="button-ref" (click)="navigateTo('subscriptions')" routerLinkActive="active"></a>
       </div>
+      <mat-error
+        *ngIf="form.get('customer')?.hasError('required') && form.get('customer')?.touched"
+        >  *שדה חובה</mat-error
+      >
 
       <div class="select">
-        <select
-          class="custom-select col-6"
-          formControlName="paymentOption"
-          required
-        >
+        <select class="custom-select col-6" formControlName="paymentOption" required>
           <option value="" disabled selected>תשלום</option>
-          <option
-            *ngFor="let paymentOption of paymentOptions"
-            [value]="paymentOption.id"
-          >
+          <option *ngFor="let paymentOption of paymentOptions" [value]="paymentOption.id">
             {{ paymentOption.title }}
           </option>
         </select>
         <div class="button-text col-4">תשלומים</div>
-        <div class="button-ref">
-          <nav><a href="../"></a></nav>
-        </div>
+        <a class="button-ref" (click)="navigateTo('payment-options')" routerLinkActive="active"></a>
       </div>
+      <mat-error
+        *ngIf="form.get('paymentOption')?.hasError('required') && form.get('paymentOption')?.touched"
+        >  *שדה חובה</mat-error
+      >
 
       <div class="select">
         <select class="custom-select col-6" formControlName="hmo">
@@ -71,85 +61,50 @@
           </option>
         </select>
         <div class="button-text col-4">נספח לקופ"ח</div>
-        <nav class="button-ref"><a href=""></a></nav>
+        <a class="button-ref" (click)="navigateTo('HMOs')" routerLinkActive="active"></a>
       </div>
-    </form>
+    </div>
 
     <div class="wrap-form col-md-6 col-12">
-      <form
-        [formGroup]="registrationForm"
-        name="form"
-        class="form"
-        (ngSubmit)="customerRegistration()"
-      >
-        <input
-          class="form-input col-12"
-          type="text"
-          formControlName="fullName"
-          placeholder="שם מלא"
-          required
-        />
+      <div class="inputs">
+        <input class="col-12" type="text" formControlName="fullName" placeholder="שם מלא" required />
         <mat-error
-          *ngIf="
-            registrationForm.get('fullName')?.hasError('required') &&
-            registrationForm.get('fullName')?.touched
-          "
-          >שדה חובה</mat-error
+          *ngIf="form.get('fullName')?.hasError('required') && form.get('fullName')?.touched"
+          >  *שדה חובה</mat-error
         >
 
-        <input
-          class="form-input col-12"
-          type="text"
-          formControlName="address"
-          placeholder="כתובת"
-        />
+        <input class="col-12" type="text" formControlName="address" placeholder="כתובת" />
 
-        <input
-          class="form-input col-12"
-          type="tel"
-          formControlName="phone"
-          pattern="^0[2-9]\d{7}$|^05\d{8}$|^077\d{7}$"
-          placeholder="טלפון"
-          required
-        />
+        <input class="col-12" type="tel" formControlName="phone" pattern="^0[2-9]\d{7}$|^05\d{8}$|^077\d{7}$"
+          placeholder="טלפון" required />
         <mat-error
-          *ngIf="
-            registrationForm.get('phone')?.hasError('required') &&
-            registrationForm.get('phone')?.touched
-          "
-          >שדה חובה</mat-error
+          *ngIf="form.get('phone')?.hasError('required') && form.get('phone')?.touched"
+          >  *שדה חובה</mat-error
         >
-        <mat-error *ngIf="registrationForm.get('phone')?.hasError('pattern')">מספר טלפון לא תקין</mat-error>
+        <mat-error *ngIf="form.get('phone')?.hasError('pattern')"
+          >מספר טלפון לא תקין</mat-error
+        >
 
-        <input
-          class="form-input col-12"
-          type="email"
-          matInput
-          formControlName="email"
-          placeholder="מייל"
-          [matAutocomplete]="auto"
-        />
+        <input class="col-12" type="email" matInput formControlName="email" placeholder="מייל"
+          [matAutocomplete]="auto" required />
         <mat-autocomplete #auto="matAutocomplete">
-          <mat-option
-            *ngFor="let email of filteredEmails | async"
-            [value]="email"
-          >
+          <mat-option *ngFor="let email of filteredEmails | async" [value]="email">
             {{ email }}
           </mat-option>
         </mat-autocomplete>
-        <mat-error *ngIf="registrationForm.get('email')?.hasError('email')"
+        <mat-error
+          *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched"
+          >  *שדה חובה</mat-error
+        >
+        <mat-error *ngIf="form.get('email')?.hasError('email')"
           >כתובת המייל אינה תקינה</mat-error
         >
-
-        <div class="sumbit">
-          <div class="sumbit-text">שלח</div>
-          <button
-            mat-raised-button
-            class="sumbit-button"
-            type="submit"
-          ></button>
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
+
+    <div class="sumbit">
+      <div class="sumbit-text">שלח</div>
+      <button mat-raised-button class="sumbit-button" type="submit"></button>
+    </div>
+  </form>
 </div>

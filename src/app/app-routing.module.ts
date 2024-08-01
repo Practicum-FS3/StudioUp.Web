@@ -6,20 +6,23 @@ import { SystemComponent } from './components/system/system.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
 import { OurTeamComponent } from './components/our-team/our-team.component';
-import { LoginComponent } from './components/login/login.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
+import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
+import { HmosComponent } from './components/hmos/hmos.component';
 
 const routes: Routes = [
-  {path:"login", component:LoginComponent},
-  {path:'',component:HomeAboutComponent},
-  {path:'about',component:AboutComponent},
-  {path:'home',component:HomeAboutComponent},
-  {path:'home/about',component:AboutComponent},
-  // {path:'', component:SystemComponent},
-  {path:'payment-options',component:PaymentOptionsComponent},
-  {path:'our-team',component:OurTeamComponent},
-  {path:'login',component:LoginComponent},
+  { path: 'login', component: LoginComponent },
+  { path: '', component: HomeAboutComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'home', component: HomeAboutComponent },
+  { path: 'home/about', component: AboutComponent },
+  // { path: '', component: SystemComponent },
+  { path: 'payment-options', component: PaymentOptionsComponent },
+  { path: 'our-team', component: OurTeamComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
+  { path: 'HMOs', component: HmosComponent },
+  { path: 'subscriptions', component: SubscriptionBenefitsComponent },
 ];
 
 @NgModule({
