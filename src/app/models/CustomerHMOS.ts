@@ -6,6 +6,5 @@ export interface CustomerHMOS {
     customer?: Customer;
     hmoId: number;
     freeFitId: string;
-    // filedId: number; 
-    // file: FileUpload;
+    filedId: number; 
 }   

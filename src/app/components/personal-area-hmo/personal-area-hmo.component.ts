@@ -28,6 +28,6 @@ export class PersonalAreaHMOComponent {
 
   onSubmit() {
     console.log(this.personalForm.value);
-    // כאן תכניסי את הקוד כדי לשלוח את המידע לשרת שלך
+    
   }
 }

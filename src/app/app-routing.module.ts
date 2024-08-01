@@ -8,7 +8,6 @@ import { AboutComponent } from './components/about/about.component';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { OurTeamComponent } from './components/our-team/our-team.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
-
 const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:'',component:HomeAboutComponent},
