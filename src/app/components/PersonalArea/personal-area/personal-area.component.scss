@@ -1,21 +1,3 @@
-// .card {
-//   background-color: yellow; /* Sets background color to yellow for the card class */
-//   color: pink; /* Sets text color to pink for the elements inside the card class */
-// }
-
-// p-tabPanel {
-//   background-color: pink; /* Sets background color to pink for the p-tabPanel elements */
-// }
-
-// p-tabView {
-//   background-color: pink; /* Sets background color to pink for the p-tabView element */
-// }
-
-// p-tabPanel p-header {
-//   color: yellow; /* Sets text color to yellow for the headers inside the p-tabPanel elements */
-// }
-
-
 .card {
     :host ::ng-deep .p-tabview .p-tabview-nav li a {
         color: pink; /* צבע ורוד לכותרות */
@@ -25,3 +7,9 @@
         border-bottom: 2px solid pink; /* פס ורוד תחתון כאשר עובר עליו */
     }
 }
+.card{
+    height: 100px;
+
+}
+.header{
+text-size-adjust: 100px;}

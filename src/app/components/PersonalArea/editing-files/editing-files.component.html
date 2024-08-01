@@ -81,11 +81,17 @@
                     </option>
                 </select>
             </p>
-           
+
             <p class="divInput">
                 <label>קופת חולים:</label><br>
-                <input pInputText id="hmoId" formControlName="hmoId" ngModel="{{currentCustomer?.hmoId}}" />
+                <select class="inputes" id="mySelect" pInputText id="hmoId" formControlName="hmoId"
+                    ngModel="{{currentCustomer?.hmoId}}">
+                    <option *ngFor="let hmo of arrSubscriptionType" [value]="hmo.id">
+                        {{hmo.title}}
+                    </option>
+                </select>
             </p>
+
            
             <p class="divInput">
                 <label>אופן התשלום:</label><br>

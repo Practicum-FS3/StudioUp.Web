@@ -6,6 +6,7 @@ import { CustomerType } from '../../models/CustomerType ';
 import { PaymentOptions } from '../../models/PaymentOptions';
 import { SubscriptionType } from '../../models/SubscriptionType';
 import { AvailableTraining } from '../../models/AvailableTrainingCalander';
+import { HMO } from '../../models/HMO';
 
 
 @Injectable({
@@ -24,10 +25,10 @@ export class DataService {
     return data
   }
 
-  // getAllHMO(): Observable<Array<HMO>> {
-  //   const data = this.http.get<Array<HMO>>(`${this.baseUrl}/getAll`)
-  //   return data
-  // }
+  getAllHMO(): Observable<Array<HMO>> {
+    const data = this.http.get<Array<HMO>>(`${this.baseUrl}/HMO/GetAll`)
+    return data
+  }
 
   getAllPaymentOptions(): Observable<Array<PaymentOptions>> {
     const data = this.http.get<Array<PaymentOptions>>(`${this.baseUrl}/PaymentOption`)

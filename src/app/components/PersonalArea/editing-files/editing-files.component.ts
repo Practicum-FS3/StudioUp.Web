@@ -5,7 +5,7 @@ import { CustomerType } from '../../../models/CustomerType ';
 import { PaymentOptions } from '../../../models/PaymentOptions';
 import { SubscriptionType } from '../../../models/SubscriptionType';
 import { FormControl, FormGroup } from '@angular/forms';
-import {DataService} from '../../../services/data.service'
+import {DataService} from '../../../services/personal-area/data.service'
 
 @Component({
   selector: 'app-editing-files',
@@ -78,9 +78,10 @@ export class EditingFilesComponent {
     this.dataService.getAllCustType().subscribe(data=>{
       this.arrCustType=data
     })
-    // this.dataService.getAllCustType().subscribe(data=>{
-    //   this.arrHMO=data
-    // })
+    
+    this.dataService.getAllHMO().subscribe(data=>{
+      this.arrHMO=data
+    })
   
     this.dataService.getAllPaymentOptions().subscribe(data=>{
       this.arrPaymentOptions=data
