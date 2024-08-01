@@ -27,12 +27,9 @@
         </div>
     </div>
 
-
-
     <!-- למסך קטן -->
 
     <div *ngIf="screenWidth<910" class="table">
-
         <div class="container">
             <div class="acordion">
                 <p-accordion *ngFor="let title of days; let i=index">
@@ -49,8 +46,7 @@
             }">
                         <div *ngFor="let lesson of groupedItems[i]">
                             <div *ngIf="lesson.id!=0 && lesson.isActive==true" class="item">
-                                {{lesson.hour}}
-                                <br>
+                                {{lesson.hour}}-
                                 {{lesson.trainerName}}
                                 <br>
                                 {{lesson.trainingTypeName}}-

@@ -19,7 +19,7 @@
     align-content: center;
     margin-left: 5%;
     height: 225px;
-
+    font-size: 300%;
 }
 
 .img {
@@ -53,15 +53,20 @@
     flex-direction: column;
     flex: 1;
     padding-left: 10%;
+
 }
 
 .headers {
-    width: 94%;
+    width: 75%;
     height: 40px;
     display: flex;
     flex-direction: row;
     gap: 1.5%;
     direction: rtl;
+
+    position: absolute;
+    transform: translate(0%, -50%);
+
 }
 
 .container {
