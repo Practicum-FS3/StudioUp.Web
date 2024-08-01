@@ -63,7 +63,7 @@ body {
     padding: 0;
 }
 
-.header {
+/* .header {
     box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
     font-size: 3%;
     width: 100%;
@@ -125,7 +125,7 @@ body {
     width: 1vw;
     height: 2vh;
     transform: rotate(6deg);
-} 
+}  */
 
 /* body {
     font-family: Arial, sans-serif;
