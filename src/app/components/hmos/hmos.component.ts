@@ -62,16 +62,16 @@ export class HmosComponent implements OnInit {
     // Initialization logic here
     console.log('data from NgOnInit');
   }
-  x: Hmos={
-    ID: 0,
-    title: "try",
-    isActive: true,
-    arrangementName: "try",
-    trainingsPerMonth: 5,
-    trainingPrice: 0,
-   minimumAge: 10,
-    maximumAge: 0,
-    trainingDescription: "try"};
+  // x: Hmos={
+  //   ID: 0,
+  //   title: "try",
+  //   isActive: true,
+  //   arrangementName: "try",
+  //   trainingsPerMonth: 5,
+  //   trainingPrice: 0,
+  //  minimumAge: 10,
+  //   maximumAge: 0,
+  //   trainingDescription: "try"};
 
   downloadFile(): void {
    

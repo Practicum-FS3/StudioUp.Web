@@ -3,7 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\components"
+    "\\src\\app\\services",
+    "\\src\\app\\services\\download-file.service"
   ],
+  "SelectedNode": "\\proxy.config.json",
   "PreviewInSolutionExplorer": false
 }

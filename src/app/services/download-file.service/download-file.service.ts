@@ -30,7 +30,7 @@ export class DownloadFileService {
       err => {
         // Download the fallback URL as a Blob
         fetch('/api/wp-content/uploads/2019/06/pdf-file-for-example.pdf')
-          .then(response => response.blob())
+        .then(response => response.blob())
           .then(blob => {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');

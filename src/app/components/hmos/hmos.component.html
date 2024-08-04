@@ -12,10 +12,13 @@
                 ביטוח: <span class="smallText">{{ item.arrangementName }}</span>
             </p>
             <p class="text">
-                הטבה: <span class="smallText">{{ item.trainingPrice}} ₪ במקום 40 ₪</span>
+                הטבה: <span class="smallText">{{ item.trainingPrice}} ₪ במקום מחיר ללא הנחה? ₪</span>
             </p>
             <p class="text">
-            {{item.minimumAge}}    מגיל:<span class="smallText">{{item.maximumAge}} ומעלה</span>
+               מגיל:<span class="smallText">{{item.minimumAge}} 
+                <!-- {{item.maximumAge}} -->
+                 ומעלה</span>
+      
             </p>
             <p class="text">
                 מוגבל ל:<span class="smallText">{{item.trainingsPerMonth}} כניסות בחודש</span>
