@@ -1,5 +1,5 @@
 
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewEncapsulation } from '@angular/core';
 import { Training } from '../../models/TrainingCalander';
 import { DataService } from '../../services/TrainingService/data.service';
 
