@@ -33,6 +33,11 @@ import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscr
 import { HomeComponent } from './components/home/home.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 
+
+ import { SignaturePadModule } from 'angular2-signaturepad';
+import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
