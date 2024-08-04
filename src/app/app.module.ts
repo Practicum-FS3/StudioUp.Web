@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';  // ייבוא של Htt
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -27,15 +28,20 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SystemComponent } from './components/system/system.component';
 import { provideHttpClient } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
+import { AfterRegistrationComponent } from './components/after-registration/after-registration.component';
+import { StoreModule } from '@ngrx/store';
+import { registrationReducer } from './store/reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,8 +60,12 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     HomeAboutComponent,
     AboutComponent,
     SystemComponent,
+    HomeAboutComponent,
+    AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
-    HomeSubscriptionBenefitsComponent
+    HomeSubscriptionBenefitsComponent,
+    HomeComponent,
+    CustomerSubHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +89,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     // NgbModule,
     ButtonModule,
+    StoreModule.forRoot({ registration: registrationReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
   ],
   providers: [
     provideAnimationsAsync(),
