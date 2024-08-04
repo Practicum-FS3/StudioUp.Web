@@ -20,6 +20,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
  import { SignaturePadModule } from 'angular2-signaturepad';
+import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
      AboutComponent,
     SystemComponent,
     RegistrationFormComponent,  
-    HomeAboutComponent, 
+    HomeAboutComponent, DetailsAndRegistrationComponent, 
     
   ],
   imports: [
@@ -45,7 +46,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpClientModule,
     AccordionModule,
     BrowserAnimationsModule,
-    
     SignaturePadModule
   ],
   providers: [provideHttpClient()],
