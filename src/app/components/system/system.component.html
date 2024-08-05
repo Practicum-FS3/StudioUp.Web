@@ -1,17 +1,17 @@
-<div class="p">
-    <div class="tit">
-        <div class="sce">מערכת שיעורים</div>
-        <div class="img"></div>
+<div class="myp">
+    <div class="mytit">
+        <div class="mysce">מערכת שיעורים</div>
+        <div class="myimg"></div>
     </div>
 
-    <div class="table" *ngIf="screenWidth>910">
-        <div class="headers">
-            <div class="header" *ngFor="let day of days">{{day}}</div>
+    <div class="mytable" *ngIf="screenWidth>910">
+        <div class="myheaders">
+            <div class="myheader" *ngFor="let day of days">{{day}}</div>
         </div>
-        <div class="container">
-            <div *ngFor="let n of numbersArray" class="n">
-                <div class="tur">
-                    <div *ngFor="let lesson of groupedItems[n-1]" class="item">
+        <div class="mycontainer">
+            <div *ngFor="let n of numbersArray" class="myn">
+                <div class="mytur">
+                    <div *ngFor="let lesson of groupedItems[n-1]" class="myitem">
                         <div *ngIf="lesson.id!=0 && lesson.isActive==true">
                             {{lesson.hour}}
                             <br>
@@ -30,14 +30,14 @@
 
 
     <!-- למסך קטן -->
-    <div *ngIf="screenWidth<910" class="table">
-        <div *ngFor="let title of days; let i=index" class="a">
-            <div class="header">{{title}}</div>
-            <div class="container">
-                <p-accordion>
-                    <p-accordionTab>
+    <div *ngIf="screenWidth<910" class="mytable">
+        <div *ngFor="let title of days; let i=index" class="mya">
+            <div class="myheader">{{title}}</div>
+            <div class="mycontainer">
+                <p-accordion >
+                    <p-accordionTab >
                         <div *ngFor="let lesson of groupedItems[i]">
-                            <div *ngIf="lesson.id!=0 && lesson.isActive==true" class="item">
+                            <div *ngIf="lesson.id!=0 && lesson.isActive==true" class="myitem">
                                 <div id="t"> {{lesson.hour}}-
                                     {{lesson.trainerName}}
                                 </div>
