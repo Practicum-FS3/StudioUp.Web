@@ -1,0 +1,36 @@
+<div class="modal-header">
+  <h4 class="modal-title">פרטי מנוי</h4>  
+  <div>  
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+  </div>
+</div>
+<div class="modal-body">
+  <p><strong>כותרת:</strong> {{ subscription.title }}</p>
+  <p><strong>פעיל:</strong> {{ subscription.isActive ? 'כן' : 'לא' }}</p>
+  <p><strong>סה"כ אימונים:</strong> {{ subscription.totalTraining }}</p>
+  <p><strong>מחיר לאימון:</strong> {{ subscription.priceForTraining | currency:'ILS':'symbol' }}</p>
+  <p><strong>מספר אימונים בשבוע:</strong> {{ subscription.numberOfTrainingPerWeek }}</p>
+  <p><strong>תיאור:</strong> {{ subscription.description }}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="close()">סגור</button>
+</div>
+
+
+
+<!-- src/app/components/subscription-detail/subscription-detail.component.html
+<div class="modal-header">
+  <button type="button" class="btn-close ms-auto" aria-label="Close" (click)="close()"></button>
+  <h4 class="modal-title me-auto">פרטי מנוי</h4>
+</div>
+<div class="modal-body">
+  <p><strong>כותרת:</strong> {{ subscription.title }}</p>
+  <p><strong>פעיל:</strong> {{ subscription.isActive ? 'כן' : 'לא' }}</p>
+  <p><strong>סה"כ אימונים:</strong> {{ subscription.totalTraining }}</p>
+  <p><strong>מחיר לאימון:</strong> {{ subscription.priceForTraining | currency:'ILS':'symbol' }}</p>
+  <p><strong>מספר אימונים בשבוע:</strong> {{ subscription.numberOfTrainingPerWeek }}</p>
+  <p><strong>תיאור:</strong> {{ subscription.description }}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="close()">סגור</button>
+</div> -->

@@ -19,8 +19,7 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe(
       token => {
         console.log('Token', token);
-        localStorage.setItem('token', token);
-        this.authService.checkToken(token).subscribe(
+        this.authService.checkToken().subscribe(
           valid => {
             if (valid) {
               console.log('Token is valid')

@@ -70,8 +70,12 @@ export class SystemComponent {
           item.splice(this.index, 0, this.rek);
           this.index++;
         }
+        console.log({item});
+        
         this.index = 0;
       }
+      console.log(this.groupedItems);
+
     })
 
   }
