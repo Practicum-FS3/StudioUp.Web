@@ -27,6 +27,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
+import { TracksComponent } from './components/tracks/tracks.component';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscr
      AboutComponent,
     SystemComponent,
     SubscriptionBenefitsComponent,
-    HomeSubscriptionBenefitsComponent
+    HomeSubscriptionBenefitsComponent,
+    TracksComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscr
     FormsModule,
     NgbModule,
     ButtonModule,
+    TooltipModule
   ],
   providers: [
     provideAnimationsAsync(),
