@@ -44,7 +44,7 @@ export class DataService {
   }
 
   getCustByID(): Observable<Customer> {
-    const data = this.http.get<Customer>(`${this.baseUrl}/Customer/byId/${1}`)
+    const data = this.http.get<Customer>(`${this.baseUrl}/Customer/byId/${8}`)
     return data
   }
 
