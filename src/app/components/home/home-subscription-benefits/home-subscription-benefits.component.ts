@@ -29,7 +29,7 @@ export class HomeSubscriptionBenefitsComponent implements OnInit {
     )
   }
 
-  id:number = 2
+  id:number = 3
   s:ContentType = new ContentType()
   
 }
