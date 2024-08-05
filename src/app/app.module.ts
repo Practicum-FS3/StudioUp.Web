@@ -97,6 +97,7 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     BrowserAnimationsModule,
     // NgbModule,
     ButtonModule,
+    TooltipModule,
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
     RouterModule.forRoot([])
