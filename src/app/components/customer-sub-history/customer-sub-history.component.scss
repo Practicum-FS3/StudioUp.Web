@@ -1,0 +1,54 @@
+:host {
+    display: block;
+    padding-top: 20px; // התחלת הקומפוננטה נמוך יותר
+  }
+  
+  .container {
+    max-width: 700px; // הגבלת רוחב מקסימלי של הטבלה
+    margin: 0 auto; // יישור המרכז של הטבלה
+  }
+  
+  .custom-title {
+    font-family: 'Ploni ML v2 AAA Bold', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: #D91C5C; // צבע אדום
+    margin-bottom: 20px;
+  }
+  
+  .table-custom {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px; // פינות מעוגלות
+  
+    th, td {
+      padding: 12px 15px; // הגדרת מרווח בתוך התאים
+      text-align: left;
+    }
+  
+    th {
+      background-color: #FFD700;; // צבע אדום לכותרות
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+    }
+  
+    td {
+      text-align: center; // יישור מרכזי של הטקסט בתאים
+    }
+  
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  
+    tbody tr td:hover {
+      background-color:#f231713e;
+      cursor: pointer; /* מצביע עכבר */
+      transition: background-color 0.5s ease;
+    }
+    
+
+  }
+  

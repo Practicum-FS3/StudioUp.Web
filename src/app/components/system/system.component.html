@@ -1,53 +1,63 @@
-
-<div class="p">
-
-    <div class="tit">
-        <div class="sce">מערכת שיעורים</div>
-        <div class="img"></div>
+<div class="myp">
+    <div class="mytit">
+        <div class="mysce">מערכת שיעורים</div>
+        <div class="myimg"></div>
     </div>
 
-    <div class="table">
-
-        <div class="headers">
-            <div class="header" *ngFor="let day of days">{{day}}</div>
+    <div class="mytable" *ngIf="screenWidth>910">
+        <div class="myheaders">
+            <div class="myheader" *ngFor="let day of days">{{day}}</div>
         </div>
-
-        <div class="container">
-            <div *ngFor="let n of numbersArray" class="n">
-                <div class="tur">
-                    <div *ngFor="let morning of groupedItems[n-1]; " class="item">
-                        <div *ngIf="morning.id!=0">
-                            {{morning.hour.minute}}
-                            :
-                            {{morning.hour.hour}}
+        <div class="mycontainer">
+            <div *ngFor="let n of numbersArray" class="myn">
+                <div class="mytur">
+                    <div *ngFor="let lesson of groupedItems[n-1]" class="myitem">
+                        <div *ngIf="lesson.id!=0 && lesson.isActive==true">
+                            {{lesson.hour}}
                             <br>
-                        {{getTrainingType(morning.trainingTypeID)}}
-                        <br>
-                        {{getCustomerType(morning.customerTypeID)}}
-
+                            {{lesson.trainerName}}
+                            <br>
+                            {{lesson.trainingTypeName}}
+                            <br>
+                            {{lesson.customerTypeName}}
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="smily" dir="ltr">
+        </div>
+    </div>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="57" height="47" fill="none"
-                    style="transform: rotate(270deg);">
-                    <path opacity="0.5" d="M12.4791 3.98518C12.2119 13.9352 24.4502 37.1337 49.6456 38.0153"
-                        stroke="#997B0F" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path opacity="0.5" d="M26.2326 4.31421C24.7997 7.73606 24.3083 14.5005 33.8059 14.1836"
-                        stroke="#997B0F" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path opacity="0.5" d="M37.6375 17.6055C36.635 21.1772 36.9767 27.9509 46.3638 26.4717"
-                        stroke="#997B0F" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
+
+
+    <!-- למסך קטן -->
+    <div *ngIf="screenWidth<910" class="mytable">
+        <div *ngFor="let title of days; let i=index" class="mya">
+            <div class="myheader">{{title}}</div>
+            <div class="mycontainer">
+                <p-accordion >
+                    <p-accordionTab >
+                        <div *ngFor="let lesson of groupedItems[i]">
+                            <div *ngIf="lesson.id!=0 && lesson.isActive==true" class="myitem">
+                                <div id="t"> {{lesson.hour}}-
+                                    {{lesson.trainerName}}
+                                </div>
+                                <div>
+                                    {{lesson.trainingTypeName}}-
+                                    {{lesson.customerTypeName}}
+                                </div>
+                            </div>
+                        </div>
+                    </p-accordionTab>
+                </p-accordion>
             </div>
-
         </div>
 
     </div>
+<<<<<<< HEAD
 </div> 
 
 <!-- <app-contact></app-contact> -->
+=======
+
+</div>
+>>>>>>> 0ac5439910b6aa86074059e0360e2b9c5d69bede

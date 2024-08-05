@@ -1,0 +1,173 @@
+.rectangle43 {
+    width: 28%;
+    height: 690.14px;
+    margin-top: -27%;
+    margin-left: 6.5%;
+
+    background: #FFF8DD;
+    border-radius: 60px;
+    transform: matrix(1, 0.01, 0, 1, 0, 0);
+}
+
+.text {
+    position: absolute;
+    width: 25%;
+    height: 21%;
+    left: 35%;
+    top: 411%;
+
+    font-family: 'Anomalia ML v2 AAA';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5vw;
+    line-height: 3vw;
+    display: 97%;
+    align-items: center;
+    text-align: center;
+
+    color: #4C4C49;
+
+    transform: matrix(1, 0, -0.02, 1, 0, 0);
+}
+
+.text2 {
+    position: absolute;
+    width: 84.8%;
+    height: 20%;
+    left: 5.2%;
+    top: 424.3%;
+
+    /* כותרת2 */
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.2vw;
+    line-height: 3vw;
+    /* or 111% */
+    display: 111%;
+    align-items: center;
+    text-align: center;
+
+    color: #4C4C49;
+
+    transform: matrix(1, 0, -0.02, 1, 0, 0);
+}
+
+.optionList {
+    float: left;
+    flex: 0 45%;
+    width: 100%;
+}
+
+.PaymentOptionDivRow {
+    display: flex;
+    margin-left: 37%;
+    margin-right: -20%;
+    gap: 40px;
+    margin-top: 210%;
+}
+
+.text1 {
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3vw;
+    line-height: 1.5vw;
+    color: #000000;
+    margin-top: 15%;
+    text-align: right;
+
+}
+
+.rectangle40 {
+    width: 100.8%;
+    height: 235%;
+    border-radius: 15%;
+    padding-top: 1%;
+    padding-left: 9%;
+    padding-right: 9%;
+    padding-bottom: 7%;
+    background: #FAF6F3;
+
+}
+
+.group121 {
+    background-image: url('../../../../assets/images/s2.png');
+    position: absolute;
+    width: 26%;
+    height: 55%;
+    left: 7.5%;
+    top: 430%;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.rectangle21 {
+    position: absolute;
+    width: 15.9%;
+    height: 5.3%;
+    left: 14.2%;
+    top: 500.8%;
+
+    background: #D91C5C;
+    border-radius: 20px;
+}
+
+.text-rectangle21 {
+    position: absolute;
+    width: 14.5%;
+    height: 5%;
+    left: 17%;
+    top: 500.8%;
+
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8vw;
+    line-height: 2.4vw;
+
+    /* identical to box height, or 164% */
+    display: flex;
+    align-items: center;
+    text-align: right;
+    text-decoration: none;
+
+    color: #FAF6F3;
+}
+
+.rectangle22 {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 2.5%;
+    height: 5%;
+    left: 11.5%;
+    top: 500.8%;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 45px;
+
+}
+
+.arrov {
+    box-sizing: border-box;
+    position: absolute;
+    width: 1.2%;
+    height: 0;
+    left: 12.2%;
+    top: 500.1%;
+    color: #4C4C49;
+    font-size: 1.9vw;
+
+}
+
+@media (max-width: 480px) {
+    .rectangle43 {
+        height: 300.14px;
+
+    }
+}
