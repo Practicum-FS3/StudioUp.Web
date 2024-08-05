@@ -1,0 +1,15 @@
+.card {
+    :host ::ng-deep .p-tabview .p-tabview-nav li a {
+        color: pink; /* צבע ורוד לכותרות */
+    }
+
+    :host ::ng-deep .p-tabview .p-tabview-nav li a:hover {
+        border-bottom: 2px solid pink; /* פס ורוד תחתון כאשר עובר עליו */
+    }
+}
+.card{
+    height: 100px;
+
+}
+.header{
+text-size-adjust: 100px;}
