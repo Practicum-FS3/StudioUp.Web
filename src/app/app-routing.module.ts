@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'subscription-benefits', component: SubscriptionBenefitsComponent },
   { path: 'system', component: SystemComponent },
   { path: 'registration-form', component: RegistrationFormComponent },
-  { path: 'signature', component: SignatureComponent },
+  // { path: 'signature', component: SignatureComponent },
   { path: 'hmos', component: HmosComponent }
 
 ];
