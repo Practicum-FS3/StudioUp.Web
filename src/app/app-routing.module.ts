@@ -9,9 +9,15 @@ import { SubscriptionBenefitsComponent } from './components/subscription-benefit
 import { OurTeamComponent } from './components/our-team/our-team.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
 import {TracksComponent} from './components/tracks/tracks.component'
+import { HmosComponent } from './components/hmos/hmos.component';
+import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
+import { HomeComponent } from './components/home/home.component';
+
 
 const routes: Routes = [
-  {path:"login", component:LoginComponent},
+  //{path:"login", component:LoginComponent},
+  {path:'',component:HomeComponent},
+  {path:'home',component:HomeComponent},
   {path:'',component:HomeAboutComponent},
   {path:'about',component:AboutComponent},
   {path:'home',component:HomeAboutComponent},
@@ -22,6 +28,8 @@ const routes: Routes = [
   {path:'our-team',component:OurTeamComponent},
   {path:'login',component:LoginComponent},
   { path: 'registration', component: RegistrationComponent },
+  { path: 'HMOs', component: HmosComponent },
+  { path: 'subscriptionPerCustomer',component: CustomerSubHistoryComponent}
 ];
 
 @NgModule({
