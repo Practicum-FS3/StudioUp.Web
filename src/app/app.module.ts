@@ -83,6 +83,7 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     FormsModule,
     NgbModule,
     ButtonModule,
+    TooltipModule,
 <<<<<<< HEAD
     ContactComponent,
 =======
