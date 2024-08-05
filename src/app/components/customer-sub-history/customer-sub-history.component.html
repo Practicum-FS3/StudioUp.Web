@@ -1,6 +1,16 @@
-<!-- src/app/components/customer-sub-history/customer-sub-history.component.html -->
 <div dir="rtl" class="container mt-3">
   <h2 class="custom-title">הסטוריית מנויי לקוח</h2>
+
+  <!-- הצגת מנוי נוכחי -->
+  <div *ngIf="currentSubscription" class="current-subscription">
+    <h3 class="current-sub-title">מנוי נוכחי:</h3>
+    <div class="current-sub-details">
+      <span><strong>תז לקוח:</strong> {{ currentSubscription.customerID }}</span>
+      <span><strong>סוג מנוי:</strong> {{ currentSubscription.subscriptionTypeId }}</span>
+      <span><strong>תאריך התחלת מנוי:</strong> {{ currentSubscription.startDate | date }}</span>
+    </div>
+  </div>
+
   <table class="table table-custom">
     <thead>
       <tr>
@@ -11,38 +21,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let subscription of subscriptions" (click)="openSubscriptionDetail(subscription.subscriptionTypeId)">
-        <td>{{ subscription.customerId }}</td>
+        <td>{{ subscription.customerID }}</td>
         <td>{{ subscription.subscriptionTypeId }}</td>
         <td>{{ subscription.startDate | date }}</td>
       </tr>
     </tbody>
   </table>
 </div>
-
-
-
-
-
-
-<!-- <div dir="rtl" class="container mt-3">
-    <h2 class="custom-title">הסטוריית מנויי לקוח</h2>
-    <table class="table table-custom">
-      <thead>
-        <tr>
-            <th>תז לקוח</th>
-            <th>סוג מנוי</th>
-            <th>תאריך התחלת מנוי</th>
-        </tr>
-      </thead>
-      <tbody>
-         <tr *ngFor="let subscription of subscriptions" [ngClass]="{'bg-danger': subscription.condition}">
-          <td>{{ subscription.customerId }}</td>
-          <td>{{ subscription.subscriptionTypeId }}</td>
-          <td>{{ subscription.startDate | date }}</td>
-        </tr> 
-      </tbody>
-      
-    </table>
-
-  </div>
-   -->

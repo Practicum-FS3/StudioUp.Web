@@ -1,4 +1,3 @@
-// src/app/components/customer-sub-history/customer-sub-history.component.ts
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CustomerSubscriptionService } from '../../services/customer-subscription.service';
@@ -12,6 +11,7 @@ import { CustomerSubscription } from '../../models/customerSubscription';
 })
 export class CustomerSubHistoryComponent implements OnInit {
   subscriptions: CustomerSubscription[] = [];
+  currentSubscription: CustomerSubscription | undefined; // שדה למנוי הנוכחי
 
   constructor(
     private subscriptionService: CustomerSubscriptionService,
@@ -23,6 +23,8 @@ export class CustomerSubHistoryComponent implements OnInit {
     this.subscriptionService.getAll().subscribe(data => {
       console.log(data);
       this.subscriptions = data;
+      this.currentSubscription = this.subscriptions.find(subscription => subscription.isActive); // קביעת המנוי הנוכחי
+      console.log('currentSubscription ' + this.currentSubscription);
     });
   }
 
@@ -40,7 +42,3 @@ export class CustomerSubHistoryComponent implements OnInit {
     });
   }
 }
-
-
-
-
