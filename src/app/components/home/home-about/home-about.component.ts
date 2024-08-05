@@ -15,14 +15,12 @@ export class HomeAboutComponent {
   constructor(private genericService: GenericService) {
 
 
-    this.genericService.getByIdWithContent(4).subscribe(data => {
+    this.genericService.getByIdWithContent(1).subscribe(data => {
       this.content = data
     })
 
-    this.genericService.GetByIdWithContentSectionHPOnly(4).subscribe(data => {
+    this.genericService.GetByIdWithContentSectionHPOnly(1).subscribe(data => {
       this.homeContent = data
-
-
       this.homeContent.contentSections?.forEach((item, index) => {
         if (item.hasOwnProperty('section1') && typeof item.section1 === 'string' && item.section1.length > 120) {
           const trimmedString = item.section1.substring(0, 120); 

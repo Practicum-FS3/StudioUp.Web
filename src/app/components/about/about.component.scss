@@ -9,7 +9,6 @@
 #a {
 
     border-radius: 33px;
-    // background-color:#7e7e41;
     width: 55%;
     height: 320px;
     position: relative;
@@ -21,8 +20,7 @@
 #cm {
     color: #FFF;
     font-size: 450%;
-    //     margin-left: 15%;
-    //    margin-top: 2%;
+    font-family: Anomalia ML v2 AAA;
     width: 100%;
     height: 250px;
     background-color: #4c4c49;
@@ -87,7 +85,7 @@
 .light-icon {
     width: 23%;
     height: 10%;
-    ;
+
     margin-top: 5%;
     margin-bottom: 8%;
     background-image: url('../../../assets/images/מרחאות\ כתום.png');
@@ -106,14 +104,12 @@
     padding: 16px;
     margin: 3%;
     padding-left: 8%;
-//     transition: height 0.3s; 
-//   overflow: hidden; 
 }
-
 
 #name {
     flex-grow: 0.8;
     font-size: 130%;
+    font-family: Ploni ML v2 AAA;
     color: rgb(76, 76, 73);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -123,33 +119,40 @@
     font-weight: 400;
 }
 
-// #name:hover {
-//     overflow: visible;
-//     /* Show full text on hover */
-//     white-space: normal;
-//     /* Allow text to wrap */
-//    background-color: aqua;
-// }
+#name1 {
+    flex-grow: 0.8;
+    color: rgb(76, 76, 73);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: none;
+    width: 0%;
+    height: 0%;
+    font-style: normal;
+    font-weight: 400;
+}
+
 #hoverWindow {
     position: absolute;
-    // top: 0;
-    // left: 0;
+    font-size: 140%;
     width: 20%;
-    height: fit-content;
+    height: min-content;
     background-color: #faf2f2e8;
-    border: 1px solid #ccc;
-    padding: 10px;
-    z-index: 999;
-     /* Ensure the window appears on top of other content */
-    display: none; /* Initially hide the window */
-  }
-  
-  #name:hover + #hoverWindow {
-    display: block; /* Show the window when hovering over the element */
-  }
-  
+
+    border: 1px solid rgba(255, 204, 15, 1);
+    border-radius: 66px;
+    padding: 18px;
+
+    display: none;
+}
+
+#name:hover+#hoverWindow {
+
+    display: block;
+}
+
 #from {
     font-size: 90%;
+    font-family: Ploni ML v2 AAA;
 }
 
 @media (max-width: 900px) {
@@ -167,7 +170,7 @@
 
     #e {
         width: 0%;
-        // height: 200px;
+
     }
 
     #name {
@@ -210,23 +213,10 @@
         margin-top: 5%;
         margin-bottom: 3%;
     }
-    #hoverWindow {
-        // position: absolute;
-        width: 80%;
-        height: fit-content;
-        background-color: #faf2f2e8;
-        border: 1px solid #ccc;
-        padding: 10px;
-        z-index: 999;
-         /* Ensure the window appears on top of other content */
-        display: none; /* Initially hide the window */
-      }
-      #name:hover + #hoverWindow {
-        display: block; /* Show the window when hovering over the element */
-      }
+
     .kl {
         width: 95%;
-        height: fit-content;
+        height: min-content;
         border-radius: 33px;
     }
 
@@ -254,11 +244,19 @@
         height: 120px;
     }
 
-
     #name {
 
-        font-size: 100%;
+        display: none;
         width: 100%;
+        height: fit-content;
+    }
+
+    #name1 {
+
+        display: block;
+        width: 80%;
+        height: fit-content;
+
     }
 
 }

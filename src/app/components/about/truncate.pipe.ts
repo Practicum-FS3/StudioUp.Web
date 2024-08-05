@@ -1,11 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-
 @Pipe({
   name: 'truncate'
 })
 export class TruncatePipe implements PipeTransform {
   transform(value: string, maxLength: number): string {
-    const ellipsis = '...';
+    const ellipsis = '... ... ...';
 
     if (value.length <= maxLength) {
       return value;
@@ -16,9 +15,8 @@ export class TruncatePipe implements PipeTransform {
     if (lastSpaceIndex !== -1) {
       truncatedString = truncatedString.substring(0, lastSpaceIndex);
     }
-    truncatedString=truncatedString + ellipsis + '\u00A0'+ellipsis+'\u00A0'+ellipsis+'\u00A0';
-    console.log({truncatedString});
-    
-    return truncatedString ; 
+
+    truncatedString = truncatedString + ellipsis;
+    return truncatedString;
   }
 }
