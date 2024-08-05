@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { forkJoin, map, Observable } from 'rxjs';
 import { CustomerSubscription } from '../models/customerSubscription';
 import { SubscriptionType } from '../models/SubscriptionType';
+import { Customer } from '../models/Customer';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class CustomerSubscriptionService {
 
   constructor(private http: HttpClient) { }
 
+  
   // קבלת כל המנויים
   getAll(): Observable<CustomerSubscription[]> {
     console.log('getAll from service');
@@ -23,6 +25,8 @@ export class CustomerSubscriptionService {
     getByCustomerId(customerId: number): Observable<CustomerSubscription[]> {
       return this.http.get<CustomerSubscription[]>(`${this.baseUrl}/customer/${customerId}`);
     }
+
+
 
   // קבלת מנוי לפי מזהה מנוי
   getById(id: number): Observable<CustomerSubscription> {

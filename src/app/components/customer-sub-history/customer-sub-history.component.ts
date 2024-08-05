@@ -11,7 +11,7 @@ import { CustomerSubscription } from '../../models/customerSubscription';
 })
 export class CustomerSubHistoryComponent implements OnInit {
   subscriptions: CustomerSubscription[] = [];
-  currentSubscription: CustomerSubscription | undefined; // שדה למנוי הנוכחי
+  currentSubscription: CustomerSubscription | undefined; 
 
   constructor(
     private subscriptionService: CustomerSubscriptionService,
@@ -19,11 +19,9 @@ export class CustomerSubHistoryComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log('Subscription');
-    this.subscriptionService.getAll().subscribe(data => {
-      console.log(data);
+    this.subscriptionService.getByCustomerId(5).subscribe(data => {
       this.subscriptions = data;
-      this.currentSubscription = this.subscriptions.find(subscription => subscription.isActive); // קביעת המנוי הנוכחי
+      this.currentSubscription = this.subscriptions.find(subscription => subscription.isActive);
       console.log('currentSubscription ' + this.currentSubscription);
     });
   }
