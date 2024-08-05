@@ -30,12 +30,11 @@ import { registrationReducer } from './store/reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
+import { TracksComponent } from './components/tracks/tracks.component';
+import { TooltipModule } from 'primeng/tooltip';
 import { HomeComponent } from './components/home/home.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
-
-
 import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
-
 
 @NgModule({
   declarations: [
@@ -55,6 +54,7 @@ import { DetailsAndRegistrationComponent } from './components/details-and-regist
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
     HomeSubscriptionBenefitsComponent,
+    TracksComponent
     HomeComponent,
     CustomerSubHistoryComponent
   ],
@@ -71,6 +71,7 @@ import { DetailsAndRegistrationComponent } from './components/details-and-regist
     FormsModule,
     NgbModule,
     ButtonModule,
+    TooltipModule
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
   ],
@@ -80,4 +81,5 @@ import { DetailsAndRegistrationComponent } from './components/details-and-regist
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
