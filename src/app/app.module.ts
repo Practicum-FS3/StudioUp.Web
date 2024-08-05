@@ -28,7 +28,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SystemComponent } from './components/system/system.component';
 import { provideHttpClient } from '@angular/common/http';
@@ -41,6 +41,7 @@ import { registrationReducer } from './store/reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -64,8 +65,8 @@ import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscr
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
     HomeSubscriptionBenefitsComponent,
-    HomeComponent,
-    CustomerSubHistoryComponent
+    // HomeComponent,
+    // CustomerSubHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +92,8 @@ import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscr
     ButtonModule,
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
+    RouterModule.forRoot([])
+
   ],
   providers: [
     provideAnimationsAsync(),
