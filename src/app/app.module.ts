@@ -54,7 +54,7 @@ import { DetailsAndRegistrationComponent } from './components/details-and-regist
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
     HomeSubscriptionBenefitsComponent,
-    TracksComponent
+    TracksComponent,
     HomeComponent,
     CustomerSubHistoryComponent
   ],
