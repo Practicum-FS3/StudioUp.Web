@@ -72,6 +72,7 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     FormsModule,
     NgbModule,
     ButtonModule,
+    TooltipModule,
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
   ],
