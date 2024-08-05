@@ -16,6 +16,7 @@ import { HomeAboutComponent } from './components/home/home-about/home-about.comp
 import { SystemComponent } from './components/system/system.component';
 import { provideHttpClient } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +31,15 @@ import { ButtonModule } from 'primeng/button';
     HomeAboutComponent,
      AboutComponent,
     SystemComponent,   
-    HomeAboutComponent,
+    HomeAboutComponent, 
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ButtonModule,
-
+    ContactComponent,
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
