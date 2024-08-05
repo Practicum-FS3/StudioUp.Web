@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { PaymentOptions } from '../models/PaymentOption';
+import { PaymentOption } from '../models/PaymentOption';
 
 @Injectable({
   providedIn: 'root'
@@ -17,31 +17,31 @@ export class PaymentOptionsService {
     return this.http.delete<void>(`${this.basisUrl}/${id}`)
   }
 
-  add(po:PaymentOptions):Observable<PaymentOptions>{
+  add(po:PaymentOption):Observable<PaymentOption>{
   
    
-    return this.http.post<PaymentOptions>(`${this.basisUrl}`, po)
+    return this.http.post<PaymentOption>(`${this.basisUrl}`, po)
 
   }
 
-  update(po:PaymentOptions, id:number):Observable<void>
+  update(po:PaymentOption, id:number):Observable<void>
   {
    
     return this.http.put<void>(`${this.basisUrl}/${id}`, po)
 
   }
 
-  getAll():Observable<Array<PaymentOptions>>
+  getAll():Observable<Array<PaymentOption>>
   {
    
-    return this.http.get<Array<PaymentOptions>>(`${this.basisUrl}`)
+    return this.http.get<Array<PaymentOption>>(`${this.basisUrl}`)
 
   }
 
-  getById(id:number):Observable<PaymentOptions>
+  getById(id:number):Observable<PaymentOption>
   {
    
-    return this.http.get<PaymentOptions>(`${this.basisUrl}/${id}`)
+    return this.http.get<PaymentOption>(`${this.basisUrl}/${id}`)
 
   }
 }
