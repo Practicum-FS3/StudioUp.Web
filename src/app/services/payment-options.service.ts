@@ -10,7 +10,7 @@ export class PaymentOptionsService {
 
   constructor(public http: HttpClient) { }
 
-  basisUrl: string = "https://localhost:7101/api/PaymentOption"
+  basisUrl: string = "https://localhost:7101/api/PaymentOptions"
 
   del(id:number):Observable<void>{
 

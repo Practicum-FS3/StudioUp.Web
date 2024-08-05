@@ -42,6 +42,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
 import { RouterModule } from '@angular/router';
+import { TracksComponent } from './components/tracks/tracks.component';
+import { TooltipModule } from 'primeng/tooltip';
+import { HomeComponent } from './components/home/home.component';
+import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
+import { SubscriptionDetailComponent } from './components/customer-sub-history/subscription-detail/subscription-detail.component';
 
 @NgModule({
   declarations: [
@@ -65,8 +70,10 @@ import { RouterModule } from '@angular/router';
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
     HomeSubscriptionBenefitsComponent,
-    // HomeComponent,
-    // CustomerSubHistoryComponent
+    TracksComponent,
+    HomeComponent,
+    CustomerSubHistoryComponent,
+    SubscriptionDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -101,4 +108,5 @@ import { RouterModule } from '@angular/router';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

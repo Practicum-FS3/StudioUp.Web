@@ -1,0 +1,33 @@
+<!-- <div class="all">
+    <div class="RachivClali">
+        <div class="MasluleiMnui-text">מסלולי מנויים</div>
+        <div class="tab" *ngFor="let tab of this.tracks; let i = index">
+            <div [class.open]="tab.isActive" style="text-align: right ;">
+                <div class="tabHeader">
+                    <span class="pi pi-star" [id]="'star-' + tab.id" [pTooltip]="!tab.isActive ? tab.description : ''"
+                        dir="rtl" tooltipPosition="top" (mouseover)="toggleIconStarOn(tab.id)"
+                        (mouseout)="toggleIconStarOff(tab.id)" [ngClass]="{'hidden-icon': tab.isActive}"></span>
+                    <span class="mySpan">{{ tab.title }} </span>
+                    <span *ngIf="!tab.isActive" class="pi pi-angle-down" [id]="'angle-' + tab.id"
+                        (click)="toggleAccordion(i)"></span>
+                    <span *ngIf="tab.isActive" class="pi pi-angle-up" [id]="'angle-' + tab.id"
+                        (click)="toggleAccordion(i)"></span>
+                </div>
+                <div class="tabContent" *ngIf="tab.isActive" dir="rtl">
+                    <div>{{ tab.description }} </div>
+                    <div>מספר אימונים בשבוע: {{ tab.numberOfTrainingPerWeek }}</div>
+                    <div>מחיר לאימון בודד: {{ tab.priceForTraining }} ₪</div>
+                    <div>סה"כ: {{ tab.totalTraining*tab.priceForTraining }} ₪</div>
+                    <div>סך תשלום חודשי: {{ tab.numberOfTrainingPerWeek*tab.priceForTraining*4 }} ₪</div>
+                </div>
+            </div>
+        </div>
+        <div class="down">
+            <div class="down-text">להצטרפות למנוי</div>
+            <div class="outer-icon">
+                <div type="button" class="circleDown"></div>
+                <div class="pi pi-arrow-down-left"></div>
+            </div>
+        </div>
+    </div>
+</div> -->

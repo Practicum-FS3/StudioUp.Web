@@ -9,9 +9,11 @@ import { SubscriptionBenefitsComponent } from './components/subscription-benefit
 import { OurTeamComponent } from './components/our-team/our-team.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import {TracksComponent} from './components/tracks/tracks.component'
 import { HmosComponent } from './components/hmos/hmos.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { HomeComponent } from './components/home/home.component';
+
 
 const routes: Routes = [
   //{path:"login", component:LoginComponent},

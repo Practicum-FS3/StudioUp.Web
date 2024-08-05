@@ -1,0 +1,112 @@
+/* src/app/components/subscription-detail/subscription-detail.component.scss */
+
+  
+  .modal-body {
+    font-family: 'Ploni ML v2 AAA Bold', sans-serif;
+    color: #D91C5C; /* צבע אדום */
+    direction: rtl; /* מימין לשמאל */
+    padding: 20px; /* מרווחים סביב התוכן */
+  }
+  
+  .modal-title {
+    margin: 0;
+    font-size: 20px;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .btn-close {
+    color: #D91C5C; /* צבע אדום */
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .modal-header {
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    background-color: #FFD700; /* צבע כתום */
+    color: #D91C5C; /* צבע אדום */
+    font-family: 'Ploni ML v2 AAA Bold', sans-serif;
+    padding: 10px 20px;
+    border-bottom: 1px solid #D91C5C; /* קו תחתון באדום */
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #FFD700; /* צבע כתום */
+    color: #D91C5C; /* צבע אדום */
+    font-family: 'Ploni ML v2 AAA Bold', sans-serif;
+    padding: 10px 20px;
+    border-top: 1px solid #D91C5C; /* קו עליון באדום */
+  }
+  
+  .btn-secondary {
+    background-color: #D91C5C; /* צבע אדום */
+    color: #FFD700; /* צבע כתום */
+    font-family: 'Ploni ML v2 AAA Bold', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .modal-body p {
+    margin: 10px 0; /* מרווח בין השורות */
+  }
+
+  .btn-close::before {
+    content: "\00D7"; /* Unicode for '×' */
+    font-size: 24px;
+    //position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+
+
+// /* src/app/components/subscription-detail/subscription-detail.component.scss */
+// .modal-header, .modal-footer {
+//     background-color: #FFD700; /* צבע כתום */
+//     color: #D91C5C; /* צבע אדום */
+//     font-family: 'Ploni ML v2 AAA Bold', sans-serif;
+//     padding: 10px 20px;
+//     border-bottom: 1px solid #D91C5C; /* קו תחתון באדום */
+//   }
+  
+//   .modal-body {
+//     font-family: 'Ploni ML v2 AAA Bold', sans-serif;
+//     color: #D91C5C; /* צבע אדום */
+//     direction: rtl; /* מימין לשמאל */
+//     padding: 20px; /* מרווחים סביב התוכן */
+//   }
+  
+//   .modal-title {
+//     margin: 0;
+//     font-size: 20px;
+//   }
+  
+//   .btn-close {
+//     color: #D91C5C; /* צבע אדום */
+//     font-size: 16px;
+//     background: none;
+//     border: none;
+//     cursor: pointer;
+//   }
+  
+//   .btn-secondary {
+//     background-color: #D91C5C; /* צבע אדום */
+//     color: #FFD700; /* צבע כתום */
+//     font-family: 'Ploni ML v2 AAA Bold', sans-serif;
+//     border: none;
+//     padding: 10px 20px;
+//     cursor: pointer;
+//     border-radius: 5px;
+//   }
+  
+//   .modal-body p {
+//     margin: 10px 0; /* מרווח בין השורות */
+//   }
+  
