@@ -34,7 +34,7 @@ import { TracksComponent } from './components/tracks/tracks.component';
 import { TooltipModule } from 'primeng/tooltip';
 import { HomeComponent } from './components/home/home.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
-import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
+import { SubscriptionDetailComponent } from './components/customer-sub-history/subscription-detail/subscription-detail.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,8 @@ import { DetailsAndRegistrationComponent } from './components/details-and-regist
     HomeSubscriptionBenefitsComponent,
     TracksComponent,
     HomeComponent,
-    CustomerSubHistoryComponent
+    CustomerSubHistoryComponent,
+    SubscriptionDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +72,6 @@ import { DetailsAndRegistrationComponent } from './components/details-and-regist
     FormsModule,
     NgbModule,
     ButtonModule,
-    TooltipModule
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
   ],
