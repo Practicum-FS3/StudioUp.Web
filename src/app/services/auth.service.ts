@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 
@@ -6,7 +6,7 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:7101/api/auth';
+  private apiUrl = 'https://localhost:7101/api/Auth';
   private loggedIn: boolean = false;
 
   constructor(private http: HttpClient) { }
@@ -20,12 +20,17 @@ export class AuthService {
       }))
   }
 
-  checkToken(token: string): Observable<boolean> {
-    return this.http.post<{ valid: boolean }>(`${this.apiUrl}/check-token`, { token: token })
+  checkToken(): Observable<boolean> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return new Observable<boolean>(observer => observer.next(false));
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.post<{ valid: boolean }>(`${this.apiUrl}/check-token`, {}, { headers })
       .pipe(map(response => {
         this.loggedIn = response.valid;
         return response.valid;
-      }))
+      }));
   }
 
   isLoggedIn(): boolean {
