@@ -1,41 +1,240 @@
-<form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="customerCode">קוד לקוח:</label>
-      <input id="customerCode" formControlName="customerCode" />
+<form [formGroup]="personalForm" (ngSubmit)="onSubmitPersonalForm()" class="personal-form">
+  <div class="form-group">
+    <label for="customerCode">: קוד לקוח</label>
+    <input id="customerCode" formControlName="customerCode" pInputText class="form-control"
+      (input)="onCustomerCodeInput()" />
+    <p-message
+      *ngIf="personalForm.get('customerCode')?.errors?.['required'] && personalForm.get('customerCode')?.touched"
+      severity="error" text="קוד לקוח נדרש"></p-message>
+    <p-message *ngIf="customerNotFound" severity="error" text="קוד לקוח לא קיים"></p-message>
+  </div>
+
+  <div class="form-group">
+    <label for="freefitCode">: קוד פריפיט</label>
+    <input id="freefitCode" formControlName="freefitCode" pInputText class="form-control" />
+    <p-message *ngIf="personalForm.get('freefitCode')?.errors?.['required'] && personalForm.get('freefitCode')?.touched"
+      severity="error" text="קוד פריפיט נדרש"></p-message>
+  </div>
+
+  <button type="submit" pButton label="המשך" class="btn btn-custom"></button>
+  <p-message *ngIf="formSubmitAttempt && personalForm.invalid" severity="error"
+    text="יש לתקן את השגיאות לפני המשך"></p-message>
+</form>
+
+
+
+<!-- <form [formGroup]="personalForm" (ngSubmit)="onSubmitPersonalForm()" class="personal-form">
+  <div class="form-group">
+    <label for="customerCode">: קוד לקוח</label>
+    <input id="customerCode" formControlName="customerCode" pInputText class="form-control" />
+    <p-message *ngIf="personalForm.get('customerCode')?.errors?.['required'] && personalForm.get('customerCode')?.touched" severity="error" text="קוד לקוח נדרש"></p-message>
+    <p-message *ngIf="customerNotFound && !personalForm.get('customerCode')?.errors?.['required']" severity="error" text="קוד לקוח לא קיים"></p-message>
+     -->
+<!-- <p-message *ngIf="personalForm.get('customerCode')?.errors?.['required'] && personalForm.get('customerCode')?.touched" severity="error" text="קוד לקוח נדרש"></p-message>
+    <p-message *ngIf="customerNotFound" severity="error" text="קוד לקוח לא קיים"></p-message> -->
+<!-- </div>
+
+  <div class="form-group">
+    <label for="freefitCode">: קוד פריפיט</label>
+    <input id="freefitCode" formControlName="freefitCode" pInputText class="form-control" />
+    <p-message *ngIf="personalForm.get('freefitCode')?.errors?.['required'] && personalForm.get('freefitCode')?.touched"
+      severity="error" text="קוד פריפיט נדרש"></p-message>
+  </div>
+
+  <button type="submit" pButton label="המשך" class="btn btn-custom"></button>
+  <p-message *ngIf="formSubmitAttempt && personalForm.invalid" severity="error"
+    text="יש לתקן את השגיאות לפני המשך"></p-message>
+</form> -->
+
+<div *ngIf="customerHMOS">
+  <form [formGroup]="fileForm" (ngSubmit)="onUploadFile()" class="file-form">
+    <div *ngIf="!fileExists" class="form-group">
+      <label for="registrationForm">: טופס רישום</label>
+      <input id="registrationForm" type="file" (change)="onFileChange($event)" class="form-control" />
+      <p-message
+        *ngIf="fileForm.get('registrationForm')?.errors?.['required'] && fileForm.get('registrationForm')?.touched"
+        severity="error" text="טופס רישום נדרש"></p-message>
+      <button type="submit" pButton label="העלה" class="btn btn-custom-secondary mt-2"></button>
     </div>
-  
-    <div>
-      <label for="prefitCode">קוד פריפיט:</label>
-      <input id="FreeFitId" formControlName="prefitCode" />
+    <div *ngIf="fileExists">
+      <button type="button" pButton label="הורד קובץ" class="btn btn-custom-danger mr-2"
+        (click)="onDownloadFile()"></button>
+      <button type="button" pButton label="מחק קובץ" class="btn btn-custom" (click)="onDeleteFile()"></button>
     </div>
-  
-    <div>
-      <label for="registrationForm">טופס רישום:</label>
-      <input id="registrationForm" type="file" (change)="onFileChange($event)" />
+  </form>
+</div>
+
+
+
+<!-- <form [formGroup]="personalForm" (ngSubmit)="onSubmitPersonalForm()" class="personal-form">
+  <div class="form-group">
+    <label for="customerCode">: קוד לקוח</label>
+    <input id="customerCode" formControlName="customerCode" pInputText class="form-control" />
+    <p-message *ngIf="personalForm.get('customerCode')?.errors?.['required'] && personalForm.get('customerCode')?.touched" severity="error" text="קוד לקוח נדרש"></p-message>
+    <p-message *ngIf="personalForm.get('customerCode')?.errors?.['pattern'] && personalForm.get('customerCode')?.touched" severity="error" text="קוד לקוח יכול להכיל רק מספרים"></p-message>
+  </div>
+
+  <div class="form-group">
+    <label for="freefitCode">: קוד פריפיט</label>
+    <input id="freefitCode" formControlName="freefitCode" pInputText class="form-control" />
+    <p-message *ngIf="personalForm.get('freefitCode')?.errors?.['required'] && personalForm.get('freefitCode')?.touched" severity="error" text="קוד פריפיט נדרש"></p-message>
+  </div>
+
+  <button type="submit" pButton label="המשך" class="btn btn-custom"></button>
+  <p-message *ngIf="formSubmitAttempt && personalForm.invalid" severity="error" text="יש לתקן את השגיאות לפני המשך"></p-message>
+</form>
+
+<div *ngIf="customerHMOS">
+  <form [formGroup]="fileForm" (ngSubmit)="onUploadFile()" class="file-form">
+    <div *ngIf="!fileExists" class="form-group">
+      <label for="registrationForm">: טופס רישום</label>
+      <input id="registrationForm" type="file" (change)="onFileChange($event)" class="form-control" />
+      <p-message *ngIf="fileForm.get('registrationForm')?.errors?.['required'] && fileForm.get('registrationForm')?.touched" severity="error" text="טופס רישום נדרש"></p-message>
+      <button type="submit" pButton label="העלה" class="btn btn-custom-secondary mt-2"></button>
     </div>
-  
-    <button type="submit">שלח</button>
+
+    <div *ngIf="fileExists">
+      <button type="button" pButton label="הורד קובץ" class="btn btn-custom-danger mr-2" (click)="onDownloadFile()"></button>
+      <button type="button" pButton label="מחק קובץ" class="btn btn-custom" (click)="onDeleteFile()"></button>
+    </div>
+  </form>
+</div>
+ -->
+
+
+<!-- <form [formGroup]="personalForm" (ngSubmit)="onSubmitPersonalForm()" class="personal-form">
+  <div class="form-group">
+    <label for="customerCode">: קוד לקוח</label>
+    <input id="customerCode" formControlName="customerCode" pInputText class="form-control" />
+    <p-message *ngIf="personalForm.get('customerCode')?.invalid && personalForm.get('customerCode')?.touched" severity="error" text="קוד לקוח נדרש ויכול להכיל רק מספרים"></p-message>
+  </div>
+
+  <div class="form-group">
+    <label for="freefitCode">: קוד פריפיט</label>
+    <input id="freefitCode" formControlName="freefitCode" pInputText class="form-control" />
+    <p-message *ngIf="personalForm.get('freefitCode')?.invalid && personalForm.get('freefitCode')?.touched" severity="error" text="קוד פריפיט נדרש"></p-message>
+  </div>
+
+  <button type="submit" pButton label="המשך" class="btn btn-custom"></button>
+</form>
+
+<div *ngIf="customerHMOS">
+  <form [formGroup]="fileForm" (ngSubmit)="onUploadFile()" class="file-form">
+    <div *ngIf="!fileExists" class="form-group">
+      <label for="registrationForm">: טופס רישום</label>
+      <input id="registrationForm" type="file" (change)="onFileChange($event)" class="form-control" />
+      <p-message *ngIf="fileForm.get('registrationForm')?.invalid && fileForm.get('registrationForm')?.touched" severity="error" text="טופס רישום נדרש"></p-message>
+      <button type="submit" pButton label="העלה" class="btn btn-custom-secondary mt-2"></button>
+    </div>
+
+    <div *ngIf="fileExists">
+      <button type="button" pButton label="הורד קובץ" class="btn btn-custom-danger mr-2" (click)="onDownloadFile()"></button>
+      <button type="button" pButton label="מחק קובץ" class="btn btn-custom" (click)="onDeleteFile()"></button>
+    </div>
+  </form>
+</div> -->
+
+
+
+<!-- <form [formGroup]="personalForm" (ngSubmit)="onSubmitPersonalForm()" class="personal-form">
+  <div class="form-group">
+    <label for="customerCode">: קוד לקוח</label>
+    <input id="customerCode" formControlName="customerCode" pInputText class="form-control" required="true"/>
+  </div>
+
+  <div class="form-group">
+    <label for="freefitCode"> : קוד פריפיט</label>
+    <input id="freefitCode" formControlName="freefitCode" pInputText class="form-control" />
+  </div>
+
+  <button type="submit" pButton label="המשך" class="btn btn-custom"></button>
+</form>
+
+<div *ngIf="customerHMOS">
+  <form [formGroup]="fileForm" (ngSubmit)="onUploadFile()" class="file-form">
+    <div *ngIf="!fileExists" class="form-group">
+      <label for="registrationForm"> : טופס רישום</label>
+      <input id="registrationForm" type="file" (change)="onFileChange($event)" class="form-control" />
+      <button type="submit" pButton label="העלה" class="btn btn-custom-secondary"></button>
+    </div>
+    
+    <div *ngIf="fileExists">
+      <button type="button" pButton label="הורד קובץ" class="btn btn-custom-danger" (click)="onDownloadFile()"></button>
+      <button type="button" pButton label="מחק קובץ" class="btn btn-custom" (click)="onDeleteFile()"></button>
+    </div>
+  </form>
+</div> -->
+
+
+<!-- <div class="container mt-5">
+  <form [formGroup]="personalForm" (ngSubmit)="onSubmitPersonalForm()" class="mb-4">
+    <div class="form-group row">
+      <label for="customerCode" class="col-sm-2 col-form-label">קוד לקוח:</label>
+      <div class="col-sm-10">
+        <input id="customerCode" formControlName="customerCode" pInputText class="form-control" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="prefitCode" class="col-sm-2 col-form-label">קוד פריפיט:</label>
+      <div class="col-sm-10">
+        <input id="prefitCode" formControlName="prefitCode" pInputText class="form-control" />
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button pButton type="submit" label="המשך" class="btn btn-primary"></button>
+    </div>
   </form>
 
-  <!-- <div class="personal-area">
-    <h2>אזור אישי</h2>
-    <form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
-      <div>
-        <label for="freeFitCode">קוד פריפיט:</label>
-        <input id="freeFitCode" formControlName="freeFitCode" type="text" />
-        <div *ngIf="personalForm.get('freeFitCode')?.invalid && personalForm.get('freeFitCode')?.touched">
-          <small>קוד פריפיט נדרש</small>
+  <div *ngIf="customerHMOS">
+    <form [formGroup]="fileForm" (ngSubmit)="onUploadFile()">
+      <div *ngIf="!fileExists" class="form-group row">
+        <label for="registrationForm" class="col-sm-2 col-form-label">טופס רישום:</label>
+        <div class="col-sm-10">
+          <input id="registrationForm" type="file" (change)="onFileChange($event)" class="form-control-file" />
         </div>
       </div>
-      
-      <div>
-        <label for="file">טופס רישום (העלאת קובץ):</label>
-        <input id="file" type="file" (change)="onFileChange($event)" />
-        <div *ngIf="personalForm.get('file')?.invalid && personalForm.get('file')?.touched">
-          <small>העלאת קובץ נדרשת</small>
-        </div>
+
+      <div *ngIf="!fileExists" class="text-center">
+        <button pButton type="submit" label="העלה" class="btn btn-success"></button>
       </div>
-  
-      <button type="submit" [disabled]="personalForm.invalid">שלח</button>
+
+      <div *ngIf="fileExists" class="text-center">
+        <button pButton type="button" label="הורד קובץ" class="btn btn-info" (click)="onDownloadFile()"></button>
+        <button pButton type="button" label="מחק קובץ" class="btn btn-danger" (click)="onDeleteFile()"></button>
+      </div>
     </form>
-  </div> -->
+  </div>
+</div> -->
+
+
+
+<!-- <form [formGroup]="personalForm" (ngSubmit)="onSubmitPersonalForm()">
+  <div>
+    <label for="customerCode">קוד לקוח:</label>
+    <input id="customerCode" formControlName="customerCode" />
+  </div>
+
+  <div>
+    <label for="prefitCode">קוד פריפיט:</label>
+    <input id="prefitCode" formControlName="prefitCode" />
+  </div>
+
+  <button type="submit">המשך</button>
+</form>
+
+<div *ngIf="customerHMOS">
+  <form [formGroup]="fileForm" (ngSubmit)="onUploadFile()">
+    <div *ngIf="!fileExists">
+      <label for="registrationForm">טופס רישום:</label>
+      <input id="registrationForm" type="file" (change)="onFileChange($event)" />
+      <button type="submit">העלה</button>
+    </div>
+
+    <div *ngIf="fileExists">
+      <button type="button" (click)="onDownloadFile()">הורד קובץ</button>
+      <button type="button" (click)="onDeleteFile()">מחק קובץ</button>
+    </div>
+  </form>
+</div> -->

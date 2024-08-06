@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PersonalAreaHMOServiceService {
-  private apiUrl = `https://localhost:7101/api/HMO/CustomerHMOSController`;
+  private apiUrl = `https://localhost:7101/api/CustomerHMOS`;
 
   constructor(private http: HttpClient) { }
 
@@ -17,12 +17,12 @@ export class PersonalAreaHMOServiceService {
   getCustomerHMOSById(id: number): Observable<CustomerHMOS> {
     return this.http.get<CustomerHMOS>(`${this.apiUrl}/GetCustomerHMOSByID/${id}`);
   }
-  
+
   addCustomerHMOS(customerHMOS: CustomerHMOS): Observable<CustomerHMOS> {
     return this.http.post<CustomerHMOS>(`${this.apiUrl, customerHMOS}/CreateCustomerHMOS`, customerHMOS); // ודאי שהטיפוס נכון כאן
   }
 
-  updateCustomerHMOS(id: number, customerHMOS: CustomerHMOS): Observable<CustomerHMOS> {
+  updateCustomerHMOS(id: number | undefined, customerHMOS: CustomerHMOS | null): Observable<CustomerHMOS> {
     return this.http.put<CustomerHMOS>(`${this.apiUrl}/UpdateCustomerHMOS/${id}`, customerHMOS);
   }
 
