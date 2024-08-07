@@ -17,6 +17,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SystemComponent } from './components/system/system.component';
@@ -24,9 +25,6 @@ import { provideHttpClient } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
-<<<<<<< HEAD
-import { ContactComponent } from './components/contact/contact.component';
-=======
 import { AfterRegistrationComponent } from './components/after-registration/after-registration.component';
 import { StoreModule } from '@ngrx/store';
 import { registrationReducer } from './store/reducer';
@@ -38,7 +36,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { HomeComponent } from './components/home/home.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { SubscriptionDetailComponent } from './components/customer-sub-history/subscription-detail/subscription-detail.component';
->>>>>>> 0ac5439910b6aa86074059e0360e2b9c5d69bede
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -50,12 +48,6 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     OurTeamComponent,
     PaymentOptionsComponent,
     HomeAboutComponent,
-<<<<<<< HEAD
-     AboutComponent,
-    SystemComponent,   
-    HomeAboutComponent, 
-    
-=======
     RegistrationComponent,
     HomeAboutComponent,
     AboutComponent,
@@ -67,11 +59,12 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     TracksComponent,
     HomeComponent,
     CustomerSubHistoryComponent,
-    SubscriptionDetailComponent
->>>>>>> 0ac5439910b6aa86074059e0360e2b9c5d69bede
+    SubscriptionDetailComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     MatAutocompleteModule,
     MatInputModule,
@@ -84,16 +77,12 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     NgbModule,
     ButtonModule,
     TooltipModule,
-<<<<<<< HEAD
-    ContactComponent,
-=======
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
   ],
   providers: [
     provideAnimationsAsync(),
     provideHttpClient()
->>>>>>> 0ac5439910b6aa86074059e0360e2b9c5d69bede
   ],
   bootstrap: [AppComponent]
 })
