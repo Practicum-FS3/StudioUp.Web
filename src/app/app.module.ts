@@ -51,12 +51,13 @@ import { DetailsAndRegistrationComponent } from './components/details-and-regist
     HomeAboutComponent,
     AboutComponent,
     SystemComponent,
+    DetailsAndRegistrationComponent,
     HomeAboutComponent,
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
     HomeSubscriptionBenefitsComponent,
     HomeComponent,
-    CustomerSubHistoryComponent
+    CustomerSubHistoryComponent,
   ],
   imports: [
     BrowserModule,

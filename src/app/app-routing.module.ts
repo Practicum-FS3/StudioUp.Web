@@ -11,6 +11,7 @@ import { PaymentOptionsComponent } from './components/payment-options/payment-op
 import { HmosComponent } from './components/hmos/hmos.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { HomeComponent } from './components/home/home.component';
+import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 
 const routes: Routes = [
   //{path:"login", component:LoginComponent},
@@ -27,7 +28,9 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   { path: 'registration', component: RegistrationComponent },
   { path: 'HMOs', component: HmosComponent },
-  { path: 'subscriptionPerCustomer',component: CustomerSubHistoryComponent}
+  { path: 'subscriptionPerCustomer',component: CustomerSubHistoryComponent},
+  { path: 'd',component: DetailsAndRegistrationComponent}
+
 ];
 
 @NgModule({
