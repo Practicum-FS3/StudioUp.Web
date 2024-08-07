@@ -1,0 +1,1656 @@
+// #footer{
+//     background-color: rgb(255, 181, 181);
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+// #header{
+//     background-color: aquamarine;
+// }
+.footer{
+   margin-top: 10%;
+}
+#form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#footerGmail{
+    /* pninaenergy@gmail.com */
+
+    position: absolute;
+    width: 15.2%;
+    //height: 30px;
+    left: 46.2%;
+    top: 221%;
+    
+    /* 22 */
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 138%;
+    //line-height: 30px;
+    /* identical to box height, or 136% */
+    text-align: right;
+    
+    /* אפור מותג */
+    color: #4C4C49;
+    
+      //margin: 50px;
+
+}
+
+#footerPhone{
+    /* 0527140619 */
+
+position: absolute;
+width: 7.45%;
+//height: 28px;
+left: 25%;
+top: 221%;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 138%;
+//line-height: 30px;
+/* or 136% */
+text-align: right;
+
+/* אפור מותג */
+color: #4C4C49;
+
+     // margin: 50px;
+
+}
+
+#footerAdress{
+
+/* ר’ עקיבא 60 בני ברק */
+
+position: absolute;
+width: 12.5%;
+//height: 30px;
+left: 64.5%;
+top: 221%;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 138%;
+//line-height: 30px;
+/* identical to box height, or 136% */
+text-align: right;
+
+/* אפור מותג */
+color: #4C4C49;
+
+//margin: 50px;
+
+}
+
+#footerTel{
+
+/* 03-6912200 */
+
+position: absolute;
+width: 7.45%;
+//height: 28px;
+left: 35.6%;
+top: 221%;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 138%;
+//line-height: 30px;
+/* or 136% */
+text-align: right;
+
+/* אפור מותג */
+color: #4C4C49;
+
+//margin: 50px;
+
+}
+
+// #arrow{
+//     /* Arrow 1 */
+
+//  box-sizing: border-box;
+
+//  position: absolute;
+//  width: 14.58px;
+//  height: 0px;
+//  left: 624.36px;
+//  top: 1507.47px;
+
+// /* אפור מותג */
+//  border: 2px solid #4C4C49;
+//  border-radius: 30px;
+//  transform: rotate(135deg);
+// margin-left: 100px;
+// }
+
+#toSend{
+
+    /* שלח */
+
+position: absolute;
+// width: 45px;
+height: 6.2%;
+left: 50.3%;
+top: 208.8%;
+
+z-index: 0;
+
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 168%;
+line-height: 46px;
+/* identical to box height, or 184% */
+display: flex;
+align-items: center;
+text-align: right;
+
+/* אפרפר */
+color: #FAF6F3;
+// margin-left: 80px;
+// initial-value: "שלח";
+
+}
+
+#rect22{
+    /* Rectangle 22 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 2.5%;
+height: 5%;
+left: 44.4%;
+top: 209.5%;
+
+border: 1px solid #000000;
+border-radius: 30px;
+
+}
+
+#rect21{
+    /* Rectangle 21 */
+
+position: absolute;
+width: 9.5%;
+height: 5%;
+left: 46.95%;
+top: 209.5%;
+
+/* מותג */
+background: #D91C5C;
+border-radius: 30px;
+border-style: none;
+}
+
+#rect273{
+   /* Rectangle 273 */
+
+position: absolute;
+width: 81%;
+height: 72%;
+left: 9.6%;
+top:165%;
+
+background: #ECECEC;
+border-radius: 30px;
+
+}
+
+#nameRect{
+/* Rectangle 274 */
+
+position: absolute;
+width: 20.8%;
+height: 6.3%;
+left: 50.8%;
+top: 189.75%;
+direction: rtl;
+
+// display: flex;
+/* #FFFFFF */
+// background: #FFFFFF;
+// border-radius: 30px;
+// border-style: none;
+
+}
+
+#nameInput{
+/* שם */
+
+// position: absolute;
+// width: 54px;
+// height: 28px;
+// left: 940.75px;
+// top: 1370px;
+width:100%;
+height: 100%;
+// left: 45.8%;
+// top: 189.75%;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 30px;
+/* or 136% */
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+}
+#phoneRect{
+/* Rectangle 276 */
+
+position: absolute;
+width: 20.8%;
+height: 6.3%;
+left: 50.8%;
+top: 198.95%;
+direction: rtl;
+
+/* #FFFFFF */
+// background: #FFFFFF;
+// border-radius: 30px;
+// border-style: none;
+
+}
+#phoneInput{
+/* טלפון */
+
+//position: absolute;
+width: 100%;
+height: 100%;
+// left: 940.75px;
+// top: 1427px;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 30px;
+/* or 136% */
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+}
+#messageRect{
+/* Rectangle 279 */
+
+position: absolute;
+width: 20.8%;
+height: 6.3%;
+left: 29.2%;
+top: 198.95%;
+direction: rtl;
+
+/* #FFFFFF */
+// background: #FFFFFF;
+// border-radius: 30px;
+// border-style: none;
+
+}
+#messageInput{
+/* הודעה */
+
+//position: absolute;
+width: 100%;
+height: 100%;
+// left: 564.75px;
+// top: 1426px;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 30px;
+/* or 136% */
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+}
+#EmailRect{
+/* Rectangle 278 */
+
+position: absolute;
+width: 20.8%;
+height: 6.3%;
+left: 29.2%;
+top: 189.75%;
+direction: rtl;
+
+/* #FFFFFF */
+// background: #FFFFFF;
+// border-radius: 30px;
+// border-style: none;
+
+}
+#EmailInput{
+    /* אימייל */
+
+// position: absolute;
+width: 100%;
+height: 100%;
+// left: 576.75px;
+// top: 1370px;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+//line-height: 30px;
+/* or 136% */
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+// /* אימייל */
+
+// position: absolute;
+// width: 95px;
+// height: 28px;
+// left: 579.75px;
+// top: 1333px;
+
+// /* 22 */
+// font-family: 'Ploni ML v2 AAA';
+// font-style: normal;
+// font-weight: 400;
+// font-size: 22px;
+// line-height: 30px;
+// /* or 136% */
+// text-align: right;
+
+// color: #000000;
+
+
+}
+
+#getDetailsOrAdvice{
+    /* לקבלת פרטים נוספים או להתייעצות בנושא - צרו קשר: */
+
+position: absolute;
+width: 33%;
+//height: 67.48px;
+left: 34.3%;
+top: 176.8%;
+
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 700;
+font-size: 242%;
+line-height: 90%;
+/* or 95% */
+text-align: center;
+
+/* אפור מותג */
+color: #4C4C49;
+
+
+}
+// #input{
+//     display: inline-block;
+// }
+.pi-arrow-down-left{
+   font-size: 110%;
+//    box-sizing: border-box;
+
+ position: absolute;
+// width: 14.58px;
+// height: 0px;
+left: 45.1%;
+top: 210.7%;
+
+// /* אפור מותג */
+// border: 2px solid #4C4C49;
+// border-radius: 30px;
+// transform: rotate(135deg);
+// //margin-left: 100px;
+}
+// #warning{
+//     font-family: 'Ploni ML v2 AAA';
+//    // font-weight: 900;
+//     color: red;
+//     display: flex;
+//     //flex-wrap: wrap;
+//     // margin-top: 50%;
+//     //padding-top: 100%;
+// }
+// .warn{
+//     // margin: 1%;
+//     z-index: 500;
+//      margin-left: 10%;
+// }
+// .placeholder{
+//     color: red;
+//     font-size: large;
+// }
+#warnShowHideName{
+//margin-top: 46.7%;
+//margin-left: 15%;
+z-index: 0;
+// text-align: right;
+     //margin-left: 1.5%;
+     font-family: 'Ploni ML v2 AAA';
+   // font-weight: 900;
+    color: red;
+    // display: flex;
+}
+#warnShowHidePhone{
+    //margin-top:50.8%;
+    // margin-left: -1%;
+    // text-align: right;
+    z-index: 0;
+     //margin-left: 11%;
+     font-family: 'Ploni ML v2 AAA';
+   // font-weight: 900;
+    color: red;
+    // display: flex;
+}
+#warnShowHideEmail{
+    //margin-top: 46.7%;
+    //margin-left: 0%;
+    // text-align: right;
+    z-index: 0;
+    //  margin-left: -9%;
+     font-family: 'Ploni ML v2 AAA';
+   // font-weight: 900;
+    color: red;
+    // display: flex;
+}
+#warnShowHideMessage{
+    // margin-top: 50.8%;
+    //margin-left: 0%;
+    // text-align: right;
+    z-index: 0;
+    //  margin-left: 35%;
+     font-family: 'Ploni ML v2 AAA';
+   // font-weight: 900;
+    color: red;
+    // display: flex;
+}
+
+
+@media (max-width: 1200px){
+
+#form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#footerGmail{
+    /* pninaenergy@gmail.com */
+
+    // position: absolute;
+    width: 18.2%;
+    //height: 30px;
+    left: 44.7%;
+    top: 221%;
+    
+    /* 22 */
+    // font-family: 'Ploni ML v2 AAA';
+    // font-style: normal;
+    // font-weight: 400;
+    // font-size: 138%;
+    //line-height: 30px;
+    /* identical to box height, or 136% */
+    // text-align: right;
+    
+    /* אפור מותג */
+    // color: #4C4C49;
+    
+      //margin: 50px;
+
+}
+
+#footerPhone{
+    /* 0527140619 */
+
+// position: absolute;
+width: 10.45%;
+//height: 28px;
+left: 20%;
+top: 221%;
+
+/* 22 */
+// font-family: 'Ploni ML v2 AAA';
+// font-style: normal;
+// font-weight: 400;
+// font-size: 138%;
+//line-height: 30px;
+/* or 136% */
+// text-align: right;
+
+/* אפור מותג */
+// color: #4C4C49;
+
+     // margin: 50px;
+
+}
+
+#footerAdress{
+
+/* ר’ עקיבא 60 בני ברק */
+
+// position: absolute;
+width: 15.5%;
+//height: 30px;
+left: 64.5%;
+top: 221%;
+
+/* 22 */
+// font-family: 'Ploni ML v2 AAA';
+// font-style: normal;
+// font-weight: 400;
+// font-size: 138%;
+//line-height: 30px;
+/* identical to box height, or 136% */
+// text-align: right;
+
+/* אפור מותג */
+// color: #4C4C49;
+
+//margin: 50px;
+
+}
+
+#footerTel{
+
+/* 03-6912200 */
+
+// position: absolute;
+width: 10.45%;
+//height: 28px;
+left: 31.6%;
+top: 221%;
+
+/* 22 */
+// font-family: 'Ploni ML v2 AAA';
+// font-style: normal;
+// font-weight: 400;
+// font-size: 138%;
+//line-height: 30px;
+/* or 136% */
+// text-align: right;
+
+/* אפור מותג */
+// color: #4C4C49;
+
+//margin: 50px;
+
+}
+
+#toSend{
+
+    /* שלח */
+
+position: absolute;
+// width: 45px;
+height: 6.2%;
+left: 50.3%;
+top: 208.8%;
+
+z-index: 0;
+
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 168%;
+line-height: 46px;
+/* identical to box height, or 184% */
+display: flex;
+align-items: center;
+text-align: right;
+
+/* אפרפר */
+color: #FAF6F3;
+// margin-left: 80px;
+// initial-value: "שלח";
+
+}
+
+#rect22{
+    /* Rectangle 22 */
+
+// box-sizing: border-box;
+
+// position: absolute;
+width: 35px;
+height: 35px;
+left: 43.9%;
+top: 209.5%;
+
+// border: 1px solid #000000;
+// border-radius: 30px;
+
+}
+
+#rect21{
+    /* Rectangle 21 */
+
+// position: absolute;
+width: 12%;
+height: 5%;
+left: 46.95%;
+top: 209.5%;
+
+/* מותג */
+// background: #D91C5C;
+// border-radius: 30px;
+// border-style: none;
+}
+
+#rect273{
+   /* Rectangle 273 */
+
+position: absolute;
+width: 81%;
+height: 72%;
+left: 9.6%;
+top:165%;
+
+background: #ECECEC;
+border-radius: 30px;
+
+}
+
+#nameRect{
+/* Rectangle 274 */
+
+position: absolute;
+width: 25.8%;
+height: 6.3%;
+left: 51.8%;
+top: 189.75%;
+direction: rtl;
+
+// display: flex;
+/* #FFFFFF */
+// background: #FFFFFF;
+// border-radius: 30px;
+// border-style: none;
+
+}
+#nameInput{
+/* שם */
+
+// position: absolute;
+// width: 54px;
+// height: 28px;
+// left: 940.75px;
+// top: 1370px;
+width:100%;
+height: 100%;
+// left: 45.8%;
+// top: 189.75%;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 30px;
+/* or 136% */
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+}
+#phoneRect{
+/* Rectangle 276 */
+
+position: absolute;
+width: 25.8%;
+height: 6.3%;
+left: 51.8%;
+top: 198.95%;
+direction: rtl;
+
+/* #FFFFFF */
+// background: #FFFFFF;
+// border-radius: 30px;
+// border-style: none;
+
+}
+#phoneInput{
+/* טלפון */
+
+//position: absolute;
+width: 100%;
+height: 100%;
+// left: 940.75px;
+// top: 1427px;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 30px;
+/* or 136% */
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+}
+#messageRect{
+/* Rectangle 279 */
+
+position: absolute;
+width: 25.8%;
+height: 6.3%;
+left: 24.2%;
+top: 198.95%;
+direction: rtl;
+
+/* #FFFFFF */
+// background: #FFFFFF;
+// border-radius: 30px;
+// border-style: none;
+
+}
+#messageInput{
+/* הודעה */
+
+//position: absolute;
+width: 100%;
+height: 100%;
+// left: 564.75px;
+// top: 1426px;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 30px;
+/* or 136% */
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+}
+#EmailRect{
+/* Rectangle 278 */
+
+position: absolute;
+width: 25.8%;
+height: 6.3%;
+left: 24.2%;
+top: 189.75%;
+direction: rtl;
+
+/* #FFFFFF */
+// background: #FFFFFF;
+// border-radius: 30px;
+// border-style: none;
+
+}
+#EmailInput{
+    /* אימייל */
+
+// position: absolute;
+width: 100%;
+height: 100%;
+// left: 576.75px;
+// top: 1370px;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+//line-height: 30px;
+/* or 136% */
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+// /* אימייל */
+
+// position: absolute;
+// width: 95px;
+// height: 28px;
+// left: 579.75px;
+// top: 1333px;
+
+// /* 22 */
+// font-family: 'Ploni ML v2 AAA';
+// font-style: normal;
+// font-weight: 400;
+// font-size: 22px;
+// line-height: 30px;
+// /* or 136% */
+// text-align: right;
+
+// color: #000000;
+
+
+}
+
+#getDetailsOrAdvice{
+    /* לקבלת פרטים נוספים או להתייעצות בנושא - צרו קשר: */
+
+position: absolute;
+width: 40%;
+//height: 67.48px;
+left: 31%;
+top: 176.8%;
+
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 700;
+font-size: 242%;
+line-height: 90%;
+/* or 95% */
+text-align: center;
+
+/* אפור מותג */
+color: #4C4C49;
+
+
+}
+
+.pi-arrow-down-left{
+//    font-size: 110%;
+// //    box-sizing: border-box;
+
+//  position: absolute;
+// width: 14.58px;
+// height: 0px;
+left: 44.75%;
+top: 210.7%;
+
+// /* אפור מותג */
+// border: 2px solid #4C4C49;
+// border-radius: 30px;
+// transform: rotate(135deg);
+// //margin-left: 100px;
+}
+
+// #warnShowHideName{
+// //margin-top: 46.7%;
+// //margin-left: 15%;
+// z-index: 0;
+// // text-align: right;
+//      //margin-left: 1.5%;
+//      font-family: 'Ploni ML v2 AAA';
+//    // font-weight: 900;
+//     color: red;
+//     // display: flex;
+// }
+// #warnShowHidePhone{
+//     //margin-top:50.8%;
+//     // margin-left: -1%;
+//     // text-align: right;
+//     z-index: 0;
+//      //margin-left: 11%;
+//      font-family: 'Ploni ML v2 AAA';
+//    // font-weight: 900;
+//     color: red;
+//     // display: flex;
+// }
+// #warnShowHideEmail{
+//     //margin-top: 46.7%;
+//     //margin-left: 0%;
+//     // text-align: right;
+//     z-index: 0;
+//     //  margin-left: -9%;
+//      font-family: 'Ploni ML v2 AAA';
+//    // font-weight: 900;
+//     color: red;
+//     // display: flex;
+// }
+// #warnShowHideMessage{
+//     // margin-top: 50.8%;
+//     //margin-left: 0%;
+//     // text-align: right;
+//     z-index: 0;
+//     //  margin-left: 35%;
+//      font-family: 'Ploni ML v2 AAA';
+//    // font-weight: 900;
+//     color: red;
+//     // display: flex;
+// }
+    
+    }
+
+
+@media (max-width: 908px){
+
+// #form{
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+// #footer{
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+#footerGmail{
+    /* pninaenergy@gmail.com */
+
+    // position: absolute;
+    width: 30%;
+    left: 19%;
+    top: 239%;
+    
+    /* 22 */
+    // font-family: 'Ploni ML v2 AAA';
+    // font-style: normal;
+    // font-weight: 400;
+    // font-size: 138%;
+    /* identical to box height, or 136% */
+    // text-align: right;
+    
+    /* אפור מותג */
+    // color: #4C4C49;
+    
+}
+
+#footerPhone{
+    /* 0527140619 */
+
+// position: absolute;
+width: 30%;
+left: 11%;
+top: 249%;
+
+/* 22 */
+// font-family: 'Ploni ML v2 AAA';
+// font-style: normal;
+// font-weight: 400;
+// font-size: 138%;
+/* or 136% */
+// text-align: right;
+
+/* אפור מותג */
+// color: #4C4C49;
+
+}
+
+#footerAdress{
+
+/* ר’ עקיבא 60 בני ברק */
+
+// position: absolute;
+width: 30%;
+left: 50%;
+top: 239%;
+
+/* 22 */
+// font-family: 'Ploni ML v2 AAA';
+// font-style: normal;
+// font-weight: 400;
+// font-size: 138%;
+/* identical to box height, or 136% */
+// text-align: right;
+
+/* אפור מותג */
+// color: #4C4C49;
+
+
+}
+
+#footerTel{
+
+/* 03-6912200 */
+
+// position: absolute;
+width: 30%;
+left: 45%;
+top: 249%;
+
+/* 22 */
+// font-family: 'Ploni ML v2 AAA';
+// font-style: normal;
+// font-weight: 400;
+// font-size: 138%;
+/* or 136% */
+// text-align: right;
+
+/* אפור מותג */
+// color: #4C4C49;
+
+}
+
+
+#toSend{
+
+    /* שלח */
+
+// position: absolute;
+height: 6.2%;
+left: 52.3%;
+top: 228.1%;
+
+// font-family: 'Ploni ML v2 AAA';
+// font-style: normal;
+// font-weight: 400;
+// font-size: 168%;
+// line-height: 46px;
+/* identical to box height, or 184% */
+// display: flex;
+// align-items: center;
+// text-align: right;
+
+/* אפרפר */
+// color: #FAF6F3;
+
+}
+
+#rect22{
+    /* Rectangle 22 */
+
+// box-sizing: border-box;
+
+// position: absolute;
+// width: 4%;
+// height: 5%;
+width: 35px;
+height: 35px;
+left: 43%;
+top: 229%;
+
+// border: 1px solid #000000;
+// border-radius: 30px;
+
+}
+
+#rect21{
+    /* Rectangle 21 */
+
+// position: absolute;
+width: 16%;
+height: 5%;
+left: 47%;
+top: 229%;
+
+/* מותג */
+// background: #D91C5C;
+// border-radius: 30px;
+// border-style: none;
+}
+
+#rect273{
+   /* Rectangle 273 */
+
+// position: absolute;
+width: 90%;
+height: 100%;
+left: 7.6%;
+top:165%;
+
+// background: #ECECEC;
+// border-radius: 30px;
+
+}
+
+#nameRect{
+/* Rectangle 274 */
+
+position: absolute;
+width: 50%;
+height: 6.3%;
+left: 27%;
+top: 189%;
+direction: rtl;
+
+}
+#nameInput{
+/* שם */
+
+width:100%;
+height: 100%;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 30px;
+/* or 136% */
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+}
+#phoneRect{
+/* Rectangle 276 */
+
+position: absolute;
+width: 50%;
+height: 6.3%;
+left: 27%;
+top: 199%;
+direction: rtl;
+
+}
+#phoneInput{
+/* טלפון */
+
+width: 100%;
+height: 100%;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 30px;
+/* or 136% */
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+}
+#messageRect{
+/* Rectangle 279 */
+
+position: absolute;
+width: 50%;
+height: 6.3%;
+left: 27%;
+top: 219%;
+direction: rtl;
+}
+#messageInput{
+/* הודעה */
+
+width: 100%;
+height: 100%;
+
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 30px;
+/* or 136% */
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+}
+#EmailRect{
+/* Rectangle 278 */
+
+position: absolute;
+width: 50%;
+height: 6.3%;
+left: 27%;
+top: 209%;
+direction: rtl;
+}
+#EmailInput{
+    /* אימייל */
+
+
+width: 100%;
+height: 100%;
+/* 22 */
+font-family: 'Ploni ML v2 AAA';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+text-align: right;
+
+color: #000000;
+
+background: #FFFFFF;
+border-radius: 30px;
+border-style: none;
+}
+
+#getDetailsOrAdvice{
+    /* לקבלת פרטים נוספים או להתייעצות בנושא - צרו קשר: */
+
+// position: absolute;
+width: 60%;
+left: 23%;
+// left: 10%;
+top: 176.8%;
+
+// font-family: 'Ploni ML v2 AAA';
+// font-style: normal;
+// font-weight: 700;
+// font-size: 242%;
+// line-height: 90%;
+
+// text-align: center;
+
+/* אפור מותג */
+// color: #4C4C49;
+
+
+}
+.pi-arrow-down-left{
+//    font-size: 110%;
+//  position: absolute;
+left: 44.25%;
+top: 230.2%;
+}
+
+// #warnShowHideName{
+// z-index: 0;
+//      font-family: 'Ploni ML v2 AAA';
+//     color: red;
+// }
+// #warnShowHidePhone{
+//     z-index: 0;
+//      font-family: 'Ploni ML v2 AAA';
+//     color: red;
+// }
+// #warnShowHideEmail{
+//     z-index: 0;
+//      font-family: 'Ploni ML v2 AAA';
+//     color: red;
+// }
+// #warnShowHideMessage{
+//     z-index: 0;
+//      font-family: 'Ploni ML v2 AAA';
+//     color: red;
+// }
+
+}
+
+
+@media (max-width: 576px){
+
+    // #form{
+    //     display: flex;
+    //     flex-wrap: wrap;
+    // }
+    // #footer{
+    //     display: flex;
+    //     flex-wrap: wrap;
+    // }
+    #footerGmail{
+        /* pninaenergy@gmail.com */
+    
+        // position: absolute;
+        width: 50%;
+        left: 22.5%;
+        top: 244%;
+        
+        /* 22 */
+        // font-family: 'Ploni ML v2 AAA';
+        // font-style: normal;
+        // font-weight: 400;
+        // font-size: 138%;
+        /* identical to box height, or 136% */
+        // text-align: right;
+        
+        /* אפור מותג */
+        // color: #4C4C49;
+        
+    }
+    
+    #footerPhone{
+        /* 0527140619 */
+    
+    // position: absolute;
+    width: 50%;
+    left: 12.5%;
+    top: 254%;
+    
+    /* 22 */
+    // font-family: 'Ploni ML v2 AAA';
+    // font-style: normal;
+    // font-weight: 400;
+    // font-size: 138%;
+    /* or 136% */
+    // text-align: right;
+    
+    /* אפור מותג */
+    // color: #4C4C49;
+    
+    }
+    
+    #footerAdress{
+    
+    /* ר’ עקיבא 60 בני ברק */
+    
+    // position: absolute;
+    width: 50%;
+    left: 18.5%;
+    top: 239%;
+    
+    /* 22 */
+    // font-family: 'Ploni ML v2 AAA';
+    // font-style: normal;
+    // font-weight: 400;
+    // font-size: 138%;
+    /* identical to box height, or 136% */
+    // text-align: right;
+    
+    /* אפור מותג */
+    // color: #4C4C49;
+    
+    
+    }
+    
+    #footerTel{
+    
+    /* 03-6912200 */
+    
+    // position: absolute;
+    width: 50%;
+    left: 12.5%;
+    top: 249%;
+    
+    /* 22 */
+    // font-family: 'Ploni ML v2 AAA';
+    // font-style: normal;
+    // font-weight: 400;
+    // font-size: 138%;
+    /* or 136% */
+    // text-align: right;
+    
+    /* אפור מותג */
+    // color: #4C4C49;
+    
+    }
+      
+    #toSend{
+    
+        /* שלח */
+    
+    // position: absolute;
+    height: 6.2%;
+    left: 51.5%;
+    top: 228.1%;
+    
+    // font-family: 'Ploni ML v2 AAA';
+    // font-style: normal;
+    // font-weight: 400;
+    // font-size: 168%;
+    // line-height: 46px;
+    /* identical to box height, or 184% */
+    // display: flex;
+    // align-items: center;
+    // text-align: right;
+    
+    /* אפרפר */
+    // color: #FAF6F3;
+    
+    }
+    
+    #rect22{
+        /* Rectangle 22 */
+    
+    // box-sizing: border-box;
+    
+    // position: absolute;
+    // width: 6%;
+    // height: 5%;
+    width: 35px;
+    height: 35px;
+    left: 39.5%;
+    top: 229%;
+    
+    // border: 1px solid #000000;
+    // border-radius: 30px;
+    
+    }
+    
+    #rect21{
+        /* Rectangle 21 */
+    
+    // position: absolute;
+    width: 20%;
+    height: 5%;
+    left: 46%;
+    top: 229%;
+    
+    /* מותג */
+    // background: #D91C5C;
+    // border-radius: 30px;
+    // border-style: none;
+    }
+    
+    #rect273{
+       /* Rectangle 273 */
+    
+    // position: absolute;
+    width: 90%;
+    height: 100%;
+    left: 7.6%;
+    top:165%;
+    
+    // background: #ECECEC;
+    // border-radius: 30px;
+    
+    }
+    
+    #nameRect{
+    /* Rectangle 274 */
+    
+    position: absolute;
+    width: 50%;
+    height: 6.3%;
+    left: 27%;
+    top: 189%;
+    direction: rtl;
+    
+    }
+    #nameInput{
+    /* שם */
+    
+    width:100%;
+    height: 100%;
+    
+    /* 22 */
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    /* or 136% */
+    text-align: right;
+    
+    color: #000000;
+    
+    background: #FFFFFF;
+    border-radius: 30px;
+    border-style: none;
+    }
+    #phoneRect{
+    /* Rectangle 276 */
+    
+    position: absolute;
+    width: 50%;
+    height: 6.3%;
+    left: 27%;
+    top: 199%;
+    direction: rtl;
+    
+    }
+    #phoneInput{
+    /* טלפון */
+    
+    width: 100%;
+    height: 100%;
+    
+    /* 22 */
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    /* or 136% */
+    text-align: right;
+    
+    color: #000000;
+    
+    background: #FFFFFF;
+    border-radius: 30px;
+    border-style: none;
+    }
+    #messageRect{
+    /* Rectangle 279 */
+    
+    position: absolute;
+    width: 50%;
+    height: 6.3%;
+    left: 27%;
+    top: 219%;
+    direction: rtl;
+    }
+    #messageInput{
+    /* הודעה */
+    
+    width: 100%;
+    height: 100%;
+    
+    /* 22 */
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    /* or 136% */
+    text-align: right;
+    
+    color: #000000;
+    
+    background: #FFFFFF;
+    border-radius: 30px;
+    border-style: none;
+    }
+    #EmailRect{
+    /* Rectangle 278 */
+    
+    position: absolute;
+    width: 50%;
+    height: 6.3%;
+    left: 27%;
+    top: 209%;
+    direction: rtl;
+    }
+    #EmailInput{
+        /* אימייל */
+    
+    
+    width: 100%;
+    height: 100%;
+    /* 22 */
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: right;
+    
+    color: #000000;
+    
+    background: #FFFFFF;
+    border-radius: 30px;
+    border-style: none;
+    }
+    
+    #getDetailsOrAdvice{
+        /* לקבלת פרטים נוספים או להתייעצות בנושא - צרו קשר: */
+    
+    // position: absolute;
+    width: 80%;
+    left: 13%;
+    // left: 10%;
+    top: 176.8%;
+    
+    // font-family: 'Ploni ML v2 AAA';
+    // font-style: normal;
+    // font-weight: 700;
+    // font-size: 242%;
+    // line-height: 90%;
+    
+    // text-align: center;
+    
+    /* אפור מותג */
+    // color: #4C4C49;
+    
+    
+    }
+    .pi-arrow-down-left{
+    //    font-size: 110%;
+    //  position: absolute;
+    left: 41.6%;
+    top: 230.2%;
+    }
+    
+    // #warnShowHideName{
+    // z-index: 0;
+    //      font-family: 'Ploni ML v2 AAA';
+    //     color: red;
+    // }
+    // #warnShowHidePhone{
+    //     z-index: 0;
+    //      font-family: 'Ploni ML v2 AAA';
+    //     color: red;
+    // }
+    // #warnShowHideEmail{
+    //     z-index: 0;
+    //      font-family: 'Ploni ML v2 AAA';
+    //     color: red;
+    // }
+    // #warnShowHideMessage{
+    //     z-index: 0;
+    //      font-family: 'Ploni ML v2 AAA';
+    //     color: red;
+    // }
+    
+    }
+
+
+
+
+
+//  להפוך פיקסלים לאחוזים 
