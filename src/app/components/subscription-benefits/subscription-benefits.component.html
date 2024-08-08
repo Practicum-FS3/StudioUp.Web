@@ -1,25 +1,26 @@
-<img class="pic1" alt="">
+<div>
+    <img class="pic1" alt="">
 
-<div class="rectangle281"></div>
-<div class="rectangle281-text">הטבות כושר למנויים</div>
-<div class="text">{{s.title}}</div>
-<div class="D2">
-    <div class="optionList1" *ngFor="let po of s.contentSections">
-        <div *ngIf="po.isActive == true">
-            <div class="m400">
-                <p class="text1">{{po.section1}}</p>
-                <p *ngIf="po.section2!='null'" class="text2">{{po.section2}}</p>
+    <div class="rectangle281"></div>
+    <div class="rectangle281-text">הטבות כושר למנויים</div>
+    <div class="text">{{s.title}}</div>
+    <div class="D2">
+        <div class="optionList1" *ngFor="let po of s.contentSections">
+            <div *ngIf="po.isActive == true">
+                <div class="m400">
+                    <p class="text1">{{po.section1}}</p>
+                    <p *ngIf="po.section2!='null'" class="text2">{{po.section2}}</p>
+                </div>
             </div>
         </div>
     </div>
 
-
-<app-tracks></app-tracks>
-
+    <app-tracks></app-tracks>
 
 
-<!-- לא קשר להטבות למנויים -->
-<!-- <div class="rectangle168"></div>
+
+    <!-- לא קשר להטבות למנויים -->
+    <!-- <div class="rectangle168"></div>
 <div class="rectangle168-text">מסלולי מנויים</div>
 
 <div class="rectangle190 "></div>
