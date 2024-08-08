@@ -12,7 +12,7 @@ export class HomeSubscriptionBenefitsComponent implements OnInit {
   constructor(public pos:GenericService){}
 
   ngOnInit(): void {
-    debugger
+    
     
     this.pos.getByIdWithContent(this.id).subscribe(
       
@@ -22,7 +22,6 @@ export class HomeSubscriptionBenefitsComponent implements OnInit {
         
       },
       err=>{
-        debugger
         console.log(err);
       }
         

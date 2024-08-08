@@ -1,11 +1,15 @@
-    <img class="pic1" alt="">
+<!-- <div id="sb"> -->
+<div>
+    <div id="divsb">
+        <img class="pic1" alt="">
+        <div class="rectangle281">
+            <p class="rectangle281-text">הטבות כושר למנויים</p>
+        </div>
+        <div class="text">{{s.title}}</div>
+    </div>
 
-    <div class="rectangle281"></div>
-    <div class="rectangle281-text">הטבות כושר למנויים</div>
 
-    <div class="text">{{s.title}}</div>
-
-    <div class="D2">
+    <div id="D2">
         <div class="optionList1" *ngFor="let po of s.contentSections">
             <div *ngIf="po.isActive == true">
                 <div class="m400">
@@ -16,7 +20,7 @@
         </div>
     </div>
 </div>
-
+<!-- </div> -->
 <app-tracks></app-tracks>
 
 

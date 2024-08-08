@@ -1,10 +1,29 @@
-.text {
+.allHSB {
+    width: 87%;
+    height: 150%;
+    margin-top: 10%;
+    margin-left: 6.5%;
+}
+
+.alltext{
+    display: flex;
+    width: 50%;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 23%;
+}
+
+.rectangleHSB {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+#text {
     position: absolute;
     width: 25%;
     height: 21%;
-    left: 35%;
-    top: 411%;
-
     font-family: 'Anomalia ML v2 AAA';
     font-style: normal;
     font-weight: 700;
@@ -12,19 +31,15 @@
     line-height: 3vw;
     display: 97%;
     align-items: center;
-    text-align: center;
-
     color: #4C4C49;
-
-    transform: matrix(1, 0, -0.02, 1, 0, 0);
+    text-align: center;
 }
 
-.text2 {
+#text2 {
     position: absolute;
     width: 84.8%;
     height: 20%;
-    left: 5.2%;
-    top: 424.3%;
+    padding-top: 8%;
 
     /* כותרת2 */
     font-family: 'Ploni ML v2 AAA';
@@ -42,32 +57,40 @@
     transform: matrix(1, 0, -0.02, 1, 0, 0);
 }
 
-.rectangle43 {
-    width: 28%;
-    height: 360.14px;
-    margin-top: 213%;
-    margin-left: 6.5%;
 
+.rectangle43 {
+    width: 30%;
+    height: 60%;
+    border-radius: 15%;
     background: #FFF8DD;
-    border-radius: 60px;
-    transform: matrix(1, 0.01, 0, 1, 0, 0);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+    margin-top: -143%;
+}
+
+.rectangle43 img{  
+    width: 90%;
+    height: 100%;
 }
 
 .optionList {
     float: left;
-    width: 40%;
+    width: 28%;
 }
 
 .DivRow1 {
     display: flex;
-    margin-left: 40%;
-    margin-right: 10%;
-    margin-top: -25%;
-    gap: -20%;
+    float: left;
+    margin-left: 35%;
+    gap: -5%;
 }
 
 .rectangle40 {
-    width: 140%;
+    width: 160%;
     border-radius: 15%;
     padding-top: 1%;
     padding-left: 15%;
@@ -85,31 +108,13 @@
     color: #000000;
     margin-top: 15%;
     text-align: right;
-
-}
-
-
-.group121 {
-    background-image: url('../../../../assets/images/s2.png');
-    position: absolute;
-    width: 26%;
-    height: 55%;
-    left: 7.5%;
-    top: 437%;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
 }
 
 .rectangle21 {
     position: absolute;
     width: 15.9%;
     height: 5.3%;
-    left: 14.2%;
-    top: 500.8%;
-
+    margin-left: 2.5%;
     background: #D91C5C;
     border-radius: 20px;
 }
@@ -118,8 +123,7 @@
     position: absolute;
     width: 14.5%;
     height: 5%;
-    left: 17%;
-    top: 500.8%;
+    margin-left: 4%;
 
     font-family: 'Ploni ML v2 AAA';
     font-style: normal;
@@ -138,17 +142,12 @@
 
 .rectangle22 {
     box-sizing: border-box;
-
     position: absolute;
     width: 2.5%;
     height: 5%;
-    left: 11.5%;
-    top: 500.8%;
-
     background: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 45px;
-
 }
 
 .arrov {
@@ -156,16 +155,41 @@
     position: absolute;
     width: 1.2%;
     height: 0;
-    left: 12.2%;
-    top: 502.1%;
+    margin-left: 0.5%;  
+    margin-top:0.5%;
     color: #4C4C49;
     font-size: 1.9vw;
+}
+
+#joining {
+    margin-top: 5%;
+    margin-left: 4.5%;
+    width: 20%;
+    height: 8%;
+}
+
+
+@media(max-width:992px) {
 
 }
 
-@media (max-width: 480px) {
+@media(max-width:500px) {
+    .DivRow1{
+        flex-direction: column;
+        margin-bottom: 5%;
+    }
     .rectangle43 {
-        height: 300.14px;
-
+        margin-left: 35%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .image{
+        margin-top: 1%;
     }
 }
+
+@media(max-width:768px) {
+}
+

@@ -1,10 +1,18 @@
+#sb {
+    // margin-top: 125%;
+
+}
+#divsb{
+    margin-top: 2%;
+}
+
 .pic1 {
     background-image: url('../../../assets/images/s1.png');
     position: absolute;
     width: 52%;
     height: 55%;
     left: 35%;
-    top: 18%;
+    // top: 18%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,24 +23,31 @@
     width: 20%;
     height: 55%;
     left: 11.5%;
-    top: 18%;
+    // top: 18%;
     background: #4C4C49;
     border-radius: 60px;
+    align-items: center;
+    justify-content: center;
 }
 
 .rectangle281-text {
     position: absolute;
     width: 14%;
     height: 19%;
-    left: 15.4%;
+    right: 15%;
+    // left: 15.4%;
     top: 33.6%;
     font-family: 'Anomalia ML v2 AAA';
     font-style: normal;
     font-weight: 700;
     font-size: 4.6vw;
     line-height: 4.1vw;
-    text-align: right;
     color: #FFFFFF;
+    direction: rtl;
+    /* כיוון ימין לשמאל */
+    text-align: right;
+    /* יישור המלל לימין */
+
 }
 
 .text {
@@ -40,7 +55,7 @@
     width: 50%;
     height: 4%;
     left: 31.2%;
-    top: 85%;
+    margin-top: 33%;
     font-family: 'Ploni ML v2 AAA';
     font-style: normal;
     font-weight: 700;
@@ -48,27 +63,27 @@
     line-height: 2.8vw;
     display: flex;
     align-items: center;
-    text-align: right;
+    // text-align: right;
     color: #4C4C49;
 }
 
 .optionList1 {
     float: left;
     flex: 0 45%;
-    width: 100%;
+    width: 90%;
+    margin-left: -12%;
 }
-
-.D2 {
+#D2{
+    margin-left: 20%;
     display: flex;
-    margin-left: 5%;
-    gap: 40px;
-    margin-top: 40%;
+    gap: 10px;
+    padding-top: 38%;
 }
 
 .m400 {
-    width: 90%;
+    width: 70%;
     height: 200%;
-    border-radius:  60px;
+    border-radius: 60px;
     padding-top: 1%;
     padding-left: 9%;
     padding-right: 9%;
@@ -99,6 +114,64 @@
     color: #FFCC0F;
 
 }
+
+@media(max-width:992px) {
+    .pic1 {
+        height: 43%;
+    }
+
+    .rectangle281 {
+        height: 43%;
+    }
+
+    // .text {
+    //     top: 75%;
+    // }
+
+}
+
+@media(max-width:768px) {
+    .pic1 {
+        height: 37%;
+    }
+
+    .rectangle281 {
+        height: 37%;
+        border-radius: 40px;
+    }
+    .m400 {
+        border-radius: 40px;
+    }
+}
+
+@media(max-width:500px) {
+    .pic1 {
+        height: 26%;
+    }
+
+    .rectangle281 {
+        height: 26%;
+        border-radius: 30px;
+    }
+    .m400 {
+        border-radius: 30px;
+        width: 90%;
+        padding: 5%;
+    }
+
+    #D2 {
+        margin-left: 30%;
+
+        display: block;
+    }
+
+    .optionList1 {
+
+        margin-top: 8%;
+    }
+}
+
+
 
 
 
