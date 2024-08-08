@@ -13,9 +13,9 @@ export class LoginComponent {
   password!: string;
   errorMassage: string = '';
   constructor(private authService: AuthService, private router: Router) {
-    
+
   }
-  onsubmit(){
+  onsubmit() {
     this.authService.login(this.email, this.password).subscribe(
       token => {
         console.log('Token', token);
@@ -23,7 +23,7 @@ export class LoginComponent {
           valid => {
             if (valid) {
               console.log('Token is valid')
-              this.router.navigate(['/home']); // Redirect to the home page
+              this.router.navigate(['/home']);
             } else {
               console.log('Token is invalid');
               this.errorMassage = 'Token is invalid';
@@ -44,13 +44,14 @@ export class LoginComponent {
       error => {
         console.error('Login error', error);
         if (error.status === 401) {
-          this.errorMassage = 'כתובת אימייל או סיסמה אינם נכונים';
+          this.errorMassage = 'אחד או יותר מן הנתונים שהקשת אינם נכונים';
         } else {
           this.errorMassage = 'שגיאת התחברות';
         }
       }
     );
   }
+
 
 
 }
