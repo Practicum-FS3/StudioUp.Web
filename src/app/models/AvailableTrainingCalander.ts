@@ -1,4 +1,3 @@
-
 export interface AvailableTraining {
     id: number,
     TrainingId: number,
@@ -11,10 +10,6 @@ export interface AvailableTraining {
     ParticipantsCount:number,
     isActive: boolean
 }
-
-
-
-
 
 
 

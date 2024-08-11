@@ -66,6 +66,7 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     HomeAboutComponent,
     AboutComponent,
     SystemComponent,
+    DetailsAndRegistrationComponent,
     HomeAboutComponent,
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
