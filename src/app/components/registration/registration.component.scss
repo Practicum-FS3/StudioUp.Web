@@ -1,7 +1,19 @@
 .container {
-  max-width: 100%;
+  width: 100%;
   padding: 2%;
-
+  font-size: 12px;
+  @font-face {
+    font-family: "Anomalia ML v2 AAA Bold";
+    src: url("../../../assets/fonts/AnomaliaMLv2AAABold.woff") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Ploni ML v2 AAA";
+    src: url("../../../assets/fonts/PloniRegular.woff"), format("woff2");
+    font-weight: 400;
+    font-style: normal;
+  }
   .registrationHeader {
     display: flex;
     align-items: center;
@@ -25,7 +37,7 @@
       height: 100%;
       .registration-text {
         font-family: "Anomalia ML v2 AAA Bold", sans-serif;
-        font-size: 70rem;
+        font-size: 7em;
         color: #ffffff;
         text-align: center;
         margin: 0;
@@ -49,7 +61,7 @@
       }
 
       .registration-text {
-        font-size: 0.5rem;
+        font-size: 0.5em;
       }
 
       .registration-image {
@@ -64,7 +76,7 @@
       }
 
       .registration-text {
-        font-size: 0.5rem;
+        font-size: 5em !important;
       }
 
       .registration-image {
@@ -84,7 +96,7 @@
       }
 
       .registration-text {
-        font-size: 0.5rem;
+        font-size: 0.5em;
       }
 
       .registration-image {
@@ -102,9 +114,6 @@
         border-radius: 30px;
       }
 
-      .registration-text {
-      }
-
       .registration-image {
         width: 35%;
         top: 50%;
@@ -120,7 +129,7 @@
       }
 
       .registration-text {
-        font-size: 0.2rem;
+        font-size: 0.2em;
       }
 
       .registration-image {
@@ -136,10 +145,6 @@
         padding: 8%;
         border-radius: 20px;
       }
-
-      .registration-text {
-      }
-
       .registration-image {
         height: 60%;
         top: 50%;
@@ -153,102 +158,137 @@
     display: flex;
     flex-wrap: wrap;
     direction: rtl;
-    margin: 5%;
+    justify-content: space-between; // רווח אוטומטי בין האלמנטים
+    margin: 5% 0;
     margin-top: 0%;
     .inputs {
       display: flex;
       flex-direction: column;
       width: 100%;
       input {
+        border-radius: 31px;
+        border: none;
+        background-color: #ececec;
+        font-family: "Ploni ML v2 AAA", sans-serif;
+        font-size: 2.2em;
+        text-align: right;
+        margin-top: 6%;
+        display: flex;
+        padding-right: 5%;
         padding-block: 1%;
       }
       ::placeholder {
         color: black;
       }
+      :hover::placeholder {
+        color: #ffffff;
+      }
     }
 
     .wrap-form,
     .selects {
-      flex: 1 1 45%;
-    }
-
-    input,
-    select {
-      width: 100%;
-      height: fit-content;
-      border-radius: 31px;
-      border: none;
-      background-color: #ececec;
-      font-family: "Ploni ML v2 AAA", sans-serif;
-      font-size: 22rem;
-      font-weight: 400;
-      text-align: right;
-      margin-top: 6%;
-      display: flex;
-      // align-items: center;
-      padding-right: 5%;
+      flex: 1 1;
     }
 
     .sumbit {
       flex: 1 1 100%;
+      width: 10%;
       display: flex;
-      align-items: center;
       margin-top: -3%;
-      margin-left: 1%;
       justify-content: left;
       .sumbit-text {
-        padding: 0.8%;
+        padding: 1%;
+      }
+      button {
+        width: 4%;
       }
     }
 
     .sumbit-text,
     .button-text {
-      width: 181.33rem;
-      margin-right: 0%;
       margin-top: 6%;
-      border-radius: 30px;
+      border-radius: 31px;
       background-color: #d91c5c;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
       font-family: "Ploni ML v2 AAA", sans-serif;
-      font-size: 22rem;
-      text-align: center;
+      font-size: 2.2em;
+      padding-block: 1%;
+      z-index: 1;
+      cursor: pointer;
     }
 
     button,
     .button-ref {
-      width: 36.55rem;
-      height: 36.55rem;
+      width: 7%;
       border-radius: 50%;
       border: 2px solid black;
       background-color: transparent;
       display: flex;
-      justify-content: center;
-      align-items: center;
       margin-top: 6%;
       background-image: url("../../../assets/images/ArrowBlack.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 40%;
+      z-index: 1;
       &:hover {
         opacity: 0.5;
       }
     }
 
-    select:hover,
-    input:hover {
-      opacity: 0.5;
-    }
-
     .select {
       display: flex;
-    }
 
-    mat-error {
-      color: #d91c5c;
-      padding-right: 3%;
+      p-dropdown {
+        flex: 1;
+      }
+
+      .button-text {
+        margin-right: -6%;
+      }
+
+      .button-ref {
+        margin-left: 5%;
+      }
+
+      ::ng-deep {
+        .p-dropdown {
+          border-radius: 31px;
+          border: none;
+          background-color: #ececec;
+          text-align: right;
+          margin-top: 10%;
+          padding-right: 5%;
+          padding-block: 1%;
+          width: 90%;
+
+          .p-dropdown-label {
+            text-align: right;
+          }
+
+          .p-placeholder {
+            font-family: "Ploni ML v2 AAA", sans-serif;
+            font-size: 1.6em;
+            color: black;
+            &:hover {
+              color: #ffffff;
+            }
+          }
+
+          .p-dropdown-items {
+            font-family: "Ploni ML v2 AAA", sans-serif;
+            font-size: 1em;
+            color: black;
+          }
+          .p-inputtext{
+            font-family: "Ploni ML v2 AAA", sans-serif;
+            font-size: 1.6em;
+            color: black;
+          }
+        }
+      }
     }
 
     .wrap-form {
@@ -256,18 +296,43 @@
       justify-content: left;
       align-items: center;
     }
-  }
 
-  @font-face {
-    font-family: "Anomalia ML v2 AAA Bold";
-    src: url("../../../assets/fonts/AnomaliaMLv2AAABold.woff") format("woff2");
-    font-weight: 700;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Ploni ML v2 AAA";
-    src: url("../../../assets/fonts/PloniRegular.woff"), format("woff2");
-    font-weight: 400;
-    font-style: normal;
+    mat-error {
+      color: #d91c5c;
+      padding-right: 3%;
+    }
+
+    @media (max-width: 992px) {
+      margin: 5%;
+      .selects,
+      .wrap-form {
+        flex: 1 1 100%;
+      }
+      .select {
+        width: 100%;
+      }
+      select option {
+        padding-left: 0%;
+        width: 10%;
+        color: #d91c5c;
+      }
+      button,
+      .button-ref {
+        width: 10%;
+      }
+      .button-text,
+      .sumbit-text {
+        font-size: 1.5em;
+      }
+      .sumbit {
+        .sumbit-text {
+          padding-left: 5%;
+          padding-right: 5%;
+        }
+        button {
+          width: 7%;
+        }
+      }
+    }
   }
 }

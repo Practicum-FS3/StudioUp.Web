@@ -1,10 +1,10 @@
+import { DropdownModule } from 'primeng/dropdown';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';  // ייבוא של HttpClientModule
+import { HttpClientModule } from '@angular/common/http'; // ייבוא של HttpClientModule
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -28,7 +28,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SystemComponent } from './components/system/system.component';
 import { provideHttpClient } from '@angular/common/http';
@@ -67,15 +67,16 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     AboutComponent,
     SystemComponent,
     HomeAboutComponent,
-    AfterRegistrationComponent,    
+    AfterRegistrationComponent,
     SubscriptionBenefitsComponent,
     HomeSubscriptionBenefitsComponent,
     TracksComponent,
     HomeComponent,
     CustomerSubHistoryComponent,
-    SubscriptionDetailComponent
+    SubscriptionDetailComponent,
   ],
   imports: [
+    DropdownModule,
     BrowserModule,
     AppRoutingModule,
     TabViewModule,
@@ -100,14 +101,9 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     TooltipModule,
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
-    RouterModule.forRoot([])
-
+    RouterModule.forRoot([]),
   ],
-  providers: [
-    provideAnimationsAsync(),
-    provideHttpClient()
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync(), provideHttpClient()],
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}

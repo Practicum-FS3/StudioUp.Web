@@ -1,10 +1,17 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { RegistrationService } from '../../services/registration/registration.service';
-import { Customer } from '../../models/Customer';
+import { Customer } from '../../models/Customer ';
 import { Training } from '../../models/Training';
+import { CustomerType } from '../../models/CustomerType ';
 import { HMO } from '../../models/HMO';
 import { PaymentOption } from '../../models/PaymentOption';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 import { map, startWith, Observable, Subscription } from 'rxjs';
 import { SubscriptionType } from '../../models/SubscriptionType';
 import { Router } from '@angular/router';
@@ -23,6 +30,7 @@ import { State } from '../../store/reducer';
 export class RegistrationComponent implements OnInit, OnDestroy {
   trainings!: Training[];
   subscriptionTypes!: SubscriptionType[];
+  customerTypes!: CustomerType[];
   paymentOptions!: PaymentOption[];
   HMOs!: HMO[];
   private customer!: Customer | null;
@@ -47,7 +55,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     'actcom.co.il',
   ];
   formSubmitted: boolean = false;
- 
+
   constructor(
     private registrationService: RegistrationService,
     private fb: FormBuilder,
@@ -56,12 +64,52 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.HMOs = [
+      {
+        title: 'Atlanta',
+        id: 1,
+      },
+      {
+        title: 'Berlin',
+        id: 2,
+      },
+      {
+        title: 'Boston',
+        id: 3,
+      },
+      {
+        title: 'Chicago',
+        id: 4,
+      },
+      {
+        title: 'London',
+        id: 5,
+      },
+      {
+        title: 'Los Angeles',
+        id: 6,
+      },
+      {
+        title: 'New York',
+        id: 7,
+      },
+      {
+        title: 'Paris',
+        id: 8,
+      },
+      {
+        title: 'San Francisco',
+        id: 9,
+      },
+    ];
     this.form = this.fb.group({
       hmo: [''],
       training: ['', Validators.required],
-      customer: ['', Validators.required],
+      subscriptionType: ['', Validators.required],
+      customerType: ['', Validators.required],
       paymentOption: ['', Validators.required],
       fullName: ['', Validators.required],
+      ID: ['', [Validators.required, this.idValidator()]],
       address: [''],
       phone: [
         '',
@@ -77,7 +125,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     if (this.formData) {
       this.form.patchValue(this.formData);
     }
-  
+
     this.formSubscription = this.form.valueChanges.subscribe((formData) => {
       this.store.dispatch(setRegistrationForm({ formData }));
     });
@@ -99,6 +147,11 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     }
   }
 
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any): void {
+    this.store.dispatch(resetRegistrationForm());
+  }
+
   private fetchData(): void {
     this.registrationService
       .getTrainings()
@@ -111,6 +164,11 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         this.subscriptionTypes = subscriptionTypes;
       });
     this.registrationService
+      .getCustomerTypes()
+      .subscribe((customerTypes: CustomerType[]) => {
+        this.customerTypes = customerTypes;
+      });
+    this.registrationService
       .getPaymentOptions()
       .subscribe((paymentOptions: PaymentOption[]) => {
         this.paymentOptions = paymentOptions;
@@ -120,8 +178,46 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     });
   }
 
+  mapDataForSelects(data: any[]): string[] {
+    return data.map((value: any) => value.title) ?? '';
+  }
+
   navigateTo(route: string): void {
-    this.router.navigate([route]);
+    this.router.navigate([route], { fragment: 'success-message' });
+  }
+
+  idValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value = control.value;
+      if (!value) {
+        return null;
+      }
+
+      if (value.length < 9) {
+        return { invalidId: true };
+      }
+
+      const idStr = value.toString().padStart(9, '0');
+      if (idStr.length !== 9 || !/^\d+$/.test(idStr)) {
+        return { invalidId: true };
+      }
+
+      let sum = 0;
+      for (let i = 0; i < 9; i++) {
+        let digit = parseInt(idStr[i], 10);
+        if (i % 2 === 0) {
+          digit *= 1;
+        } else {
+          digit *= 2;
+          if (digit > 9) {
+            digit -= 9;
+          }
+        }
+        sum += digit;
+      }
+
+      return sum % 10 === 0 ? null : { invalidId: true };
+    };
   }
 
   private _filter(value: string): string[] {
@@ -140,28 +236,41 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     this.formSubmitted = true;
     if (this.form.valid) {
       this.customer = {
-        subscriptionTypeId: this.form.value.customer.id,
-        paymentOptionId: this.form.value.paymentOption.id,
-        hmoId: this.form.value.hmo.id,
+        subscriptionTypeId: this.convertValueToId(
+          this.subscriptionTypes,
+          this.form.value.subscriptionTypeId
+        ),
+        // trainingTypeId: this.convertValueToId(this.form.value.training),
+        customerTypeId: this.convertValueToId(
+          this.customerTypes,
+          this.form.value.customerType
+        ),
+        paymentOptionId: this.convertValueToId(
+          this.paymentOptions,
+          this.form.value.paymentOption
+        ),
+        hmoId: this.convertValueToId(this.HMOs, this.form.value.hmo),
         firstName: this.firstName(this.form.value.fullName),
         lastName: this.lastName(this.form.value.fullName),
+        id: this.form.value.ID,
         address: this.form.value.address ?? '',
-        phone: this.form.value.phone,
+        tel: this.form.value.phone,
         email: this.form.value.email ?? '',
-        
+        isActive: true,
       };
       console.log('Customer registration data:', this.customer); // Make API call to register customer
       this.registrationService.customerRegistration(this.customer); // Reset form fields
       this.customer = null;
       this.form.reset();
       this.store.dispatch(resetRegistrationForm());
+      this.navigateTo('afterRegistration');
     } else {
       this.form.markAllAsTouched();
     }
   }
-  @HostListener('window:beforeunload', ['$event'])
-  unloadNotification($event: any): void {
-    this.store.dispatch(resetRegistrationForm());
+
+  convertValueToId(data: any[], title: string): number {
+    return data.find((value) => value.title == title).id;
   }
 
   firstName(fullName: string): string {
