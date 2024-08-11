@@ -1,9 +1,13 @@
-export class SubscriptionType {
-  id: number;
-  title: string;
 
-  constructor(id: number, title: string) {
-    this.id = id;
-    this.title = title;
-  }
+
+export class SubscriptionType {
+  constructor(
+    public id: number,
+    public title: string,
+    public isActive: boolean,
+    public totalTraining: number,
+    public priceForTraining: number,
+    public numberOfTrainingPerWeek: number,
+    public description: string
+  ){}
 }

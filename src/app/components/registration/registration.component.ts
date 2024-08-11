@@ -148,6 +148,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         address: this.form.value.address ?? '',
         phone: this.form.value.phone,
         email: this.form.value.email ?? '',
+        
       };
       console.log('Customer registration data:', this.customer); // Make API call to register customer
       this.registrationService.customerRegistration(this.customer); // Reset form fields
