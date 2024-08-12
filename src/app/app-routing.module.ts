@@ -13,6 +13,7 @@ import {TracksComponent} from './components/tracks/tracks.component'
 import { HmosComponent } from './components/hmos/hmos.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -28,7 +29,7 @@ const routes: Routes = [
   {path:'payment-options',component:PaymentOptionsComponent},
   {path:'our-team',component:OurTeamComponent},
   {path:'login',component:LoginComponent},
-  { path: "personal-area" ,component:PersonalAreaComponent},
+  { path: "personal-area" ,component:PersonalAreaComponent, canActivate: [AuthGuard] },
   { path: 'registration', component: RegistrationComponent },
   { path: 'HMOs', component: HmosComponent },
   { path: 'subscriptionPerCustomer',component: CustomerSubHistoryComponent}
