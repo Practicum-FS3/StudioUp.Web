@@ -1,22 +1,53 @@
 <div dir="rtl" class="container mt-3">
-    <h2 class="custom-title">הסטוריית מנויי לקוח</h2>
-    <table class="table table-custom">
-      <thead>
-        <tr>
-            <th>תז לקוח</th>
-            <th>סוג מנוי</th>
-            <th>תאריך התחלת מנוי</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- <tr *ngFor="let subscription of subscriptions" [ngClass]="{'bg-danger': subscription.condition}">
-          <td>{{ subscription.customerId }}</td>
-          <td>{{ subscription.subscriptionTypeId }}</td>
-          <td>{{ subscription.startDate | date }}</td>
-        </tr> -->
-      </tbody>
-      
-    </table>
+  <h2 class="custom-title">הסטוריית מנויי לקוח</h2>
 
+<!-- הצגת מנוי נוכחי -->
+<div *ngIf="currentSubscription; else noSubscription" class="current-subscription">
+  <h3 class="current-sub-title">מנוי נוכחי:</h3>
+  <div class="current-sub-details">
+    <span><strong>תז לקוח:</strong> {{ currentSubscription.customerID }}</span>
+    <span><strong>סוג מנוי:</strong> {{ currentSubscription.subscriptionTypeId }}</span>
+    <span><strong>תאריך התחלת מנוי:</strong> {{ currentSubscription.startDate | date }}</span>
   </div>
+</div>
+
+<!-- הודעה למקרה שאין מנוי נוכחי -->
+<ng-template #noSubscription>
+    <p class="current-sub-details">לא נמצא מנוי פעיל עבור הלקוח.</p>
+</ng-template>
+
+
+<br/>
+<br/>
+
+<div *ngIf="subscriptions && subscriptions.length > 0; else noSubscriptions">
+  <h5 class="select-title">יש לבחור מנוי לקבלת פרטים נוספים</h5>
+  <table class="table table-custom" >
+    <thead>
+      <tr>
+        <th>תז לקוח</th>
+        <th>סוג מנוי</th>
+        <th>תאריך התחלת מנוי</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subscription of subscriptions" (click)="openSubscriptionDetail(subscription.subscriptionTypeId)">
+        <td>{{ subscription.customerID }}</td>
+        <td>{{ subscription.subscriptionTypeId }}</td>
+        <td>{{ subscription.startDate | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
   
+  <ng-template #noSubscriptions>
+    <div class="no-subscriptions">
+      <p>לא נמצאו מנויים עבור לקוח זה.</p>
+      <br/>
+      <br/>
+      <p>תכניסו בקוד בcustomer-sub-history.component.ts איזשהו id של לקוח שמעודכן אצליכם בדאטה בייס כדי שזה יעבוד לכם.</p>
+      <p>בהצלחה:)</p>
+    </div>
+  </ng-template>
+  
+</div>
