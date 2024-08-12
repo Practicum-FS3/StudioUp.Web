@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PersonalAreaHMOServiceService {
+export class PersonalAreaHMOService {
   private apiUrl = `https://localhost:7101/api/CustomerHMOS`;
 
   constructor(private http: HttpClient) { }
@@ -18,7 +18,7 @@ export class PersonalAreaHMOServiceService {
     return this.http.get<CustomerHMOS>(`${this.apiUrl}/GetCustomerHMOSByID/${id}`);
   }
 
-  addCustomerHMOS(customerHMOS: CustomerHMOS): Observable<CustomerHMOS> {
+  addCustomerHMOS(customerHMOS: CustomerHMOS | null): Observable<CustomerHMOS> {
     return this.http.post<CustomerHMOS>(`${this.apiUrl, customerHMOS}/CreateCustomerHMOS`, customerHMOS); // ודאי שהטיפוס נכון כאן
   }
 

@@ -1,0 +1,219 @@
+.personal-form,
+.file-form {
+    max-width: 600px;
+    margin: auto;
+    background-color: #faf6f3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    color: #4c4c49;
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-form .form-group,
+.file-form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-form label,
+.file-form label {
+    margin-bottom: 5px;
+    color: #4c4c49;
+}
+
+.form-control {
+    text-align: right;
+    color: #4c4c49;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.btn-custom,
+.btn-custom-secondary,
+.btn-custom-danger {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn-custom {
+    background-color: #d91c5c;
+    border: none;
+    color: #faf6f3;
+}
+
+.btn-custom:hover {
+    background-color: #b11749;
+}
+
+.btn-custom-secondary {
+    background-color: #4c4c49;
+    border: none;
+    color: #faf6f3;
+}
+
+.btn-custom-secondary:hover {
+    background-color: #3d3d3a;
+}
+
+.btn-custom-danger {
+    background-color: #ffcc0f;
+    border: none;
+    color: #4c4c49;
+}
+
+.btn-custom-danger:hover {
+    background-color: #e6b80d;
+}
+
+@media (max-width: 768px) {
+
+    .personal-form,
+    .file-form {
+        padding: 15px;
+    }
+
+    .form-control {
+        font-size: 13px;
+    }
+
+    .btn-custom,
+    .btn-custom-secondary,
+    .btn-custom-danger {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .personal-form,
+    .file-form {
+        padding: 10px;
+    }
+
+    .form-control {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .btn-custom,
+    .btn-custom-secondary,
+    .btn-custom-danger {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+#button-icon {
+    border: 2px solid #000000;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    margin: 3px;
+    padding: 7px;
+    color: #d91c5c;
+}
+
+.file-input-hidden {
+    display: none;
+}
+
+.error-massege {
+    color: rgb(213, 14, 14);
+    font-size: smaller;
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.file-preview {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  #pdf-preview-icon {
+    font-size: 50px;
+    color: red;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .custom-select {
+    width: 100%; /* עושה את ה-dropdown רספונסיבי */
+    border-radius: 4px; /* פינות מעוגלות */
+    border: 2px solid #d91c5c; /* גבול בצבע שהגדרת */
+    padding: 10px; /* ריפוד פנימי */
+    background-color: #faf6f3; /* צבע הרקע */
+    color: #4c4c49; /* צבע הטקסט */
+    font-size: 14px; /* גודל הטקסט */
+}
+
+/* שינוי צבעים של ה-dropdown כשזה בפוקוס */
+.custom-select:focus {
+    border-color: #ffcc0f; /* צבע הגבול כשזה בפוקוס */
+    outline: none; /* הסרת קו מתאר */
+    background-color: #fff; /* צבע רקע כשזה בפוקוס */
+}
+
+/* שינוי צבעים של האופציות */
+.custom-select option {
+    background-color: #faf6f3; /* צבע הרקע של האופציות */
+    color: #4c4c49; /* צבע הטקסט של האופציות */
+}
+
+/* שינוי צבעים של האופציות כשזה בפוקוס */
+.custom-select option:focus {
+    background-color: #ffcc0f; /* צבע הרקע כשזה בפוקוס */
+    color: #4c4c49; /* צבע הטקסט */
+}
+
+
+
+.custom-dropdown {
+    width: 100%; /* עושה את ה-dropdown רספונסיבי */
+}
+
+.p-dropdown {
+    border-radius: 4px; /* פינות מעוגלות */
+}
+
+.p-dropdown .p-dropdown-label {
+    background-color: #faf6f3; /* צבע הרקע */
+    color: #4c4c49; /* צבע הטקסט */
+    padding: 10px; /* ריפוד פנימי */
+}
+
+.p-dropdown .p-dropdown-trigger {
+    background-color: #d91c5c; /* צבע הרקע של הכפתור */
+    color: #faf6f3; /* צבע הטקסט של הכפתור */
+}
+
+.p-dropdown .p-dropdown-items {
+    background-color: #faf6f3; /* צבע הרקע של האופציות */
+    color: #4c4c49; /* צבע הטקסט של האופציות */
+}
+
+/* שינוי צבעים של האופציות כשזה בפוקוס */
+.p-dropdown .p-dropdown-item:hover {
+    background-color: #ffcc0f; /* צבע הרקע של האופציות בהhover */
+    color: #4c4c49; /* צבע הטקסט */
+}

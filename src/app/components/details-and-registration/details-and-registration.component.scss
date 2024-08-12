@@ -1,0 +1,13 @@
+.page{
+    background-color: rgb(201, 97, 97);
+    align-content: center;
+    width: 50%;
+    height: 50%;
+    
+}
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
