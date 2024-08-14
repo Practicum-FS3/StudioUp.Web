@@ -1,0 +1,14 @@
+<p-dialog id="message-dialog" [(visible)]="display" [modal]="true" [closable]="false" (onHide)="hide()"
+    [header]="messageHeader" dir="rtl">
+    <div class="p-grid p-align-center p-justify-center" style="text-align: center;">
+        <div class="p-col-12">
+            <p id="message-content">{{ messageContent || 'Default Erroe Message' }}</p>
+        </div>
+        <div class="p-col-12" id="button">
+            <button id="message-button" type="button" (click)="hide()">חזרה</button>
+            <button id="button-icon" type="button" (click)="hide()">
+                <img src="../../../assets/images/Arrow1Black.png" alt="Arrow" class="button-icon">
+            </button>
+        </div>
+    </div>
+</p-dialog>
