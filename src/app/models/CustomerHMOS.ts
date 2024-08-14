@@ -3,14 +3,27 @@ import { Customer } from "./Customer";
 export class CustomerHMOS {
     private _id: number | undefined;
     private _customerID: number | undefined;
-    private _customer?: Customer;
+    // private _customer?: Customer;
     private _hmoid: number | undefined;
     private _freeFitId: string | undefined;
     private _filedId: number | undefined;
 
-    constructor() {
+    constructor(
+        id?: number,
+        customerID?: number,
+        // customer?: Customer,
+        hmoid?: number,
+        freeFitId?: string,
+        filedId?: number
+    ) {
+        this._id = id;
+        this._customerID = customerID;
+        // this._customer = customer;
+        this._hmoid = hmoid;
+        this._freeFitId = freeFitId;
+        this._filedId = filedId;
     }
-
+    
     // Getter and Setter for id
     get id(): number | undefined {
         return this._id;
@@ -30,13 +43,13 @@ export class CustomerHMOS {
     }
 
     // Getter and Setter for customer
-    get customer(): Customer | undefined {
-        return this._customer;
-    }
+    // get customer(): Customer | undefined {
+    //     return this._customer;
+    // }
 
-    set customer(value: Customer | undefined) {
-        this._customer = value;
-    }
+    // set customer(value: Customer | undefined) {
+    //     this._customer = value;
+    // }
 
     // Getter and Setter for hmoId
     get hmoid(): number | undefined {

@@ -1,6 +1,7 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
+import { FileDownload } from '../../models/FileDownload';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,7 @@ export class FileService {
       catchError(this.handleError)
     );
   }
+
 
   deleteFile(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
