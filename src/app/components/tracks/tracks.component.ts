@@ -22,6 +22,7 @@ export class TracksComponent implements OnInit {
       this.tracks = data; // Store the retrieved data in the tracksData array
     });
   }
+
   toggleIconStarOff(itemId: number): void {
     const element = document.getElementById('star-' + itemId.toString());
     if (element) {
@@ -31,6 +32,7 @@ export class TracksComponent implements OnInit {
       console.log('Error: Element not found');
     }
   }
+  
   toggleIconStarOn(itemId: number): void {
     const element = document.getElementById('star-' + itemId.toString());
     if (element) {
@@ -40,7 +42,7 @@ export class TracksComponent implements OnInit {
       console.log('Error: Element not found');
     }
   }
-  
+
   toggleAccordion(index: number): void {
     this.tracks.forEach((tab, i) => {
       if (i === index) {

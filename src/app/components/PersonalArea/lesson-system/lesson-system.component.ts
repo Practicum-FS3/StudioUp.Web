@@ -146,9 +146,10 @@ export class LessonSystemComponent {
         if (this.arr.filter(x => x.dayOfWeek == day).length > this.maxCount) {
           this.maxCount = this.arr.filter(x => x.dayOfWeek == day).length
         }
-        console.log('ayala');
         this.groupedItems?.push(this.arr.filter(x => x.dayOfWeek == day).sort((a, b) => {
 
+      
+          
           let hourA = a.time.charAt(0) + a.time.charAt(1);
           let hourB = b.time.charAt(0) + b.time.charAt(1);
           let minutA = a.time.charAt(3) + a.time.charAt(4);

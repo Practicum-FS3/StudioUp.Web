@@ -50,6 +50,8 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
 import { Component, OnInit } from '@angular/core';
 import { Message } from 'primeng/api';
 import { MessagesModule } from 'primeng/messages';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
+import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,7 @@ import { MessagesModule } from 'primeng/messages';
     HomeAboutComponent,
     AboutComponent,
     SystemComponent,
+    DetailsAndRegistrationComponent,
     HomeAboutComponent,
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
@@ -76,7 +79,8 @@ import { MessagesModule } from 'primeng/messages';
     TracksComponent,
     HomeComponent,
     CustomerSubHistoryComponent,
-    SubscriptionDetailComponent
+    SubscriptionDetailComponent,
+    ErrorMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -101,6 +105,7 @@ import { MessagesModule } from 'primeng/messages';
     // NgbModule,
     ButtonModule,
     MessagesModule,
+    TooltipModule,
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
     RouterModule.forRoot([]),
