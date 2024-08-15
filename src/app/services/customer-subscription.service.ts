@@ -23,7 +23,7 @@ export class CustomerSubscriptionService {
 
   // קבלת כל המנויים של לקוח לפי מזהה לקוח
     getByCustomerId(customerId: number): Observable<CustomerSubscription[]> {
-      return this.http.get<CustomerSubscription[]>(`${this.baseUrl}/customer/${customerId}`);
+      return this.http.get<CustomerSubscription[]>(`${this.baseUrl}/GetCustomerSubscriptionsByCustomerId/${customerId}`);
     }
 
 
@@ -50,6 +50,6 @@ export class CustomerSubscriptionService {
 
   //קבלת פרטי מנוי לפי מזהה מנוי ממנויים ללקוח
   getSubscriptionType(id: number): Observable<SubscriptionType> {
-    return this.http.get<SubscriptionType>(`https://localhost:7101/api/subscriptionType/${id}`);
+    return this.http.get<SubscriptionType>(`https://localhost:7101/api/subscriptionType/getSubscriptionTypeById/${id}`);
   }
 }

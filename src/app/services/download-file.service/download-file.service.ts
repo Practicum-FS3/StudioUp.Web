@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class DownloadFileService {
   private http = inject(HttpClient);
 
-  constructor() {}
+  constructor() { }
 
   downloadFile(fileUrl: string): Observable<Blob> {
     return this.http.get(fileUrl, { responseType: 'blob' });
