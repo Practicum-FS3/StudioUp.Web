@@ -1,0 +1,107 @@
+<div class="panel cardCust">
+    <p-accordion>
+        <p-accordionTab *ngFor="let LeumitCommitments of allLeumitCommitments"
+            (onOpen)="setCurrentLeumit(LeumitCommitments)">
+
+
+            <ng-template pTemplate="header">
+                <div class="head">{{ LeumitCommitments.validity }}</div>
+            </ng-template>
+            <div class="content">
+                <label class="title" id="top-title">נתוני התחיבות</label>
+                <div class="form-group">
+                    <label class="title">מזהה התחיבות:</label>
+                    <span class="tooltip-container">
+                        <i class="pi pi-question-circle tooltip-icon" id="Question-Mark"></i>
+                        <div class="tooltip-content">
+                            <img src="../../../assets/images/LeumitId.png" alt="Tooltip Image">
+                        </div>
+                        <input type="text" [(ngModel)]="LeumitCommitments.id">
+                    </span>
+                </div>
+                
+                <div class="form-group">
+                    <label class="title">סוג התחיבות:</label>
+                    <span class="tooltip-container">
+                        <i class="pi pi-question-circle tooltip-icon" id="Question-Mark"></i>
+                        <div class="tooltip-content">
+                            <img src="../../../assets/images/LeumitCommintType.png" alt="Tooltip Image">
+                        </div>
+                        <select [(ngModel)]="LeumitCommitments.commitmentTypeId">
+                            <ng-container *ngFor="let leumitType of allLeumitType">
+                                <option [value]="leumitType.id">
+                                    {{ leumitType.id }}/{{ leumitType.title }}
+                                </option>
+                            </ng-container>
+                        </select>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label class="title">תוקף התחיבות:</label>
+                    <span class="tooltip-container">
+                        <i class="pi pi-question-circle tooltip-icon" id="Question-Mark"></i>
+                        <div class="tooltip-content">
+                            <img src="../../../assets/images/LeumitValidity.png" alt="Tooltip Image">
+                        </div>
+                        <input type="date" [(ngModel)]="LeumitCommitments.validity"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="title">תעודת זהות התחיבות:</label>
+                    <span class="tooltip-container">
+                        <i class="pi pi-question-circle tooltip-icon" id="Question-Mark"></i>
+                        <div class="tooltip-content">
+                            <img src="../../../assets/images/LeumitTZCust.png" alt="Tooltip Image">
+                        </div>
+                        <input type="text" [(ngModel)]="LeumitCommitments.commitmentTz" pattern="[0-9]*" title="Please enter only numbers">
+                        <div *ngIf="!LeumitCommitments.commitmentTz.match('^[0-9]*$')|| LeumitCommitments.commitmentTz.length !== 9" class="worning">
+                        תעודת זהות לא תקינה!
+                        </div>
+                    </span>
+                </div> 
+                <div class="form-group">
+                    <label class="title">תאריך לידה התחייבות:</label>
+                    <span class="tooltip-container">
+                        <i class="pi pi-question-circle tooltip-icon" id="Question-Mark"></i>
+                      <div class="tooltip-content">
+                            {{LeumitCommitments.birthDate}}
+                        </div><input type="date" [(ngModel)]="LeumitCommitments.birthDate">
+                    </span>
+                </div>
+                <div *ngIf="!LeumitCommitments.fileUploadId">
+
+                    <input id="registrationForm" type="file" (change)="addFile($event,LeumitCommitments)"
+                        class="file-input-hidden" />
+                    <i class="pi pi-upload" id="button-icon" (click)="triggerFileInput()"></i>
+                    <span>לא נבחר קובץ</span>
+                </div>
+                <div *ngIf="LeumitCommitments.fileUploadId">
+                    <span id="name-file">טופס התחיבות</span>
+                    <i class="pi pi-download" id="button-icon" (click)="downloadFile(LeumitCommitments)"></i>
+
+                    <i class="pi pi-trash" id="button-icon" (click)="deleteFile(LeumitCommitments)"></i>
+                </div>
+                <div id="save_cancel">
+                    <input type="button" value="שמירה" (click)="save(LeumitCommitments)">
+                    <input type="button" value="ביטול" (click)="cancelation()">
+                </div>
+
+            </div>
+
+
+            <!-- <p-fileUpload 
+                    mode="basic" 
+                    chooseLabel="Choose" 
+                    chooseIcon="pi pi-upload"
+                    name="demo[]" 
+                    url="https://www.primefaces.org/cdn/api/upload.php" 
+            
+                    maxFileSize="1000000" 
+                    (change)="addFile($event,LeumitCommitments)" />
+           -->
+
+
+        </p-accordionTab>
+    </p-accordion>
+</div>

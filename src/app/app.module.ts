@@ -41,6 +41,11 @@ import { registrationReducer } from './store/reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
+import { HmoLeumitComponent } from './components/hmo-leumit/hmo-leumit.component';
+import { ListboxModule } from 'primeng/listbox';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ToastModule } from 'primeng/toast';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { TracksComponent } from './components/tracks/tracks.component';
 import { TooltipModule } from 'primeng/tooltip';
@@ -50,6 +55,7 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 import { DialogModule } from 'primeng/dialog'
+
 
 @NgModule({
   declarations: [
@@ -74,6 +80,7 @@ import { DialogModule } from 'primeng/dialog'
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
     HomeSubscriptionBenefitsComponent,
+    HmoLeumitComponent,
     TracksComponent,
     HomeComponent,
     CustomerSubHistoryComponent,
