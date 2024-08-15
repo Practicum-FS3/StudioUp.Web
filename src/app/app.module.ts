@@ -54,6 +54,8 @@ import { CustomerSubHistoryComponent } from './components/customer-sub-history/c
 import { SubscriptionDetailComponent } from './components/customer-sub-history/subscription-detail/subscription-detail.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
+import { DialogModule } from 'primeng/dialog'
+
 
 @NgModule({
   declarations: [
@@ -107,6 +109,7 @@ import { DetailsAndRegistrationComponent } from './components/details-and-regist
     BrowserAnimationsModule,
     // NgbModule,
     ButtonModule,
+    DialogModule,
     TooltipModule,
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
