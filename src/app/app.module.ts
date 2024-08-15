@@ -47,6 +47,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { HomeComponent } from './components/home/home.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { SubscriptionDetailComponent } from './components/customer-sub-history/subscription-detail/subscription-detail.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     // NgbModule,
     ButtonModule,
     TooltipModule,
+    MenubarModule,
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
     RouterModule.forRoot([])
