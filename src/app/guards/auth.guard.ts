@@ -7,18 +7,26 @@ import { AuthService } from '../services/auth.service'
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-
-  constructor(private authService: AuthService, private router: Router) {}
+  login:boolean = false
+  constructor(private authService: AuthService, private router: Router) {
+    
+  }
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      
-    if (this.authService.isLoggedIn()) {
-      return true;
-    } else {
-      this.router.navigate(['/login']); // ניתוב לדף התחברות אם המשתמש לא מחובר
-      return false;
-    }
+      if (this.authService.isLoggedIn()) {
+        this.login = true      
+      }
+       else {
+        this.authService.checkToken().subscribe(a => {
+          this.login = a  
+          if(a == false)
+            this.router.navigate(['/login']); // ניתוב לדף התחברות אם המשתמש לא מחובר
+        })
+            
+      }
+     return this.login;
+    
   }
 }
