@@ -12,18 +12,18 @@ export class PersonalAreaHMOService {
   constructor(private http: HttpClient) { }
 
   getAllCustomerHMOS(): Observable<CustomerHMOS[]> {
-    return this.http.get<CustomerHMOS[]>(`${this.apiUrl}/GetCustomerHMOS`);
+    return this.http.get<CustomerHMOS[]>(`${this.apiUrl}/GetAllCustomerHMOS`);
   }
   getCustomerHMOSById(id: number): Observable<CustomerHMOS> {
     return this.http.get<CustomerHMOS>(`${this.apiUrl}/GetCustomerHMOSByID/${id}`);
   }
 
   addCustomerHMOS(customerHMOS: CustomerHMOS | null): Observable<CustomerHMOS> {
-    return this.http.post<CustomerHMOS>(`${this.apiUrl, customerHMOS}/CreateCustomerHMOS`, customerHMOS); // ודאי שהטיפוס נכון כאן
+    return this.http.post<CustomerHMOS>(`${this.apiUrl}/AddCustomerHMO`, customerHMOS);
   }
 
   updateCustomerHMOS(id: number | undefined, customerHMOS: CustomerHMOS | null): Observable<CustomerHMOS> {
-    return this.http.put<CustomerHMOS>(`${this.apiUrl}/UpdateCustomerHMOS/${id}`, customerHMOS);
+    return this.http.put<CustomerHMOS>(`${this.apiUrl}/UpdateCustomerHMOS`, customerHMOS);
   }
 
   deleteCustomerHMOS(id: number): Observable<void> {
