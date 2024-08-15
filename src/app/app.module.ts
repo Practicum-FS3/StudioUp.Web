@@ -27,7 +27,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
-
+import { HmoLeumitComponent } from './components/hmo-leumit/hmo-leumit.component';
+import { ListboxModule } from 'primeng/listbox';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ToastModule } from 'primeng/toast';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +47,8 @@ import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscr
      AboutComponent,
     SystemComponent,
     SubscriptionBenefitsComponent,
-    HomeSubscriptionBenefitsComponent
+    HomeSubscriptionBenefitsComponent,
+    HmoLeumitComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,10 @@ import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscr
     FormsModule,
     NgbModule,
     ButtonModule,
+    ListboxModule,
+    FileUploadModule, 
+    ToastModule,
+    MatTooltipModule
   ],
   providers: [
     provideAnimationsAsync(),
