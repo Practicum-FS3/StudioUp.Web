@@ -52,10 +52,10 @@ import { TooltipModule } from 'primeng/tooltip';
 import { HomeComponent } from './components/home/home.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { SubscriptionDetailComponent } from './components/customer-sub-history/subscription-detail/subscription-detail.component';
+import { MenubarModule } from 'primeng/menubar';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 import { DialogModule } from 'primeng/dialog'
-
 
 @NgModule({
   declarations: [
@@ -111,6 +111,7 @@ import { DialogModule } from 'primeng/dialog'
     ButtonModule,
     DialogModule,
     TooltipModule,
+    MenubarModule,
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
     RouterModule.forRoot([])
