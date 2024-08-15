@@ -3,6 +3,7 @@
     margin-top: 3vh;
     border-color: black;
     margin-left: 3vh;
+    color: white;
 
 }
 
@@ -17,6 +18,15 @@ input:focus {
     border-color: white;
 }
 
-.alert{
+.alert {
     direction: rtl;
+}
+
+
+#email:-webkit-autofill,
+#email:-webkit-autofill:hover,
+#email:-webkit-autofill:focus,
+#email:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 124) inset !important;
+    -webkit-text-fill-color: black !important;
 }

@@ -1,0 +1,83 @@
+:host {
+  display: block;
+  padding-top: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.custom-title {
+  font-family: 'Ploni ML v2 AAA Bold', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  color: #d91c5c;
+  margin-bottom: 20px;
+}
+
+.select-title {
+  font-family: 'Ploni ML v2 AAA Bold', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  color: #d91c5c;
+  margin-bottom: 20px;
+}
+
+/* עיצוב עבור מנוי נוכחי */
+.current-subscription {
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.current-sub-title {
+  font-family: 'Ploni ML v2 AAA Bold', sans-serif;
+  font-size: 18px;
+  color: #d91c5c;
+  margin-bottom: 10px;
+}
+
+.current-sub-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 16px;
+}
+
+.table-custom {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  th,
+  td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #ffd700;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tbody tr td:hover {
+    background-color: #f231713e;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+}

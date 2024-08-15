@@ -1,26 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { RegistrationService } from '../../services/registration/registration.service';
 import { Customer } from '../../models/Customer';
 import { Training } from '../../models/Training';
 import { HMO } from '../../models/HMO';
 import { PaymentOption } from '../../models/PaymentOption';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { map, startWith, Observable } from 'rxjs';
+import { map, startWith, Observable, Subscription } from 'rxjs';
 import { SubscriptionType } from '../../models/SubscriptionType';
+import { Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+import {
+  resetRegistrationForm,
+  setRegistrationForm,
+} from '../../store/actions';
+import { State } from '../../store/reducer';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss'],
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponent implements OnInit, OnDestroy {
   trainings!: Training[];
   subscriptionTypes!: SubscriptionType[];
   paymentOptions!: PaymentOption[];
   HMOs!: HMO[];
   private customer!: Customer | null;
-  selectsForm!: FormGroup;
-  registrationForm!: FormGroup;
+  form!: FormGroup;
+  private formDataSelector: any;
+  private formData: any;
+  private formSubscription!: Subscription;
   filteredEmails!: Observable<string[]>;
   domains: string[] = [
     'gmail.com',
@@ -38,20 +47,20 @@ export class RegistrationComponent implements OnInit {
     'actcom.co.il',
   ];
   formSubmitted: boolean = false;
-
+ 
   constructor(
     private registrationService: RegistrationService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router,
+    private store: Store<State>
   ) {}
 
   ngOnInit(): void {
-    this.selectsForm = this.fb.group({
+    this.form = this.fb.group({
       hmo: [''],
       training: ['', Validators.required],
       customer: ['', Validators.required],
       paymentOption: ['', Validators.required],
-    });
-    this.registrationForm = this.fb.group({
       fullName: ['', Validators.required],
       address: [''],
       phone: [
@@ -61,10 +70,19 @@ export class RegistrationComponent implements OnInit {
           Validators.pattern('^0[2-9]\\d{7}$|^05\\d{8}$|^077\\d{7}$'),
         ],
       ],
-      email: ['', Validators.email],
+      email: ['', [Validators.required, Validators.email]],
+    });
+    this.formDataSelector = this.store.pipe(select('registrationForm'));
+    this.formData = this.formDataSelector.actionsObserver._value.formData;
+    if (this.formData) {
+      this.form.patchValue(this.formData);
+    }
+  
+    this.formSubscription = this.form.valueChanges.subscribe((formData) => {
+      this.store.dispatch(setRegistrationForm({ formData }));
     });
 
-    const emailControl = this.registrationForm.get('email');
+    const emailControl = this.form.get('email');
     if (emailControl) {
       this.filteredEmails = emailControl.valueChanges.pipe(
         startWith(''),
@@ -72,6 +90,16 @@ export class RegistrationComponent implements OnInit {
       );
     }
 
+    this.fetchData();
+  }
+
+  ngOnDestroy(): void {
+    if (this.formSubscription) {
+      this.formSubscription.unsubscribe();
+    }
+  }
+
+  private fetchData(): void {
     this.registrationService
       .getTrainings()
       .subscribe((trainings: Training[]) => {
@@ -84,12 +112,16 @@ export class RegistrationComponent implements OnInit {
       });
     this.registrationService
       .getPaymentOptions()
-      .subscribe((paymentOption: PaymentOption[]) => {
-        this.paymentOptions = paymentOption;
+      .subscribe((paymentOptions: PaymentOption[]) => {
+        this.paymentOptions = paymentOptions;
       });
     this.registrationService.getHMOs().subscribe((HMOs: HMO[]) => {
       this.HMOs = HMOs;
     });
+  }
+
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
   }
 
   private _filter(value: string): string[] {
@@ -106,27 +138,30 @@ export class RegistrationComponent implements OnInit {
 
   customerRegistration(): void {
     this.formSubmitted = true;
-    if (this.registrationForm.valid) {
-      console.log('Form Submitted', this.registrationForm.value);
+    if (this.form.valid) {
       this.customer = {
-        subscriptionTypeId: this.selectsForm.value.customer.id,
-        paymentOptionId: this.selectsForm.value.paymentOption.id,
-        hmoId: this.selectsForm.value.hmo.id,
-        firstName: this.firstName(this.registrationForm.value.fullName),
-        lastName: this.lastName(this.registrationForm.value.fullName),
-        address: this.registrationForm.value.address ?? '',
-        phone: this.registrationForm.value.phone,
-        email: this.registrationForm.value.email ?? '',
+        subscriptionTypeId: this.form.value.customer.id,
+        paymentOptionId: this.form.value.paymentOption.id,
+        hmoId: this.form.value.hmo.id,
+        firstName: this.firstName(this.form.value.fullName),
+        lastName: this.lastName(this.form.value.fullName),
+        address: this.form.value.address ?? '',
+        phone: this.form.value.phone,
+        email: this.form.value.email ?? '',
+        
       };
-      console.log('Customer registration data:', this.customer);
-      // Make API call to register customer
-      this.registrationService.customerRegistration(this.customer);
-      // Reset form fields
+      console.log('Customer registration data:', this.customer); // Make API call to register customer
+      this.registrationService.customerRegistration(this.customer); // Reset form fields
       this.customer = null;
-      this.registrationForm.reset();
+      this.form.reset();
+      this.store.dispatch(resetRegistrationForm());
     } else {
-      this.registrationForm.markAllAsTouched();
+      this.form.markAllAsTouched();
     }
+  }
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any): void {
+    this.store.dispatch(resetRegistrationForm());
   }
 
   firstName(fullName: string): string {
