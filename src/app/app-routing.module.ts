@@ -13,6 +13,7 @@ import {TracksComponent} from './components/tracks/tracks.component'
 import { HmosComponent } from './components/hmos/hmos.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { HomeComponent } from './components/home/home.component';
+import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,9 @@ const routes: Routes = [
   { path: "personal-area" ,component:PersonalAreaComponent},
   { path: 'registration', component: RegistrationComponent },
   { path: 'HMOs', component: HmosComponent },
-  { path: 'subscriptionPerCustomer',component: CustomerSubHistoryComponent}
+  { path: 'subscriptionPerCustomer',component: CustomerSubHistoryComponent},
+  { path: 'd',component: DetailsAndRegistrationComponent}
+
 ];
 
 @NgModule({

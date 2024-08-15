@@ -47,6 +47,8 @@ import { TooltipModule } from 'primeng/tooltip';
 import { HomeComponent } from './components/home/home.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { SubscriptionDetailComponent } from './components/customer-sub-history/subscription-detail/subscription-detail.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
+import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,7 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     HomeAboutComponent,
     AboutComponent,
     SystemComponent,
+    DetailsAndRegistrationComponent,
     HomeAboutComponent,
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
@@ -73,7 +76,8 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     TracksComponent,
     HomeComponent,
     CustomerSubHistoryComponent,
-    SubscriptionDetailComponent
+    SubscriptionDetailComponent,
+    ErrorMessageComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,6 @@ export class SubscriptionBenefitsComponent implements OnInit{
   constructor(public pos:GenericService){}
 
   ngOnInit(): void {
-    debugger
     
     this.pos.getByIdWithContent(this.id).subscribe(
       
@@ -22,13 +21,13 @@ export class SubscriptionBenefitsComponent implements OnInit{
         
       },
       err=>{
-        debugger
+        
         console.log(err);
       }
         
     )
   }
 
-  id:number = 3
+  id:number = 4
   s:ContentType = new ContentType()
 }

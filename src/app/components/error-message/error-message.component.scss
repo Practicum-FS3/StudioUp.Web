@@ -1,0 +1,106 @@
+@import "primeng/resources/themes/saga-blue/theme.css";
+@import "primeng/resources/primeng.min.css";
+@import "primeicons/primeicons.css";
+
+:host ::ng-deep .p-dialog {
+  width: 500px;
+  height: auto;
+  background-color: #faf6f3;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: #faf6f3;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-title {
+  display: flex;
+  font-size: 30px;
+  font-family: 'Ploni ML v2 AAA', sans-serif;
+  color: #4c4c49;
+}
+
+:host ::ng-deep #message-dialog .p-dialog .p-dialog-content {
+  padding: 20px;
+  background-color: #faf6f3;
+  color: #4c4c49;
+}
+
+:host ::ng-deep #message-content {
+  font-size: 25px;
+}
+
+#button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 0;
+  flex-direction: row;
+}
+
+#message-button {
+  width: 200px;
+  height: 39px;
+  border-radius: 20px;
+  background-color: #d91c5c;
+  font-family: 'Ploni ML v2 AAA';
+  font-size: 28px;
+  color: #faf6f3;
+  border: 2px solid #d91c5c;
+}
+
+#button-icon {
+  width: 39px;
+  height: 39px;
+  background-color: white;
+  border-radius: 50%;
+  padding-bottom: 1%;
+  border: 2px solid black;
+}
+
+#button-icon img {
+  width: 100%;
+  height: auto;
+}
+
+@media(max-width:700px) {
+  :host ::ng-deep .p-dialog {
+    width: 450px;
+    height: auto;
+  }
+}
+
+@media(max-width:480px) {
+  :host ::ng-deep .p-dialog {
+    width: 90%;
+    height: auto;
+  }
+
+  :host ::ng-deep .p-dialog .p-dialog-header {
+    height: 40px;
+  }
+
+  :host ::ng-deep .p-dialog .p-dialog-title {
+    font-size: 30px;
+  }
+
+  :host ::ng-deep .p-dialog-content {
+    padding: 10px;
+  }
+
+  :host ::ng-deep #message-content {
+    font-size: 20px;
+  }
+
+  #button {
+    flex-direction: row;
+    padding-top: 10px;
+  }
+}
