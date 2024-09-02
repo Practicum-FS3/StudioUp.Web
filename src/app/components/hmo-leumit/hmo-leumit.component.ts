@@ -39,7 +39,6 @@ export class HmoLeumitComponent {
     private leumitCommimentTypesService: LeumitCommimentTypesService,
     private downloadService: DownloadFileService
   ) { }
-
   ngOnInit(): void {
     if (this.custId) {
       this.customerService.getCustomerById(this.custId).subscribe(data => {
@@ -53,7 +52,6 @@ export class HmoLeumitComponent {
         this.allLeumitType = data
       })
     } 
-
   }
   downloadFile(leumit: LeumitCommitments): void {
     if (leumit.fileUploadId)
@@ -70,13 +68,11 @@ export class HmoLeumitComponent {
         },
         error => console.log('Download error', error)
       );
-
   }
   deleteFile(leumit: LeumitCommitments) {
     if (leumit.fileUploadId)
       this.fileService.deleteFile(leumit.fileUploadId).subscribe();
     leumit.fileUploadId = null
-
     this.LeumitService.updateLeumit(leumit).subscribe(data => {
     })
   }
@@ -89,8 +85,6 @@ export class HmoLeumitComponent {
     }
   }
   addLeumit() {
-    console.log("addLeumit");
-    
     this.clickSave = true
     if (this.areAllFieldsFilled(this.newLeumitCommitments))
       this.newLeumitCommitments.isActive = true
@@ -100,7 +94,6 @@ export class HmoLeumitComponent {
     this.LeumitService.addLeumit(this.newLeumitCommitments).subscribe(data => {
       location.reload();
     })
-
   }
   addFile(event: any, leumit: LeumitCommitments): void {
     const file = event.target.files[0];
