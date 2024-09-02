@@ -55,6 +55,8 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
 import { MenubarModule } from 'primeng/menubar';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
+import { DialogModule } from 'primeng/dialog'
+
 
 @NgModule({
   declarations: [
@@ -108,6 +110,7 @@ import { DetailsAndRegistrationComponent } from './components/details-and-regist
     BrowserAnimationsModule,
     // NgbModule,
     ButtonModule,
+    DialogModule,
     TooltipModule,
     MenubarModule,
     StoreModule.forRoot({ registration: registrationReducer }),
