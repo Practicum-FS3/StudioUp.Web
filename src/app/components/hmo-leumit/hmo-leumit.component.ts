@@ -50,22 +50,9 @@ export class HmoLeumitComponent {
 
       })
       this.leumitCommimentTypesService.getAllLeumitCommitmentType().subscribe(data => {
-        console.log("getLeumitCommitmentTypeById", data);
         this.allLeumitType = data
       })
-    } else {
-      this.customerService.getCustomerById(3).subscribe(data => {
-        this.currentCustomer = data
-      })
-      this.LeumitService.getAllLeumitCommitmentsByCustId(3).subscribe(data => {
-        this.allLeumitCommitments = data
-
-      })
-      this.leumitCommimentTypesService.getAllLeumitCommitmentType().subscribe(data => {
-        console.log("getLeumitCommitmentTypeById", data);
-        this.allLeumitType = data
-      })
-    }
+    } 
 
   }
   downloadFile(leumit: LeumitCommitments): void {
@@ -110,9 +97,6 @@ export class HmoLeumitComponent {
     if (this.custId)
       this.newLeumitCommitments.customerId = this.custId
     this.newLeumitCommitments.customerId = 3
-    console.log("id", this.newLeumitCommitments.id);
-
-    console.log(this.newLeumitCommitments);
     this.LeumitService.addLeumit(this.newLeumitCommitments).subscribe(data => {
       location.reload();
     })
@@ -159,11 +143,6 @@ export class HmoLeumitComponent {
     )
   }
   areAllFieldsFilled(leumitCommitments: LeumitCommitments): boolean {
-    console.log("====================");
-    
-    console.log("birthDate",leumitCommitments.birthDate);
-    console.log(leumitCommitments);
-    
     if (leumitCommitments.id != "" &&
       leumitCommitments.commitmentTypeId != 0 &&
       leumitCommitments.commitmentTz != "" && 
