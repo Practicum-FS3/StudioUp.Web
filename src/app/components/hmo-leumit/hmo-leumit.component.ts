@@ -4,7 +4,7 @@ import { HmoLeumitService } from '../../services/hmoLeumit.service/hmo-leumit.se
 import { LeumitCommitments } from '../../models/leumit-commitments';
 import { Customer } from '../../models/Customer';
 import { FileService } from '../../services/fileService/file.service';
-
+import { NgForm } from '@angular/forms';
 import { LeumitCommimentTypesService } from '../../services/LeumitCommimentTypes.service/leumit-commiment-types.service';
 import { LeumitCommimentTypes } from '../../models/leumit-commiment-types';
 import { DownloadFileService } from '../../services/download-file.service/download-file.service';
@@ -22,6 +22,18 @@ export class HmoLeumitComponent {
   selectedFile?: string
   currentLeumit?: LeadingComment
   allLeumitCommitments?: Array<LeumitCommitments>
+  newCommiment: boolean = false
+  clickSave: boolean = false
+  newLeumitCommitments: LeumitCommitments = {
+    id: '',
+    commitmentTypeId: 0,
+    customerId: 0,
+    commitmentTz: '',
+    birthDate: "",
+    fileUploadId: null,
+    validity: '',
+    isActive: false
+  };
   constructor(private customerService: CustomersService, private LeumitService: HmoLeumitService,
     private fileService: FileService,
     private leumitCommimentTypesService: LeumitCommimentTypesService,
@@ -34,6 +46,18 @@ export class HmoLeumitComponent {
         this.currentCustomer = data
       })
       this.LeumitService.getAllLeumitCommitmentsByCustId(this.custId).subscribe(data => {
+        this.allLeumitCommitments = data
+
+      })
+      this.leumitCommimentTypesService.getAllLeumitCommitmentType().subscribe(data => {
+        console.log("getLeumitCommitmentTypeById", data);
+        this.allLeumitType = data
+      })
+    } else {
+      this.customerService.getCustomerById(3).subscribe(data => {
+        this.currentCustomer = data
+      })
+      this.LeumitService.getAllLeumitCommitmentsByCustId(3).subscribe(data => {
         this.allLeumitCommitments = data
 
       })
@@ -70,17 +94,36 @@ export class HmoLeumitComponent {
     })
   }
   save(leumit: LeumitCommitments) {
-    this.LeumitService.updateLeumit(leumit).subscribe(data => {
+    this.clickSave = true
+    if (this.areAllFieldsFilled(leumit)) {
+      this.LeumitService.updateLeumit(leumit).subscribe(data => {
+        location.reload();
+      })
+    }
+  }
+  addLeumit() {
+    console.log("addLeumit");
+    
+    this.clickSave = true
+    if (this.areAllFieldsFilled(this.newLeumitCommitments))
+      this.newLeumitCommitments.isActive = true
+    if (this.custId)
+      this.newLeumitCommitments.customerId = this.custId
+    this.newLeumitCommitments.customerId = 3
+    console.log("id", this.newLeumitCommitments.id);
+
+    console.log(this.newLeumitCommitments);
+    this.LeumitService.addLeumit(this.newLeumitCommitments).subscribe(data => {
       location.reload();
     })
-  
+
   }
   addFile(event: any, leumit: LeumitCommitments): void {
     const file = event.target.files[0];
     const formData = new FormData();
     formData.append('file', file);
     this.fileService.uploadFile(formData).subscribe(data => {
-      
+
       leumit.fileUploadId = data.id
       leumit.isActive = true
       this.LeumitService.updateLeumit(leumit).subscribe(data => {
@@ -94,9 +137,40 @@ export class HmoLeumitComponent {
   setCurrentLeumit(LeumitCommitments: any) {
     this.currentLeumit = LeumitCommitments;
   }
-  
+
   triggerFileInput() {
     const fileInput = document.getElementById('registrationForm') as HTMLElement;
     fileInput.click();
+  }
+  addNewCommit() {
+    this.newCommiment = true
+  }
+  cancelationNewL() {
+    this.newCommiment = false
+  }
+  addFileToNewLeumit(event: any) {
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+    this.fileService.uploadFile(formData).subscribe(data => {
+      this.newLeumitCommitments.fileUploadId = data.id
+      this.newLeumitCommitments.isActive = true
+    }
+    )
+  }
+  areAllFieldsFilled(leumitCommitments: LeumitCommitments): boolean {
+    console.log("====================");
+    
+    console.log("birthDate",leumitCommitments.birthDate);
+    console.log(leumitCommitments);
+    
+    if (leumitCommitments.id != "" &&
+      leumitCommitments.commitmentTypeId != 0 &&
+      leumitCommitments.commitmentTz != "" && 
+      leumitCommitments.validity!= "" && 
+      leumitCommitments.birthDate != ""){
+      return true
+    }
+    return false
   }
 }
