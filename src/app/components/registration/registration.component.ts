@@ -120,6 +120,10 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     });
   }
 
+  mapDataForSelects(data: any[]): string[] {
+    return data?.map((value: any) => value.title);
+  }
+
   navigateTo(route: string): void {
     this.router.navigate([route]);
   }
@@ -140,15 +144,26 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     this.formSubmitted = true;
     if (this.form.valid) {
       this.customer = {
-        subscriptionTypeId: this.form.value.customer.id,
-        paymentOptionId: this.form.value.paymentOption.id,
-        hmoId: this.form.value.hmo.id,
         firstName: this.firstName(this.form.value.fullName),
         lastName: this.lastName(this.form.value.fullName),
-        address: this.form.value.address ?? '',
-        phone: this.form.value.phone,
-        email: this.form.value.email ?? '',
-        
+        id: this.form.value.ID,
+        subscriptionTypeId: this.convertValueToId(
+          this.subscriptionTypes,
+          this.form.value.subscriptionTypeId
+        ),
+        customerTypeId: this.convertValueToId(
+          this.customerTypes,
+          this.form.value.customerType
+        ),
+        paymentOptionId: this.convertValueToId(
+          this.paymentOptions,
+          this.form.value.paymentOption
+        ),
+        hmoId: this.convertValueToId(this.HMOs, this.form.value.hmo),
+        address: this.form.value.city + ', ' ?? '' + this.form.value.street ?? '',
+        tel: this.form.value.phone,
+        email: this.form.value.email,
+        isActive: true,
       };
       console.log('Customer registration data:', this.customer); // Make API call to register customer
       this.registrationService.customerRegistration(this.customer); // Reset form fields
