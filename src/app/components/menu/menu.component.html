@@ -1,24 +1,11 @@
-
-
-
 <div>
-    <nav class="navbar-nav d-none d-lg-flex" id="nav_row" dir="rtl">
-        <a class="nav-item nav-link active" routerLink="/home" routerLinkActive="active" id="first">בית</a>
-        <a class="nav-item nav-link" routerLink="/about" routerLinkActive="active">אודות</a>
-        <a class="nav-item nav-link" routerLink="/training" routerLinkActive="active">סוגי אימונים</a>
-        <a class="nav-item nav-link" routerLink="/testimonials" routerLinkActive="active">לקוחות מספרים</a>
-        <a class="nav-item nav-link" routerLink="/system" routerLinkActive="active">מערכת קורסים</a>
-        
-        <a class="nav-item nav-link" routerLink="/d" routerLinkActive="active">הרשמה</a>
-
-        <a class="nav-item nav-link" routerLink="/SubscriptionBenefits" routerLinkActive="active">מסלולי מנויים</a>
-        <a class="nav-item nav-link" routerLink="/pricing" routerLinkActive="active">מחירון</a>
-        <a class="nav-item nav-link" routerLink="/contact" routerLinkActive="active">צור קשר</a>
-        <!-- <a class="nav-item nav-link" routerLink="/subscriptionPerCustomer" routerLinkActive="active">הסטוריית מנויים ללקוח </a> -->
-        <a class="nav-item nav-link" routerLink="/personal-area" routerLinkActive="active">אזור אישי</a>
-        <a class="nav-item nav-link fixed-login" routerLink="/login" routerLinkActive="active" >התחברות/הזדהות</a>
-
-    </nav>
+    <p-menubar [model]="items" class="navbar-nav d-none d-lg-flex" id="nav_row">
+      <ng-template pTemplate="item" let-item>
+        <a [class]="item.class" [id]="item.id" [routerLink]="item.routerLink" routerLinkActive="active">
+          {{item.label}}
+        </a>
+      </ng-template>
+    </p-menubar>
 </div>
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -27,17 +14,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="close"></button>
     </div>
     <div class="offcanvas-body">
-        <nav class="navbar-nav">
-            <a class="nav-item nav-link active" routerLink="/home" routerLinkActive="active">בית</a>
-            <a class="nav-item nav-link" routerLink="/about" routerLinkActive="active">אודות</a>
-            <a class="nav-item nav-link" routerLink="/training" routerLinkActive="active">סוגי אימונים</a>
-            <a class="nav-item nav-link" routerLink="/testimonials" routerLinkActive="active">לקוחות מספרים</a>
-            <a class="nav-item nav-link" routerLink="/system" routerLinkActive="active">מערכת קורסים</a>
-            <a class="nav-item nav-link" routerLink="/plans" routerLinkActive="active">מסלולי מנויים</a>
-            <a class="nav-item nav-link" routerLink="/pricing" routerLinkActive="active">מחירון</a>
-            <a class="nav-item nav-link" routerLink="/contact" routerLinkActive="active">צור קשר</a>
-            <a class="nav-item nav-link" routerLink="/personal-area" routerLinkActive="active" style="display: none;">אזור אישי</a>
-            <a class="nav-item nav-link " routerLink="/login" routerLinkActive="active">התחברות/הזדהות</a>
-        </nav>
+        <div class="navbar-nav">
+        <a *ngFor="let item of items" class="nav-item nav-link" [routerLink]="item.routerLink" routerLinkActive="active">{{item.label}}</a>
+        </div>
     </div>
 </div>
+
