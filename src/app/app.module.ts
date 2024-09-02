@@ -41,12 +41,21 @@ import { registrationReducer } from './store/reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
+import { HmoLeumitComponent } from './components/hmo-leumit/hmo-leumit.component';
+import { ListboxModule } from 'primeng/listbox';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ToastModule } from 'primeng/toast';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { TracksComponent } from './components/tracks/tracks.component';
 import { TooltipModule } from 'primeng/tooltip';
 import { HomeComponent } from './components/home/home.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { SubscriptionDetailComponent } from './components/customer-sub-history/subscription-detail/subscription-detail.component';
+import { MenubarModule } from 'primeng/menubar';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
+import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
+import { DialogModule } from 'primeng/dialog'
 
 @NgModule({
   declarations: [
@@ -66,14 +75,17 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     HomeAboutComponent,
     AboutComponent,
     SystemComponent,
+    DetailsAndRegistrationComponent,
     HomeAboutComponent,
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
     HomeSubscriptionBenefitsComponent,
+    HmoLeumitComponent,
     TracksComponent,
     HomeComponent,
     CustomerSubHistoryComponent,
-    SubscriptionDetailComponent
+    SubscriptionDetailComponent,
+    ErrorMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +109,9 @@ import { SubscriptionDetailComponent } from './components/customer-sub-history/s
     BrowserAnimationsModule,
     // NgbModule,
     ButtonModule,
+    DialogModule,
     TooltipModule,
+    MenubarModule,
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
     RouterModule.forRoot([])

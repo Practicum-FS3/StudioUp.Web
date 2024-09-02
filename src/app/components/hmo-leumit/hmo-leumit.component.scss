@@ -1,0 +1,308 @@
+.panel {
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    border: 2px solid #FFCC0F;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    direction: rtl;
+}
+.error-message{
+    width: 80%;
+    height:2em;
+    background-color:#FEF3F3 ;
+    border: 2px solid #FECACA;
+    border-radius: 8px;
+    padding: 0.3em;
+    display: flex;
+    color: red;
+}
+#erroe{
+    color: red;
+    font-size: large;
+    padding: 0.2%;
+}
+.content {
+    width: 500px;
+    border: 2px solid #D91C5C;
+    padding: 2em;
+}
+
+.title {
+    font-size: 1.5em;
+    color: #D91C5C;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+    color: #D91C5C;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+.head {
+    font-size: 1.5em;
+    color: #D91C5C;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+    color: #D91C5C;
+}
+
+span {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+#save_cancel {
+    margin-top: 10%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="button"] {
+    background-color: #FFCC0F;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    margin-top: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    color: #D91C5C;
+    width: 180px;
+    border: 2px solid #FFCC0F;
+    text-align: center;
+}
+
+select {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    color: #D91C5C;
+    width: 180px;
+    border: 2px solid #FFCC0F;
+    text-align: center;
+}
+
+input[type="button"]:hover {
+    background-color: #D91C5C;
+}
+
+:host ::ng-deep .p-accordion .p-accordion-content {
+    align-items: center;
+    justify-content: center;
+    display: grid;
+}
+
+#top-title {
+    border-bottom: 2px solid #FFCC0F;
+}
+
+#button-icon {
+    border: 2px solid #000000;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    margin: 3px;
+    padding: 7px;
+}
+
+#name-file {
+    background-color: #D91C5C;
+    border-radius: 10em;
+    display: inline-block;
+    height: 39px;
+    padding: 10px;
+    margin: 3px;
+}
+.file-input-hidden {
+    display: none;
+}
+#Question-Mark {
+    color: #D91C5C;
+    font-size: large;
+    margin: 3px;
+    padding: 7px;
+}
+//---------------מעל האינפוט
+.tooltip-container {
+    position: relative;
+    display: flex; /* Use flex to keep items on the same line */
+    align-items: center; /* Vertically center align */
+}
+.p-button.p-button-secondary{    color: #ffffff;
+    background: #64748B;
+    border: 1px solid #64748B;
+}
+
+.tooltip-content {
+    visibility: hidden;
+    width: 200px;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip-icon:hover + .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+#newLeumit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.tooltip-content img {
+    max-width: 350px; /* Adjust to desired size */
+    max-height: 350px;
+    width: auto;
+    height: auto;
+}
+.worning {
+    width: 200px;
+    background-color: #ffffff;
+    color: #ff0000;
+    text-align: center;
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+//----------לימין האיפוט
+// .tooltip-container {
+//     position: relative;
+//     display: flex; /* Keep the icon and input on the same line */
+//     align-items: center; /* Vertically center align */
+// }
+
+// .tooltip-content {
+//     visibility: hidden;
+//     width: 200px;
+//     background-color: #f9f9f9;
+//     color: #333;
+//     text-align: center;
+//     border-radius: 5px;
+//     padding: 10px;
+//     position: absolute;
+//     z-index: 1;
+//     left: 100%; /* Position the tooltip content to the right of the icon */
+//     top: 50%;
+//     transform: translateY(-50%); /* Center the tooltip vertically with respect to the icon */
+//     margin-left: 10px; /* Add some space between the icon and the tooltip */
+//     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+// }
+
+// .tooltip-container:hover .tooltip-content {
+//     visibility: visible;
+//     opacity: 1;
+//     transition: opacity 0.3s;
+// }
+
+// .tooltip-content img {
+//     max-width: 400px; /* Adjust to desired size */
+//     max-height: 400px;
+//     width: auto;
+//     height: auto;
+// }
+#add{
+    margin-top: 3%;
+}
+@media only screen and (max-width: 600px) {
+    .panel {
+        max-width: 100%;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+        width: 100%;
+        width: 130px;
+        text-align: center;
+    }
+
+    #top-title {
+        width: 100%;
+    }
+
+    .title {
+        width: 40%;
+    }
+
+    select {
+        width: 100%;
+        width: 130px;
+    }
+
+    .form-group {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Ensure vertical alignment */
+    }
+
+    .tooltip-container {
+        display: flex;
+        align-items: center;
+        width: auto;
+    }
+
+    .tooltip-content {
+        width: auto;
+        max-width: 180px;
+    }
+
+    .button-group {
+        width: 100%;
+    }
+
+    .in {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    input[type="text"],
+    input[type="date"] {
+
+        width: 100px;
+    }
+
+    select {
+      
+        width: 100px;
+    }
+}
