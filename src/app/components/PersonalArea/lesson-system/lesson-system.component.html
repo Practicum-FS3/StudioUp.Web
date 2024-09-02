@@ -1,0 +1,56 @@
+<div class="myp">
+    <div class="mytable" *ngIf="screenWidth>910">
+        <div class="myheaders">
+            <div class="myheader" *ngFor="let day of days">{{day}}</div>
+        </div>
+        <div class="mycontainer">
+            <div *ngFor="let n of numbersArray" class="myn">
+                <div class="mytur">
+                    <div *ngFor="let lesson of groupedItems[n-1]" class="myitem"
+                    [ngClass]="{'hasTrainingCustomer': lesson.dayOfWeek === 4}">
+                        <div *ngIf="lesson.id!=0 && lesson.isActive==true">
+                            <b>{{lesson.time}}</b>
+                            <br>
+                            {{lesson.trainerName}}
+                            <br>
+                            {{lesson.trainingTypeName}}
+                            {{lesson.customerTypeName}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- למסך קטן -->
+    <div *ngIf="screenWidth<910" class="mytable">
+        <div *ngFor="let title of days; let i=index" class="mya">
+            <div class="myheader">{{title}}</div>
+            <div class="mycontainer">
+                <p-accordion >
+                    <p-accordionTab >
+                        <div *ngFor="let lesson of groupedItems[i]">
+                            <div *ngIf="lesson.id!=0 && lesson.isActive==true" class="myitem">
+                                <div id="t"> {{lesson.time}}-
+                                    {{lesson.trainerName}}
+                                </div>
+                                <div>
+                                    {{lesson.trainingTypeName}}-
+                                    {{lesson.customerTypeName}}
+                                </div>
+                            </div>
+                        </div>
+                    </p-accordionTab>
+                </p-accordion>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>

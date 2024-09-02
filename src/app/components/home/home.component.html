@@ -1,0 +1,36 @@
+<div *ngIf="homePageContent" dir="rtl" id="homePage">
+    <div id="container1">
+        <div class="row1">
+            <div class="col-md-8">
+                <div id="title">
+                    <p id="title1">{{ homePageContent.title }}</p>
+                    <p id="title2">{{ homePageContent.title1 }}</p>
+                </div>
+                <div id="button">
+                    <button id="big-button">{{ homePageContent.title2}} </button>
+                    <button id="button-icon">
+                        <img src="../../../assets/images/ArrowWhite.png" alt="Arrow">
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="emoji">
+                    <img src="../../../assets/images/Group 95 emoji.png" alt="emoji">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="homePageContent && homePageContent.contentSections && homePageContent.contentSections.length > 0"
+        id="container2">
+        <div class="row2">
+            <div *ngFor="let section of homePageContent.contentSections; let i=index" class="col">
+                <div class="boxes">
+                    <div class="images"><img [src]="section.section2" alt="section image"></div>
+                    <p><span class="nowrap">{{ section.section1 }}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-home-subscription-benefits></app-home-subscription-benefits>

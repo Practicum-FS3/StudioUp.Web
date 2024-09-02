@@ -1,44 +1,21 @@
-<div class="container">
-    <img class="pic1" alt="">
+<div>
+    <div id="subscriptionBenefitsContainer">
+        <img class="subscriptionImage" alt="">
+        <div class="benefitsRectangle">
+            <p class="benefitsRectangleText">הטבות כושר למנויים</p>
+        </div>
+        <div class="subscriptionText">{{s.title}}</div>
+    </div>
 
-    <div class="rectangle281"></div>
-    <div class="rectangle281-text">הטבות כושר למנויים</div>
-
-    <div class="text">{{s.title}}</div>
-
-    <div class="PaymentOptionDivRow">
+    <div id="contentSectionsContainer">
         <div class="optionList" *ngFor="let po of s.contentSections">
-            <div *ngIf="po.isActive == true" class="PaymentOptionDivContainer">
-                <div class="PaymentOptionDiv">
-                    <p class="text1">{{po.section1}}</p>
-                    <p *ngIf="po.section2!='null'" class="text2">{{po.section2}}</p>
+            <div *ngIf="po.isActive == true">
+                <div class="contentBox">
+                    <p class="contentBoxText1">{{po.section1}}</p>
+                    <p *ngIf="po.section2 != 'null'" class="contentBoxText2">{{po.section2}}</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-<!-- לא קשר להטבות למנויים -->
-<!-- <div class="rectangle168"></div>
-<div class="rectangle168-text">מסלולי מנויים</div>
-
-<div class="rectangle190 "></div>
-<div class="rectangle282"></div>
-<div class="rectangle283"></div>
-<div class="rectangle284 "></div>
-<div class="rectangle285 "></div>
-<div class="rectangle287 "></div>
-<div class="rectangle286 "></div>
-<div class="rectangle288 "></div>
-<div class="rectangle289 "></div>
-<div class="rectangle21"></div>
-
-<div class="group85"> </div>
-<div class="rectangle21"></div>
-<a class="rectangle21-text" href="/*קישור לדף של ההרשמה*/" >להצטרפות למנוי</a>
-<div class="rectangle22"></div>
-<div class="arrov"><h1>↙</h1></div> -->
+<app-tracks></app-tracks>

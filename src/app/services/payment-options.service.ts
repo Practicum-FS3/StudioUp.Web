@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { PaymentOptions } from '../models/PaymentOption';
+import { PaymentOptions } from '../models/PaymentOptions';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class PaymentOptionsService {
 
   constructor(public http: HttpClient) { }
 
-  basisUrl: string = "https://localhost:7101/api/PaymentOption"
+  basisUrl: string = "https://localhost:7101/api/PaymentOptions"
 
   del(id:number):Observable<void>{
 

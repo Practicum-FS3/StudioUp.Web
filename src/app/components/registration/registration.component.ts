@@ -151,7 +151,6 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           this.subscriptionTypes,
           this.form.value.subscriptionTypeId
         ),
-        // trainingTypeId: this.convertValueToId(this.form.value.training),
         customerTypeId: this.convertValueToId(
           this.customerTypes,
           this.form.value.customerType

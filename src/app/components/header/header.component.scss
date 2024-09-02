@@ -3,16 +3,26 @@ body {
   margin: 0;
   padding: 0;
 }
+.header-placeholder {
+  height: 150px; 
+}
 
 .header {
   box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
-  color: #ffffff;
   width: 100%;
+  position: fixed;
+  margin-top: 0px;
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+  background-color: white;
 }
 .wrapper{
   background-color: #ffffff;
+  margin-top: 0px;
+  margin: 0;
+  padding: 0;
 }
-
 
 .custom-header {
   background-color: #FFD700;
