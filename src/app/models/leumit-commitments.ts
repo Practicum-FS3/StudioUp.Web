@@ -3,7 +3,7 @@ export interface LeumitCommitments {
       commitmentTypeId: number,
       customerId :number,
       commitmentTz:string  ,
-      birthDate:Date ,
+      birthDate:string ,
       fileUploadId: number|null,
       validity:string,
       isActive:boolean

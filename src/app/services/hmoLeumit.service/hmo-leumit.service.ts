@@ -25,4 +25,9 @@ baseUrl :string = 'https://localhost:7101/api/LeumitCommitments'
       {headers: { 'content-type': "application/json" }}
     );
   }
+  addLeumit(leumit:LeumitCommitments):Observable<LeumitCommitments>{
+    return this.http.post<LeumitCommitments>(`${this.baseUrl}/AddLeumitCommitment`,leumit,
+      {headers: { 'content-type': "application/json" }}
+    );
+  }
 }
