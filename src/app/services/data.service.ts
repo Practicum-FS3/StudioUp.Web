@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Customer } from '../models/Customer ';
+import { Customer } from '../models/Customer';
 import { CustomerType } from '../models/CustomerType ';
 import { PaymentOptions } from '../models/PaymentOptions';
 import { SubscriptionType } from '../models/SubscriptionType';

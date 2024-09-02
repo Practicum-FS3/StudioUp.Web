@@ -1,30 +1,29 @@
-export class Customer {
-  firstName: string;
-  lastName?: string;
-  phone: string;
-  address: string;
-  email: string;
-  subscriptionTypeId: number;
-  paymentOptionId: number;
-  hmoId?: number;
-
-  constructor(
-    firstName: string,
-    lastName: string,
-    phone: string,
-    address: string,
-    email: string,
-    subscriptionTypeId: number,
-    paymentOptionId: number,
-    hmoId: number
-  ) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.phone = phone;
-    this.address = address;
-    this.email = email;
-    this.subscriptionTypeId = subscriptionTypeId;
-    this.paymentOptionId = paymentOptionId;
-    this.hmoId = hmoId;
-  }
+export class Customer{
+    id?: number;
+    tz?:string;
+    firstName?: string;
+    lastName?: string;
+    customerTypeId?:number
+    hmoId?:number
+    paymentOptionId?:number
+    subscriptionTypeId?:number
+    isActive?:boolean
+    tel?:string
+    address?:string
+    email?:string
+    constructor(tz:string,firstName: string,lastName: string,customerTypeId:number,hmoId:number,paymentOptionId:number,
+        subscriptionTypeId:number,isActive:boolean,tel:string,address:string,email:string) {
+            this.tz=tz;
+            this.firstName=firstName;
+            this.lastName=lastName;
+            this.customerTypeId=customerTypeId;
+            this.hmoId=hmoId;
+            this.paymentOptionId=paymentOptionId;
+            this.subscriptionTypeId=subscriptionTypeId;
+            this.isActive=isActive;
+            this.tel=tel;
+            this.address=address;
+            this.email=email;
+    }
 }
+
