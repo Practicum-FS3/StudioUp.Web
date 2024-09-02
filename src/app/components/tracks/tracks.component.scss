@@ -1,0 +1,298 @@
+.all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    flex-direction: column;
+    padding: 3%;
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+}
+
+.RachivClali {
+    padding-top: 5%;
+    padding: 3%;
+    width: 75%;
+    height: 80%;
+    background: #FBEDE9;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.MasluleiMnui-text {
+    display: grid;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
+    grid-gap: 20px;
+    font-weight: 600;
+    font-size: 320%;
+    color: #4C4C49;
+    text-shadow: 1px 1px 0 white;
+    margin-bottom: 5%;
+}
+
+.MasluleiMnui-text:before,
+.MasluleiMnui-text:after {
+    content: '';
+    height: 1px;
+}
+
+.MasluleiMnui-text:after {
+    background: linear-gradient(to right, transparent, #818078);
+}
+
+.MasluleiMnui-text:before {
+    background: linear-gradient(to right, #818078, transparent);
+}
+
+.tab {
+    background-color: #ffff;
+    border-radius: 19px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    padding: 2%;
+    font-weight: 700;
+    font-size: 230%;
+    color: #4C4C49;
+    box-shadow: 4px 0 6px #ffc8000d;
+    border-width: 2px;
+    line-height: normal;
+    font-family: 'PloniLight';
+    width: 90%;
+}
+
+.tabContent {
+    font-weight: 540;
+    font-size: 90%;
+}
+
+.mySpan {
+    text-align: right;
+    color: #dc2e68;
+}
+
+.tabHeader {
+    display: grid;
+    grid-template-columns: 4% 92% 4%;
+}
+
+.pi-star,
+.pi-star-fill {
+    color: #FFC900;
+    font-size: 100%;
+    text-shadow: 0.5px 0.5px 0.5px #D91C5C;
+    text-align: right;
+}
+
+.down {
+    width: 40%;
+    height: 3.9%;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: row;
+    direction: rtl;
+    border-radius: 60px;
+}
+
+.down-text {
+    font-family: 'Anomalia ML v2 AAA Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 200%;
+    color: #ffff;
+    font-weight: 700;
+    background: #D91C5C;
+    border-radius: 60px;
+    padding: 4%;
+    width: 100%;
+}
+
+.outer-icon {
+    color: #020007;
+    transform: translate(-50%, -50%);
+    margin-right: 29px;
+    cursor: pointer;
+    font-weight: 100;
+}
+
+.circleDown {
+    width: 57px;
+    height: 57px;
+    border-radius: 30px;
+    border: 1px solid var(--Color-7, #000);
+    background: rgba(255, 255, 255, 0.00);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pi-arrow-down-left {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+
+.pi-angle-down,
+.pi-angle-up {
+    font-size: 70%;
+}
+
+.hidden-icon {
+    visibility: hidden;
+}
+
+/* Large Devices (Desktops) - 992px to 1200px */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .RachivClali {
+        width: 75%;
+        height: 80%;
+        padding: 3%;
+    }
+
+    .MasluleiMnui-text {
+        font-size: 280%;
+        width: 95%;
+    }
+
+    .tab {
+        font-size: 200%;
+    }
+
+    .down-text {
+        font-size: 200%;
+    }
+
+    .outer-icon {
+        margin-right: 22px;
+    }
+
+    .pi-arrow-down-left {
+        font-size: 25px;
+    }
+
+    .circleDown {
+        width: 43px;
+        height: 43px;
+    }
+}
+
+/* Medium Devices (Desktops) - 768px to 992px */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .RachivClali {
+        width: 85%;
+        height: 90%;
+        padding: 4%;
+    }
+
+    .MasluleiMnui-text {
+        font-size: 280%;
+        width: 90%;
+    }
+
+    .tab {
+        font-size: 160%;
+    }
+
+    .down-text {
+        font-size: 150%;
+        height: 100%;
+    }
+
+    .circleDown {
+        width: 40px;
+        height: 40px;
+    }
+
+    .pi-arrow-down-left {
+        font-size: 20px;
+    }
+
+    .outer-icon {
+        margin-right: 20px;
+    }
+}
+
+/* Small Devices (Tablets) - 576px to 768px */
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .RachivClali {
+        width: 90%;
+        height: 90%;
+        padding: 4%;
+    }
+
+    .MasluleiMnui-text {
+        font-size: 240%;
+        width: 90%;
+    }
+
+    .tab {
+        font-size: 160%;
+    }
+
+    .down-text {
+        font-size: 150%;
+    }
+
+    .outer-icon {
+        margin-right: 17px;
+    }
+
+    .pi-arrow-down-left {
+        font-size: 15px;
+    }
+
+    .circleDown {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Extra Small Devices (Phones) - up to 576px */
+@media screen and (max-width: 576px) {
+   
+    .tab {
+        font-size: 120%;
+    }
+
+    .MasluleiMnui-text {
+        font-size: 170%;
+        width: 90%;
+    }
+
+    .RachivClali {
+        width: 100%;
+        height: 80%;
+        border-radius: 40px;
+    }
+
+    .down-text {
+        font-size: 110%;
+    }
+
+    .outer-icon {
+        margin-right: 15px;
+    }
+
+    .pi-arrow-down-left {
+        font-size: 15px;
+    }
+
+    .circleDown {
+        width: 30px;
+        height: 30px;
+    }
+
+}

@@ -1,0 +1,33 @@
+
+.card{
+    border: none;
+}
+
+:host ::ng-deep .p-tabview  {
+    border: none; /* ביטול המסגרת התחתונה */
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav li a {
+    color: #d91c5c; /* צבע הטקסט לכותרות */
+    border: none; /* ביטול המסגרת התחתונה */
+    text-decoration: none;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav li a:hover {
+    border-bottom: 2px solid #d91c5c; /* פס תחתון בצבע #d91c5c כשעוברים על הכרטיסיות */
+    text-decoration: none;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav li.p-highlight a {
+    border: none; /* ביטול המסגרת התחתונה לכרטיסיה שנבחרה */
+    border-bottom: 2px solid #d91c5c; 
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav {
+    border-bottom: none; /* ביטול המסגרת הכללית התחתונה */
+}
+
+:host ::ng-deep .p-tabview {
+    margin-bottom: 8%;
+}
+
