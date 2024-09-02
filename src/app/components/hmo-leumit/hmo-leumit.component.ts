@@ -39,7 +39,6 @@ export class HmoLeumitComponent {
     private leumitCommimentTypesService: LeumitCommimentTypesService,
     private downloadService: DownloadFileService
   ) { }
-
   ngOnInit(): void {
     if (this.custId) {
       this.customerService.getCustomerById(this.custId).subscribe(data => {
@@ -50,23 +49,9 @@ export class HmoLeumitComponent {
 
       })
       this.leumitCommimentTypesService.getAllLeumitCommitmentType().subscribe(data => {
-        console.log("getLeumitCommitmentTypeById", data);
         this.allLeumitType = data
       })
-    } else {
-      this.customerService.getCustomerById(3).subscribe(data => {
-        this.currentCustomer = data
-      })
-      this.LeumitService.getAllLeumitCommitmentsByCustId(3).subscribe(data => {
-        this.allLeumitCommitments = data
-
-      })
-      this.leumitCommimentTypesService.getAllLeumitCommitmentType().subscribe(data => {
-        console.log("getLeumitCommitmentTypeById", data);
-        this.allLeumitType = data
-      })
-    }
-
+    } 
   }
   downloadFile(leumit: LeumitCommitments): void {
     if (leumit.fileUploadId)
@@ -83,13 +68,11 @@ export class HmoLeumitComponent {
         },
         error => console.log('Download error', error)
       );
-
   }
   deleteFile(leumit: LeumitCommitments) {
     if (leumit.fileUploadId)
       this.fileService.deleteFile(leumit.fileUploadId).subscribe();
     leumit.fileUploadId = null
-
     this.LeumitService.updateLeumit(leumit).subscribe(data => {
     })
   }
@@ -102,21 +85,15 @@ export class HmoLeumitComponent {
     }
   }
   addLeumit() {
-    console.log("addLeumit");
-    
     this.clickSave = true
     if (this.areAllFieldsFilled(this.newLeumitCommitments))
       this.newLeumitCommitments.isActive = true
     if (this.custId)
       this.newLeumitCommitments.customerId = this.custId
     this.newLeumitCommitments.customerId = 3
-    console.log("id", this.newLeumitCommitments.id);
-
-    console.log(this.newLeumitCommitments);
     this.LeumitService.addLeumit(this.newLeumitCommitments).subscribe(data => {
       location.reload();
     })
-
   }
   addFile(event: any, leumit: LeumitCommitments): void {
     const file = event.target.files[0];
@@ -159,11 +136,6 @@ export class HmoLeumitComponent {
     )
   }
   areAllFieldsFilled(leumitCommitments: LeumitCommitments): boolean {
-    console.log("====================");
-    
-    console.log("birthDate",leumitCommitments.birthDate);
-    console.log(leumitCommitments);
-    
     if (leumitCommitments.id != "" &&
       leumitCommitments.commitmentTypeId != 0 &&
       leumitCommitments.commitmentTz != "" && 
