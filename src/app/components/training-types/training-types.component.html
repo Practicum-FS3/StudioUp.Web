@@ -1,0 +1,23 @@
+<div class="all"> 
+    <div class="top">
+        <div class="ryb">
+            <div class="sinker"></div>
+        </div>
+        <div class="headero" dir="rtl">
+            <p class="head">סוגי האימונים</p>
+            <div class="reka"></div>
+        </div>
+    </div>
+    <div class="training" *ngFor="let training of contentSections" [class.open]="content?.contentSections" dir="rtl">
+        <div class="training_top">
+            <p class="titleo" dir="ltr" [ngStyle]="{'font-family': training.section3 ? 'Ploni ML v2 AAA bold' : 'PloniLight'}">{{training.section1}}</p>
+            <p class="content_1">{{training.section2}}</p>
+        </div>
+        <div class="cir" *ngIf="training.section3" (click)="toggleAccordion(0)">             
+                <i class="pi pi-circle">
+                    <i class="pi pi-arrow-left"></i>
+                </i>
+        </div>
+        <p class="content_2" *ngIf="training.isActive">{{training.section3}}</p>    
+    </div>
+</div>

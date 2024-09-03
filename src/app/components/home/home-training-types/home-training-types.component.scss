@@ -1,0 +1,155 @@
+.all {
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-size: 220%;
+    text-align: right;
+    display: flex;
+    width: 100%;
+    padding: 3%;
+}
+.right_side {
+    width: 65%;
+    height: 70%;
+    margin-right: 3%;
+}
+.left_side {
+    width: 30%;
+    height: 405px;
+}
+.sinkerHM{
+    width: 400px;
+    height: 400px ;
+    background-image:  url('../../../../assets/images/sinker_2.png');
+    background-size: cover;
+}
+.titleo {
+    width: 55%;
+    font-family: 'Anomalia ML v2 AAA';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 175%;
+    line-height: 100%;
+    display: flex;
+    text-align: left;
+    color: #4C4C49;
+}
+.content {
+    width: 55%;
+    min-height: 250px;
+    font-size: 80%;
+    color: #4C4C49;
+}
+.mal_link{
+    width: 210px;
+    height: 35px;
+    color: #ffffff;
+    margin-top: 5%;
+}
+.link_lik{
+    width: 170px;
+    height: 35px;
+    background-color: #D91C5C;
+    border-radius: 60px;
+    font-family: 'PloniLight';
+    font-size: 80%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.cir {
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    margin-right: 71%;
+    margin-top: -8.5%;
+    cursor: pointer;
+}
+.pi-circle{
+    position: absolute;
+    font-size: 35px;
+    font-weight: 100;
+    color:#000000;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+}
+.pi-arrow-down-left {
+    font-size: 55%;
+    color: #4C4C49;
+    position: absolute;
+    font-weight: 100;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+}
+@media screen and (max-width: 576px) {
+    .sinkerHM{
+        width: 200px;
+        height: 200px ;
+        margin-right: -45%;
+    }
+    .titleo {
+        width: 65%;
+        font-size: 55%;
+    }
+    .content {
+        width: 75%;
+        min-height: 220px;
+        font-size: 35%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .sinkerHM{
+        width: 310px;
+        height: 310px ;
+        margin-right: -55%;
+    }
+    .titleo {
+        width: 55%;
+        font-size: 95%;
+    }
+    .content {
+        width: 75%;
+        min-height: 220px;
+        font-size: 40%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .sinkerHM{
+        width: 370px;
+        height: 370px ;
+        margin-right: -55%;
+    }
+    .titleo {
+        width: 55%;
+        font-size: 135%;
+    }
+    .content {
+        width: 65%;
+        min-height: 220px;
+        font-size: 55%;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1180px) {
+    .sinkerHM{
+        width: 420px;
+        height: 420px ;
+        margin-right: -30%;
+    }
+    .titleo {
+        width: 55%;
+        font-size: 175%;
+    }
+    .content {
+        width: 60%;
+        min-height: 250px;
+        font-size: 80%;
+    }
+}

@@ -1,0 +1,383 @@
+.all {
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-size: 220%;
+    text-align: right;
+    width: 100%;
+    padding: 1%;
+    gap: 12%;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    padding: 1%;
+    margin: 1%;
+    width: 93%;
+    height: 30%;
+}
+
+.ryb {
+    width: 260px;
+    height: 205px;
+    margin-left: 4%;
+    margin-bottom: 1%;
+}
+
+.sinker {
+    width: 80%;
+    height: 100%;
+    background-image: url('../../../assets/images/sinker_1.png');
+    background-size: cover;
+}
+
+.headero {
+    background-color: #4C4C49;
+    width: 75%;
+    height: 165px;
+    font-size: 220%;
+    font-family: 'Anomalia ML v2 AAA';
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #FFFFFF;
+    border-radius: 60px;
+    padding-right: 9%;
+}
+
+.head {
+    width: 150%;
+    height: 20%;
+    margin-right: 1%;
+    margin-top: 6%;
+}
+
+.reka {
+    width: 300%;
+    height: 220%;
+    margin-right: -90%;
+    background-image: url('../../../assets/images/reka.png');
+    background-size: contain;
+    background-position: calc(100% - 50px) center;
+    background-repeat: no-repeat;
+}
+
+.training {
+    padding: 3%;
+    width: 87%;
+    margin: 6%;
+    margin-top: 3%;
+    background-color: #FCFBF9;
+    border-radius: 60px;
+    margin-bottom: 5%;
+}
+
+.training_top {
+    display: flex;
+    padding: 1%;
+    width: 90%;
+    height: 40%;
+    align-items: center;
+    margin: 2%;
+    gap: 2%;
+    position: relative;
+
+}
+
+.titleo {
+    width: 20%;
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 125%;
+    line-height: 100%;
+    display: flex;
+    text-align: left;
+    color: #D91C5C;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.content_1 {
+    width: 55%;
+    font-family: 'PloniLight';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 62%;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #000000;
+    margin-top: 0.5%;
+    margin-right: 22%;
+}
+
+.cir {
+    cursor: pointer;
+    margin-left: 81.5%;
+    margin-top: 1%;
+    transform: translate(-50%, -50%);
+
+}
+
+.pi-circle {
+    position: absolute;
+    font-size: 110%;
+    font-weight: normal;
+    color: #000000;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+
+}
+
+.pi-arrow-left {
+    font-size: 70%;
+    color: #D91C5C;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.content_2 {
+    width: 48.5%;
+    font-size: 62%;
+    line-height: 100%;
+    font-family: 'Ploni ML v2 AAA';
+    font-style: normal;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    margin-right: 22.3%;
+    margin-top: -2%;
+    color: #000000;
+}
+
+@media screen and (max-width: 576px) {
+    .ryb {
+        width: 78px;
+        height: 65px;
+        margin-left: 4%;
+        margin-bottom: 1.2%;
+    }
+
+    .sinker {
+        width: 85%;
+        height: 100%;
+    }
+
+    .headero {
+        width: 70%;
+        height: 55px;
+        font-size: 60%;
+        border-radius: 20px;
+        padding-right: 9%;
+    }
+
+    .reka {
+        width: 250%;
+        height: 180%;
+        margin-right: -120%;
+    }
+    .training {
+        width: 81.5%;
+        border-radius: 40px;
+    }
+    .titleo {
+        width: 15%;
+        font-size: 45%; 
+        margin-right: 4%;
+    }
+
+    .content_1 {
+        width: 65%;
+        font-size: 30%;
+    }
+    .content_2 {
+        width: 65%;
+        font-size: 30%;
+    }
+    .cir{
+        margin-bottom: 5%;
+    }
+    .pi-circle {
+        font-size: 80%;
+    }
+    
+    .pi-arrow-left {
+        font-size: 40%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .ryb {
+        width: 150px;
+        height: 125px;
+        margin-left: 4%;
+        margin-bottom: 1.2%;
+    }
+
+    .sinker {
+        width: 85%;
+        height: 100%;
+    }
+
+    .headero {
+        width: 70%;
+        height: 100px;
+        font-size: 105%;
+        border-radius: 30px;
+        padding-right: 9%;
+    }
+
+    .head {
+        width: 180%;
+        height: 20%;
+        margin-right: 1%;
+    }
+
+    .reka {
+        width: 300%;
+        height: 220%;
+        margin-right: -115%;
+    }
+    .training {
+        width: 85%;
+    }
+    .training_top {
+        gap: 1%;
+    }
+    .titleo {
+        width: 20%;
+        font-size: 85%; 
+    }
+
+    .content_1 {
+        width: 55%;
+        font-size: 50%;
+    }
+    .content_2 {
+        width: 55%;
+        font-size: 50%;
+    }
+    .cir{
+        margin-bottom: 5%;
+    }
+    .pi-circle {
+        font-size: 90%;
+    }
+    
+    .pi-arrow-left {
+        font-size: 50%;
+    }
+      
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .ryb {
+        width: 170px;
+        height: 145px;
+        margin-left: 4%;
+        margin-bottom: 1.2%;
+    }
+
+    .sinker {
+        width: 85%;
+        height: 100%;
+    }
+
+    .headero {
+        width: 74%;
+        height: 120px;
+        font-size: 150%;
+        border-radius: 40px;
+        padding-right: 9%;
+    }
+
+    .head {
+        width: 180%;
+        height: 20%;
+        margin-right: 1%;
+    }
+
+    .reka {
+        width: 300%;
+        height: 220%;
+        margin-right: -115%;
+    }
+
+    .training {
+        width: 85%;
+    }
+    .training_top {
+        gap: 1%;
+    }
+
+    .titleo {
+        width: 20%;
+        font-size: 105%; 
+    }
+
+    .content_1 {
+        width: 60%;
+        font-size: 60%;
+    }
+    .content_2 {
+        width: 60%;
+        font-size: 60%;
+    }
+    .cir{
+        margin-bottom: 5%;
+    }
+    .pi-circle {
+        font-size: 100%;
+    }
+    
+    .pi-arrow-left {
+        font-size: 60%;
+    }
+            
+}
+
+@media screen and (min-width: 992px) and (max-width: 1180px) {
+    .ryb {
+        width: 170px;
+        height: 145px;
+        margin-left: 4%;
+        margin-bottom: 1.2%;
+    }
+
+    .sinker {
+        width: 85%;
+        height: 100%;
+    }
+
+    .headero {
+        width: 74%;
+        height: 120px;
+        font-size: 150%;
+        border-radius: 40px;
+        padding-right: 9%;
+        margin-right: -25%;
+    }
+
+    .head {
+        width: 180%;
+        height: 20%;
+        margin-right: 1%;
+    }
+
+    .reka {
+        width: 300%;
+        height: 220%;
+        margin-right: -105%;
+    }
+    .training {
+        width: 82%;
+    }
+    
+}
