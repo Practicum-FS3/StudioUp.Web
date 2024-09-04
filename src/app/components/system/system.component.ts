@@ -1,5 +1,5 @@
 
-import { Component, HostListener, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Training } from '../../models/TrainingCalander';
 import { DataService } from '../../services/TrainingService/data.service';
 
@@ -29,8 +29,6 @@ export class SystemComponent {
     }
   }
   constructor(private dataService: DataService) {
-
-
     this.dataService.getAll().subscribe(data => {
       this.arr = data
       console.log({ data });
@@ -41,13 +39,15 @@ export class SystemComponent {
         }
 
         this.groupedItems?.push(this.arr.filter(x => x.dayOfWeek == day).sort((a, b) => {
-          let hourA = a.hour.charAt(0) + a.hour.charAt(1);
-          let hourB = b.hour.charAt(0) + b.hour.charAt(1);
+          console.log(a.hour);
+          
+          let timeA = a.hour.charAt(0) + a.hour.charAt(1);
+          let timeB = b.hour.charAt(0) + b.hour.charAt(1);
           let minutA = a.hour.charAt(3) + a.hour.charAt(4);
           let minutB = b.hour.charAt(3) + b.hour.charAt(4);
 
-          if (hourA !== hourB) {
-            return parseInt(hourA) - parseInt(hourB);
+          if (timeA !== timeB) {
+            return parseInt(timeA) - parseInt(timeB);
           }
           return parseInt(minutA) - parseInt(minutB);
 

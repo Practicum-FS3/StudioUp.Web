@@ -21,7 +21,7 @@ export class LessonSystemComponent {
     trainerName: '',
     date:new Date(),
     dayOfWeek: 0,
-    hour: '',
+    time: '',
     customerTypeName:'',
     trainingTypeName:'',
     ParticipantsCount:0,
@@ -52,10 +52,10 @@ export class LessonSystemComponent {
           
           console.log({a, b});
           
-          let hourA = a.hour.charAt(0) + a.hour.charAt(1);
-          let hourB = b.hour.charAt(0) + b.hour.charAt(1);
-          let minutA = a.hour.charAt(3) + a.hour.charAt(4);
-          let minutB = b.hour.charAt(3) + b.hour.charAt(4);
+          let hourA = a.time.charAt(0) + a.time.charAt(1);
+          let hourB = b.time.charAt(0) + b.time.charAt(1);
+          let minutA = a.time.charAt(3) + a.time.charAt(4);
+          let minutB = b.time.charAt(3) + b.time.charAt(4);
            
              console.log('groupedItems');
              console.log(this.groupedItems);
@@ -77,7 +77,7 @@ export class LessonSystemComponent {
         if (item.length < this.maxCount)
           //אבל הוא תמיד באורך המקסימלי אז למה צריך את זה?
           for (let i = 0; i < item.length; i++) {
-            if (14 < parseInt(item[i].hour.charAt(0) + item[i].hour.charAt(1))) {
+            if (14 < parseInt(item[i].time.charAt(0) + item[i].time.charAt(1))) {
               this.index = i;
               break;
             } else {

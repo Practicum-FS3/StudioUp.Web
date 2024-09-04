@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';  // ייבוא של Htt
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -47,6 +46,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { HomeComponent } from './components/home/home.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { SubscriptionDetailComponent } from './components/customer-sub-history/subscription-detail/subscription-detail.component';
+import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 
 @NgModule({
   declarations: [

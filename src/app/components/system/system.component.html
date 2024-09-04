@@ -35,7 +35,7 @@
             <div class="myheader">{{title}}</div>
             <div class="mycontainer">
                 <p-accordion >
-                    <p-accordionTab >
+                    <p-accordionTab>
                         <div *ngFor="let lesson of groupedItems[i]">
                             <div *ngIf="lesson.id!=0 && lesson.isActive==true" class="myitem">
                                 <div id="t"> {{lesson.hour}}-
