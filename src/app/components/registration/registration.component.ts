@@ -1,6 +1,6 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { RegistrationService } from '../../services/registration/registration.service';
-import { Customer } from '../../models/Customer';
+import { Customer } from '../../models/Customer ';
 import { CustomerType } from '../../models/CustomerType ';
 import { HMO } from '../../models/HMO';
 import { PaymentOption } from '../../models/PaymentOption';
@@ -177,7 +177,10 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   mapDataForSelects(data: any[]): string[] {
     return data.map((value: any) => value.title) ?? '';
   }
-
+  convertValueToId(data: any[], value: string): number {
+    return data.find((item: any) => item.title === value)?.id;
+  }
+  
   navigateTo(route: string): void {
     this.router.navigate([route]);
   }
@@ -214,11 +217,8 @@ export class RegistrationComponent implements OnInit, OnDestroy {
 
       return sum % 10 === 0 ? null : { invalidId: true };
     };
-    return data?.map((value: any) => value.title);
   }
-  convertValueToId(data: any[], value: string): number {
-    return data.find((item: any) => item.title === value)?.id;
-  }
+ 
 
   customerRegistration(): void {
     this.formSubmitted = true;
@@ -226,7 +226,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
       this.customer = {
         firstName: this.firstName(this.form.value.fullName),
         lastName: this.lastName(this.form.value.fullName),
-        tz: this.form.value.ID,
+        id: this.form.value.ID,
         subscriptionTypeId: this.convertValueToId(
           this.subscriptionTypes,
           this.form.value.subscriptionTypeId
@@ -242,7 +242,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         hmoId: this.convertValueToId(this.HMOs, this.form.value.hmo),
         address:
           this.form.value.city + ', ' ?? '' + this.form.value.street ?? '',
-        phone: this.form.value.phone,
+        tel: this.form.value.phone,
         email: this.form.value.email,
       };
       console.log('Customer registration data:', this.customer); // Make API call to register customer
