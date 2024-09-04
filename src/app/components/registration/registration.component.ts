@@ -1,7 +1,6 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { RegistrationService } from '../../services/registration/registration.service';
-import { Customer } from '../../models/Customer ';
-import { Training } from '../../models/Training';
+import { Customer } from '../../models/Customer';
 import { CustomerType } from '../../models/CustomerType ';
 import { HMO } from '../../models/HMO';
 import { PaymentOption } from '../../models/PaymentOption';
@@ -13,6 +12,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { map, startWith, Observable, Subscription } from 'rxjs';
+import { AddressService } from '../../services/address/address.service';
 import { SubscriptionType } from '../../models/SubscriptionType';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
@@ -28,7 +28,6 @@ import { State } from '../../store/reducer';
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit, OnDestroy {
-  trainings!: Training[];
   subscriptionTypes!: SubscriptionType[];
   customerTypes!: CustomerType[];
   paymentOptions!: PaymentOption[];
@@ -39,6 +38,8 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   private formData: any;
   private formSubscription!: Subscription;
   filteredEmails!: Observable<string[]>;
+  filteredCities!: string[];
+  filteredStreets!: string[];
   domains: string[] = [
     'gmail.com',
     'yahoo.com',
@@ -58,50 +59,13 @@ export class RegistrationComponent implements OnInit, OnDestroy {
 
   constructor(
     private registrationService: RegistrationService,
+    private addressService: AddressService,
     private fb: FormBuilder,
     private router: Router,
     private store: Store<State>
   ) {}
 
   ngOnInit(): void {
-    this.HMOs = [
-      {
-        title: 'Atlanta',
-        id: 1,
-      },
-      {
-        title: 'Berlin',
-        id: 2,
-      },
-      {
-        title: 'Boston',
-        id: 3,
-      },
-      {
-        title: 'Chicago',
-        id: 4,
-      },
-      {
-        title: 'London',
-        id: 5,
-      },
-      {
-        title: 'Los Angeles',
-        id: 6,
-      },
-      {
-        title: 'New York',
-        id: 7,
-      },
-      {
-        title: 'Paris',
-        id: 8,
-      },
-      {
-        title: 'San Francisco',
-        id: 9,
-      },
-    ];
     this.form = this.fb.group({
       hmo: [''],
       training: ['', Validators.required],
@@ -134,11 +98,53 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     if (emailControl) {
       this.filteredEmails = emailControl.valueChanges.pipe(
         startWith(''),
-        map((value: string) => this._filter(value))
+        map((value: string) => this.emailsFilter(value))
       );
+    }
+    const cityControl = this.form.get('city');
+    if (cityControl) {
+      cityControl.valueChanges
+        .pipe(
+          startWith(''),
+          map((value: string) => this.citiesFilter(value))
+        )
+        .subscribe((cities: string[]) => {
+          this.filteredCities = cities;
+        });
+    }
+    const streetControl = this.form.get('street');
+    if (streetControl) {
+      streetControl.valueChanges
+        .pipe(
+          startWith(''),
+          map((value: string) => this.streetsFilter(value))
+        )
+        .subscribe((streets: string[]) => {
+          this.filteredStreets = streets;
+        });
     }
 
     this.fetchData();
+  }
+
+  emailsFilter(value: string): string[] {
+    if (!value) return [];
+    const [name, domain] = value.split('@');
+    if (domain) {
+      return this.domains
+        .filter((d) => d.startsWith(domain))
+        .map((d) => `${name}@${d}`);
+    } else {
+      return this.domains.map((d) => `${value}@${d}`);
+    }
+  }
+  citiesFilter(value: string): string[] {
+    if (!value) return [];
+    return this.addressService.getCities(value);
+  }
+  streetsFilter(value: string): string[] {
+    if (!value) return [];
+    return this.addressService.getStreets(value);
   }
 
   ngOnDestroy(): void {
@@ -147,17 +153,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     }
   }
 
-  @HostListener('window:beforeunload', ['$event'])
-  unloadNotification($event: any): void {
-    this.store.dispatch(resetRegistrationForm());
-  }
-
   private fetchData(): void {
-    this.registrationService
-      .getTrainings()
-      .subscribe((trainings: Training[]) => {
-        this.trainings = trainings;
-      });
     this.registrationService
       .getSubscriptionTypes()
       .subscribe((subscriptionTypes: SubscriptionType[]) => {
@@ -183,7 +179,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   }
 
   navigateTo(route: string): void {
-    this.router.navigate([route], { fragment: 'success-message' });
+    this.router.navigate([route]);
   }
 
   idValidator(): ValidatorFn {
@@ -218,29 +214,23 @@ export class RegistrationComponent implements OnInit, OnDestroy {
 
       return sum % 10 === 0 ? null : { invalidId: true };
     };
+    return data?.map((value: any) => value.title);
   }
-
-  private _filter(value: string): string[] {
-    if (!value) return [];
-    const [name, domain] = value.split('@');
-    if (domain) {
-      return this.domains
-        .filter((d) => d.startsWith(domain))
-        .map((d) => `${name}@${d}`);
-    } else {
-      return this.domains.map((d) => `${value}@${d}`);
-    }
+  convertValueToId(data: any[], value: string): number {
+    return data.find((item: any) => item.title === value)?.id;
   }
 
   customerRegistration(): void {
     this.formSubmitted = true;
     if (this.form.valid) {
       this.customer = {
+        firstName: this.firstName(this.form.value.fullName),
+        lastName: this.lastName(this.form.value.fullName),
+        tz: this.form.value.ID,
         subscriptionTypeId: this.convertValueToId(
           this.subscriptionTypes,
           this.form.value.subscriptionTypeId
         ),
-        // trainingTypeId: this.convertValueToId(this.form.value.training),
         customerTypeId: this.convertValueToId(
           this.customerTypes,
           this.form.value.customerType
@@ -250,13 +240,10 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           this.form.value.paymentOption
         ),
         hmoId: this.convertValueToId(this.HMOs, this.form.value.hmo),
-        firstName: this.firstName(this.form.value.fullName),
-        lastName: this.lastName(this.form.value.fullName),
-        id: this.form.value.ID,
-        address: this.form.value.address ?? '',
-        tel: this.form.value.phone,
-        email: this.form.value.email ?? '',
-        isActive: true,
+        address:
+          this.form.value.city + ', ' ?? '' + this.form.value.street ?? '',
+        phone: this.form.value.phone,
+        email: this.form.value.email,
       };
       console.log('Customer registration data:', this.customer); // Make API call to register customer
       this.registrationService.customerRegistration(this.customer); // Reset form fields
@@ -269,8 +256,9 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     }
   }
 
-  convertValueToId(data: any[], title: string): number {
-    return data.find((value) => value.title == title).id;
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any): void {
+    this.store.dispatch(resetRegistrationForm());
   }
 
   firstName(fullName: string): string {

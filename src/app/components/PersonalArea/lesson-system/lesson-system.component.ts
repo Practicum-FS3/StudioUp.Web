@@ -8,6 +8,8 @@ import { DataService } from '../../../services/personal-area/data.service';
   styleUrl: './lesson-system.component.scss'
 })
 export class LessonSystemComponent {
+  thisDay=new Date()
+  Ayala={id:1,Att:false,reg:true}
   days = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'מוצש"ק'];
   numbersArray = [1, 2, 3, 4, 5, 6, 7];
   maxCount = 0;
@@ -17,17 +19,20 @@ export class LessonSystemComponent {
   screenWidth: number = window.innerWidth;
   rek: AvailableTraining = {
     id: 0,
-    TrainingId: 0,
+    trainingId: 0,
     trainerName: '',
     date:new Date(),
     dayOfWeek: 0,
-    hour: '',
+    time: '',
     customerTypeName:'',
     trainingTypeName:'',
-    ParticipantsCount:0,
-    isActive: false
+    participantsCount:0,
+    isActive: false,
+    attend:false,
+    register:false
+    
   }
-
+  
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     if (event.target instanceof Window) {
@@ -35,32 +40,123 @@ export class LessonSystemComponent {
     }
   }
   constructor(private dataService: DataService) {
-
-    this.dataService.getAllAvailableTraining().subscribe(data => {
+    this.dataService.GetAllTrainingsDetailsForCustomer(1).subscribe(data => {
+      // this.arr =[
+      //   {
+      //     "id": 1,
+      //     "trainingId": 2,
+      //     "trainerName": "רחלי זוארץ",
+      //     "date": new Date("2024-08-12"),
+      //     "dayOfWeek": 2,
+      //     "time": "10:45",
+      //     "customerTypeName": "נשים",
+      //     "trainingTypeName": "פילאטיס",
+      //     "participantsCount": 12,
+      //     "isActive": true,
+      //     "attend":true,
+      //     "register":'נרשמתי'
+      //   },
+      //   {
+      //     "id": 3,
+      //     "trainingId": 8,
+      //     "trainerName": "רחלי זוארץ",
+      //     "date":new Date( "2024-08-12"),
+      //     "dayOfWeek": 2,
+      //     "time": "10:45",
+      //     "customerTypeName": "נשים",
+      //     "trainingTypeName": "פילאטיס",
+      //     "participantsCount": 17,
+      //     "isActive": true,
+      //     "attend":false,
+      //     "register":""
+      //   },
+      //   {
+      //     "id": 4,
+      //     "trainingId": 10,
+      //     "trainerName": "חיה שווירץ",
+      //     "date": new Date("2024-08-12"),
+      //     "dayOfWeek": 2,
+      //     "time": "17:30",
+      //     "customerTypeName": "נשים",
+      //     "trainingTypeName": "פילאטיס",
+      //     "participantsCount": 9,
+      //     "isActive": true,
+      //      "attend":false,
+      //     "register":"נרשמתי"
+      //   },
+      //   {
+      //     "id": 5,
+      //     "trainingId": 12,
+      //     "trainerName": "רחלי זוארץ",
+      //     "date":new Date( "2024-08-14"),
+      //     "dayOfWeek": 4,
+      //     "time": "14:30",
+      //     "customerTypeName": "נשים",
+      //     "trainingTypeName": "פילאטיס",
+      //     "participantsCount": 5,
+      //     "isActive": true,
+      //     "attend":false,
+      //     "register":'נרשמתי'
+      //   },
+      //   {
+      //     "id": 5,
+      //     "trainingId": 12,
+      //     "trainerName": "רחלי זוארץ",
+      //     "date":new Date( "2024-08-14"),
+      //     "dayOfWeek": 4,
+      //     "time": "14:30",
+      //     "customerTypeName": "נשים ונערות",
+      //     "trainingTypeName": "התעמלות קרקע",
+      //     "participantsCount": 5,
+      //     "isActive": true,
+      //     "attend":false,
+      //     "register":''
+      //   },
+      //   {
+      //     "id": 5,
+      //     "trainingId": 12,
+      //     "trainerName": "מלכי ברין",
+      //     "date":new Date( "2024-08-15"),
+      //     "dayOfWeek": 5,
+      //     "time": "17:30",
+      //     "customerTypeName": "נשים",
+      //     "trainingTypeName": "פילאטיס",
+      //     "participantsCount": 5,
+      //     "isActive": true,
+      //     "attend":false,
+      //     "register":''},
+      //     {
+      //       "id": 5,
+      //       "trainingId": 12,
+      //       "trainerName": "מלכי ברין",
+      //       "date":new Date( "2024-08-11"),
+      //       "dayOfWeek": 1,
+      //       "time": "16:30",
+      //       "customerTypeName": "נשים",
+      //       "trainingTypeName": "פילאטיס",
+      //       "participantsCount": 5,
+      //       "isActive": true,
+      //       "attend":false,
+      //       "register":'br'}
+      // ]
       this.arr = data
-      console.log({ data });
+      console.log( this.arr);
 
       for (var day of this.numbersArray) {
         if (this.arr.filter(x => x.dayOfWeek == day).length > this.maxCount) {
           this.maxCount = this.arr.filter(x => x.dayOfWeek == day).length
         }
-        console.log('ayala');
-
         this.groupedItems?.push(this.arr.filter(x => x.dayOfWeek == day).sort((a, b) => {
 
-          console.log('!!!!????');
+      
           
-          console.log({a, b});
-          
-          let hourA = a.hour.charAt(0) + a.hour.charAt(1);
-          let hourB = b.hour.charAt(0) + b.hour.charAt(1);
-          let minutA = a.hour.charAt(3) + a.hour.charAt(4);
-          let minutB = b.hour.charAt(3) + b.hour.charAt(4);
+          let hourA = a.time.charAt(0) + a.time.charAt(1);
+          let hourB = b.time.charAt(0) + b.time.charAt(1);
+          let minutA = a.time.charAt(3) + a.time.charAt(4);
+          let minutB = b.time.charAt(3) + b.time.charAt(4);
            
              console.log('groupedItems');
              console.log(this.groupedItems);
-
-//מה קורה כשזה אותה שעה?
           if (hourA !== hourB) {
             return parseInt(hourA) - parseInt(hourB);
           }
@@ -70,14 +166,12 @@ export class LessonSystemComponent {
         }));
      
       }
+      
      
-//צריכה הסבר- זה נראה שמסדר לפי שעה
       for (var item of this.groupedItems) {
-        //item   ---המערך של השיעורים של יום אחד  
         if (item.length < this.maxCount)
-          //אבל הוא תמיד באורך המקסימלי אז למה צריך את זה?
           for (let i = 0; i < item.length; i++) {
-            if (14 < parseInt(item[i].hour.charAt(0) + item[i].hour.charAt(1))) {
+            if (14 < parseInt(item[i].time.charAt(0) + item[i].time.charAt(1))) {
               this.index = i;
               break;
             } else {
@@ -89,6 +183,7 @@ export class LessonSystemComponent {
           this.index++;
         }
         this.index = 0;
+
       }
     })
 

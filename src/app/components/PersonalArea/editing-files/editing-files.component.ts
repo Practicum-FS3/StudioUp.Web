@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HMO } from '../../../models/HMO';
-import { Customer } from '../../../models/Customer ';
+import { Customer } from '../../../models/Customer';
 import { CustomerType } from '../../../models/CustomerType ';
 import { PaymentOptions } from '../../../models/PaymentOptions';
 import { SubscriptionType } from '../../../models/SubscriptionType';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators} from '@angular/forms';
 import {DataService} from '../../../services/personal-area/data.service'
+
+
+
 
 @Component({
   selector: 'app-editing-files',
   templateUrl: './editing-files.component.html',
-  styleUrl: './editing-files.component.scss'
+  styleUrl: './editing-files.component.scss',
 })
 export class EditingFilesComponent {
   myForm: FormGroup
@@ -21,21 +24,26 @@ export class EditingFilesComponent {
   arrPaymentOptions!: PaymentOptions[];
   arrSubscriptionType!: SubscriptionType[]; 
 
-  constructor(private dataService: DataService ) {
+
+
+  constructor(private dataService: DataService) {
     this.myForm = new FormGroup({
       id: new FormControl(''),
-      firstName: new FormControl(''),
-      lastName: new FormControl(''),
+      tz:new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+      firstName: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת\\s]*$')]),
+      lastName: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת\\s]*$')]),
       customerTypeId: new FormControl(''),
-      hmoId: new FormControl(),
+      hmoId: new FormControl(''),
       paymentOptionId: new FormControl(''),
       subscriptionTypeId: new FormControl(''),
       isActive: new FormControl(true),
-      tel: new FormControl(''),
-      address: new FormControl(''),
-      email: new FormControl(''),
+      tel: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+      address: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת0-9\\s\\"\\-]*$')]),
+      email: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Zא-ת0-9._%+-]+@[a-zA-Zא-ת0-9.-]+\\.[a-zA-Zא-ת]{2,}$')]),
       selectedCategory: new FormControl('')
-    })
+    });
+
+    
   }
 
   getCustomerTypeTitle(): string |undefined{
@@ -71,7 +79,7 @@ export class EditingFilesComponent {
   }
 
   ngOnInit(): void {
-    this.dataService.getCustByID().subscribe(data=>{
+    this.dataService.getCustByID(1).subscribe(data=>{
       this.currentCustomer=data
     })
 
@@ -90,7 +98,8 @@ export class EditingFilesComponent {
     this.dataService.getAllSubscriptionType().subscribe(data=>{
       this.arrSubscriptionType=data
     })
-  }
+  
+    }
   
  
   edit() {
@@ -99,6 +108,7 @@ export class EditingFilesComponent {
   saveChanges() {
     const { controls } = this.myForm
     let cust: Customer = new Customer(
+      controls['tz'].value,
       controls['firstName'].value,
       controls['lastName'].value,
       controls['customerTypeId'].value,
@@ -110,9 +120,13 @@ export class EditingFilesComponent {
       controls['address'].value,
       controls['email'].value
     )
-      cust.id=this.currentCustomer?.id      
-      this.dataService.updateCustByID(cust).subscribe(data => {
-        this.myForm.reset()
-      })
+
+    cust.id = this.currentCustomer.id;
+    this.dataService.updateCustByID(cust).subscribe(data => {
+        // this.myForm.reset();
+        this.toedit = false;
+    });
+    
   }
+
 }
