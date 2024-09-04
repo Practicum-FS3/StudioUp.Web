@@ -34,46 +34,6 @@
     border: 1px solid #ccc;
 }
 
-// .btn-custom,
-// .btn-custom-secondary,
-// .btn-custom-danger {
-//     padding: 10px 15px;
-//     font-size: 14px;
-//     border-radius: 4px;
-//     cursor: pointer;
-//     margin-top: 10px;
-//     text-align: center;
-// }
-
-// .btn-custom {
-//     background-color: #d91c5c;
-//     border: none;
-//     color: #faf6f3;
-// }
-
-// .btn-custom:hover {
-//     background-color: #b11749;
-// }
-
-// .btn-custom-secondary {
-//     background-color: #4c4c49;
-//     border: none;
-//     color: #faf6f3;
-// }
-
-// .btn-custom-secondary:hover {
-//     background-color: #3d3d3a;
-// }
-
-// .btn-custom-danger {
-//     background-color: #ffcc0f;
-//     border: none;
-//     color: #4c4c49;
-// }
-
-// .btn-custom-danger:hover {
-//     background-color: #e6b80d;
-// }
 
 @media (max-width: 768px) {
 
@@ -86,12 +46,7 @@
         font-size: 13px;
     }
 
-    // .btn-custom,
-    // .btn-custom-secondary,
-    // .btn-custom-danger {
-    //     font-size: 13px;
-    //     padding: 8px 12px;
-    // }
+
 }
 
 @media (max-width: 576px) {
@@ -106,12 +61,7 @@
         padding: 8px;
     }
 
-    // .btn-custom,
-    // .btn-custom-secondary,
-    // .btn-custom-danger {
-    //     font-size: 12px;
-    //     padding: 6px 10px;
-    // }
+
 }
 
 #button-icon {
@@ -122,10 +72,11 @@
     margin: 3px;
     padding: 7px;
     color: #d91c5c;
-    transition: box-shadow 0.2s; /* מעבר חלק */
+    transition: box-shadow 0.2s;
 }
+
 #button-icon:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* צל בעת מעבר */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .file-input-hidden {
@@ -172,93 +123,63 @@
 
 .custom-select {
     width: 100%;
-    /* עושה את ה-dropdown רספונסיבי */
     border-radius: 4px;
-    /* פינות מעוגלות */
     border: 2px solid #d91c5c;
-    /* גבול בצבע שהגדרת */
     padding: 10px;
-    /* ריפוד פנימי */
     background-color: #faf6f3;
-    /* צבע הרקע */
     color: #4c4c49;
-    /* צבע הטקסט */
     font-size: 14px;
-    /* גודל הטקסט */
 }
 
-/* שינוי צבעים של ה-dropdown כשזה בפוקוס */
 .custom-select:focus {
     border-color: #ffcc0f;
-    /* צבע הגבול כשזה בפוקוס */
     outline: none;
-    /* הסרת קו מתאר */
     background-color: #fff;
-    /* צבע רקע כשזה בפוקוס */
 }
 
-/* שינוי צבעים של האופציות */
 .custom-select option {
     background-color: #faf6f3;
-    /* צבע הרקע של האופציות */
     color: #4c4c49;
-    /* צבע הטקסט של האופציות */
 }
 
-/* שינוי צבעים של האופציות כשזה בפוקוס */
 .custom-select option:focus {
     background-color: #ffcc0f;
-    /* צבע הרקע כשזה בפוקוס */
     color: #4c4c49;
-    /* צבע הטקסט */
 }
 
 
 
 .custom-dropdown {
     width: 100%;
-    /* עושה את ה-dropdown רספונסיבי */
 }
 
 .p-dropdown {
     border-radius: 4px;
-    /* פינות מעוגלות */
 }
 
 .p-dropdown .p-dropdown-label {
     background-color: #faf6f3;
-    /* צבע הרקע */
     color: #4c4c49;
-    /* צבע הטקסט */
     padding: 10px;
-    /* ריפוד פנימי */
 }
 
 .p-dropdown .p-dropdown-trigger {
     background-color: #d91c5c;
-    /* צבע הרקע של הכפתור */
     color: #faf6f3;
-    /* צבע הטקסט של הכפתור */
 }
 
 .p-dropdown .p-dropdown-items {
     background-color: #faf6f3;
-    /* צבע הרקע של האופציות */
     color: #4c4c49;
-    /* צבע הטקסט של האופציות */
 }
 
-/* שינוי צבעים של האופציות כשזה בפוקוס */
 .p-dropdown .p-dropdown-item:hover {
     background-color: #ffcc0f;
-    /* צבע הרקע של האופציות בהhover */
     color: #4c4c49;
-    /* צבע הטקסט */
 }
 
 .uploaded-file-name {
     margin-left: 10px;
     font-size: 14px;
-    color: #4c4c49; // צבע המתאים לעיצוב שלך
-  }
-  
+    color: #4c4c49;
+}

@@ -14,7 +14,7 @@ export class FileService {
 
 
   uploadFile(formData: FormData): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/UploadFile`, formData).pipe(
+    return this.http.post<any>(`${this.apiUrl}/UploadFileAndReturnId`, formData).pipe(
       catchError(this.handleError)
     );;
   }
@@ -24,7 +24,6 @@ export class FileService {
       catchError(this.handleError)
     );
   }
-
 
   deleteFile(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/DeleteFile/${id}`);
