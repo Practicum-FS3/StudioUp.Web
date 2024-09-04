@@ -4,6 +4,8 @@ export class ContentSections{
     section1?:string;
     section2?:string;
     section3?:string;
+    // imageData?:null;
     isActive?:boolean;
     viewInHP?:boolean;
+    
 }

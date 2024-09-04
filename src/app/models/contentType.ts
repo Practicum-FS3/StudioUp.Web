@@ -9,5 +9,6 @@ export class ContentType {
     title1?: string;
     title2?: string;
     title3?: string;
+    isActive?:boolean;
     contentSections?:ContentSections[];
 }

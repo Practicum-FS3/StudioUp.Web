@@ -8,12 +8,17 @@ import { HomeAboutComponent } from './components/home/home-about/home-about.comp
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { OurTeamComponent } from './components/our-team/our-team.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
+import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
+import { SignatureComponent } from './components/signature/signature.component';
+import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import {TracksComponent} from './components/tracks/tracks.component'
 import { HmosComponent } from './components/hmos/hmos.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
 import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
+
 
 
 const routes: Routes = [
@@ -29,11 +34,12 @@ const routes: Routes = [
   {path:'payment-options',component:PaymentOptionsComponent},
   {path:'our-team',component:OurTeamComponent},
   {path:'login',component:LoginComponent},
-  { path: "personal-area" ,component:PersonalAreaComponent},
+  { path: "personal-area" ,component:PersonalAreaComponent, canActivate: [AuthGuard] },
   { path: 'registration', component: RegistrationComponent },
   { path: 'HMOs', component: HmosComponent },
   { path: 'subscriptionPerCustomer',component: CustomerSubHistoryComponent},
   { path: 'd',component: DetailsAndRegistrationComponent}
+  { path: 'subscription-benefits', component: SubscriptionBenefitsComponent },
 
 ];
 

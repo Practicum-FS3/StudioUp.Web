@@ -27,13 +27,17 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SystemComponent } from './components/system/system.component';
 import { provideHttpClient } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
+import { SignaturePadModule } from 'angular2-signaturepad';
+import { SignatureComponent } from './components/signature/signature.component';
+// import { TruncateTextDirectiveDirective } from './components/about/truncate-text-directive.directive';
+// import { TruncateTextDirective } from './components/about/truncate-text.directive';
 import { AfterRegistrationComponent } from './components/after-registration/after-registration.component';
 import { StoreModule } from '@ngrx/store';
 import { registrationReducer } from './store/reducer';
@@ -51,12 +55,17 @@ import { TooltipModule } from 'primeng/tooltip';
 import { HomeComponent } from './components/home/home.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
 import { SubscriptionDetailComponent } from './components/customer-sub-history/subscription-detail/subscription-detail.component';
+import { Component, OnInit } from '@angular/core';
+import { Message } from 'primeng/api';
+import { MessagesModule } from 'primeng/messages';
 import { MenubarModule } from 'primeng/menubar';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 import { DialogModule } from 'primeng/dialog'
 import { DropdownModule } from 'primeng/dropdown';
 
+
+import { TruncatePipe } from './components/about/truncate.pipe'; // Import your custom pipe
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,6 +86,9 @@ import { DropdownModule } from 'primeng/dropdown';
     SystemComponent,
     DetailsAndRegistrationComponent,
     HomeAboutComponent,
+    SignatureComponent,
+    TruncatePipe
+    
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
     HomeSubscriptionBenefitsComponent,
@@ -107,15 +119,20 @@ import { DropdownModule } from 'primeng/dropdown';
     HttpClientModule,
     AccordionModule,
     BrowserAnimationsModule,
+    FormsModule,
+    NgbModule,
+    ButtonModule,
+    SignaturePadModule
     // NgbModule,
     ButtonModule,
+    MessagesModule,
     DialogModule,
     TooltipModule,
     MenubarModule,
     DropdownModule,
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
   ],
   providers: [
     provideAnimationsAsync(),

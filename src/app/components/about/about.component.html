@@ -1,37 +1,26 @@
 <div class="container">
-<div id="top">
-  <div id="a">
-  
-      
-      <div id="cm">{{content?.title}}</div>   
-      <div id="bubble"></div>
+  <div id="top">
+    <div id="a">
+      <div id="cm">{{content?.title}}</div>
     </div>
-  
-  <!-- <div id="d"></div>
-  <div id="e">
-    <div id="f">
+    <div id="e">
       <div id="smily"></div>
     </div>
   </div>
-</div>
-
-<div id="g">
-  <div id="h"></div>
-</div> -->
-<div id="e">
-  <div id="smily"></div>     
-</div>
-</div>
-<div id="cards">
-  <div *ngFor="let item of content?.contentSections" class="kl">
-    <div id="icon"></div>
-    <p id="name">{{item.section1}}</p>
-    <!-- <div id="from">{{item.section2}}</div> -->
-    
+  <div id="cards">
+    <div *ngFor="let item of content?.contentSections ; let i=index" class="kl"  >
+      <div [ngClass]="{'light-icon': i % 2 === 0, ' dark-icon': i % 2 !== 0}"></div>
+     <p id="name" dir="rtl" (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
+         {{ item?.section1 || '' | truncate:133 }}</p>
+      <div dir="rtl" id="hoverWindow" *ngIf="isHovered &&  item && item.section1 &&item.section1.length>120">
+        <p id="hoverContent">{{ item?.section1 }}</p>
+      </div>      
+      
+      <p id="name1">{{item?.section1}}</p>
+      <div id="from">{{item?.section2}}</div>
+    </div>
   </div>
-  </div>
+
 </div>
-
-
-
-
+<div>
+</div>
