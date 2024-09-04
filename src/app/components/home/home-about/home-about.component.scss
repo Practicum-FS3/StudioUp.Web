@@ -24,8 +24,9 @@
             margin-top: 5%;
             margin-bottom: 8%;
             width: 23%;
-            height: 10%;
-            background-image: url('../../../../assets/images/מרחאות\ ורוד\ בהיר.png');
+
+            height: 42px;
+            background-image: url('../../../../assets/images/QuotationMarksLitePink.png');
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
@@ -117,7 +118,7 @@
             align-items: center;
 
             #arrow {
-                background-image: url('../../../../assets/images/חץ\ לקרא\ עוד.png');
+                background-image: url('../../../../assets/images/ArrowGray.png');
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
                 width: 66%;
@@ -204,6 +205,12 @@
             #name {
                 font-size: 80%;
                 color: rgba(76, 76, 73, 1);
+            #arrow {
+                background-image: url('../../../../assets/images/ArrowGray.png');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                width: 60%;
+                height: 75%;
             }
 
         }

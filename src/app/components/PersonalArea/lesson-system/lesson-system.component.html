@@ -1,0 +1,70 @@
+<div class="myp">
+    <div class="mytable" *ngIf="screenWidth>910">
+        <div class="myheaders">
+            <div class="myheader" *ngFor="let day of days">{{day}}</div>
+        </div>
+        <div class="mycontainer">
+            <div *ngFor="let n of numbersArray" class="myn">
+                <div class="mytur">
+                    <div *ngFor="let lesson of groupedItems[n-1]" class="myitem"
+                    [ngClass]="{'hasTrainingCustomer': lesson.register}">
+                        <div *ngIf="lesson.id!=0 && lesson.isActive==true">
+                                <i class="pi pi-check-circle" id="miniAicon" *ngIf="lesson.attend&&lesson.date<thisDay"></i> 
+                                <i class="pi pi-minus-circle" id="miniAicon" *ngIf="!lesson.attend&&lesson.register&&lesson.date<thisDay"></i>
+                            <b style="font-weight: bolder;">{{lesson.time}}</b>
+                             <br>
+                            <div style="line-height: 1">
+                                {{lesson.trainerName}}
+                                <br>
+                                {{lesson.trainingTypeName}}
+                                {{lesson.customerTypeName}}
+                                
+                            </div>
+                           
+<!--                             <b>{{lesson.time}}</b>
+                            <br>
+                            {{lesson.trainerName}}
+                            <br>
+                            {{lesson.trainingTypeName}}
+                            {{lesson.customerTypeName}} -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- למסך קטן -->
+    <div *ngIf="screenWidth<910" class="mytable">
+        <div *ngFor="let title of days; let i=index" class="mya">
+            <div class="myheader">{{title}}</div>
+            <div class="mycontainer">
+                <p-accordion >
+                    <p-accordionTab >
+                        <div *ngFor="let lesson of groupedItems[i]">
+                            <div *ngIf="lesson.id!=0 && lesson.isActive==true" class="myitem">
+                                <div id="t"> {{lesson.time}}-
+                                    {{lesson.trainerName}}
+                                </div>
+                                <div>
+                                    {{lesson.trainingTypeName}}-
+                                    {{lesson.customerTypeName}}
+                                </div>
+                                <div id="iconsDiv">
+                                    <i class="pi pi-check-circle" id="miniAicon" *ngIf="Ayala?.Att"></i> 
+                                    <i class="pi pi-minus-circle" id="miniAicon" *ngIf="Ayala?.reg"></i>   
+                                </div>
+                            </div>
+                        </div>
+                    </p-accordionTab>
+                </p-accordion>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,43 +1,56 @@
-.pic1 {
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#subscriptionBenefitsContainer {
+    margin-top: 2%;
+}
+
+.subscriptionImage {
     background-image: url('../../../assets/images/s1.png');
     position: absolute;
     width: 52%;
     height: 55%;
     left: 35%;
-    top: 18%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-.rectangle281 {
+
+.benefitsRectangle {
     position: absolute;
     width: 20%;
     height: 55%;
     left: 11.5%;
-    top: 18%;
     background: #4C4C49;
-    border-radius: 60px;
+    border-radius: 15%;
+    align-items: center;
+    justify-content: center;
+    padding-right: 3%;
+    padding-top: 8.5%;
 }
-.rectangle281-text {
-    position: absolute;
-    width: 14%;
-    height: 19%;
-    left: 15.4%;
-    top: 33.6%;
-    font-family: 'Anomalia ML v2 AAA';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 4.6vw;
-    line-height: 4.1vw;
-    text-align: right;
+
+.benefitsRectangleText {
+    width: 100%;
+    font-family: 'Anomalia ML v2 AAA', sans-serif;
+    font-weight: 600;
+    font-size: 500%;
+    line-height: 90%;
     color: #FFFFFF;
+    direction: rtl;
+    text-align: right;
 }
-.text {
+
+.subscriptionText {
     position: absolute;
     width: 50%;
     height: 4%;
     left: 31.2%;
-    top: 85%;
+    margin-top: 33%;
     font-family: 'Ploni ML v2 AAA';
     font-style: normal;
     font-weight: 700;
@@ -45,182 +58,159 @@
     line-height: 2.8vw;
     display: flex;
     align-items: center;
-    text-align: right;
     color: #4C4C49;
 }
-.rectangle235 {
-    position: absolute;
-    width: 20.6%;
-    height: 43.2%;
-    left: 60.7%;
-    top: 95%;
-    background: rgba(255, 246, 212, 0.8);
-    border-radius: 60px;
+
+.optionList {
+    float: left;
+    flex: 0 45%;
+    width: 90%;
+    margin-left: -12%;
 }
-.rectangle235-text {
-    position: absolute;
-    width: 14.8%;
-    height: 21.8%;
-    left: 63.5%;
-    top: 104%;
+
+#contentSectionsContainer {
+    margin-left: 20%;
+    display: flex;
+    gap: 10px;
+    padding-top: 38%;
+}
+
+.contentBox {
+    width: 70%;
+    height: 200%;
+    border-radius: 60px;
+    padding-top: 15%;
+    padding-left: 9%;
+    padding-right: 9%;
+    padding-bottom: 15%;
+    background: rgba(255, 246, 212, 0.8);
+}
+
+.contentBoxText1 {
+    width: 100%;
     font-family: 'Ploni ML v2 AAA';
     font-style: normal;
-    font-weight: 400;
-    font-size: 1.3vw;
-    line-height: 1.5vw;
+    font-weight: 600;
+    font-size: 170%;
+    line-height: 140%;
     text-align: center;
     color: #000000;
 }
-.rectangle236 {
-    position: absolute;
-    width: 20.5%;
-    height: 43.2%;
-    left: 37.7%;
-    top: 95%;
-    background: rgba(255, 246, 212, 0.8);
-    border-radius: 60px;
-}
-.rectangle236-text {
-    position: absolute;
-    width: 14.7%;
-    height: 27.7%;
-    left: 40.7%;
-    top: 104%;
+
+.contentBoxText2 {
     font-family: 'Ploni ML v2 AAA';
     font-style: normal;
-    font-weight: 400;
-    font-size: 1.3vw;
-    line-height: 1.5vw;
+    font-weight: 600;
+    font-size: 170%;
+    line-height: 140%;
     text-align: center;
-    color: #000000;
-}
-.rectangle237 {
-    position: absolute;
-    width: 20.6%;
-    height: 43.2%;
-    left: 14.6%;
-    top: 95%;
-    background: rgba(255, 246, 212, 0.8);
-    border-radius: 60px;
-}
-.rectangle237-text {
-    position: absolute;
-    width: 14.6%;
-    height: 27.7%;
-    left: 18%;
-    top: 104%;
-    font-family: 'Ploni ML v2 AAA';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.3vw;
-    line-height: 1.5vw;
-    text-align: center;
-    color: #000000;
-}
-.rectangle237-text2 {
     color: #FFCC0F;
 }
-.rectangle168 {
-    position: absolute;
-    width: 75.3%;
-    height: 110.1%;
-    left: 11.5%;
-    top: 150.2%;
-    background: #FBEDE9;
-    border-radius: 60px;
+
+@media (max-width: 1200px) {
+    .subscriptionImage {
+        height: 43%;
+    }
+
+    .benefitsRectangle {
+        height: 43%;
+    }
+
+    .contentBoxText1 {
+        font-size: 130%;
+        width: 95%;
+    }
+
+    .contentBoxText2 {
+        font-size: 130%;
+        width: 95%;
+    }
+
+    .benefitsRectangleText {
+        font-size: 390%;
+        width: 95%;
+    }
+
+    .subscriptionText {
+        margin-top: 30%;
+    }
 }
-.rectangle168-text {
-    position: absolute;
-    width: 10.7%;
-    height: 3.9%;
-    left: 44.1%;
-    top: 154.2%;
-    font-family: 'Ploni ML v2 AAA';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 2vw;
-    line-height: 2.5vw;
-    display: flex;
-    align-items: center;
-    text-align: right;
-    color: #4C4C49;
+
+@media (max-width: 992px) {
+    .subscriptionImage {
+        height: 37%;
+    }
+
+    .benefitsRectangle {
+        height: 37%;
+        border-radius: 40px;
+    }
+
+    .contentBox {
+        border-radius: 40px;
+    }
+
+    .contentBoxText1 {
+        font-size: 100%;
+        width: 90%;
+    }
+
+    .contentBoxText2 {
+        font-size: 100%;
+        width: 90%;
+    }
+
+    .benefitsRectangleText {
+        font-size: 290%;
+        width: 90%;
+    }
+
+    .subscriptionText {
+        margin-top: 28%;
+    }
 }
-.rectangle190,
-.rectangle282,
-.rectangle283,
-.rectangle284,
-.rectangle285,
-.rectangle287,
-.rectangle286,
-.rectangle288,
-.rectangle289 {
-    position: absolute;
-    width: 66.6%;
-    height: 7.4%;
-    left: 15.7%;
-    background: #FFFFFF;
-    border-radius: 10px;
-}
-.rectangle190 { top: 162.4%; }
-.rectangle282 { top: 172.4%; }
-.rectangle283 { top: 182.4%; }
-.rectangle284 { top: 192.4%; }
-.rectangle285 { top: 202.4%; }
-.rectangle287 { top: 212.4%; }
-.rectangle286 { top: 222.4%; }
-.rectangle288 { top: 232.4%; }
-.rectangle289 { top: 242.4%; }
-.group85 {
-    position: absolute;
-    width: 16.9%;
-    height: 5%;
-    left: 29.3%;
-    top: 229.1%;
-    transform: rotate(-0.45deg);
-}
-.rectangle21 {
-    position: absolute;
-    width: 14%;
-    height: 4.05%;
-    left: 44.3%;
-    top: 253.8%;
-    background: #D91C5C;
-    border-radius: 60px;
-}
-.rectangle21-text {
-    position: absolute;
-    width: 14.5%;
-    height: 5%;
-    left: 40.5%;
-    top: 253.4%;
-    font-family: 'Ploni ML v2 AAA';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.4vw;
-    line-height: 2.4vw;
-    text-decoration: none;
-    display: 184%;
-    align-items: center;
-    text-align: right;
-    color: #FAF6F3;
-}
-.rectangle22 {
-    box-sizing: border-box;
-    position: absolute;
-    width: 2.3%;
-    height: 4.05%;
-    left: 41.9%;
-    top: 254%;
-    border: 1.5px solid #000000;
-    border-radius: 45px;
-}
-.arrov {
-    box-sizing: border-box;
-    position: absolute;
-    width: 1.2%;
-    height: 0;
-    left: 42.4%;
-    top: 251.6%;
-    color: #4C4C49;
-    font-size: 0.9vw;
+
+@media (max-width: 768px) {
+    .subscriptionImage {
+        height: 26%;
+    }
+
+    .benefitsRectangle {
+        height: 26%;
+        border-radius: 30px;
+    }
+
+    .contentBox {
+        border-radius: 30px;
+        width: 90%;
+        padding: 5%;
+    }
+
+    #contentSectionsContainer {
+        margin-left: 30%;
+        display: block;
+    }
+
+    .optionList {
+        margin-top: 8%;
+    }
+
+    .contentBoxText1 {
+        font-size: 90%;
+        width: 95%;
+    }
+
+    .contentBoxText2 {
+        font-size: 90%;
+        width: 95%;
+    }
+
+    .benefitsRectangleText {
+        font-size: 240%;
+        width: 90%;
+    }
+
+    .subscriptionText {
+        margin-top: 36%;
+    }
 }

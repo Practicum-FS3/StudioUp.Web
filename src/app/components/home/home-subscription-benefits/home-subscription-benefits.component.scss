@@ -1,240 +1,315 @@
-.text {
-    position: absolute;
-    width: 25%;
-    height: 21%;
-    left: 35%;
-    top: 411%;
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 1200px;
+    /* Optional: Limit the maximum width */
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.title-section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#main-title {
     font-family: 'Anomalia ML v2 AAA';
-    font-style: normal;
     font-weight: 700;
     font-size: 5vw;
     line-height: 3vw;
-    /* or 97% */
-    display: 97%;
-    align-items: center;
-    text-align: center;
-
     color: #4C4C49;
-
-    transform: matrix(1, 0, -0.02, 1, 0, 0);
 }
 
-.text2 {
-    position: absolute;
-    width: 84.8%;
-    height: 20%;
-    left: 5.2%;
-    top: 424.3%;
-
-    /* כותרת2 */
+#subtitle {
     font-family: 'Ploni ML v2 AAA';
-    font-style: normal;
     font-weight: 700;
     font-size: 2.2vw;
     line-height: 3vw;
-    /* or 111% */
-    display: 111%;
-    align-items: center;
-    text-align: center;
-
     color: #4C4C49;
-
-    transform: matrix(1, 0, -0.02, 1, 0, 0);
+    margin-top: 8%;
 }
 
-.frame2 {
+.content-wrapper {
+    width: 110%;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0%;
-    gap: 2.2%;
-
-    position: absolute;
-    width: 83%;
-    height: 28%;
-    left: calc(46% - 75%/2 + 0%);
-    top: 437.5%;
+    flex-direction: column;
+    /* Changed to column to place #joining under DivRow1 */
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 5%;
 }
 
-.rectangle43 {
-    width: 31.8%;
-    height: 165%;
-
-    background: #FFF8DD;
-    border-radius: 16.2%;
-    transform: matrix(1, 0.01, 0, 1, 0, 0);
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.group121 {
-    background-image: url('../../../../assets/images/s2.png');
-    position: absolute;
-    width: 24%;
-    height: 145%;
-    left: 2.5%;
-    top: -15%;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
+.item-list {
+    flex: 1;
+    margin: 0 1%;
 }
 
-.rectangle41 {
-    width: 32.8%;
-    height: 235%;
-
+.cardd {
+    width: 100%;
+    border-radius: 15%;
     background: #FAF6F3;
-    border-radius: 15%;
-    transform: matrix(1, 0.01, 0, 1, 0, 0);
+    text-align: right;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
 
-    /* Inside auto layout */
-    flex: none;
-    order: 2;
-    flex-grow: 0;
 }
 
-.text-rectangle41 {
-    position: absolute;
-    width: 21.4%;
-    height: 10%;
-    left: 69%;
-    top: 448%;
-
+.card-title {
     font-family: 'Ploni ML v2 AAA';
-    font-style: normal;
     font-weight: 700;
-    font-size: 2vw;
-    line-height: 2vw;
-    /* or 109% */
-    display: flex;
-    align-items: center;
-    text-align: right;
-
-    color: #4C4C49;
+    font-size: 32px;
+    line-height: 35px;
+    color: #494948;
 }
 
-.text2-rectangle41 {
-    position: absolute;
-    width: 21.3%;
-    height: 50%;
-    left: 69%;
-    top: 460%;
-
+.card-description {
+    line-height: 1.5vw;
+  
+    width: 100%;
     font-family: 'Ploni ML v2 AAA';
     font-style: normal;
-    font-weight: 400;
-    font-size: 1.5vw;
-    line-height: 2vw;
-    /* or 136% */
-    text-align: right;
-
+    font-weight: 600;
+    font-size: 190%;
+    line-height: 140%;
     color: #000000;
 }
 
-.rectangle40 {
-    width: 30.8%;
-    height: 235%;
-
-    background: rgba(250, 246, 243, 0.8);
+.image-wrapper {
+    width: 30%;
+    height: auto;
     border-radius: 15%;
-    transform: matrix(1, 0.01, 0, 1, 0, 0);
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-
+    background: #FFF8DD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.text-rectangle40 {
-    position: absolute;
-    width: 21.3%;
-    height: 50%;
-    left: 40%;
-    top: 448%;
-
-    font-family: 'Ploni ML v2 AAA';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5vw;
-    line-height: 2vw;
-    /* or 136% */
-    text-align: right;
-
-    color: #000000;
+.image-wrapper img {
+    width: 90%;
+    height: 100%;
 }
 
-.group85 {
-    position: absolute;
-    width: 280.97px;
-    height: 47.38px;
-    left: calc(50% - 280.97px/2 - 434.51px);
-    top: 3432.19px;
-
-    transform: rotate(-0.45deg);
+#cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    margin-top: 5%;
+    /* Space between row and CTA section */
+    box-sizing: border-box;
 }
 
-.rectangle21 {
-    position: absolute;
+.cta-button {
     width: 15.9%;
     height: 5.3%;
-    left: 14.2%;
-    top: 493.8%;
-
     background: #D91C5C;
     border-radius: 20px;
 }
 
-.text-rectangle21 {
-    position: absolute;
-    width: 14.5%;
-    height: 5%;
-    left: 17%;
-    top: 493.8%;
-
+.cta-text {
+    width: 100%;
+    height: 100%;
     font-family: 'Ploni ML v2 AAA';
-    font-style: normal;
     font-weight: 400;
     font-size: 1.8vw;
     line-height: 2.4vw;
-
-    /* identical to box height, or 164% */
     display: flex;
     align-items: center;
-    text-align: right;
+    text-align: center;
     text-decoration: none;
-
     color: #FAF6F3;
 }
 
-.rectangle22 {
-    box-sizing: border-box;
-
-    position: absolute;
+.secondary-button {
     width: 2.5%;
     height: 5%;
-    left: 11.5%;
-    top: 493.8%;
-
     background: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 45px;
-
+    margin-top: 10px;
 }
 
-.arrov {
-    box-sizing: border-box;
-    position: absolute;
-    width: 1.2%;
-    height: 0;
-    left: 12.2%;
-    top: 491.9%;
+.arrow {
     color: #4C4C49;
-    font-size: 0.9vw;
-
+    font-size: 1.9vw;
+    margin-top: 10px;
 }
+
+.image-wrapper {
+    width: 31%;
+    /* Adjust as needed */
+    margin-right: -32%;
+    height: 55%;
+}
+
+.cardd{
+    width: 100%;
+}
+.image{
+    margin-top: -15%;
+    max-width: 100% ;
+    max-height: 80%;
+}
+
+.down {
+    width: 25%;
+    height: 3.9%;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: row;
+    direction: rtl;
+    border-radius: 60px;
+    margin-right: 70%;
+    margin-top: -6%;
+}
+
+.down-text {
+    font-family: 'Anomalia ML v2 AAA Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 200%;
+    color: #ffff;
+    font-weight: 700;
+    background: #D91C5C;
+    border-radius: 60px;
+    padding: 4%;
+    width: 100%;
+}
+
+.outer-icon {
+    color: #020007;
+    transform: translate(-50%, -50%);
+    margin-right: 25px;
+    cursor: pointer;
+    font-weight: 100;
+}
+
+.circleDown {
+    width: 47px;
+    height: 47px;
+    border-radius: 30px;
+    border: 1px solid var(--Color-7, #000);
+    background: rgba(255, 255, 255, 0.00);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pi-arrow-down-left {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+}
+
+.pi-angle-down,
+.pi-angle-up {
+    font-size: 70%;
+}
+
+.hidden-icon {
+    visibility: hidden;
+}
+
+@media (max-width: 768px) {
+}
+
+@media  (max-width: 992px) {
+    .card-title{
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .card-description {
+        font-size: 100%;
+    }
+    .down{
+        margin-top: 1%;
+    }
+    .down-text {
+        font-size: 100%;
+    }
+
+    .outer-icon {
+        margin-right: 17px;
+    }
+
+    .pi-arrow-down-left {
+        font-size: 20px;
+    }
+
+    .circleDown {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media  (max-width: 500px) {
+    .card-title{
+        font-size: 20px;
+    }
+    .card-description {
+        font-size: 130%;
+    }
+    .down{
+        margin-top: -11%;
+    }
+    .down-text {
+        font-size: 100%;
+    }
+
+    .outer-icon {
+        margin-right: 17px;
+    }
+
+    .pi-arrow-down-left {
+        font-size: 20px;
+    }
+
+    .circleDown {
+        width: 38px;
+        height: 38px;
+    }
+   
+}
+
+
+  

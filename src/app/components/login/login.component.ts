@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,27 +12,30 @@ export class LoginComponent {
   email!: string;
   password!: string;
   errorMassage: string = '';
-  constructor(private authService: AuthService) {
-    
+  constructor(private authService: AuthService, private router: Router) {
+
   }
-  onsubmit(){
+  onsubmit() {
     this.authService.login(this.email, this.password).subscribe(
       token => {
         console.log('Token', token);
-        localStorage.setItem('token', token);
-        this.authService.checkToken(token).subscribe(
+        this.authService.checkToken().subscribe(
           valid => {
             if (valid) {
               console.log('Token is valid')
-              //הפניה ךדף הבית
-              //?????
+              this.router.navigate(['/home']);
             } else {
               console.log('Token is invalid');
+              this.errorMassage = 'Token is invalid';
             }
           },
           error => {
             console.error('Token validation error', error);
-            this.errorMassage = 'Token is invalid';
+            if (error.status === 403) {
+              this.errorMassage = 'User not found';
+            } else {
+              this.errorMassage = 'Token validation error';
+            }
 
           }
 
@@ -39,9 +43,15 @@ export class LoginComponent {
       },
       error => {
         console.error('Login error', error);
-        this.errorMassage = 'Login failed';
+        if (error.status === 401) {
+          this.errorMassage = 'אחד או יותר מן הנתונים שהקשת אינם נכונים';
+        } else {
+          this.errorMassage = 'שגיאת התחברות';
+        }
       }
     );
   }
+
+
 
 }

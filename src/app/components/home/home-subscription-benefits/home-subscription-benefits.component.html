@@ -1,29 +1,30 @@
-<div class="text">?מנויה</div>
-<div class="text2">!הטבות כושר אישית לבריאות</div>
-
-<div class="frame2">
-    <div class="rectangle40"></div>
-    <div class="rectangle41"></div>
-    <div class="rectangle43"></div>
-    <div class="group121"></div>
-
-    <div class="rectangle44"></div>
-
+<div class="container">
+    <div class="header">
+        <div class="title-section">
+            <div id="main-title">?מנויה</div>
+            <div id="subtitle">!הטבות כושר אישית לבריאות</div>
+        </div>
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="image-wrapper">
+                    <img class="image" src="../../../../assets/images/s2.png" alt="Image">
+                </div>
+                <div class="item-list" *ngFor="let po of s.contentSections">
+                    <div *ngIf="po.viewInHP">
+                        <div class="cardd">
+                            <p *ngIf="po.section3" class="card-title">{{po.section3}}</p>
+                            <p class="card-description">{{po.section1}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="down">
+                <div class="down-text">להצטרפות למנוי</div>
+                <div class="outer-icon">
+                    <div type="button" class="circleDown"></div>
+                    <div class="pi pi-arrow-down-left"></div>
+                </div>
+            </div> 
+        </div>
+    </div>
 </div>
-<div class="text-rectangle41">פגישת אישית איתי ייעוץ לפעילות גופנית </div>
-<div class="text2-rectangle41">בפגישה אישית ניצור יחד תכנית פעולה מותאמת להכנסת כושר לשגרה שלך,
-    רעיונות לתרגילים יעודים בדיוק בשבילך , מתיחות למצבי כאב ,
-    ופתרונות תנועתיים למצבים מאתגרים.
-</div>
-
-<div class="text-rectangle40">סדנת אורח חיים בריא -
-    בשווי של 100 ש"ח חינם לבעלות מנוי וחברות לאומית ו20- ש"ח ללקוחות כרטיסיה.
-    אחת לחודש תערך בסטודיו סדנה לאורח חיים בריא מדיאטנית מובילה בתחום הבריאות
-    והירידה במשקל. עם שו"ת שלכן עצות וטיפים לתזונה בריאה ועוד .
-    הסדנה היא סגורה ומיועדת למתאמנות סטודיו אפ בלבד, פרטים בסטודיו.</div>
-
-<div class="group85"></div>
-<div class="rectangle21"></div>
-<a class="text-rectangle21" href="/*קישור לדף של ההרשמה*/" >להצטרפות למנוי</a>
-<div class="rectangle22"></div>
-<div class="arrov"><h1>↙</h1></div>

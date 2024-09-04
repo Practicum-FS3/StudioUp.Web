@@ -40,3 +40,13 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+/.vs/VSWorkspaceState.json
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/.vs/slnx.sqlite
+/.vs/StudioUp.Web/v17/.wsuo
+/.vs/StudioUp.Web/FileContentIndex/2803f9d5-bd91-4057-a9e4-4cf8531d8eb0.vsidx
+/.vs/StudioUp.Web/FileContentIndex/9e8d3cd8-26d2-4c31-a624-556e5048da54.vsidx
+/.vs/StudioUp.Web/FileContentIndex/df1ddb60-491a-44b0-8d6c-ffabb56a4b79.vsidx
+/.vs/StudioUp.Web/FileContentIndex/ed4c7fb9-ea2d-4f1d-9165-ed4d2b5beece.vsidx
+/.vs/StudioUp.Web/FileContentIndex

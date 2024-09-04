@@ -1,0 +1,15 @@
+<div class="container">
+    <div *ngFor="let m of questions; let i=index" class="info">
+        <div class="q">
+               {{m}}
+        </div>
+        <div class="answer" *ngIf="information!=null">
+            {{information[i]}}
+        </div>
+    </div>
+
+    <div class="sub">
+        <button class="iWant">אני רוצה לבוא</button>
+        <button class="arrow"></button>
+    </div>
+</div>
