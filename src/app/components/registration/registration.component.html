@@ -8,64 +8,37 @@
 
   <form [formGroup]="form" class="form" (ngSubmit)="customerRegistration()">
     <input
-    class="col-12"
-    type="text"
-    formControlName="fullName"
-    placeholder="שם מלא"
-    required
-  />
-  <mat-error
-    *ngIf="
-      form.get('fullName')?.hasError('required') &&
-      form.get('fullName')?.touched
-    "
-  >
-    *שדה חובה</mat-error
-  >
+      class="col-12"
+      type="text"
+      formControlName="fullName"
+      placeholder="שם מלא"
+      required
+    />
+    <mat-error
+      *ngIf="
+        form.get('fullName')?.hasError('required') &&
+        form.get('fullName')?.touched
+      "
+    >
+      *שדה חובה</mat-error
+    >
 
-  <input
-    class="col-12"
-    type="text"
-    formControlName="ID"
-    placeholder="מספר זהות"
-    required
-  />
-  <mat-error
-    *ngIf="
-      form.get('ID')?.hasError('required') && form.get('ID')?.touched
-    "
-  >
-    *שדה חובה</mat-error
-  >
-  <mat-error *ngIf="form.get('ID')?.hasError('invalidId')"
-    >מספר זהות לא תקין</mat-error
-  >
+    <input
+      class="col-12"
+      type="text"
+      formControlName="ID"
+      placeholder="מספר זהות"
+      required
+    />
+    <mat-error
+      *ngIf="form.get('ID')?.hasError('required') && form.get('ID')?.touched"
+    >
+      *שדה חובה</mat-error
+    >
+    <mat-error *ngIf="form.get('ID')?.hasError('invalidId')"
+      >מספר זהות לא תקין</mat-error
+    >
     <div class="selects col-12">
-      <!-- <div class="select">
-        <p-dropdown
-          formControlName="training"
-          [options]="mapDataForSelects(trainings)"
-          required
-          placeholder="סוג האימון"
-        />
-        <div (click)="navigateTo('subscriptions')" class="button-text col-4">
-          סוגי אימונים
-        </div>
-        <a
-          class="button-ref"
-          (click)="navigateTo('subscriptions')"
-          routerLinkActive="active"
-        ></a>
-      </div>
-      <mat-error
-        *ngIf="
-          form.get('training')?.hasError('required') &&
-          form.get('training')?.touched
-        "
-      >
-        *שדה חובה</mat-error
-      > -->
-
       <div class="select">
         <p-dropdown
           formControlName="subscriptionType"
@@ -86,8 +59,12 @@
         ></a>
       </div>
       <mat-error
-        *ngIf="form.get('customer')?.hasError('required') && form.get('customer')?.touched"
-        >  *שדה חובה</mat-error
+        *ngIf="
+          form.get('customer')?.hasError('required') &&
+          form.get('customer')?.touched
+        "
+      >
+        *שדה חובה</mat-error
       >
 
       <div class="select">
@@ -121,8 +98,12 @@
         ></a>
       </div>
       <mat-error
-        *ngIf="form.get('paymentOption')?.hasError('required') && form.get('paymentOption')?.touched"
-        >  *שדה חובה</mat-error
+        *ngIf="
+          form.get('paymentOption')?.hasError('required') &&
+          form.get('paymentOption')?.touched
+        "
+      >
+        *שדה חובה</mat-error
       >
 
       <div class="select">
@@ -133,7 +114,11 @@
           </option>
         </select>
         <div class="button-text col-4">נספח לקופ"ח</div>
-        <a class="button-ref" (click)="navigateTo('HMOs')" routerLinkActive="active"></a>
+        <a
+          class="button-ref"
+          (click)="navigateTo('HMOs')"
+          routerLinkActive="active"
+        ></a>
       </div>
     </div>
 
@@ -142,16 +127,36 @@
         <input
           class="col-12"
           type="text"
+          matInput
+          [matAutocomplete]="auto"
           formControlName="city"
           placeholder="עיר"
         />
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option
+            *ngFor="let city of filteredCities"
+            [value]="city"
+          >
+            {{ city }}
+          </mat-option>
+        </mat-autocomplete>
 
         <input
           class="col-12"
           type="text"
+          matInput
+          [matAutocomplete]="auto"
           formControlName="street"
           placeholder="רחוב"
         />
+<mat-autocomplete #auto="matAutocomplete">
+          <mat-option
+            *ngFor="let street of filteredStreets"
+            [value]="street"
+          >
+            {{ street }}
+          </mat-option>
+        </mat-autocomplete>
 
         <input
           class="col-12"
@@ -163,23 +168,40 @@
         />
 
         <mat-error
-          *ngIf="form.get('phone')?.hasError('required') && form.get('phone')?.touched"
-          >  *שדה חובה</mat-error
+          *ngIf="
+            form.get('phone')?.hasError('required') &&
+            form.get('phone')?.touched
+          "
+        >
+          *שדה חובה</mat-error
         >
         <mat-error *ngIf="form.get('phone')?.hasError('pattern')"
           >מספר טלפון לא תקין</mat-error
         >
 
-        <input class="col-12" type="email" matInput formControlName="email" placeholder="מייל"
-          [matAutocomplete]="auto" required />
+        <input
+          class="col-12"
+          type="email"
+          c
+          formControlName="email"
+          placeholder="מייל"
+          required
+        />
         <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let email of filteredEmails | async" [value]="email">
+          <mat-option
+            *ngFor="let email of filteredEmails | async"
+            [value]="email"
+          >
             {{ email }}
           </mat-option>
         </mat-autocomplete>
         <mat-error
-          *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched"
-          >  *שדה חובה</mat-error
+          *ngIf="
+            form.get('email')?.hasError('required') &&
+            form.get('email')?.touched
+          "
+        >
+          *שדה חובה</mat-error
         >
         <mat-error *ngIf="form.get('email')?.hasError('email')"
           >כתובת המייל אינה תקינה</mat-error
