@@ -134,7 +134,7 @@
         />
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option
-            *ngFor="let city of filteredCities | async"
+            *ngFor="let city of filteredCities"
             [value]="city"
           >
             {{ city }}
@@ -149,9 +149,9 @@
           formControlName="street"
           placeholder="רחוב"
         />
-        <mat-autocomplete #auto="matAutocomplete">
+<mat-autocomplete #auto="matAutocomplete">
           <mat-option
-            *ngFor="let street of filteredStreets | async"
+            *ngFor="let street of filteredStreets"
             [value]="street"
           >
             {{ street }}

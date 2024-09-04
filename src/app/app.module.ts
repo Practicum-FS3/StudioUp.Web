@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';  // ייבוא של Htt
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -28,7 +27,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SystemComponent } from './components/system/system.component';
 import { provideHttpClient } from '@angular/common/http';
@@ -56,6 +55,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 import { DialogModule } from 'primeng/dialog'
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -112,10 +112,10 @@ import { DialogModule } from 'primeng/dialog'
     DialogModule,
     TooltipModule,
     MenubarModule,
+    DropdownModule,
     StoreModule.forRoot({ registration: registrationReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
     RouterModule.forRoot([])
-
   ],
   providers: [
     provideAnimationsAsync(),

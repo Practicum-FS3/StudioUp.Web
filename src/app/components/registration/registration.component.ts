@@ -21,7 +21,6 @@ import { State } from '../../store/reducer';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss'],
 })
-
 export class RegistrationComponent implements OnInit, OnDestroy {
   subscriptionTypes!: SubscriptionType[];
   paymentOptions!: PaymentOption[];
@@ -33,8 +32,8 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   private formData: any;
   private formSubscription!: Subscription;
   filteredEmails!: Observable<string[]>;
-  filteredCities!: Observable<Observable<string[]>>;
-  filteredStreets!: Observable<Observable<string[]>>;
+  filteredCities!: string[];
+  filteredStreets!: string[];
   domains: string[] = [
     'gmail.com',
     'yahoo.com',
@@ -51,7 +50,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     'actcom.co.il',
   ];
   formSubmitted: boolean = false;
- 
+
   constructor(
     private registrationService: RegistrationService,
     private addressService: AddressService,
@@ -82,7 +81,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     if (this.formData) {
       this.form.patchValue(this.formData);
     }
-  
+
     this.formSubscription = this.form.valueChanges.subscribe((formData) => {
       this.store.dispatch(setRegistrationForm({ formData }));
     });
@@ -96,17 +95,25 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     }
     const cityControl = this.form.get('city');
     if (cityControl) {
-      this.filteredCities = cityControl.valueChanges.pipe(
-        startWith(''),
-        map((value: string) => this.citiesFilter(value))
-      );
+      cityControl.valueChanges
+        .pipe(
+          startWith(''),
+          map((value: string) => this.citiesFilter(value))
+        )
+        .subscribe((cities: string[]) => {
+          this.filteredCities = cities;
+        });
     }
     const streetControl = this.form.get('street');
     if (streetControl) {
-      this.filteredStreets = streetControl.valueChanges.pipe(
-        startWith(''),
-        map((value: string) => this.streetsFilter(value))
-      );
+      streetControl.valueChanges
+        .pipe(
+          startWith(''),
+          map((value: string) => this.streetsFilter(value))
+        )
+        .subscribe((streets: string[]) => {
+          this.filteredStreets = streets;
+        });
     }
 
     this.fetchData();
@@ -123,15 +130,15 @@ export class RegistrationComponent implements OnInit, OnDestroy {
       return this.domains.map((d) => `${value}@${d}`);
     }
   }
-  citiesFilter(value: string): Observable<string[]> {
-    if (!value) return of([]);
-    return this.addressService.getCities(value);      
+  citiesFilter(value: string): string[] {
+    if (!value) return [];
+    return this.addressService.getCities(value);
   }
-  streetsFilter(value: string): Observable<string[]> {
-    if (!value) return of([]);
+  streetsFilter(value: string): string[] {
+    if (!value) return [];
     return this.addressService.getStreets(value);
   }
-  
+
   ngOnDestroy(): void {
     if (this.formSubscription) {
       this.formSubscription.unsubscribe();
@@ -185,7 +192,8 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           this.form.value.paymentOption
         ),
         hmoId: this.convertValueToId(this.HMOs, this.form.value.hmo),
-        address: this.form.value.city + ', ' ?? '' + this.form.value.street ?? '',
+        address:
+          this.form.value.city + ', ' ?? '' + this.form.value.street ?? '',
         phone: this.form.value.phone,
         email: this.form.value.email,
       };
@@ -198,7 +206,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
       this.form.markAllAsTouched();
     }
   }
-  
+
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any): void {
     this.store.dispatch(resetRegistrationForm());
