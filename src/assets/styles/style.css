@@ -21,6 +21,7 @@
 }
 
 @font-face {
+
     font-family: 'PloniLight';
     src: url('../fonts/PloniLight.woff') format('opentype');
     font-weight: 500;
@@ -42,6 +43,7 @@
 }
 
 @font-face {
+
     font-family: 'PloniUBold';
     src: url('../fonts/PloniUBold.woff') format('opentype');
     font-weight: 500;

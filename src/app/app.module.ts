@@ -35,6 +35,10 @@ import { provideHttpClient } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
+import { SignaturePadModule } from 'angular2-signaturepad';
+import { SignatureComponent } from './components/signature/signature.component';
+// import { TruncateTextDirectiveDirective } from './components/about/truncate-text-directive.directive';
+// import { TruncateTextDirective } from './components/about/truncate-text.directive';
 import { AfterRegistrationComponent } from './components/after-registration/after-registration.component';
 import { StoreModule } from '@ngrx/store';
 import { registrationReducer } from './store/reducer';
@@ -60,6 +64,8 @@ import { ErrorMessageComponent } from './components/error-message/error-message.
 import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 import { DialogModule } from 'primeng/dialog'
 
+
+import { TruncatePipe } from './components/about/truncate.pipe'; // Import your custom pipe
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +86,9 @@ import { DialogModule } from 'primeng/dialog'
     SystemComponent,
     DetailsAndRegistrationComponent,
     HomeAboutComponent,
+    SignatureComponent,
+    TruncatePipe
+    
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
     HomeSubscriptionBenefitsComponent,
@@ -110,6 +119,10 @@ import { DialogModule } from 'primeng/dialog'
     HttpClientModule,
     AccordionModule,
     BrowserAnimationsModule,
+    FormsModule,
+    NgbModule,
+    ButtonModule,
+    SignaturePadModule
     // NgbModule,
     ButtonModule,
     MessagesModule,
