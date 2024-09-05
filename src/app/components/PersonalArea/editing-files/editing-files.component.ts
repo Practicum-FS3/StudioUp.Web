@@ -4,8 +4,8 @@ import { Customer } from '../../../models/Customer ';
 import { CustomerType } from '../../../models/CustomerType ';
 import { PaymentOptions } from '../../../models/PaymentOptions';
 import { SubscriptionType } from '../../../models/SubscriptionType';
-import { FormControl, FormGroup, Validators} from '@angular/forms';
-import {DataService} from '../../../services/personal-area/data.service'
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DataService } from '../../../services/personal-area/data.service'
 
 
 
@@ -22,14 +22,14 @@ export class EditingFilesComponent {
   arrCustType!: CustomerType[];
   arrHMO!: HMO[];
   arrPaymentOptions!: PaymentOptions[];
-  arrSubscriptionType!: SubscriptionType[]; 
+  arrSubscriptionType!: SubscriptionType[];
 
 
 
   constructor(private dataService: DataService) {
     this.myForm = new FormGroup({
       id: new FormControl(''),
-      tz:new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+      tz: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(9)]),
       firstName: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת\\s]*$')]),
       lastName: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת\\s]*$')]),
       customerTypeId: new FormControl(''),
@@ -43,10 +43,10 @@ export class EditingFilesComponent {
       selectedCategory: new FormControl('')
     });
 
-    
+
   }
 
-  getCustomerTypeTitle(): string |undefined{
+  getCustomerTypeTitle(): string | undefined {
     if (this.currentCustomer && this.arrCustType) {
       const customerType = this.arrCustType.find(c => c.id === this.currentCustomer.customerTypeId);
       return customerType ? customerType.title : '';
@@ -54,7 +54,7 @@ export class EditingFilesComponent {
     return '';
   }
 
-  getSubscriptionTypeTitle(): string |undefined{
+  getSubscriptionTypeTitle(): string | undefined {
     if (this.currentCustomer && this.arrSubscriptionType) {
       const subscriptionType = this.arrSubscriptionType.find(c => c.id === this.currentCustomer.subscriptionTypeId);
       return subscriptionType ? subscriptionType.title : '';
@@ -62,52 +62,53 @@ export class EditingFilesComponent {
     return '';
   }
 
-  getHmoTitle(): string |undefined{
+  getHmoTitle(): string | undefined {
     if (this.currentCustomer && this.arrHMO) {
-      const  hmo= this.arrHMO.find(c => c.id === this.currentCustomer.hmoId);
+      const hmo = this.arrHMO.find(c => c.id === this.currentCustomer.hmoId);
       return hmo ? hmo.title : '';
     }
     return '';
   }
 
-  getPaymentOptionTitle(): string |undefined{
+  getPaymentOptionTitle(): string | undefined {
     if (this.currentCustomer && this.arrPaymentOptions) {
-      const  paymentOption= this.arrPaymentOptions.find(c => c.id === this.currentCustomer.paymentOptionId);
+      const paymentOption = this.arrPaymentOptions.find(c => c.id === this.currentCustomer.paymentOptionId);
       return paymentOption ? paymentOption.title : '';
     }
     return '';
   }
 
   ngOnInit(): void {
-    this.dataService.getCustByID(1).subscribe(data=>{
-      this.currentCustomer=data
+    this.dataService.getCustByID(1).subscribe(data => {
+      this.currentCustomer = data
     })
 
-    this.dataService.getAllCustType().subscribe(data=>{
-      this.arrCustType=data
+    this.dataService.getAllCustType().subscribe(data => {
+      this.arrCustType = data
     })
-    
-    this.dataService.getAllHMO().subscribe(data=>{
-      this.arrHMO=data
+
+    this.dataService.getAllHMO().subscribe(data => {
+      this.arrHMO = data
     })
-  
-    this.dataService.getAllPaymentOptions().subscribe(data=>{
-      this.arrPaymentOptions=data
+
+    this.dataService.getAllPaymentOptions().subscribe(data => {
+      this.arrPaymentOptions = data
     })
-  
-    this.dataService.getAllSubscriptionType().subscribe(data=>{
-      this.arrSubscriptionType=data
+
+    this.dataService.getAllSubscriptionType().subscribe(data => {
+      this.arrSubscriptionType = data
     })
-  
-    }
-  
- 
+
+  }
+
+
   edit() {
     this.toedit = true;
   }
   saveChanges() {
     const { controls } = this.myForm
     let cust: Customer = new Customer(
+      controls['id'].value,
       controls['tz'].value,
       controls['firstName'].value,
       controls['lastName'].value,
@@ -121,12 +122,16 @@ export class EditingFilesComponent {
       controls['email'].value
     )
 
-    cust.id = this.currentCustomer.id;
+
     this.dataService.updateCustByID(cust).subscribe(data => {
-        // this.myForm.reset();
-        this.toedit = false;
+      console.log(data);
+      
+      this.dataService.getCustByID(this.currentCustomer.id).subscribe(data => {
+        this.currentCustomer = data
+      })
+      this.toedit = false;
     });
-    
+
   }
 
 }

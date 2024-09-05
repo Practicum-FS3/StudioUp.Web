@@ -28,8 +28,8 @@ export class LessonSystemComponent {
     trainingTypeName:'',
     participantsCount:0,
     isActive: false,
-    attend:false,
-    register:false
+    attended:false,
+    isRegistered:false
     
   }
   
@@ -41,130 +41,25 @@ export class LessonSystemComponent {
   }
   constructor(private dataService: DataService) {
     this.dataService.GetAllTrainingsDetailsForCustomer(1).subscribe(data => {
-      // this.arr =[
-      //   {
-      //     "id": 1,
-      //     "trainingId": 2,
-      //     "trainerName": "רחלי זוארץ",
-      //     "date": new Date("2024-08-12"),
-      //     "dayOfWeek": 2,
-      //     "time": "10:45",
-      //     "customerTypeName": "נשים",
-      //     "trainingTypeName": "פילאטיס",
-      //     "participantsCount": 12,
-      //     "isActive": true,
-      //     "attend":true,
-      //     "register":'נרשמתי'
-      //   },
-      //   {
-      //     "id": 3,
-      //     "trainingId": 8,
-      //     "trainerName": "רחלי זוארץ",
-      //     "date":new Date( "2024-08-12"),
-      //     "dayOfWeek": 2,
-      //     "time": "10:45",
-      //     "customerTypeName": "נשים",
-      //     "trainingTypeName": "פילאטיס",
-      //     "participantsCount": 17,
-      //     "isActive": true,
-      //     "attend":false,
-      //     "register":""
-      //   },
-      //   {
-      //     "id": 4,
-      //     "trainingId": 10,
-      //     "trainerName": "חיה שווירץ",
-      //     "date": new Date("2024-08-12"),
-      //     "dayOfWeek": 2,
-      //     "time": "17:30",
-      //     "customerTypeName": "נשים",
-      //     "trainingTypeName": "פילאטיס",
-      //     "participantsCount": 9,
-      //     "isActive": true,
-      //      "attend":false,
-      //     "register":"נרשמתי"
-      //   },
-      //   {
-      //     "id": 5,
-      //     "trainingId": 12,
-      //     "trainerName": "רחלי זוארץ",
-      //     "date":new Date( "2024-08-14"),
-      //     "dayOfWeek": 4,
-      //     "time": "14:30",
-      //     "customerTypeName": "נשים",
-      //     "trainingTypeName": "פילאטיס",
-      //     "participantsCount": 5,
-      //     "isActive": true,
-      //     "attend":false,
-      //     "register":'נרשמתי'
-      //   },
-      //   {
-      //     "id": 5,
-      //     "trainingId": 12,
-      //     "trainerName": "רחלי זוארץ",
-      //     "date":new Date( "2024-08-14"),
-      //     "dayOfWeek": 4,
-      //     "time": "14:30",
-      //     "customerTypeName": "נשים ונערות",
-      //     "trainingTypeName": "התעמלות קרקע",
-      //     "participantsCount": 5,
-      //     "isActive": true,
-      //     "attend":false,
-      //     "register":''
-      //   },
-      //   {
-      //     "id": 5,
-      //     "trainingId": 12,
-      //     "trainerName": "מלכי ברין",
-      //     "date":new Date( "2024-08-15"),
-      //     "dayOfWeek": 5,
-      //     "time": "17:30",
-      //     "customerTypeName": "נשים",
-      //     "trainingTypeName": "פילאטיס",
-      //     "participantsCount": 5,
-      //     "isActive": true,
-      //     "attend":false,
-      //     "register":''},
-      //     {
-      //       "id": 5,
-      //       "trainingId": 12,
-      //       "trainerName": "מלכי ברין",
-      //       "date":new Date( "2024-08-11"),
-      //       "dayOfWeek": 1,
-      //       "time": "16:30",
-      //       "customerTypeName": "נשים",
-      //       "trainingTypeName": "פילאטיס",
-      //       "participantsCount": 5,
-      //       "isActive": true,
-      //       "attend":false,
-      //       "register":'br'}
-      // ]
-      this.arr = data
-      console.log( this.arr);
 
+      this.arr = data
+      
       for (var day of this.numbersArray) {
         if (this.arr.filter(x => x.dayOfWeek == day).length > this.maxCount) {
           this.maxCount = this.arr.filter(x => x.dayOfWeek == day).length
-        }
+        }        
         this.groupedItems?.push(this.arr.filter(x => x.dayOfWeek == day).sort((a, b) => {
-
-      
-          
           let hourA = a.time.charAt(0) + a.time.charAt(1);
           let hourB = b.time.charAt(0) + b.time.charAt(1);
           let minutA = a.time.charAt(3) + a.time.charAt(4);
           let minutB = b.time.charAt(3) + b.time.charAt(4);
-           
-             console.log('groupedItems');
-             console.log(this.groupedItems);
+        
           if (hourA !== hourB) {
             return parseInt(hourA) - parseInt(hourB);
           }
           return parseInt(minutA) - parseInt(minutB);
-
-
         }));
-     
+        
       }
       
      

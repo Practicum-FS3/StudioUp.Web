@@ -226,7 +226,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
       this.customer = {
         firstName: this.firstName(this.form.value.fullName),
         lastName: this.lastName(this.form.value.fullName),
-        id: this.form.value.ID,
+        tz: this.form.value.ID,
         subscriptionTypeId: this.convertValueToId(
           this.subscriptionTypes,
           this.form.value.subscriptionTypeId

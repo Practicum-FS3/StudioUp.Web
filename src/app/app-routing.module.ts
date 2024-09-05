@@ -33,7 +33,7 @@ const routes: Routes = [
   {
     path: 'personal-area',
     component: PersonalAreaComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   { path: 'registration', component: RegistrationComponent },
   { path: 'HMOs', component: HmosComponent },

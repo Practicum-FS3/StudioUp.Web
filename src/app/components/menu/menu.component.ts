@@ -18,7 +18,7 @@ export class MenuComponent {
     { label: 'מסלולי מנויים', routerLink: '/SubscriptionBenefits', class: 'nav-item nav-link p-menuitem-link' },
     { label: 'מחירון', routerLink: '/pricing', class: 'nav-item nav-link p-menuitem-link' },
     { label: 'צור קשר', routerLink: '/contact', class: 'nav-item nav-link p-menuitem-link' },
-    { label: 'לאיזור האישי', routerLink: '/login', class: 'nav-item nav-link fixed-login' }
+    { label: 'לאיזור האישי', routerLink: '/personal-area', class: 'nav-item nav-link fixed-login' }
     ];
   }
 }

@@ -38,10 +38,10 @@ export class DataService {
     return data
   }
   getAllAvailableTraining(): Observable<Array<AvailableTraining>> {
-    return this.http.get<Array<AvailableTraining>>(`${this.baseUrl}/AvailableTraining/forCalander`)
+    return this.http.get<Array<AvailableTraining>>(`${this.baseUrl}/AvailableTraining/GetAvailableTrainingsCalender`)
   }
 
-  getCustByID(customerID: number): Observable<Customer> {
+  getCustByID(customerID: number|undefined): Observable<Customer> {
     const data = this.http.get<Customer>(`${this.baseUrl}/Customer/GetCustomerById/${customerID}`)
     return data
   }
