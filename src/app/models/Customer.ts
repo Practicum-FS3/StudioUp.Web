@@ -9,6 +9,7 @@ export class Customer {
   subscriptionTypeId: number;
   paymentOptionId: number;
   hmoId?: number;
+  isActive?: boolean;
 
   constructor(
     tz: string,
@@ -20,7 +21,8 @@ export class Customer {
     customerTypeId: number,
     subscriptionTypeId: number,
     paymentOptionId: number,
-    hmoId: number
+    hmoId: number,
+    isActive?: boolean
   ) {
     this.tz = tz;
     this.firstName = firstName;
@@ -32,6 +34,6 @@ export class Customer {
     this.subscriptionTypeId = subscriptionTypeId;
     this.paymentOptionId = paymentOptionId;
     this.hmoId = hmoId;
+    this.isActive = isActive ? isActive : true;
   }
 }
-

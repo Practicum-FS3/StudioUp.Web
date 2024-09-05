@@ -193,7 +193,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         ),
         hmoId: this.convertValueToId(this.HMOs, this.form.value.hmo),
         address:
-          this.form.value.city + ', ' ?? '' + this.form.value.street ?? '',
+          this.form.value.city + ', ' + this.form.value.street,
         phone: this.form.value.phone,
         email: this.form.value.email,
       };

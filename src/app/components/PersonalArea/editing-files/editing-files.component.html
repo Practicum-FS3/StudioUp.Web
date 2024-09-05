@@ -15,7 +15,7 @@
             </div>
             <div class="detail-item">
                 <label class="titleLabel">טלפון</label>
-                <span [innerText]="currentCustomer.tel"></span>
+                <span [innerText]="currentCustomer.phone"></span>
             </div>
             <div class="detail-item">
                 <label class="titleLabel">מייל</label>
@@ -82,11 +82,11 @@
                     </div>
                 <div class="divInput">
                     <label class="label">טלפון</label><br>
-                    <input class="inputes" pInputText id="tel" formControlName="tel" [ngModel]="currentCustomer.tel"/>
-                    <div *ngIf="myForm.get('tel')?.hasError('required') && myForm.get('tel')?.touched" class="error-message">
+                    <input class="inputes" pInputText id="phone" formControlName="phone" [ngModel]="currentCustomer.phone"/>
+                    <div *ngIf="myForm.get('phone')?.hasError('required') && myForm.get('phone')?.touched" class="error-message">
                         טלפון הינו שדה חובה
                     </div>
-                    <div *ngIf="myForm.get('tel')?.hasError('pattern') && myForm.get('tel')?.touched" class="error-message">
+                    <div *ngIf="myForm.get('phone')?.hasError('pattern') && myForm.get('phone')?.touched" class="error-message">
                         יש להזין רק מספרים בשדה זה
                     </div>
                 </div>

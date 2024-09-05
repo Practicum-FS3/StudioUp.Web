@@ -37,7 +37,7 @@ export class EditingFilesComponent {
       paymentOptionId: new FormControl(''),
       subscriptionTypeId: new FormControl(''),
       isActive: new FormControl(true),
-      tel: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+      phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
       address: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת0-9\\s\\"\\-]*$')]),
       email: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Zא-ת0-9._%+-]+@[a-zA-Zא-ת0-9.-]+\\.[a-zA-Zא-ת]{2,}$')]),
       selectedCategory: new FormControl('')
@@ -116,12 +116,12 @@ export class EditingFilesComponent {
       controls['paymentOptionId'].value,
       controls['subscriptionTypeId'].value,
       controls['isActive'].value,
-      controls['tel'].value,
+      controls['phone'].value,
       controls['address'].value,
       controls['email'].value
     )
 
-    cust.id = this.currentCustomer.id;
+    cust.tz = this.currentCustomer.tz;
     this.dataService.updateCustByID(cust).subscribe(data => {
         // this.myForm.reset();
         this.toedit = false;
