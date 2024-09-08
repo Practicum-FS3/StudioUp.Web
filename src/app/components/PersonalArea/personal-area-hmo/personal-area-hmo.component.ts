@@ -4,7 +4,6 @@ import { FileService } from '../../../services/fileService/file.service';
 import { PersonalAreaHMOService } from '../../../services/personal-area-HMO.service/personal-area-hmo.service';
 import { CustomerHMOS } from '../../../models/CustomerHMOS';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-personal-area-hmo',
@@ -132,25 +131,15 @@ export class PersonalAreaHMOComponent {
       })
   }
   updateCustomerHMOS() {
+    console.log(this.fileId, this.fileExists);
     this.customerHMOS!.hmoid = this.HMOCodeValue;
     this.customerHMOS!.freeFitId = this.freefitCodeValue;
-    this.customerHMOS!.filedId = this.fileId;
+    if (this.fileId) {
+      this.customerHMOS!.filedId = this.fileId;
+    }
     this.personalAreaHMOService.updateCustomerHMOS(this.customerHMOS!.id, this.customerHMOS).subscribe(
       (response) => {
         console.log('Customer HMOS updated successfully', response);
-      },
-      (error) => {
-        console.error('Error updating customer HMOS', error);
-      }
-    );
-  }
-
-  updateFileCustomerHMOS(filedId: number) {
-    this.customerHMOS!.filedId = filedId;
-    this.personalAreaHMOService.updateCustomerHMOS(this.customerHMOS!.id, this.customerHMOS).subscribe(
-      (response) => {
-        console.log('Customer HMOS updated successfully with file', response);
-        this.fileExists = true;
       },
       (error) => {
         console.error('Error updating customer HMOS', error);
@@ -192,23 +181,19 @@ export class PersonalAreaHMOComponent {
     }
   }
 
-
-
   loadFile(file: number | undefined) {
     if (!file) return;
 
     this.fileService.getFile(file!).subscribe(
       (response: Blob) => {
-        const fileName = response.type;
         console.log(response.stream());
 
         this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(response));
         console.log('Loaded file successfully, URL:', this.fileUrl);
 
-        // this.uploadedFileName = fileName;
         this.isImage = this.isImageFile(response);
         this.isPDF = this.isPdfFile(response);
-        this.fileExists = true; // וודא שזה מתעדכן
+        this.fileExists = true;
       },
       (error) => {
         console.error('Error loading file', error);
