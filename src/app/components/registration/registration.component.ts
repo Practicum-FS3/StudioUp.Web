@@ -11,14 +11,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import {
-  map,
-  startWith,
-  Observable,
-  Subscription,
-  switchMap,
-  of,
-} from 'rxjs';
+import { map, startWith, Observable, Subscription, switchMap, of } from 'rxjs';
 import { AddressService } from '../../services/address/address.service';
 import { SubscriptionType } from '../../models/SubscriptionType';
 import { Router } from '@angular/router';
@@ -34,7 +27,6 @@ import { State } from '../../store/reducer';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss'],
 })
-
 export class RegistrationComponent implements OnInit, OnDestroy {
   subscriptionTypes!: SubscriptionType[];
   customerTypes!: CustomerType[];
@@ -120,14 +112,14 @@ export class RegistrationComponent implements OnInit, OnDestroy {
       );
     }
 
-    const streetControl = this.form.get('street');    
-    if (streetControl) {      
+    const streetControl = this.form.get('street');
+    if (streetControl) {
       this.filteredStreets = streetControl.valueChanges.pipe(
         startWith(''),
         switchMap((value: string) => {
           return this.streetsFilter(value);
         })
-      );      
+      );
     }
 
     this.fetchData();
@@ -232,7 +224,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
 
   customerRegistration(): void {
     this.formSubmitted = true;
-    if (this.form.valid) {      
+    if (this.form.valid) {
       this.customer = {
         firstName: this.firstName(this.form.value.fullName),
         lastName: this.lastName(this.form.value.fullName),
@@ -250,8 +242,11 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           this.form.value.paymentOption
         ),
         hmoId: this.convertValueToId(this.HMOs, this.form.value.hmo),
-        address:
-          this.form.value.city + ', ' ?? '' + this.form.value.street ?? '',
+        address: this.form.value.city
+          ? this.form.value.city + this.form.value.street
+            ? ', ' + this.form.value.street
+            : ''
+          : '',
         tel: this.form.value.phone,
         email: this.form.value.email,
       };
