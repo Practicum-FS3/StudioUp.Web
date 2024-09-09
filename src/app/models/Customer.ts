@@ -1,8 +1,8 @@
 export class Customer {
-  tz: string;
+  Tz: string;
   firstName: string;
   lastName?: string;
-  phone: string;
+  tel: string;
   address: string;
   email: string;
   customerTypeId: number;
@@ -12,10 +12,10 @@ export class Customer {
   isActive?: boolean;
 
   constructor(
-    tz: string,
+    Tz: string,
     firstName: string,
     lastName: string,
-    phone: string,
+    tel: string,
     address: string,
     email: string,
     customerTypeId: number,
@@ -24,10 +24,10 @@ export class Customer {
     hmoId: number,
     isActive?: boolean
   ) {
-    this.tz = tz;
+    this.Tz = Tz;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.phone = phone;
+    this.tel = tel;
     this.address = address;
     this.email = email;
     this.customerTypeId = customerTypeId;

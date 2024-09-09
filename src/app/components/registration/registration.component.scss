@@ -256,6 +256,50 @@
       justify-content: left;
       align-items: center;
     }
+    @media (max-width: 992px) {
+      margin: 5%;
+      .first_inputs {
+        flex-direction: column;
+      }
+      .selects,
+      .wrap-form {
+        flex: 1 1 100%;
+      }
+      .select {
+        width: 100%;
+      }
+      select option {
+        padding-left: 0%;
+        width: 10%;
+        color: #d91c5c;
+      }
+      button,
+      .button-ref {
+        width: 10%;
+      }
+      .button-text,
+      .sumbit-text {
+        font-size: 1.5em;
+      }
+      .sumbit {
+        .sumbit-text {
+          padding-left: 5%;
+          padding-right: 5%;
+        }
+        button {
+          width: 7%;
+        }
+      }
+    }
+    @media (max-width: 480px) {
+      .registration-image {
+        padding-left: 5%;
+      }
+      .first_inputs input {
+        padding-right: 5%;
+        padding-left: 5%;
+      }
+    }
   }
 
   @font-face {

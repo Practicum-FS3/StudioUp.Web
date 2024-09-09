@@ -5,8 +5,14 @@ import { Customer } from '../../models/Customer';
 import { CustomerType } from '../../models/CustomerType';
 import { HMO } from '../../models/HMO';
 import { PaymentOption } from '../../models/PaymentOption';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { map, startWith, Observable, of, Subscription } from 'rxjs';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
+import { map, startWith, Observable, Subscription, switchMap, of } from 'rxjs';
 import { SubscriptionType } from '../../models/SubscriptionType';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
@@ -104,16 +110,15 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           this.filteredCities = cities;
         });
     }
+
     const streetControl = this.form.get('street');
     if (streetControl) {
-      streetControl.valueChanges
-        .pipe(
-          startWith(''),
-          map((value: string) => this.streetsFilter(value))
-        )
-        .subscribe((streets: string[]) => {
-          this.filteredStreets = streets;
-        });
+      this.filteredStreets = streetControl.valueChanges.pipe(
+        startWith(''),
+        switchMap((value: string) => {
+          return this.streetsFilter(value);
+        })
+      );
     }
 
     this.fetchData();
@@ -192,9 +197,12 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           this.form.value.paymentOption
         ),
         hmoId: this.convertValueToId(this.HMOs, this.form.value.hmo),
-        address:
-          this.form.value.city + ', ' + this.form.value.street,
-        phone: this.form.value.phone,
+        address: this.form.value.city
+          ? this.form.value.city + this.form.value.street
+            ? ', ' + this.form.value.street
+            : ''
+          : '',
+        tel: this.form.value.phone,
         email: this.form.value.email,
       };
       console.log('Customer registration data:', this.customer); // Make API call to register customer

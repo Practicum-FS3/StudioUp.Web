@@ -29,7 +29,7 @@ export class EditingFilesComponent {
   constructor(private dataService: DataService) {
     this.myForm = new FormGroup({
       id: new FormControl(''),
-      tz:new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+      Tz:new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
       firstName: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת\\s]*$')]),
       lastName: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת\\s]*$')]),
       customerTypeId: new FormControl(''),
@@ -108,7 +108,7 @@ export class EditingFilesComponent {
   saveChanges() {
     const { controls } = this.myForm
     let cust: Customer = new Customer(
-      controls['tz'].value,
+      controls['Tz'].value,
       controls['firstName'].value,
       controls['lastName'].value,
       controls['customerTypeId'].value,
@@ -121,7 +121,7 @@ export class EditingFilesComponent {
       controls['email'].value
     )
 
-    cust.tz = this.currentCustomer.tz;
+    cust.Tz = this.currentCustomer.Tz;
     this.dataService.updateCustByID(cust).subscribe(data => {
         // this.myForm.reset();
         this.toedit = false;

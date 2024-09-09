@@ -11,11 +11,11 @@
             </div>
             <div class="detail-item">
                 <label class="titleLabel">תעודת זהות</label>
-                <span [innerText]="currentCustomer.tz"></span>
+                <span [innerText]="currentCustomer.Tz"></span>
             </div>
             <div class="detail-item">
                 <label class="titleLabel">טלפון</label>
-                <span [innerText]="currentCustomer.phone"></span>
+                <span [innerText]="currentCustomer.tel"></span>
             </div>
             <div class="detail-item">
                 <label class="titleLabel">מייל</label>
@@ -72,21 +72,21 @@
                     </div>
                     <div class="divInput">
                         <label class="label">תעודת זהות</label><br>
-                        <input class="inputes" pInputText id="tz" formControlName="tz" [ngModel]="currentCustomer.tz"/>
-                        <p *ngIf="myForm.get('tz')?.hasError('required') && myForm.get('tz')?.touched" class="error-message">
+                        <input class="inputes" pInputText id="id" formControlName="id" [ngModel]="currentCustomer.Tz"/>
+                        <p *ngIf="myForm.get('id')?.hasError('required') && myForm.get('id')?.touched" class="error-message">
                             תעודת זהות הינה שדה חובה
                         </p>
-                        <p *ngIf="myForm.get('tz')?.hasError('pattern') && myForm.get('tz')?.touched" class="error-message">
+                        <p *ngIf="myForm.get('id')?.hasError('pattern') && myForm.get('id')?.touched" class="error-message">
                             יש להזין רק מספרים בשדה זה
                         </p>
                     </div>
                 <div class="divInput">
                     <label class="label">טלפון</label><br>
-                    <input class="inputes" pInputText id="phone" formControlName="phone" [ngModel]="currentCustomer.phone"/>
-                    <div *ngIf="myForm.get('phone')?.hasError('required') && myForm.get('phone')?.touched" class="error-message">
+                    <input class="inputes" pInputText id="tel" formControlName="tel" [ngModel]="currentCustomer.tel"/>
+                    <div *ngIf="myForm.get('tel')?.hasError('required') && myForm.get('tel')?.touched" class="error-message">
                         טלפון הינו שדה חובה
                     </div>
-                    <div *ngIf="myForm.get('phone')?.hasError('pattern') && myForm.get('phone')?.touched" class="error-message">
+                    <div *ngIf="myForm.get('tel')?.hasError('pattern') && myForm.get('tel')?.touched" class="error-message">
                         יש להזין רק מספרים בשדה זה
                     </div>
                 </div>
