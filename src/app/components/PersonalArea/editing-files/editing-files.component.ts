@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HMO } from '../../../models/HMO';
-import { Customer } from '../../../models/Customer';
+import { Customer } from '../../../models/Customer ';
 import { CustomerType } from '../../../models/CustomerType ';
 import { PaymentOptions } from '../../../models/PaymentOptions';
 import { SubscriptionType } from '../../../models/SubscriptionType';

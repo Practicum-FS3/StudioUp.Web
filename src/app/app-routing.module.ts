@@ -19,7 +19,6 @@ import { AuthGuard } from './guards/auth.guard';
 import { DetailsAndRegistrationComponent } from './components/details-and-registration/details-and-registration.component';
 
 const routes: Routes = [
-  //{path:"login", component:LoginComponent},
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeAboutComponent },
@@ -44,7 +43,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

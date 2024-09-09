@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { forkJoin, map, Observable } from 'rxjs';
 import { CustomerSubscription } from '../models/customerSubscription';
 import { SubscriptionType } from '../models/SubscriptionType';
-import { Customer } from '../models/Customer';
+import { Customer } from '../models/Customer ';
 
 @Injectable({
   providedIn: 'root'

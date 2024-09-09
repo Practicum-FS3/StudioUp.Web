@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';  // ייבוא של HttpClientModule
+import { HttpClientModule } from '@angular/common/http'; // ייבוא של HttpClientModule
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -14,6 +14,7 @@ import { OurTeamComponent } from './components/our-team/our-team.component';
 import { PaymentOptionsComponent } from './components/payment-options/payment-options.component';
 import { EditingFilesComponent } from './components/PersonalArea/editing-files/editing-files.component';
 import { LessonSystemComponent } from './components/PersonalArea/lesson-system/lesson-system.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 import { PaymentsComponent } from './components/PersonalArea/payments/payments.component';
 import { PersonalAreaComponent } from './components/PersonalArea/personal-area/personal-area.component';
 import { TabViewModule } from 'primeng/tabview';
@@ -23,7 +24,6 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { AutoCompleteModule } from 'primeng/autocomplete';
-import { RegistrationComponent } from './components/registration/registration.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AboutComponent } from './components/about/about.component';
 import { HomeAboutComponent } from './components/home/home-about/home-about.component';
@@ -81,7 +81,6 @@ import { TruncatePipe } from './components/about/truncate.pipe'; // Import your 
     PersonalAreaComponent,
     HomeAboutComponent,
     RegistrationComponent,
-    HomeAboutComponent,
     AboutComponent,
     SystemComponent,
     DetailsAndRegistrationComponent,
@@ -99,6 +98,7 @@ import { TruncatePipe } from './components/about/truncate.pipe'; // Import your 
     ErrorMessageComponent
   ],
   imports: [
+    DropdownModule,
     BrowserModule,
     AppRoutingModule,
     TabViewModule,
@@ -133,11 +133,7 @@ import { TruncatePipe } from './components/about/truncate.pipe'; // Import your 
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
     RouterModule.forRoot([]),
   ],
-  providers: [
-    provideAnimationsAsync(),
-    provideHttpClient()
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync(), provideHttpClient()],
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}
