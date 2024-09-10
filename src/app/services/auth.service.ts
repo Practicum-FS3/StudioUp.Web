@@ -1,75 +1,79 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, of } from 'rxjs';
+import { Observable, BehaviorSubject, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { Account, Client } from 'appwrite';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private apiUrl = 'https://localhost:7101/api/Auth';
-  private loggedIn: boolean = false;
+  private loggedInSubject = new BehaviorSubject<boolean>(false);
+  client: Client;
+  account: Account;
 
   constructor(private http: HttpClient) {
-   }
+    this.client = new Client()
+      .setEndpoint('https://cloud.appwrite.io/v1') 
+      .setProject('66d96c2000000570a419'); 
+    this.account = new Account(this.client);
+    this.checkToken().subscribe(); // Initialize login status on service creation
+  }
+
+  getAccount() {
+    return this.account;
+  }
 
   login(email: string, password: string): Observable<string> {
     return this.http.post<{ token: string }>(`${this.apiUrl}/login`, { email, password })
       .pipe(map(response => {
         localStorage.setItem('token', response.token);
-        this.loggedIn = true;
-        debugger
+        this.loggedInSubject.next(true);
         return response.token;
       }))
   }
 
-  // checkToken(): Observable<boolean> {
-  //   const token = localStorage.getItem('token');
-  //   if (!token) {
-  //     return new Observable<boolean>(observer => observer.next(false));
-  //   }
-  //   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-  //   return this.http.post<{ valid: boolean }>(`${this.apiUrl}/check-token`, {}, { headers })
-  //     .pipe(map(response => {
-  //       this.loggedIn = response.valid;
-  //       return response.valid;
-  //     }));
-  // }
+  loginWithGoogle(email: string): Observable<string> {
+    return this.http.post<{ token: string }>(`${this.apiUrl}/loginWithGoogle`, { email })
+      .pipe(map(response => {
+        if (response && response.token) {
+          localStorage.setItem('token', response.token);
+          this.loggedInSubject.next(true);
+          return response.token;
+        } else {
+          throw new Error('Token is missing from response');
+        }
+      }));
+  }
+
   checkToken(): Observable<boolean> {
-    console.log("bbbb");
-    
     const token = localStorage.getItem('token');
     if (!token) {
-      return new Observable<boolean>(observer => observer.next(false));
+      this.loggedInSubject.next(false);
+      return of(false);
     }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.post<{ valid: boolean }>(`${this.apiUrl}/check-token`, {}, { headers }).pipe(
       map(response => {
-        this.loggedIn = response.valid;
-        // console.log(response.valid);
-
+        this.loggedInSubject.next(response.valid);
         return response.valid;
       }),
       catchError(error => {
         if (error.status === 401) {
-          
-          this.loggedIn = false;
+          this.loggedInSubject.next(false);
         }
         return of(false);
       })
     );
   }
-  
-  isLoggedIn(): boolean {
-    this.checkToken().subscribe(a => {
-      this.loggedIn = a
-    })
-    return this.loggedIn;
+
+  isLoggedIn(): Observable<boolean> {
+    return this.loggedInSubject.asObservable();
   }
 
   logout() {
-    this.loggedIn = false;
+    this.loggedInSubject.next(false);
     localStorage.removeItem('token');
   }
-
-
 }
