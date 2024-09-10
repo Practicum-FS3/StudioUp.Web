@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'payment-options', component: PaymentOptionsComponent },
   { path: 'our-team', component: OurTeamComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'callback', component: LoginComponent },
   {
     path: 'personal-area',
     component: PersonalAreaComponent,

@@ -13,14 +13,23 @@
                                 name="email" placeholder="הכנס כתובת אימייל" autocomplete="on">
                         </div>
                         <div class="form-group" dir="rtl">
-                            <label class="label" for="email"> סיסמה</label>
+                            <label class="label" for="password"> סיסמה</label>
                             <input type="password" class="form-control" id="password" required [(ngModel)]="password"
                                 name="password" placeholder="הכנס סיסמה">
                         </div>
                         <button type="submit" class="btn btn-block" [disabled]="!loginForm.valid">התחבר</button>
                         <div *ngIf="errorMassage" class="alert alert-danger mt-3">{{errorMassage}}</div>
                     </form>
+                    <!-- הוסף מחלקת mt-small לכפתור -->
+                    <div class="mt-small">
+                        <button class="google-btn w-100 mt-small" (click)="LoginWithGoogle()">
+                            <div class="img" dir="ltr"></div>
+                            Google כניסה עם
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
