@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Customer } from '../models/Customer';
+import { Customer } from '../models/Customer ';
 import { CustomerType } from '../models/CustomerType ';
 import { PaymentOptions } from '../models/PaymentOptions';
 import { SubscriptionType } from '../models/SubscriptionType';
@@ -14,8 +14,8 @@ export class DataService {
   private baseUrl = "https://localhost:7101/api"
   constructor(private http: HttpClient) { }
   getAll(): Observable<Array<Customer>> {
-      const data = this.http.get<Array<Customer>>(`${this.baseUrl}/Customer`)
-      return data
+    const data = this.http.get<Array<Customer>>(`${this.baseUrl}/Customer`)
+    return data
   }
 
   getAllCustType(): Observable<Array<CustomerType>> {
@@ -46,7 +46,7 @@ export class DataService {
   updateCustByID(customer: Customer): Observable<Customer> {
     console.log('updateCustByID');
     console.log(customer);
-    const c={
+    const c = {
       "id": 1,
       "firstName": "הני",
       "lastName": "כהן",
@@ -62,7 +62,7 @@ export class DataService {
     console.log(c);
 
     return this.http.put<Customer>(`${this.baseUrl}/Customer`, customer);
-   
+
 
   }
 }
