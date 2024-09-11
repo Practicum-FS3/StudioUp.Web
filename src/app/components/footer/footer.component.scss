@@ -1,0 +1,78 @@
+.footer-container{
+    margin-top: 60px;
+    padding-top: 2%;
+    margin-right: 7%;
+    margin-left: 7%;
+    padding-right: 2%;
+    padding-left: 2%;
+    background-color: #FAF6F3;
+    border-radius: 50px;
+    align-items: center;
+    height: 237px;
+    margin-bottom: 0;
+}
+#footer-sentence{
+    padding-top: 20px;
+    text-align: center;
+}
+#sent{
+    font-family: "Ploni ML v2 AAA", sans-serif;
+    /* font-weight: 700; */
+    font-size: 38px;
+    line-height: 42px;
+}
+#call-us{
+    font-family: 'Ploni ML v2 AAA', sans-serif;
+    font-weight: 700;
+    font-size: 250%;
+    line-height: 42px;
+    color: #D91C5C;
+}
+.nowrap{
+    white-space: nowrap;
+}
+#button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2%;
+    margin-right: 35%;
+    position: relative;
+}
+#big-button{
+    width: 40%;
+    height: 39px;
+    border-radius: 20px;
+    background-color: #d91c5c;
+    font-family: 'Ploni ML v2 AAA';
+    font-size: 28px;
+    color: #faf6f3;
+    border: 2px solid #d91c5c;
+}
+
+#button-icon{
+    width: 39px;
+    height: 39px;
+    background-color:  transparent;
+    border-radius: 50%;
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
+    border: 2px solid #4c4c49;
+}
+#button-icon img{
+    width: 100%;
+    height: auto;
+}
+@media(max-width:573px){
+    .footer-container{
+        height: 300px;
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+    #button{
+        margin-right: 30%;
+    }
+    #big-button{
+        width: 60%;
+    }
+}

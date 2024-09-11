@@ -65,7 +65,9 @@ import { DialogModule } from 'primeng/dialog'
 import { DropdownModule } from 'primeng/dropdown';
 
 
-import { TruncatePipe } from './components/about/truncate.pipe'; // Import your custom pipe
+import { TruncatePipe } from './components/about/truncate.pipe';
+import { FooterComponent } from './components/footer/footer.component';
+import { PdfGeneratorComponent } from './components/pdf-generator/pdf-generator.component'; // Import your custom pipe
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,7 +97,9 @@ import { TruncatePipe } from './components/about/truncate.pipe'; // Import your 
     HomeComponent,
     CustomerSubHistoryComponent,
     SubscriptionDetailComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    FooterComponent,
+    PdfGeneratorComponent
   ],
   imports: [
     DropdownModule,

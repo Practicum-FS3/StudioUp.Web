@@ -7,8 +7,8 @@
                     <p id="title2">{{ homePageContent.title1 }}</p>
                 </div>
                 <div id="button">
-                    <button id="big-button">{{ homePageContent.title2}} </button>
-                    <button id="button-icon">
+                    <button id="big-button" [routerLink]="['/system']">{{ homePageContent.title2}} </button>
+                    <button id="button-icon" [routerLink]="['/system']">
                         <img src="../../../assets/images/ArrowWhite.png" alt="Arrow">
                     </button>
                 </div>
@@ -34,3 +34,4 @@
 </div>
 
 <app-home-subscription-benefits></app-home-subscription-benefits>
+<app-footer></app-footer>
