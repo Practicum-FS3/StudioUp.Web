@@ -1,0 +1,73 @@
+#button {
+    position:  fixed;
+    left: 2%;
+    top: 25%;
+    z-index: 1000;
+    // display: flex;
+    // justify-content: left;
+    // margin-top: 20px;
+    // margin-left: 20px;
+    // position: relative;
+    // align-items: center;
+    // padding-top: 20px;
+    // padding-bottom: 0;
+    // flex-direction: row;
+}
+
+#download-button {
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #d91c5c;
+    font-family: 'Ploni ML v2 AAA';
+    font-size: 20px;
+    color: #faf6f3;
+    border: 1px solid #d91c5c;
+}
+
+#button-icon {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+#button-icon img {
+    width: 100%;
+    height: auto;
+}
+@media(max-width: 1290px){
+    #button{
+        left: 0.5%;
+    }
+}
+// @media(max-width: 1080px){
+//     #download-button {
+//         width: 50px;
+//         height: auto;
+//         font-size: 12px;
+//     }
+//     #button-icon {
+//         width: 25px;
+//         height: auto;
+//     }
+// }
+@media(max-width:910px){
+    #button{
+        top: 25%;
+    }
+    #download-button {
+        display: none;
+    }
+}
+@media(max-width:395px){
+    #button{
+        top: 24%;
+    }
+}
+// @media(max-width:375px){
+//     #button{
+//         top: 22%;
+//     }
+// }
