@@ -16,7 +16,7 @@ export class DataService {
   getAll(): Observable<Array<Training>> {
     return this.http.get<Array<Training>>(`${this.baseUrl}/api/Training/GetTrainingsCalender`)
   }
-  getAvailableTrainingById(id:number): Observable<AvailableTraining> {
+  getAvailableTrainingById(id:number|undefined): Observable<AvailableTraining> {
     return this.http.get<AvailableTraining>(`${this.baseUrl}/api/AvailableTraining/GetByTrainingIdForCalander/${id}`)
   }
 

@@ -13,7 +13,7 @@ export class MenuComponent {
     { label: 'בית', routerLink: '/home', id: 'first', class: 'nav-item nav-link active' },
     { label: 'אודות', routerLink: '/about', class: 'nav-item nav-link p-menuitem-link' },
     { label: 'סוגי אימונים', routerLink: '/training', class: 'nav-item nav-link p-menuitem-link' },
-    { label: 'לקוחות מספרים', routerLink: '/testimonials', class: 'nav-item nav-link p-menuitem-link' },
+    { label: 'לקוחות מספרים', routerLink: '/about', class: 'nav-item nav-link p-menuitem-link' },
     { label: 'מערכת קורסים', routerLink: '/system', class: 'nav-item nav-link p-menuitem-link' },
     { label: 'מסלולי מנויים', routerLink: '/SubscriptionBenefits', class: 'nav-item nav-link p-menuitem-link' },
     { label: 'מחירון', routerLink: '/pricing', class: 'nav-item nav-link p-menuitem-link' },

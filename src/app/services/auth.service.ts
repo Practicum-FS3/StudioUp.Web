@@ -17,7 +17,7 @@ export class AuthService {
       .pipe(map(response => {
         localStorage.setItem('token', response.token);
         this.loggedIn = true;
-        debugger
+        // debugger
         return response.token;
       }))
   }

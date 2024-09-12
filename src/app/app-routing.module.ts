@@ -33,12 +33,12 @@ const routes: Routes = [
   {
     path: 'personal-area',
     component: PersonalAreaComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   { path: 'registration', component: RegistrationComponent },
   { path: 'HMOs', component: HmosComponent },
   { path: 'subscriptionPerCustomer', component: CustomerSubHistoryComponent },
-  { path: 'd', component: DetailsAndRegistrationComponent },
+  { path: 'details/:CustomerID/:TrainingId', component: DetailsAndRegistrationComponent },
   { path: 'subscription-benefits', component: SubscriptionBenefitsComponent },
 ];
 
