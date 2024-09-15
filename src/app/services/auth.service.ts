@@ -29,7 +29,7 @@ export class AuthService {
     return this.http.post<{ token: string }>(`${this.apiUrl}/login`, { email, password })
       .pipe(map(response => {
         localStorage.setItem('token', response.token);
-        this.loggedIn = true;
+        // this.loggedIn = true;
         this.loggedInSubject.next(true);
         return response.token;
       }))
