@@ -1,10 +1,12 @@
 <p>signature works!</p>
 <!-- <div id="canvas">
+
 <signature-pad
   [options]="signaturePadOptions"
   (onBeginEvent)="captureSignature()"
   (onEndEvent)="saveSignature($event)">
 </signature-pad></div> -->
+
 <br>
-<button *ngIf="signatureData" (click)="save()" >שמירה</button>
+<button *ngIf="signatureData" (click)="save()">שמירה</button>
 <button *ngIf="signatureData" (click)="cancel()">ביטול</button>

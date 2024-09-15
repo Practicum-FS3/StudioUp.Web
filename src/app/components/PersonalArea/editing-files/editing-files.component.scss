@@ -14,7 +14,7 @@
 }
 .inputes {
     background-color: #ECECEC;
-    border-color: #E3DCDC;
+    border-color: rgb(255, 201, 0);
     border-style: solid;
     box-shadow: none;
     border-radius: 1.5vh;
@@ -25,7 +25,7 @@
 }
 span {
     font-size: 1rem;
-    margin-right: 5%;
+    // margin-right: 5%;
 }
 :host ::ng-deep .p-tabview .p-tabview-nav {
     background-color: rgb(255, 255, 255); /* Specify your desired background color here */
@@ -40,8 +40,8 @@ span {
     color: red; /* Specify your desired color here */
 }
 .divInput {
-    background-color: rgb(255, 201, 0);
-    color: white;
+    // background-color: rgb(255, 201, 0);
+    // color: white;
     border-radius: 2vh;
     text-align: right;
     padding: 0.8vh 2vh 0.8vh 0vh;
@@ -71,11 +71,11 @@ span {
 .titleLabel {
     display: block;
     list-style: circle;
-    color: white;
+    color: rgb(128, 111, 111);
     border-radius: 20vh;
-    background-color: rgb(255, 201, 0);
+    // background-color: rgb(255, 201, 0);
     text-align: right;
-    padding: 0.8vh 1vh 0.8vh 0vh;
+    // padding: 0.8vh 1vh 0.8vh 0vh;
 }
 .div-header {
     width: 100%;

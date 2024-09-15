@@ -1,6 +1,7 @@
 <div class="cardCust">
     <ng-container *ngIf="!toedit; else otherContent">
         <div class="details-grid">
+
             <div class="detail-item">
                 <label class="titleLabel">שם פרטי</label>
                 <span [innerText]="currentCustomer.firstName"></span>
@@ -11,7 +12,9 @@
             </div>
             <div class="detail-item">
                 <label class="titleLabel">תעודת זהות</label>
+
                 <span [innerText]="currentCustomer.Tz"></span>
+
             </div>
             <div class="detail-item">
                 <label class="titleLabel">טלפון</label>
@@ -49,7 +52,17 @@
     </ng-container>
     <ng-template #otherContent>
         <form [formGroup]="myForm" id="form">
+
             <div class="details-grid">
+
+
+                <div class="divInput" disabled style="display: none;">
+                    <label class="label"></label><br>
+                    <input class="inputes" pInputText id="id" formControlName="id" [ngModel]="currentCustomer?.id" style="direction: rtl;"/>
+                
+                </div>
+
+
                 <div class="divInput">
                     <label class="label">שם פרטי</label><br>
                     <input class="inputes" pInputText id="firstName" formControlName="firstName" [ngModel]="currentCustomer?.firstName" style="direction: rtl;"/>
@@ -72,12 +85,17 @@
                     </div>
                     <div class="divInput">
                         <label class="label">תעודת זהות</label><br>
+
                         <input class="inputes" pInputText id="id" formControlName="id" [ngModel]="currentCustomer.Tz"/>
                         <p *ngIf="myForm.get('id')?.hasError('required') && myForm.get('id')?.touched" class="error-message">
+
                             תעודת זהות הינה שדה חובה
                         </p>
-                        <p *ngIf="myForm.get('id')?.hasError('pattern') && myForm.get('id')?.touched" class="error-message">
+                        <!-- <p *ngIf="myForm.get('tz')?.hasError('pattern') && myForm.get('tz')?.touched" class="error-message">
                             יש להזין רק מספרים בשדה זה
+                        </p> -->
+                        <p *ngIf="myForm.get('tz')?.hasError('minLength') && myForm.get('tz')?.touched" class="error-message">
+                            תעודת הזהות אינה תקינה
                         </p>
                     </div>
                 <div class="divInput">

@@ -1,3 +1,258 @@
+
+#header {
+  height: fit-content;
+  font-size: 580%;
+  font-weight: 500;
+  text-align: center;
+}
+
+#allcards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  #card {
+    width: 18%;
+    height: 360px;
+    border-radius: 60px;
+    background-color: rgba(250, 246, 243, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin: 3%;
+
+    .dark-icon {
+      margin-top: 5%;
+      margin-bottom: 8%;
+      width: 23%;
+
+      height: 42px;
+      background-image: url("../../../../assets/images/QuotationMarksLitePink.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .light-icon {
+      margin-top: 5%;
+      margin-bottom: 8%;
+      width: 23%;
+      height: 10%;
+      background-image: url("../../../../assets/images/מרחאות\ כתום\ כהה.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    #p {
+      font-size: 120%;
+      height: 68%;
+      color: rgba(76, 76, 73, 1);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 75%;
+    }
+
+    #p:hover {
+      overflow: visible;
+      white-space: normal;
+    }
+
+    #hoverWindow {
+      position: absolute;
+      font-size: 140%;
+      width: 20%;
+      height: min-content;
+      background-color: #faf2f2e8;
+      border: 1px solid rgba(255, 204, 15, 1);
+      border-radius: 66px;
+      padding: 18px;
+      z-index: 999;
+      display: none;
+    }
+
+    #p:hover + #hoverWindow {
+      display: block;
+    }
+
+    #p1 {
+      display: none;
+    }
+
+    #name {
+      justify-self: flex-end;
+      font-size: 100%;
+      color: rgba(76, 76, 73, 1);
+    }
+  }
+}
+
+#end {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  #readmore {
+    border-radius: 66px;
+    background: var(--, #d91c5c);
+    width: 12%;
+    background-color: rgb(217, 28, 92, 1);
+    color: rgba(250, 246, 243, 1);
+    color: var(--, #faf6f3);
+    text-align: center;
+    font-size: 185%;
+    margin: 0.3%;
+    margin-right: 6%;
+  }
+
+  #link {
+    width: 4%;
+    transform: rotate(2deg);
+
+    #circle {
+      display: flex;
+      width: 61%;
+      height: 69%;
+      border-radius: 49%;
+      border: 2px solid var(--Color-7, #000);
+      background: #fff;
+      justify-content: space-around;
+      align-items: center;
+
+      #arrow {
+        background-image: url("../../../../assets/images/ArrowGray.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        width: 66%;
+        height: 81%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  #allcards {
+    width: 100%;
+
+    #card {
+      width: 25%;
+    }
+  }
+
+  #end {
+    #readmore {
+      width: 22%;
+    }
+
+    #circle {
+      width: 81%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  #header {
+    font-size: 250%;
+    width: auto;
+  }
+
+  #allcards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 5%;
+
+    #card {
+      display: flex;
+      width: 90%;
+      height: fit-content;
+      border-radius: 33px;
+      padding-left: 7%;
+
+      .light-icon {
+        margin-top: 3%;
+        width: 8%;
+        height: 18px;
+        margin-bottom: 4%;
+      }
+
+      .dark-icon {
+        margin-top: 3%;
+        width: 8%;
+        height: 18px;
+        margin-bottom: 4%;
+      }
+
+      #p {
+        font-size: 90%;
+        color: rgba(76, 76, 73, 1);
+        width: 80%;
+        padding-bottom: 2%;
+        overflow: hidden;
+        display: none;
+      }
+
+      #p1 {
+        display: block;
+        width: 80%;
+        height: fit-content;
+      }
+
+      #name {
+        font-size: 80%;
+        color: rgba(76, 76, 73, 1);
+        #arrow {
+          background-image: url("../../../../assets/images/ArrowGray.png");
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          width: 60%;
+          height: 75%;
+        }
+      }
+    }
+
+    #end {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      #readmore {
+        width: 32%;
+        height: fit-content;
+        font-size: 105%;
+        margin-right: 20%;
+      }
+
+      #link {
+        width: 24%;
+        transform: rotate(2deg);
+
+        #circle {
+          display: flex;
+          width: 45%;
+          height: 89%;
+          border-radius: 49%;
+          border: 2px solid var(--Color-7, #000);
+          background: #fff;
+          justify-content: space-around;
+          align-items: center;
+
+          #arrow {
+            background-image: url("../../../../assets/images/Group\ 126.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 60%;
+            height: 75%;
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+=======
 // #header {
 //   height: fit-content;
 //   font-size: 580%;
@@ -251,3 +506,4 @@
 //     flex-direction: column;
 //   }
 // }
+

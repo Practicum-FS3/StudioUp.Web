@@ -4,14 +4,15 @@ export interface AvailableTraining {
     trainingId: number,
     trainerName: string,
     date:Date,
+    // DateOnly
     dayOfWeek: number,
     time: string,
     customerTypeName:string,
     trainingTypeName:string,
     participantsCount:number,
     isActive: boolean,
-    attend: boolean,
-    register:boolean
+    attended: boolean,
+    isRegistered:boolean
 }
 
 

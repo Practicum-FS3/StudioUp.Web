@@ -41,7 +41,7 @@ const routes: Routes = [
   { path: 'afterRegistration', component: AfterRegistrationComponent},
   { path: 'HMOs', component: HmosComponent },
   { path: 'subscriptionPerCustomer', component: CustomerSubHistoryComponent },
-  { path: 'd', component: DetailsAndRegistrationComponent },
+  { path: 'details/:CustomerID/:TrainingId', component: DetailsAndRegistrationComponent },
   { path: 'subscription-benefits', component: SubscriptionBenefitsComponent },
 ];
 

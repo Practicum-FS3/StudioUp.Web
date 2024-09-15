@@ -1,4 +1,5 @@
 export class Customer {
+
   Tz?: string;
   firstName?: string;
   lastName?: string;
@@ -23,6 +24,7 @@ export class Customer {
     address: string,
     email: string
   ) {
+
     this.Tz = Tz;
     this.firstName = firstName;
     this.lastName = lastName;

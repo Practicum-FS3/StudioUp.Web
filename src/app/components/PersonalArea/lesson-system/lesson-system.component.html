@@ -6,27 +6,26 @@
         <div class="mycontainer">
             <div *ngFor="let n of numbersArray" class="myn">
                 <div class="mytur">
-                    <div *ngFor="let lesson of groupedItems[n-1]" class="myitem"
-                    [ngClass]="{'hasTrainingCustomer': lesson.register}">
-                        <div *ngIf="lesson.id!=0 && lesson.isActive==true">
-                                <i class="pi pi-check-circle" id="miniAicon" *ngIf="lesson.attend&&lesson.date<thisDay"></i> 
-                                <i class="pi pi-minus-circle" id="miniAicon" *ngIf="!lesson.attend&&lesson.register&&lesson.date<thisDay"></i>
+
+                    <div *ngFor="let lesson of groupedItems[n-1]" class="myitem" let
+                        [ngClass]="{'hasTrainingCustomer': lesson.isRegistered}"
+                        (click)="navigateToLessonDetails(lesson.id,lesson.trainingId,lesson.isRegistered)">
+                        <div *ngIf="lesson.id!=0">
+                            <i class="pi pi-check-circle" id="miniAicon"
+                                *ngIf="(lesson.attended&&lesson.date.toString()<thisDay)"></i>
+
+                            <i class="pi pi-minus-circle" id="miniAicon"
+                                *ngIf="(!lesson.attended&&lesson.isRegistered&&lesson.date.toString()<thisDay)"></i>
+
                             <b style="font-weight: bolder;">{{lesson.time}}</b>
-                             <br>
+                            <br>
                             <div style="line-height: 1">
                                 {{lesson.trainerName}}
                                 <br>
                                 {{lesson.trainingTypeName}}
                                 {{lesson.customerTypeName}}
-                                
+
                             </div>
-                           
-<!--                             <b>{{lesson.time}}</b>
-                            <br>
-                            {{lesson.trainerName}}
-                            <br>
-                            {{lesson.trainingTypeName}}
-                            {{lesson.customerTypeName}} -->
                         </div>
                     </div>
                 </div>
@@ -43,8 +42,8 @@
         <div *ngFor="let title of days; let i=index" class="mya">
             <div class="myheader">{{title}}</div>
             <div class="mycontainer">
-                <p-accordion >
-                    <p-accordionTab >
+                <p-accordion>
+                    <p-accordionTab>
                         <div *ngFor="let lesson of groupedItems[i]">
                             <div *ngIf="lesson.id!=0 && lesson.isActive==true" class="myitem">
                                 <div id="t"> {{lesson.time}}-
@@ -55,8 +54,8 @@
                                     {{lesson.customerTypeName}}
                                 </div>
                                 <div id="iconsDiv">
-                                    <i class="pi pi-check-circle" id="miniAicon" *ngIf="Ayala?.Att"></i> 
-                                    <i class="pi pi-minus-circle" id="miniAicon" *ngIf="Ayala?.reg"></i>   
+                                    <i class="pi pi-check-circle" id="miniAicon" *ngIf="lesson.attended"></i>
+                                    <i class="pi pi-minus-circle" id="miniAicon" *ngIf="lesson.isRegistered"></i>
                                 </div>
                             </div>
                         </div>
@@ -68,3 +67,7 @@
     </div>
 
 </div>
+
+<!-- <div *ngIf="show">
+<app-details-and-registration [CustomerID]="1" [TrainingId]="3"></app-details-and-registration>
+</div> -->

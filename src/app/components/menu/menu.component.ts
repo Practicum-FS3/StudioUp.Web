@@ -43,5 +43,6 @@ export class MenuComponent implements OnInit {
         { label: 'התחברות', routerLink: '/login', class: 'nav-item nav-link fixed-login' }
       ];
     }
+
   }
 }
