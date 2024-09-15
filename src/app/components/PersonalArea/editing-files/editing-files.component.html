@@ -12,7 +12,9 @@
             </div>
             <div class="detail-item">
                 <label class="titleLabel">תעודת זהות</label>
-                <span [innerText]="currentCustomer.tz"></span>
+
+                <span [innerText]="currentCustomer.Tz"></span>
+
             </div>
             <div class="detail-item">
                 <label class="titleLabel">טלפון</label>
@@ -83,8 +85,10 @@
                     </div>
                     <div class="divInput">
                         <label class="label">תעודת זהות</label><br>
-                        <input class="inputes" pInputText id="tz" formControlName="tz" [ngModel]="currentCustomer.tz"/>
-                        <p *ngIf="myForm.get('tz')?.hasError('required') && myForm.get('tz')?.touched" class="error-message">
+
+                        <input class="inputes" pInputText id="id" formControlName="id" [ngModel]="currentCustomer.Tz"/>
+                        <p *ngIf="myForm.get('id')?.hasError('required') && myForm.get('id')?.touched" class="error-message">
+
                             תעודת זהות הינה שדה חובה
                         </p>
                         <!-- <p *ngIf="myForm.get('tz')?.hasError('pattern') && myForm.get('tz')?.touched" class="error-message">

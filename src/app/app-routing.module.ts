@@ -11,6 +11,7 @@ import { PaymentOptionsComponent } from './components/payment-options/payment-op
 import { SignatureComponent } from './components/signature/signature.component';
 import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { AfterRegistrationComponent } from './components/after-registration/after-registration.component';
 import { TracksComponent } from './components/tracks/tracks.component';
 import { HmosComponent } from './components/hmos/hmos.component';
 import { CustomerSubHistoryComponent } from './components/customer-sub-history/customer-sub-history.component';
@@ -30,12 +31,14 @@ const routes: Routes = [
   { path: 'payment-options', component: PaymentOptionsComponent },
   { path: 'our-team', component: OurTeamComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'callback', component: LoginComponent },
   {
     path: 'personal-area',
     component: PersonalAreaComponent,
     canActivate: [AuthGuard],
   },
   { path: 'registration', component: RegistrationComponent },
+  { path: 'afterRegistration', component: AfterRegistrationComponent},
   { path: 'HMOs', component: HmosComponent },
   { path: 'subscriptionPerCustomer', component: CustomerSubHistoryComponent },
   { path: 'details/:CustomerID/:TrainingId', component: DetailsAndRegistrationComponent },

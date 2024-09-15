@@ -29,7 +29,9 @@ export class EditingFilesComponent {
   constructor(private dataService: DataService) {
     this.myForm = new FormGroup({
       id: new FormControl(''),
-      tz: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(9)]),
+
+      Tz:new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+
       firstName: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת\\s]*$')]),
       lastName: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת\\s]*$')]),
       customerTypeId: new FormControl(''),
@@ -37,7 +39,7 @@ export class EditingFilesComponent {
       paymentOptionId: new FormControl(''),
       subscriptionTypeId: new FormControl(''),
       isActive: new FormControl(true),
-      tel: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+      phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
       address: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת0-9\\s\\"\\-]*$')]),
       email: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Zא-ת0-9._%+-]+@[a-zA-Zא-ת0-9.-]+\\.[a-zA-Zא-ת]{2,}$')]),
       selectedCategory: new FormControl('')
@@ -108,8 +110,9 @@ export class EditingFilesComponent {
   saveChanges() {
     const { controls } = this.myForm
     let cust: Customer = new Customer(
-      controls['id'].value,
-      controls['tz'].value,
+
+      controls['Tz'].value,
+
       controls['firstName'].value,
       controls['lastName'].value,
       controls['customerTypeId'].value,
@@ -117,11 +120,13 @@ export class EditingFilesComponent {
       controls['paymentOptionId'].value,
       controls['subscriptionTypeId'].value,
       controls['isActive'].value,
-      controls['tel'].value,
+      controls['phone'].value,
       controls['address'].value,
       controls['email'].value
     )
 
+
+    cust.Tz = this.currentCustomer.Tz;
 
     this.dataService.updateCustByID(cust).subscribe(data => {
       console.log(data);

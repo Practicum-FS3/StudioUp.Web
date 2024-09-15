@@ -11,7 +11,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { map, startWith, Observable, Subscription } from 'rxjs';
+import { map, startWith, Observable, Subscription, switchMap, of } from 'rxjs';
 import { AddressService } from '../../services/address/address.service';
 import { SubscriptionType } from '../../models/SubscriptionType';
 import { Router } from '@angular/router';
@@ -38,8 +38,8 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   private formData: any;
   private formSubscription!: Subscription;
   filteredEmails!: Observable<string[]>;
-  filteredCities!: string[];
-  filteredStreets!: string[];
+  filteredCities!: Observable<string[]>;
+  filteredStreets!: Observable<string[]>;
   domains: string[] = [
     'gmail.com',
     'yahoo.com',
@@ -68,13 +68,13 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.form = this.fb.group({
       hmo: [''],
-      training: ['', Validators.required],
       subscriptionType: ['', Validators.required],
       customerType: ['', Validators.required],
       paymentOption: ['', Validators.required],
       fullName: ['', Validators.required],
       ID: ['', [Validators.required, this.idValidator()]],
-      address: [''],
+      city: [''],
+      street: [''],
       phone: [
         '',
         [
@@ -101,27 +101,25 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         map((value: string) => this.emailsFilter(value))
       );
     }
+
     const cityControl = this.form.get('city');
     if (cityControl) {
-      cityControl.valueChanges
-        .pipe(
-          startWith(''),
-          map((value: string) => this.citiesFilter(value))
-        )
-        .subscribe((cities: string[]) => {
-          this.filteredCities = cities;
-        });
+      this.filteredCities = cityControl.valueChanges.pipe(
+        startWith(''),
+        switchMap((value: string) => {
+          return this.citiesFilter(value);
+        })
+      );
     }
+
     const streetControl = this.form.get('street');
     if (streetControl) {
-      streetControl.valueChanges
-        .pipe(
-          startWith(''),
-          map((value: string) => this.streetsFilter(value))
-        )
-        .subscribe((streets: string[]) => {
-          this.filteredStreets = streets;
-        });
+      this.filteredStreets = streetControl.valueChanges.pipe(
+        startWith(''),
+        switchMap((value: string) => {
+          return this.streetsFilter(value);
+        })
+      );
     }
 
     this.fetchData();
@@ -138,13 +136,13 @@ export class RegistrationComponent implements OnInit, OnDestroy {
       return this.domains.map((d) => `${value}@${d}`);
     }
   }
-  citiesFilter(value: string): string[] {
-    if (!value) return [];
+  citiesFilter(value: string): Observable<string[]> {
+    if (!value) return of([]);
     return this.addressService.getCities(value);
   }
-  streetsFilter(value: string): string[] {
-    if (!value) return [];
-    return this.addressService.getStreets(value);
+  streetsFilter(value: string): Observable<string[]> {
+    if (!value) return of([]);
+    return this.addressService.getStreets(value, this.form.get('city')?.value);
   }
 
   ngOnDestroy(): void {
@@ -154,33 +152,38 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   }
 
   private fetchData(): void {
-    this.registrationService
-      .getSubscriptionTypes()
-      .subscribe((subscriptionTypes: SubscriptionType[]) => {
-        this.subscriptionTypes = subscriptionTypes;
+    try {
+      this.registrationService
+        .getSubscriptionTypes()
+        .subscribe((subscriptionTypes: SubscriptionType[]) => {
+          this.subscriptionTypes = subscriptionTypes;
+        });
+      this.registrationService
+        .getCustomerTypes()
+        .subscribe((customerTypes: CustomerType[]) => {
+          this.customerTypes = customerTypes;
+        });
+      this.registrationService
+        .getPaymentOptions()
+        .subscribe((paymentOptions: PaymentOption[]) => {
+          this.paymentOptions = paymentOptions;
+        });
+      this.registrationService.getHMOs().subscribe((HMOs: HMO[]) => {
+        this.HMOs = HMOs;
       });
-    this.registrationService
-      .getCustomerTypes()
-      .subscribe((customerTypes: CustomerType[]) => {
-        this.customerTypes = customerTypes;
-      });
-    this.registrationService
-      .getPaymentOptions()
-      .subscribe((paymentOptions: PaymentOption[]) => {
-        this.paymentOptions = paymentOptions;
-      });
-    this.registrationService.getHMOs().subscribe((HMOs: HMO[]) => {
-      this.HMOs = HMOs;
-    });
+    } catch {
+      console.error('Error fetching data');
+    }
   }
 
   mapDataForSelects(data: any[]): string[] {
-    return data.map((value: any) => value.title) ?? '';
+    return data && data.length > 0 ? data.map((value: any) => value.title) : [];
   }
+
   convertValueToId(data: any[], value: string): number {
     return data.find((item: any) => item.title === value)?.id;
   }
-  
+
   navigateTo(route: string): void {
     this.router.navigate([route]);
   }
@@ -218,7 +221,6 @@ export class RegistrationComponent implements OnInit, OnDestroy {
       return sum % 10 === 0 ? null : { invalidId: true };
     };
   }
- 
 
   customerRegistration(): void {
     this.formSubmitted = true;
@@ -226,7 +228,9 @@ export class RegistrationComponent implements OnInit, OnDestroy {
       this.customer = {
         firstName: this.firstName(this.form.value.fullName),
         lastName: this.lastName(this.form.value.fullName),
-        tz: this.form.value.ID,
+
+        Tz: this.form.value.ID,
+
         subscriptionTypeId: this.convertValueToId(
           this.subscriptionTypes,
           this.form.value.subscriptionTypeId
@@ -240,17 +244,30 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           this.form.value.paymentOption
         ),
         hmoId: this.convertValueToId(this.HMOs, this.form.value.hmo),
-        address:
-          this.form.value.city + ', ' ?? '' + this.form.value.street ?? '',
+        address: this.form.value.city
+          ? this.form.value.city + this.form.value.street
+            ? ', ' + this.form.value.street
+            : ''
+          : '',
         tel: this.form.value.phone,
         email: this.form.value.email,
       };
-      console.log('Customer registration data:', this.customer); // Make API call to register customer
-      this.registrationService.customerRegistration(this.customer); // Reset form fields
-      this.customer = null;
-      this.form.reset();
-      this.store.dispatch(resetRegistrationForm());
-      this.navigateTo('afterRegistration');
+      this.registrationService.customerRegistration(this.customer).subscribe({
+        next: (response) => {
+          console.log('Customer registered successfully:', response);
+          this.customer = null;
+          this.form.reset();
+          this.store.dispatch(resetRegistrationForm());
+          this.navigateTo('afterRegistration');
+        },
+        error: (err) => {
+          console.error('Error registering customer:', err);
+          if (err.status === 400 && err.error.errors) {
+            // הדפסת הודעות שגיאה מהשרת
+            console.log('Validation errors:', err.error.errors);
+          }
+        },
+      });
     } else {
       this.form.markAllAsTouched();
     }

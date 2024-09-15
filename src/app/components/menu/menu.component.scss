@@ -8,15 +8,14 @@
 
 .navbar-nav {
   display: flex;
-  justify-content: space-between; 
-  align-items: center;
+  justify-content: flex-end;
   width: 100%;
 }
 
 .navbar-nav .nav-link {
   color: black;
   font-weight: 500;
-  margin: 0 20px ;
+  margin: 0 20px;
   background-color: white;
   border: none;
   font-size: small;
@@ -31,23 +30,24 @@
 .navbar-nav .nav-link.active {
   color: #FFD700;
   background-color: white;
+  
 }
 
 #nav_row {
   display: flex;
   flex-direction: row;
-  align-items: center;
-
-  justify-content: space-between; 
+  align-items:center;
+  justify-content: flex-end;
   direction: rtl;
   width: 100%;
   padding: 0;
-  margin: 0; 
+  margin: 0;
 }
 
 #nav_row .fixed-login {
-  margin-left: 0; 
-  margin-right: 350px; }
+  position: fixed;
+  left: 80px;
+}
 
 .btn-close {
   border: none;
@@ -77,28 +77,28 @@
       border: none;
     }
 
-    .p-menuitem-content{
+    .p-menuitem-content {
       background-color: #ffffff00;
       height: 30px;
       line-height: 30px;
       margin-right: 20px;
     }
 
-    .p-menubar-start{
+    .p-menubar-start {
       height: 30px;
       line-height: 15px;
     }
 
-    .p-component-end{
+    .p-component-end {
       left: 0px;
-      margin-left: auto; 
+      margin-left: auto;
     }
   }
 }
 
 @media (max-width: 1400px) {
   #nav_row .fixed-login {
-    margin-right: 80px; 
+    margin-right: 80px;
   }
 }
 
@@ -106,13 +106,13 @@
   .navbar-nav .nav-link {
     font-size: 14px;
   }
-  
+
   #nav_row .fixed-login {
-    margin-right: 10px; 
+    margin-right: 10px;
   }
 
   .navbar-nav .nav-link {
-    margin: 0 10px ;
+    margin: 0 10px;
     font-size: small;
   }
 }

@@ -1,6 +1,7 @@
+
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user1\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\StudioUp.Web\\",
+  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\StudioUp.Web\\",
   "Documents": [],
   "DocumentGroupContainers": [
     {
@@ -13,11 +14,24 @@
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             }
           ]
         }
       ]
     }
   ]
+
 }

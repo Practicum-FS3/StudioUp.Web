@@ -29,7 +29,7 @@ body {
   text-align: center;
   padding: 0.8vh 0vh 0.8vh 0vh;
   border-radius: 20vh;
-  margin: 2vh 5%;
+  margin: 0vh 5%;
   color: white;
   font-weight: 700;
 
@@ -69,6 +69,7 @@ body {
   position: absolute;
   right: 25px;
   transform: translateY(-50%);
+  bottom: 0;
 }
 
 @media (max-width: 470px) {

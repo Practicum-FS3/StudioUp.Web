@@ -1,6 +1,6 @@
 export class Customer {
-  id?: number;
-  tz?: string;
+
+  Tz?: string;
   firstName?: string;
   lastName?: string;
   customerTypeId?: number;
@@ -12,8 +12,7 @@ export class Customer {
   address?: string;
   email?: string;
   constructor(
-    id:number,
-    tz: string,
+    Tz: string,
     firstName: string,
     lastName: string,
     customerTypeId: number,
@@ -25,8 +24,8 @@ export class Customer {
     address: string,
     email: string
   ) {
-    this.id=id;
-    this.tz = tz;
+
+    this.Tz = Tz;
     this.firstName = firstName;
     this.lastName = lastName;
     this.customerTypeId = customerTypeId;

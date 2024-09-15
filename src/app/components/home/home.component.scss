@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center; 
     align-items: center; 
-    height: 100vh;
+    min-height: 100vh;
 }
 #homePage{
     display: flex;
@@ -43,7 +43,7 @@ body {
 .col-md-8 {
     padding-right: 10%;
     background-image: url(../../../assets/images/Rectangle\ 2.png);
-    background-size: 200px 150px;
+    background-size: 300px 350px;
     background-position: calc(100% - 50px) center;
     background-repeat: no-repeat;
 }
@@ -55,7 +55,7 @@ body {
     text-align: right;
     margin-bottom: 0;
     width: 100%;
-    font-family: 'Anomalia ML v2 AAA',sans-serif;
+    font-family: 'Anomalia ML v2 AAA Bold',sans-serif;
     font-weight: 600;
     font-size: 100px;
     line-height: 1.2;
@@ -98,8 +98,8 @@ body {
     border: 2px solid #faf6f3;
 }
 #button-icon img{
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: auto;
 }
 .col-md-4{
     flex: 1;

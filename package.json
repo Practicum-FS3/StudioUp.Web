@@ -25,9 +25,13 @@
     "@ngrx/store": "^17.2.0",
     "@ngrx/store-devtools": "^17.2.0",
     "@popperjs/core": "^2.11.8",
-    "angular2-signaturepad": "^4.0.2",
+    "appwrite": "^15.0.0",
     "bootstrap": "^5.3.3",
+    "html2canvas": "^1.4.1",
     "jquery": "^3.7.1",
+
+    "jspdf": "^2.5.1",
+
     "material": "^0.9.15",
     "ngx-signaturepad": "^0.0.10",
     "primeicons": "^7.0.0",

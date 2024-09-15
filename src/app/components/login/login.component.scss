@@ -4,7 +4,6 @@
     border-color: black;
     margin-left: 3vh;
     color: white;
-
 }
 
 input {
@@ -14,19 +13,53 @@ input {
 }
 
 input:focus {
-    box-shadow: 0px 0px 5px 2px yellow;
+    box-shadow: 0px 0px 5px 2px #FFD700;
     border-color: white;
 }
 
 .alert {
     direction: rtl;
+    margin-bottom: 0;
 }
-
 
 #email:-webkit-autofill,
 #email:-webkit-autofill:hover,
 #email:-webkit-autofill:focus,
 #email:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 124) inset !important;
+    -webkit-box-shadow: 0 0 0 30px #FFD700 inset !important;
     -webkit-text-fill-color: black !important;
 }
+
+.google-btn {
+    display: flex; /* הפוך את הכפתור ל-flex container */
+    align-items: center; /* יישור התוכן במרכז לאורך הציר האנכי */
+    justify-content: center; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-size: 16px;
+    background-color: white;
+    color: #757575;
+    transition: background-color 0.3s ease;
+    width: 100%; /* להבטיח שהכפתור יתפוס את כל הרוחב */
+    text-align: center; /* יישור הטקסט במרכז */
+}
+
+.google-btn:hover {
+    background-color: #f7f7f7;
+}
+
+.img {
+    display: block;
+    height: 20px; 
+    width: 20px; 
+    margin-right: 6px;
+    background-image: url('../../../assets/images/google.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Center the image */
+}
+.google-btn.mt-small {
+    margin-top: 3vh; /* מרווח קטן יותר בין הכפתור לתוכן שמעליו */
+}
+

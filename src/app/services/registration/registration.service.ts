@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, shareReplay } from 'rxjs';
+import { catchError, Observable, shareReplay, throwError } from 'rxjs';
 import { Customer } from '../../models/Customer ';
 import { HMO } from '../../models/HMO';
 import { PaymentOption } from '../../models/PaymentOption';
@@ -11,12 +11,18 @@ import { CustomerType } from '../../models/CustomerType ';
   providedIn: 'root',
 })
 export class RegistrationService {
-  private apiUrl: string = 'http://localhost:7101/api';
+  private apiUrl: string = 'https://localhost:7101/api';
 
   constructor(private http: HttpClient) {}
-  customerRegistration(customer: Customer | null): void {
-    this.http.post(`${this.apiUrl}/Customer/AddCustomer`, customer);
+  customerRegistration(customer: Customer | null): Observable<any> {
+    return this.http.post(`${this.apiUrl}/Customer/AddCustomer`, customer).pipe(
+      catchError((error) => {
+        console.error('Error during customer registration:', error);
+        return throwError(() => new Error(error));
+      })
+    );
   }
+  
   getPaymentOptions(): Observable<PaymentOption[]> {
     return this.http
       .get<any[]>(`${this.apiUrl}/PaymentOption/GetPaymentOptions`)
