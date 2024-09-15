@@ -3,22 +3,23 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Account, Client } from 'appwrite';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:7101/api/Auth';
+  private apiUrl = `${environment.apiUrl}/Auth`; 
   private loggedInSubject = new BehaviorSubject<boolean>(false);
   client: Client;
   account: Account;
 
   constructor(private http: HttpClient) {
     this.client = new Client()
-      .setEndpoint('https://cloud.appwrite.io/v1') 
-      .setProject('66d96c2000000570a419'); 
+      .setEndpoint(environment.endpoint) 
+      .setProject(environment.projectId); 
     this.account = new Account(this.client);
-    this.checkToken().subscribe(); // Initialize login status on service creation
+    this.checkToken().subscribe();
   }
 
   getAccount() {
@@ -75,5 +76,13 @@ export class AuthService {
   logout() {
     this.loggedInSubject.next(false);
     localStorage.removeItem('token');
+  }
+
+  retrievePassword(email: string): Observable<string> {
+    const passwordRequest = {
+      email: email
+    };
+
+    return this.http.post<string>(`${this.apiUrl}/forget-password`, passwordRequest);
   }
 }
