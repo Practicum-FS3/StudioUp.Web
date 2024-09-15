@@ -29,9 +29,7 @@ export class EditingFilesComponent {
   constructor(private dataService: DataService) {
     this.myForm = new FormGroup({
       id: new FormControl(''),
-
-      Tz:new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
-
+      Tz: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
       firstName: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת\\s]*$')]),
       lastName: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zא-ת\\s]*$')]),
       customerTypeId: new FormControl(''),
@@ -110,9 +108,8 @@ export class EditingFilesComponent {
   saveChanges() {
     const { controls } = this.myForm
     let cust: Customer = new Customer(
-
+      controls['id'].value,
       controls['Tz'].value,
-
       controls['firstName'].value,
       controls['lastName'].value,
       controls['customerTypeId'].value,
@@ -126,11 +123,11 @@ export class EditingFilesComponent {
     )
 
 
-    cust.Tz = this.currentCustomer.Tz;
+    cust.tz = this.currentCustomer.tz;
 
     this.dataService.updateCustByID(cust).subscribe(data => {
       console.log(data);
-      
+
       this.dataService.getCustByID(this.currentCustomer.id).subscribe(data => {
         this.currentCustomer = data
       })
