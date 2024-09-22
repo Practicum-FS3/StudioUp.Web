@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { CustomerSubscriptionService } from '../../services/customer-subscription.service';
+import { MatDialog } from '@angular/material/dialog';
 import { SubscriptionDetailComponent } from './subscription-detail/subscription-detail.component';
 import { CustomerSubscription } from '../../models/customerSubscription';
 

@@ -44,6 +44,9 @@ import { registrationReducer } from './store/reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SubscriptionBenefitsComponent } from './components/subscription-benefits/subscription-benefits.component';
 import { HomeSubscriptionBenefitsComponent } from './components/home/home-subscription-benefits/home-subscription-benefits.component';
+import { PersonalAreaHMOComponent } from './components/PersonalArea/personal-area-hmo/personal-area-hmo.component';
+import { MessageModule } from 'primeng/message';
+import { MessagesModule } from 'primeng/messages';
 import { HmoLeumitComponent } from './components/hmo-leumit/hmo-leumit.component';
 import { ListboxModule } from 'primeng/listbox';
 import { FileUploadModule } from 'primeng/fileupload';
@@ -92,6 +95,9 @@ import { PdfGeneratorComponent } from './components/pdf-generator/pdf-generator.
     AfterRegistrationComponent,    
     SubscriptionBenefitsComponent,
     HomeSubscriptionBenefitsComponent,
+    PersonalAreaHMOComponent,
+    HomeComponent,
+    CustomerSubHistoryComponent,
     HmoLeumitComponent,
     TracksComponent,
     HomeComponent,
@@ -128,6 +134,10 @@ import { PdfGeneratorComponent } from './components/pdf-generator/pdf-generator.
     // SignaturePadModule,
     // NgbModule,
     ButtonModule,
+    StoreModule.forRoot({ registration: registrationReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
+    MessageModule,
+    MessagesModule,
     MessagesModule,
     DialogModule,
     TooltipModule,
