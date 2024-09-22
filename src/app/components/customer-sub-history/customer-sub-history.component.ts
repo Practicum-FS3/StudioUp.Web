@@ -19,12 +19,22 @@ export class CustomerSubHistoryComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.subscriptionService.getByCustomerId(5).subscribe(data => {
+    this.subscriptionService.getByCustomerId(6).subscribe(data => {
       this.subscriptions = data;
-      this.currentSubscription = this.subscriptions.find(subscription => subscription.isActive);
-      console.log('currentSubscription ' + this.currentSubscription);
+      const now = new Date();
+  
+      this.currentSubscription = this.subscriptions
+        .filter(subscription => new Date(subscription.startDate) <= now)
+        .reduce((prev, curr) => {
+          const prevDate = new Date(prev.startDate);
+          const currDate = new Date(curr.startDate);
+          return (currDate > prevDate && currDate <= now) ? curr : prev;
+        });
+  
+      console.log('currentSubscription', this.currentSubscription);
     });
   }
+  
 
   openSubscriptionDetail(subscriptionId: number): void {
     console.log(`open subscription, id-${subscriptionId}`);

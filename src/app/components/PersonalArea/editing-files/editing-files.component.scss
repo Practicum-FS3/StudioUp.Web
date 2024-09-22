@@ -7,98 +7,80 @@
     margin: 0 auto;
     padding-right: 3%;
 }
-
-.title {
-    font-size: 25px;
-    display: block;
-    list-style: circle;
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
-
 .inputes {
     background-color: #ECECEC;
-    border-color: #E3DCDC;
+    border-color: rgb(255, 201, 0);
     border-style: solid;
     box-shadow: none;
     border-radius: 1.5vh;
 }
-
 .p-inputtext {
     margin: 0;
     width: 90%;
 }
-
 span {
-    font-size: 20px;
-    margin-right: 5%;
+    font-size: 1rem;
+    // margin-right: 5%;
 }
-
 :host ::ng-deep .p-tabview .p-tabview-nav {
     background-color: rgb(255, 255, 255); /* Specify your desired background color here */
 }
-
 :host ::ng-deep .p-tabview-panels {
     background-color: rgba(236, 236, 236, 1);
     height: 250%;
     width: 100%;
     margin-top: 20px;
 }
-
 .cardCust ::ng-deep .p-tabPanel[header="פרטים אישיים"] .ui-tabview-title {
     color: red; /* Specify your desired color here */
 }
-
 .divInput {
-    background-color: rgb(255, 201, 0);
-    color: white;
+    // background-color: rgb(255, 201, 0);
+    // color: white;
     border-radius: 2vh;
-    text-align: center;
-    padding: 0.8vh 0vh 0.8vh 0vh;
+    text-align: right;
+    padding: 0.8vh 2vh 0.8vh 0vh;
     font-weight: bold;
     font-size: 1.2vw;
     margin: 1vh 1%;
 }
-
 .miniTitle {
     font-size: 15px;
 }
-
 .saveInput {
-    display: block;
-    margin: 0 auto;
-    width: 50%;
-    height: 48.03px;
-    background-color: #D91C5C;
-    gap: 0px;
-    border-radius: 20px 20px 20px 20px;
-    opacity: 0px;
     border-style: none;
-    font-size: 25px;
+    font-size:  1.2rem;;
     color: white;
+    background-color: #D91C5C;
+    width: 50%;
+    gap: 0px;
+    border-radius: 20px;
+    opacity: 0px;
+
 }
-////////////////////////////////////////////////////////////////////////////////////
 .header {
     box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
     font-size: 3%;
     width: 100%;
 }
-
-.title {
-    background-color: rgb(255, 201, 0);
-    color: white;
+.titleLabel {
+    display: block;
+    list-style: circle;
+    color: rgb(128, 111, 111);
     border-radius: 20vh;
-    text-align: center;
-    padding: 0.8vh 0vh 0.8vh 0vh;
-    font-weight: bold;
-    font-size: 1.2vw;
-    margin: 1vh 1%;
-
+    // background-color: rgb(255, 201, 0);
+    text-align: right;
+    // padding: 0.8vh 1vh 0.8vh 0vh;
 }
-
 .div-header {
     width: 100%;
     display: flex;
 }
-
 .nav-bar {
     padding: 3vh;
     width: 100%;
@@ -109,11 +91,9 @@ span {
     height: 5vh;
     font-size: 1vw;
 }
-
 .img img {
     height: 10vh;
 }
-
 .nav-bar a {
     text-decoration: none;
     color: black;
@@ -121,90 +101,105 @@ span {
     font-weight: bold;
     white-space: nowrap;
 }
-
 .nav-bar a:hover {
     color: #FFC900;
 }
-
 .leftlink {
     display: inline-block;
     position: absolute;
     left: 8%;
 }
-
 .star {
     fill: #D91C5C;
     padding: -5vh;
     width: 1vw;
     height: 2vh;
     transform: rotate(6deg);
-}  
-/////////////////////////////////////////////
+}
 
-/* מדיה קווריס כדי להפוך את העיצוב לרספונסיבי */
+
+.sub {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    // height: 40%;
+
+}
+#button-icon {
+    border: 2px solid #4C4C49;
+    border-radius: 100%;
+    margin: 3px;
+    padding: 7px;
+    transform: translate(10%, 0%);
+}
+.error-message{
+    border-color: #fa818b;
+    font-size: 0.7rem;
+    font-weight: 400;
+    width: 90%;
+    background-color: #f6e8e9;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    color:red;
+    border-style: solid;
+    margin-top: 2%;
+    margin-bottom: auto;
+    text-align: center;
+}
 @media only screen and (max-width: 1200px) {
     .cardCust {
         width: 60%;
     }
-
-    .title {
+    .titleLabel {
         font-size: 22px;
     }
-
-    .span {
-        font-size: 18px;
-    }
-
     .divInput {
         font-size: 1.5vw;
     }
-
     .saveInput {
         width: 60%;
     }
 }
-
 @media only screen and (max-width: 768px) {
     .cardCust {
         width: 80%;
     }
-
-    .title {
+    .titleLabel {
         font-size: 20px;
     }
-
-    .span {
-        font-size: 16px;
-    }
-
     .divInput {
         font-size: 2vw;
     }
-
     .saveInput {
         width: 70%;
     }
 }
-
+/* התאמת גודל למסכים קטנים */
 @media only screen and (max-width: 480px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
     .cardCust {
         width: 100%;
         padding: 5%;
     }
-
-    .title {
+    .titleLabel {
         font-size: 18px;
     }
-
-    .span {
-        font-size: 14px;
-    }
-
     .divInput {
         font-size: 3vw;
     }
-
     .saveInput {
         width: 80%;
     }
 }
+
+
+
+
+
+
+
+
+
+

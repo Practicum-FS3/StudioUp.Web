@@ -15,60 +15,44 @@ import { HMO } from '../../models/HMO';
 export class DataService {
   private baseUrl = "https://localhost:7101/api"
   constructor(private http: HttpClient) { }
-  getAll(): Observable<Array<Customer>> {
-      const data = this.http.get<Array<Customer>>(`${this.baseUrl}/Customer`)
-      return data
-  }
+
 
   getAllCustType(): Observable<Array<CustomerType>> {
-    const data = this.http.get<Array<CustomerType>>(`${this.baseUrl}/CustomerType`)    
+    const data = this.http.get<Array<CustomerType>>(`${this.baseUrl}/CustomerType/GetAllCustomerTypes`)    
     return data
   }
 
   getAllHMO(): Observable<Array<HMO>> {
-    const data = this.http.get<Array<HMO>>(`${this.baseUrl}/HMO/GetAll`)
+    const data = this.http.get<Array<HMO>>(`${this.baseUrl}/HMO`)
     return data
+
   }
 
   getAllPaymentOptions(): Observable<Array<PaymentOptions>> {
-    const data = this.http.get<Array<PaymentOptions>>(`${this.baseUrl}/PaymentOption`)
+    const data = this.http.get<Array<PaymentOptions>>(`${this.baseUrl}/PaymentOption/GetPaymentOptions`)
     return data
   }
 
   getAllSubscriptionType(): Observable<Array<SubscriptionType>> {
-    const data = this.http.get<Array<SubscriptionType>>(`${this.baseUrl}/SubscriptionType`)
+    const data = this.http.get<Array<SubscriptionType>>(`${this.baseUrl}/SubscriptionType/GetSubscriptionTypes`)
     return data
   }
   getAllAvailableTraining(): Observable<Array<AvailableTraining>> {
-    return this.http.get<Array<AvailableTraining>>(`${this.baseUrl}/AvailableTraining/forCalander`)
+    return this.http.get<Array<AvailableTraining>>(`${this.baseUrl}/AvailableTraining/GetAvailableTrainingsCalender`)
   }
 
-  getCustByID(): Observable<Customer> {
-    const data = this.http.get<Customer>(`${this.baseUrl}/Customer/byId/${8}`)
+  getCustByID(customerID: number|undefined): Observable<Customer> {
+    const data = this.http.get<Customer>(`${this.baseUrl}/Customer/GetCustomerById/${customerID}`)
     return data
   }
 
   updateCustByID(customer: Customer): Observable<Customer> {
-    console.log('updateCustByID');
-    console.log(customer);
-    const c={
-      "id": 1,
-      "firstName": "הני",
-      "lastName": "כהן",
-      "customerTypeId": 1,
-      "hmoId": 1,
-      "paymentOptionId": 1,
-      "subscriptionTypeId": 1,
-      "isActive": true,
-      "tel": "055678856",
-      "address": "השושנים 5 גבעתיים",
-      "email": "m055678856@gmail.com"
-    }
-    console.log(c);
+    const data =  this.http.put<Customer>(`${this.baseUrl}/Customer/UpdateCustomer`, customer);
+    return data
+  }
 
-    return this.http.put<Customer>(`${this.baseUrl}/Customer`, customer);
-   
-
+  GetAllTrainingsDetailsForCustomer(customerID: number): Observable<Array<AvailableTraining>> {
+    return this.http.get<Array<AvailableTraining>>(`${this.baseUrl}/AvailableTraining/GetAllTrainingsDetailsForCustomerAsync/${customerID}`);
   }
 }
 

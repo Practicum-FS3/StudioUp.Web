@@ -2,7 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { FileService } from './file.service';
 
-describe('FileServiceService', () => {
+//describe('FileServiceService', () => {
+describe('FileService', () => {
   let service: FileService;
 
   beforeEach(() => {

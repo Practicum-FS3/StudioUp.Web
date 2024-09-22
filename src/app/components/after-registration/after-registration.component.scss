@@ -1,0 +1,114 @@
+body {
+  font-size: 12px;
+}
+#success-message {
+  height: 50%;
+  background-color: #4c4c49;
+  padding: 20px;
+  margin: 1%;
+  text-align: center;
+  border-radius: 60px;
+
+  h3 {
+    margin-top: 3%;
+    font-family: "Anomalia ML v2 AAA Bold";
+    font-size: 5em;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-top: 5%;
+    font-family: "Ploni ML v2 AAA";
+    font-size: 5em;
+    color: #d91c5c;
+  }
+}
+#emoji {
+  position: absolute;
+  left: 20%;
+  transform: translate(-40%, -40%);
+}
+#emoji img {
+  animation: roll 1s linear;
+  animation-iteration-count: 1;
+}
+@keyframes roll {
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  0% {
+    transform: translateX(100%) rotate(20deg);
+  }
+}
+@font-face {
+  font-family: "Anomalia ML v2 AAA Bold";
+  src: url("../../../assets/fonts/AnomaliaMLv2AAABold.woff") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ploni ML v2 AAA";
+  src: url("../../../assets/fonts/PloniRegular.woff"), format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@media(max-width:992px){
+    // #container1{
+    //     padding-right: 5%;
+    // }
+
+    .col-md-8{
+        flex: 1 0 70%;
+        padding-right: 0;
+        background-position: right;
+    }
+    .col-md-4{
+        flex: 1 0 30%;
+    }
+}
+@media(max-width:768px){
+    #container1{
+        padding-right: 0;
+    }
+
+    .row1{
+        flex-direction: column;
+        align-items: center;
+    }
+    .col-md-8{
+        background-position: center;
+    }
+    .col-md-8,.col-md-4{
+        width: 100%;
+        text-align: center;
+    }
+    #title1, #title2{
+        text-align: center;
+    }
+
+    #emoji img{
+    display: none;
+    }
+}
+@media(max-width:500px){
+    .row1{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .col-md-8{
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+    #title1{
+        font-size: 85px;
+    }
+    #title2{
+        font-size: 30px;
+    }
+    #emoji img{
+        display: none;
+    }
+
+}

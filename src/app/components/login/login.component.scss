@@ -4,7 +4,6 @@
     border-color: black;
     margin-left: 3vh;
     color: white;
-
 }
 
 input {
@@ -13,20 +12,189 @@ input {
     color: #000;
 }
 
+#password {
+    border: 2px solid #FFD700
+}
+
+a.text-decoration {
+    color: black;
+}
+
+a.text-decoration-none:hover {
+    color: black;
+}
+
 input:focus {
-    box-shadow: 0px 0px 5px 2px yellow;
+    box-shadow: 0px 0px 5px 2px #FFD700;
     border-color: white;
 }
 
 .alert {
     direction: rtl;
+    margin-bottom: 0;
+}
+
+#email:focus {
+    border: 2px solid #FFD700 !important;
+    box-shadow: 0 0 0 2px #FFD700 !important;
+    outline: none;
+}
+
+#email:-webkit-autofill,
+#email:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px #FFFFFF inset !important;
+    -webkit-text-fill-color: black !important;
+    border: 2px solid #FFD700;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-size: 16px;
+    background-color: white;
+    color: #757575;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.google-btn:hover {
+    background-color: #f7f7f7;
+}
+
+.img {
+    display: block;
+    height: 20px;
+    width: 20px;
+    margin-right: 6px;
+    background-image: url('../../../assets/images/google.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.google-btn.mt-small {
+    margin-top: 3vh;
+}
+
+//----------------
+.modal-title {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.form-label,
+.form-control {
+    text-align: right;
+}
+
+.btn-close {
+    border: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    padding: 4px;
+    margin-right: 10px;
+}
+
+.modal-sm {
+    max-width: 400px;
+}
+
+#emailInput:focus {
+    border: 2px solid #FFD700 !important;
+    box-shadow: 0 0 0 2px #FFD700 !important;
+    outline: none;
+}
+
+#emailInput:-webkit-autofill,
+#emailInput:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px #FFFFFF inset !important;
+    -webkit-text-fill-color: black !important;
+    border: 2px solid #FFD700;
+}
+
+input::-webkit-input-placeholder {
+    color: #a9a9a9;
+}
+
+input::-webkit-autofill,
+input::-webkit-autofill:focus {
+    border: 2px solid #FFD700 !important;
+    box-shadow: 0 0 0 2px #FFD700 !important;
+    -webkit-box-shadow: 0 0 0 2px #FFD700 !important;
+}
+
+input[type="email"] {
+    border: 2px solid #FFD700 !important;
+}
+
+.modal-content {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.modal-body .form-label {
+    display: block;
+    text-align: right;
+    width: 100%;
 }
 
 
-#email:-webkit-autofill,
-#email:-webkit-autofill:hover,
-#email:-webkit-autofill:focus,
-#email:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 124) inset !important;
-    -webkit-text-fill-color: black !important;
+.modal-footer {
+    padding-top: 0.5rem;
+}
+
+#emailInput {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#btnmodal {
+    width: 100%;
+    margin: 10px auto;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.btn-close:focus {
+    outline: none;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.modal-dialog {
+    margin-top: 20vh;
+}
+
+
+#btnmodal:active {
+    background-color: rgb(190, 24, 81);
+    border-color: black;
+    outline: none;
+    box-shadow: none;
+}
+
+#btnmodal:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#label {
+    font-size: 17px;
+}
+
+.modal-header {
+    background-color: #FFD700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,6 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { AvailableTraining } from '../../../models/AvailableTrainingCalander';
 import { DataService } from '../../../services/personal-area/data.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-lesson-system',
@@ -8,24 +10,36 @@ import { DataService } from '../../../services/personal-area/data.service';
   styleUrl: './lesson-system.component.scss'
 })
 export class LessonSystemComponent {
+
+  // אמור להיות currentCustomer
+  // לשנות את כל ה-1 ל-ID שיהיה לו
+
+  thisDay = new Date("2024-09-12").toJSON().slice(0, 10);
+  thisHour = new Date().getHours();
+  thisMinutes = new Date().getMinutes();
+
+
   days = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'מוצש"ק'];
   numbersArray = [1, 2, 3, 4, 5, 6, 7];
   maxCount = 0;
+  show = false;
   arr: Array<AvailableTraining> | undefined
   groupedItems: Array<Array<AvailableTraining>> = []
   index: number = 0
   screenWidth: number = window.innerWidth;
   rek: AvailableTraining = {
     id: 0,
-    TrainingId: 0,
+    trainingId: 0,
     trainerName: '',
-    date:new Date(),
+    date: new Date(),
     dayOfWeek: 0,
-    hour: '',
-    customerTypeName:'',
-    trainingTypeName:'',
-    ParticipantsCount:0,
-    isActive: false
+    time: '',
+    customerTypeName: '',
+    trainingTypeName: '',
+    participantsCount: 0,
+    isActive: false,
+    attended: false,
+    isRegistered: false
   }
 
   @HostListener('window:resize', ['$event'])
@@ -34,50 +48,37 @@ export class LessonSystemComponent {
       this.screenWidth = (<Window>event.target).innerWidth;
     }
   }
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
+    this.dataService.GetAllTrainingsDetailsForCustomer(1).subscribe(data => {
 
-    this.dataService.getAllAvailableTraining().subscribe(data => {
       this.arr = data
       console.log({ data });
+      console.log(this.thisHour);
+      console.log(this.thisMinutes);
 
       for (var day of this.numbersArray) {
         if (this.arr.filter(x => x.dayOfWeek == day).length > this.maxCount) {
           this.maxCount = this.arr.filter(x => x.dayOfWeek == day).length
         }
-        console.log('ayala');
-
         this.groupedItems?.push(this.arr.filter(x => x.dayOfWeek == day).sort((a, b) => {
+          let hourA = a.time.charAt(0) + a.time.charAt(1);
+          let hourB = b.time.charAt(0) + b.time.charAt(1);
+          let minutA = a.time.charAt(3) + a.time.charAt(4);
+          let minutB = b.time.charAt(3) + b.time.charAt(4);
 
-          console.log('!!!!????');
-          
-          console.log({a, b});
-          
-          let hourA = a.hour.charAt(0) + a.hour.charAt(1);
-          let hourB = b.hour.charAt(0) + b.hour.charAt(1);
-          let minutA = a.hour.charAt(3) + a.hour.charAt(4);
-          let minutB = b.hour.charAt(3) + b.hour.charAt(4);
-           
-             console.log('groupedItems');
-             console.log(this.groupedItems);
-
-//מה קורה כשזה אותה שעה?
           if (hourA !== hourB) {
             return parseInt(hourA) - parseInt(hourB);
           }
           return parseInt(minutA) - parseInt(minutB);
-
-
         }));
-     
+
       }
-     
-//צריכה הסבר- זה נראה שמסדר לפי שעה
+
+
       for (var item of this.groupedItems) {
-        //item   ---המערך של השיעורים של יום אחד  
         if (item.length < this.maxCount)
-          //אבל הוא תמיד באורך המקסימלי אז למה צריך את זה?
           for (let i = 0; i < item.length; i++) {
-            if (14 < parseInt(item[i].hour.charAt(0) + item[i].hour.charAt(1))) {
+            if (14 < parseInt(item[i].time.charAt(0) + item[i].time.charAt(1))) {
               this.index = i;
               break;
             } else {
@@ -89,9 +90,24 @@ export class LessonSystemComponent {
           this.index++;
         }
         this.index = 0;
+
       }
+
+
     })
 
+  }
+
+  navigateToLessonDetails(id: number, lessonId: number, isRegistered: boolean) {
+
+    if (id !== 0 && isRegistered === false) {
+      // this.show = true;
+      this.router.navigate(['/details', 1, lessonId]);
+    }
+    else if (id !== 0 && isRegistered) {
+      console.log("אמור לעבור לביטול הרשמה");
+
+    }
   }
 
 }

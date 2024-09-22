@@ -29,12 +29,8 @@ export class SystemComponent {
     }
   }
   constructor(private dataService: DataService) {
-
-
     this.dataService.getAll().subscribe(data => {
       this.arr = data
-      console.log({ data });
-
       for (var day of this.numbersArray) {
         if (this.arr.filter(x => x.dayOfWeek == day).length > this.maxCount) {
           this.maxCount = this.arr.filter(x => x.dayOfWeek == day).length
@@ -53,9 +49,6 @@ export class SystemComponent {
 
         }));
       }
-
-      console.log(this.groupedItems);
-
       for (var item of this.groupedItems) {
         if (item.length < this.maxCount)
           for (let i = 0; i < item.length; i++) {
@@ -69,13 +62,9 @@ export class SystemComponent {
         for (let i = item.length; i < this.maxCount; i++) {
           item.splice(this.index, 0, this.rek);
           this.index++;
-        }
-        console.log({item});
-        
+        }        
         this.index = 0;
       }
-      console.log(this.groupedItems);
-
     })
 
   }
